@@ -1,0 +1,213 @@
+@import 'theme.css';
+
+.wy-nav-top {
+    padding: 1%;
+    background-color: #05203E;
+    max-width: none;
+    height: 50px;
+    background-position: 4px 4px;
+    background-repeat: no-repeat;
+    background-size: 30%;
+    background-image: url('https://eumetsat.docs.cloudferro.com/en/latest/_static/eumetsat_logo.png');
+}
+
+.wy-nav-top a {
+    color:#fff;
+    font-weight:700
+}
+
+.wy-nav-top img {
+    margin-right:12px;
+    height:45px;
+    width:45px;
+    background-color:#05203E;
+    padding:5px;
+    border-radius:100%;
+}
+.wy-nav-top i {
+    font-size:30px;
+    float:right;
+    cursor:pointer;
+    padding-top:inherit
+}
+.wy-side-nav-search{
+    background-color:#05203E;
+}
+.wy-side-scroll{
+    background-color: #05203E;
+}
+.wy-nav-content {
+    background-color: #05203E;
+    max-width: none;
+}
+.wy-nav-content-wrap {
+    background-color: #05203E;
+}
+.h2 {
+    color: #73b3fd;
+}
+.section ul {
+    color: white;
+}
+.wy-breadcrumbs li a:first-child {
+    color: #FF8225
+  }
+.rst-content .toctree-wrapper > p.caption, .rst-content h1, .rst-content h2, .rst-content h3, .rst-content h4, .rst-content h5, .rst-content h6 {
+    color: #157EFB;
+}
+.wy-breadcrumbs li {
+    color: #FF8225
+  }
+
+.rst-content .section ol li > :first-child, .rst-content .section ul li > :first-child, .rst-content .toctree-wrapper ol li > :first-child, .rst-content .toctree-wrapper ul li > :first-child, .rst-content section ol li > :first-child, .rst-content section ul li > :first-child {
+    color: white;
+}
+footer {
+    color:white;
+}
+a:visited {
+    color: #FF8225
+}
+.rst-content .section ul li, .rst-content .toctree-wrapper ul li, .rst-content section ul li, .wy-plain-list-disc li, article ul li {
+    color: white;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+    color: white;
+  }
+.rst-content div[class^="highlight"] div[class^="highlight"], .rst-content pre.literal-block div[class^="highlight"] {
+    color: black;
+}
+.rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td, .wy-table-backed, .wy-table-odd td, .wy-table-striped tr:nth-child(2n-1) td {
+    background-color: #05203E;
+}
+html.writer-html5 .rst-content table.docutils th {
+    color: white;
+}
+
+.rst-content .admonition-todo p:last-child, .rst-content .admonition p:last-child, .rst-content .attention p:last-child, .rst-content .caution p:last-child, .rst-content .danger p:last-child, .rst-content .error p:last-child, .rst-content .hint p:last-child, .rst-content .important p:last-child, .rst-content .note p:last-child, .rst-content .seealso p:last-child, .rst-content .tip p:last-child, .rst-content .warning p:last-child, .wy-alert p:last-child {
+    color: black;
+}
+.rst-content .section ul li, .rst-content .toctree-wrapper ul li, .rst-content section ul li, .wy-plain-list-disc li, article ul li {
+  color: gray;
+}
+
+
+/* Hide "On GitHub" section from versions menu */
+div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(2) {
+    display: none;
+}
+div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(3) {
+    display: none;
+}
+div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(4) {
+    display: none;
+}
+div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(5) {
+    display: none;
+}
+div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(6) {
+    display: none;
+}
+div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(7) {
+    display: none;
+}
+
+.image-with-border {
+    border: 2px solid black;
+}
+
+
+/* LEGACY NOTE Title Styling Eumetsat Elasticity*/
+.admonition.legacy-note .admonition-title {
+    background-color: #003f8a; /* Dark blue for title background */
+    color: #ffffff; /* White text for strong contrast */
+    font-weight: bold; /* Emphasize the title */
+    padding: 5px; /* Add padding around the title */
+    text-transform: uppercase; /* Make the title stand out */
+    border-radius: 3px; /* Smooth corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Optional: Links in LEGACY NOTE */
+.admonition.legacy-note a {
+    color: #0073e6; /* Bright blue for links */
+    text-decoration: underline;
+}
+
+.admonition.legacy-note a:hover {
+    color: #005bb5; /* Darker blue on hover */
+    text-decoration: none;
+}
+
+/* LEGACY NOTE Container Styling */
+.admonition.legacy-note {
+    background-color: #e6f0ff; /* Soft blue background for the container */
+    border: 1px solid #003f8a; /* Dark blue border for emphasis */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Internal spacing */
+    color: #003366; /* Deep blue text for readability */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05); /* Subtle shadow for emphasis */
+}
+
+
+
+
+/* Force all text in console code blocks to be black */
+.rst-content .highlight-console pre,
+.rst-content .highlight-console code {
+    color: black !important;
+    background: none !important;
+    font-weight: normal !important;
+    text-shadow: none !important;
+    white-space: pre-wrap !important; /* Enable text wrapping */
+    word-break: break-word !important;
+}
+
+/* Disable syntax highlighting for URLs, operators, numbers, and strings */
+.rst-content .highlight-console .o,  /* Operators ($, :, etc.) */
+.rst-content .highlight-console .m,  /* Numbers */
+.rst-content .highlight-console .n,  /* Names */
+.rst-content .highlight-console .s,  /* Strings */
+.rst-content .highlight-console .p,  /* Punctuation */
+.rst-content .highlight-console .nf, /* Functions */
+.rst-content .highlight-console .na, /* Attribute names */
+.rst-content .highlight-console .nn, /* Class names */
+.rst-content .highlight-console .nc, /* Class names */
+.rst-content .highlight-console .nt, /* Tags */
+.rst-content .highlight-console .gr, /* Generic errors */
+.rst-content .highlight-console .gd, /* Generic deleted */
+.rst-content .highlight-console .gi, /* Generic inserted */
+.rst-content .highlight-console .gh, /* Generic heading */
+.rst-content .highlight-console .go, /* Generic output */
+.rst-content .highlight-console .gp, /* Generic prompt */
+.rst-content .highlight-console .gs, /* Generic strong */
+.rst-content .highlight-console .gu, /* Generic subheading */
+.rst-content .highlight-console .gt { /* Generic tracebacks */
+    color: black !important;
+    font-weight: normal !important;
+}
+
+/* Keep Python code blocks unchanged */
+.rst-content .highlight-python pre {
+    white-space: pre !important;
+    word-break: normal !important;
+    overflow-x: auto;
+    color: inherit !important; /* Preserve syntax highlighting */
+}
+
+/* Ensure the entire note text and paragraphs inside notes are visible */
+.rst-content .admonition.note p {
+    color: #000000 !important; /* Force text color to black */
+}
+
+/* Apply the color and background to the whole note */
+.rst-content .admonition.note {
+    background-color: #f9f9f9 !important; /* Light gray background */
+    color: #000000 !important; /* Set text color to black */
+}
+
+/* Modify the note title background and text color if necessary */
+.rst-content .admonition.note .admonition-title {
+    background-color: #003f8a !important; /* Dark blue for title background */
+    color: #ffffff !important; /* White text for contrast */
+}

@@ -1,0 +1,358 @@
+@import 'theme.css';
+
+/* =========================================================
+   GLOBAL LAYOUT
+   ========================================================= */
+
+.wy-nav-top {
+    padding: 1%;
+    background-color: #00205b;
+    max-width: none;
+    height: 50px;
+    background-position: 4px 4px;
+    background-repeat: no-repeat;
+    background-size: 30%;
+    background-image: url('https://eumetsat.docs.cloudferro.com/en/latest/_static/eumetsat_logo.png');
+}
+
+.wy-nav-top a {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.wy-nav-top img {
+    margin-right: 12px;
+    height: 45px;
+    width: 45px;
+    background-color: #00205b;
+    padding: 5px;
+    border-radius: 100%;
+}
+
+.wy-nav-top i {
+    font-size: 30px;
+    float: right;
+    cursor: pointer;
+    padding-top: inherit;
+    color: #ffffff;
+}
+
+.wy-side-nav-search,
+.wy-side-scroll,
+.wy-nav-side {
+    background-color: #00205b;
+}
+
+.wy-nav-content {
+    background-color: #ffffff;
+    max-width: none;
+    color: #38484E;
+}
+
+.wy-nav-content-wrap {
+    background-color: #ffffff;
+}
+
+/* =========================================================
+   TYPOGRAPHY / MAIN CONTENT
+   ========================================================= */
+
+body,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+.rst-content,
+.rst-content p,
+.rst-content li,
+.rst-content ul,
+.rst-content ol,
+.rst-content div,
+.rst-content span {
+    color: #38484E;
+}
+
+.h2 {
+    color: #00205b;
+}
+
+.section ul {
+    color: #38484E;
+}
+
+.rst-content .toctree-wrapper > p.caption,
+.rst-content h1,
+.rst-content h2,
+.rst-content h3,
+.rst-content h4,
+.rst-content h5,
+.rst-content h6 {
+    color: #00205b;
+}
+
+.rst-content .section ol li > :first-child,
+.rst-content .section ul li > :first-child,
+.rst-content .toctree-wrapper ol li > :first-child,
+.rst-content .toctree-wrapper ul li > :first-child,
+.rst-content section ol li > :first-child,
+.rst-content section ul li > :first-child {
+    color: #38484E;
+}
+
+.rst-content .section ul li,
+.rst-content .toctree-wrapper ul li,
+.rst-content section ul li,
+.wy-plain-list-disc li,
+article ul li {
+    color: #38484E;
+}
+
+footer {
+    color: #38484E;
+}
+
+/* =========================================================
+   BREADCRUMBS / LINKS
+   ========================================================= */
+
+.wy-breadcrumbs li,
+.wy-breadcrumbs li a,
+.wy-breadcrumbs li a:first-child {
+    color: #5B7F95;
+}
+
+.rst-content a,
+.rst-content a:visited {
+    color: #5B7F95;
+}
+
+.rst-content a:hover,
+.rst-content a:active {
+    color: #00205b;
+}
+
+/* Prevent old orange visited-link behavior globally */
+a:visited {
+    color: inherit;
+}
+
+/* =========================================================
+   LEFT NAVIGATION
+   ========================================================= */
+
+.wy-menu-vertical p.caption,
+.wy-menu-vertical header,
+.wy-menu-vertical .caption-text {
+    color: #5B7F95 !important;
+}
+
+.wy-menu-vertical a {
+    background: transparent !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+.wy-menu-vertical a:hover,
+.wy-menu-vertical a:focus {
+    background: #16376f !important;
+    color: #ffffff !important;
+}
+
+.wy-menu-vertical li.current {
+    background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.wy-menu-vertical li.current > a,
+.wy-menu-vertical li.toctree-l1.current > a,
+.wy-menu-vertical li.toctree-l2.current > a,
+.wy-menu-vertical li.toctree-l3.current > a,
+.wy-menu-vertical li.current a {
+    background: #5B7F95 !important;
+    color: #ffffff !important;
+}
+
+/* Kill sticky orange states in sidebar */
+.wy-menu-vertical a:visited,
+.wy-menu-vertical a:active,
+.wy-menu-vertical a:focus-visible,
+.wy-menu-vertical li.current > a:visited,
+.wy-menu-vertical li.current a:visited {
+    color: #ffffff !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Search box */
+.wy-side-nav-search input[type="text"] {
+    background: #ffffff;
+    color: #38484E;
+    border-radius: 20px;
+    border: 1px solid #5B7F95;
+}
+
+/* =========================================================
+   VERSION MENU CLEANUP
+   ========================================================= */
+
+/* Hide "On GitHub" section from versions menu */
+div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(2),
+div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(3),
+div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(4),
+div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(5),
+div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(6),
+div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(7) {
+    display: none;
+}
+
+/* =========================================================
+   IMAGES
+   ========================================================= */
+
+.image-with-border {
+    border: 2px solid black;
+}
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td,
+.wy-table-backed,
+.wy-table-odd td,
+.wy-table-striped tr:nth-child(2n-1) td {
+    background-color: #ffffff;
+    color: #38484E;
+}
+
+html.writer-html5 .rst-content table.docutils th {
+    background-color: #00205b;
+    color: #ffffff;
+}
+
+/* =========================================================
+   LEGACY NOTE
+   ========================================================= */
+
+.admonition.legacy-note .admonition-title {
+    background-color: #00205b;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 5px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.admonition.legacy-note a {
+    color: #5B7F95;
+    text-decoration: underline;
+}
+
+.admonition.legacy-note a:hover {
+    color: #00205b;
+    text-decoration: none;
+}
+
+.admonition.legacy-note {
+    background-color: #eaf1f7;
+    border: 1px solid #00205b;
+    border-radius: 5px;
+    padding: 15px;
+    color: #38484E;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* =========================================================
+   CODE BLOCKS
+   ========================================================= */
+
+/* Force all text in console code blocks to be black */
+.rst-content .highlight-console pre,
+.rst-content .highlight-console code {
+    color: black !important;
+    background: none !important;
+    font-weight: normal !important;
+    text-shadow: none !important;
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+}
+
+/* Disable syntax highlighting for console token classes */
+.rst-content .highlight-console .o,
+.rst-content .highlight-console .m,
+.rst-content .highlight-console .n,
+.rst-content .highlight-console .s,
+.rst-content .highlight-console .p,
+.rst-content .highlight-console .nf,
+.rst-content .highlight-console .na,
+.rst-content .highlight-console .nn,
+.rst-content .highlight-console .nc,
+.rst-content .highlight-console .nt,
+.rst-content .highlight-console .gr,
+.rst-content .highlight-console .gd,
+.rst-content .highlight-console .gi,
+.rst-content .highlight-console .gh,
+.rst-content .highlight-console .go,
+.rst-content .highlight-console .gp,
+.rst-content .highlight-console .gs,
+.rst-content .highlight-console .gu,
+.rst-content .highlight-console .gt {
+    color: black !important;
+    font-weight: normal !important;
+}
+
+/* Keep Python code blocks unchanged */
+.rst-content .highlight-python pre {
+    white-space: pre !important;
+    word-break: normal !important;
+    overflow-x: auto;
+    color: inherit !important;
+}
+
+.rst-content div[class^="highlight"] div[class^="highlight"],
+.rst-content pre.literal-block div[class^="highlight"] {
+    color: black;
+}
+
+/* =========================================================
+   STANDARD NOTE
+   ========================================================= */
+
+.rst-content .admonition.note {
+    background-color: #f9f9f9 !important;
+    color: #000000 !important;
+}
+
+.rst-content .admonition.note p {
+    color: #000000 !important;
+}
+
+.rst-content .admonition.note .admonition-title {
+    background-color: #00205b !important;
+    color: #ffffff !important;
+}
+
+/* =========================================================
+   RTD-LOOKING H2 BLOCK
+   ========================================================= */
+
+.rst-content .rtd-h2 > p {
+    font-family: "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif;
+    font-size: 150%;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 24px 0 12px;
+    padding: 0;
+    border: 0;
+    color: #00205b !important;
+}
+
+.rst-content .rtd-h2 > p {
+    border-bottom: none !important;
+}
