@@ -475,6 +475,7 @@ KUBERNETES = CF + "kubernetes-doc" + blob
 AD = "https://github.com/cloudferrodocumentation/"
 REMOTE_TREE_SOURCE = AD + LOCAL + "/tree/main/source/"
 LOCAL_SOURCE = AD + LOCAL + blob
+EUMETSAT_ELASTICITY_TREE = REMOTE_TREE_SOURCE
 
 urls_dict = get_files(
   {
