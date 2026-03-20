@@ -477,6 +477,7 @@ REMOTE_TREE_SOURCE = AD + LOCAL + "/tree/main/source/"
 LOCAL_SOURCE = AD + LOCAL + blob
 EUMETSAT_ELASTICITY_TREE = REMOTE_TREE_SOURCE
 
+
 urls_dict = get_files(
   {
 
@@ -496,8 +497,8 @@ urls_dict = get_files(
             CF3 + "accountmanagement/Users-Roles",
             CF3 + "accountmanagement/How-to-activate-OpenStack-CLI-access-to-Eumetsat-Elasticity-cloud",
 	        CF3 + "accountmanagement/Tenant-Manager-Users-And-Roles-On-Eumetsat-Elasticity",
-            EUMETSAT_ELASTICITY + "accountmanagement/Help-Desk-And-Support",
-            EUMETSAT_ELASTICITY + "accountmanagement/Dual-Factor-Authentication-for-Eumetsat-Elasticity-Site",
+            LOCAL_SOURCE + "accountmanagement/Help-Desk-And-Support",
+            LOCAL_SOURCE + "accountmanagement/Dual-Factor-Authentication-for-Eumetsat-Elasticity-Site",
             CF3 + "accountmanagement/Billing-reports-on-Eumetsat-Elasticity",
 
 
@@ -682,11 +683,11 @@ urls_dict = get_files(
 
          "sfs": [
             EUMETSAT_ELASTICITY_TREE + "sfs",
-            EUMETSAT_ELASTICITY + "sfs/How-To-Create-A-Local-Horizon-User",
-            EUMETSAT_ELASTICITY + "sfs/How-To-Create-Manila-Network-And-Manila-User-Role",
-            EUMETSAT_ELASTICITY + "sfs/How-To-Enable-Command-Line-Interface-For-Local-Horizon-User",
-            EUMETSAT_ELASTICITY + "sfs/How-To-Install-Shared-File-System-Based-On-Manila-OpenStack",
-            EUMETSAT_ELASTICITY + "sfs/How-To-Increase-Security-For-Shared-File-System-Based-On-Manila-OpenStack",
+            LOCAL_SOURCE + "sfs/How-To-Create-A-Local-Horizon-User",
+            LOCAL_SOURCE + "sfs/How-To-Create-Manila-Network-And-Manila-User-Role",
+            LOCAL_SOURCE + "sfs/How-To-Enable-Command-Line-Interface-For-Local-Horizon-User",
+            LOCAL_SOURCE + "sfs/How-To-Install-Shared-File-System-Based-On-Manila-OpenStack",
+            LOCAL_SOURCE + "sfs/How-To-Increase-Security-For-Shared-File-System-Based-On-Manila-OpenStack",
      
            ],
            
