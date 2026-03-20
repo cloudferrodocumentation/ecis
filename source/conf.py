@@ -721,7 +721,7 @@ html_context = {
     "urls_dict": urls_dict,
     "github_host": "github.com",
     "github_user": "CloudFerro",
-    "github_repo": "waw3-1-kubernetes-test",
+    "github_repo": "ecis",
     "github_version": "main",
     "conf_py_path": "/source/",
     "source_suffix": ".rst",
