@@ -95,7 +95,7 @@ BRANDS = {
         'MK8s' : 'Eumetsat Elasticity Managed Kubernetes',
         "mk8s_url": "managed-kubernetes.cloudferro.com/",
         "server_cert": "managed-kubernetes-cloudferro-com-chain.pem",
-        "main_site_url": "eumetsat.int",
+        "main_site_url": "https://eumetsat.int",
         "main_site_name": "Eumetsat Elasticity",
     },
 
