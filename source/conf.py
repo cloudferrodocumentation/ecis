@@ -463,17 +463,11 @@ templates_path = ["_templates"]
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = [
-    '**/_debug*.md',
-    '**/_machine-translation*.rst',
-    '**/_previous*.rst',
-    '**/_original*.rst',
-    '**/*.pot',
-    '**/*.po',
 ]
 
-CF = "https://github.com/CloudFerro/"
+CF = "https://github.com/cloudferrodocumentation/"
 blob = "/blob/main/source/"
-LOCAL = "waw3-1-kubernetes-test"
+LOCAL = "ecis"
 REMOTE = "cf3-doc"
 CF3 = CF + REMOTE + blob
 KUBERNETES = CF + "kubernetes-doc" + blob
