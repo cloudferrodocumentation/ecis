@@ -465,20 +465,16 @@ templates_path = ["_templates"]
 exclude_patterns = [
 ]
 
-CF_REMOTE = "https://github.com/CloudFerro/"
-CF_LOCAL = "https://github.com/cloudferrodocumentation/"
-
+CF = "https://github.com/Cloudferro/"
 blob = "/blob/main/source/"
-tree = "/tree/main/source/"
-
 LOCAL = "ecis"
-REMOTE = "cf3-doc"
+REMOTE = LOCAL
+CF3 = CF + "cf3-doc" + blob
+KUBERNETES = CF + "kubernetes-doc" + blob
 
-CF3 = CF_REMOTE + REMOTE + blob
-KUBERNETES = CF_REMOTE + "kubernetes-doc" + blob
-
-EUMETSAT_ELASTICITY = CF_LOCAL + LOCAL + blob
-EUMETSAT_ELASTICITY_TREE = CF_LOCAL + LOCAL + tree
+AD = "https://github.com/cloudferrodocumentation/"
+REMOTE_TREE_SOURCE = AD + LOCAL + "/tree/main/source/"
+LOCAL_SOURCE = AD + LOCAL + blob
 
 urls_dict = get_files(
   {
