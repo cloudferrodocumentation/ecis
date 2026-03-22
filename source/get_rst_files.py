@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 brand_name = 'Eumetsat-Elasticity'
 string_to_replace = 'Eumetsat-Elasticity'
 
-cloud_name = 'WAW3-1'
+cloud_name = ''
 cloud_name_to_replace = 'WAW3-1'
 
 def process_url(url: str):

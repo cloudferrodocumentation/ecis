@@ -40,17 +40,17 @@
 .wy-side-nav-search,
 .wy-side-scroll,
 .wy-nav-side {
-    background-color: #00205b;
+    background-color: #00205b !important;
+}
+
+.wy-nav-content,
+.wy-nav-content-wrap {
+    background-color: #ffffff !important;
 }
 
 .wy-nav-content {
-    background-color: #ffffff;
     max-width: none;
     color: #38484E;
-}
-
-.wy-nav-content-wrap {
-    background-color: #ffffff;
 }
 
 /* =========================================================
@@ -78,22 +78,16 @@ section,
     color: #38484E;
 }
 
-.h2 {
-    color: #00205b;
-}
-
-.section ul {
-    color: #38484E;
-}
-
+.h2,
 .rst-content .toctree-wrapper > p.caption,
 .rst-content h1,
 .rst-content h2,
 .rst-content h3,
 .rst-content h4,
 .rst-content h5,
-.rst-content h6 {
-    color: #00205b;
+.rst-content h6,
+.rst-content .rtd-h2 > p {
+    color: #00205b !important;
 }
 
 .rst-content .section ol li > :first-child,
@@ -101,18 +95,13 @@ section,
 .rst-content .toctree-wrapper ol li > :first-child,
 .rst-content .toctree-wrapper ul li > :first-child,
 .rst-content section ol li > :first-child,
-.rst-content section ul li > :first-child {
-    color: #38484E;
-}
-
+.rst-content section ul li > :first-child,
 .rst-content .section ul li,
 .rst-content .toctree-wrapper ul li,
 .rst-content section ul li,
 .wy-plain-list-disc li,
-article ul li {
-    color: #38484E;
-}
-
+article ul li,
+.section ul,
 footer {
     color: #38484E;
 }
@@ -124,21 +113,25 @@ footer {
 .wy-breadcrumbs li,
 .wy-breadcrumbs li a,
 .wy-breadcrumbs li a:first-child {
-    color: #5B7F95;
+    color: #5B7F95 !important;
 }
 
-.rst-content a,
-.rst-content a:visited {
+/* General non-doc links in article body */
+.rst-content a:not(.reference.internal),
+.rst-content a:not(.reference.internal):visited {
     color: #5B7F95;
+    text-decoration: none !important;
 }
 
-.rst-content a:hover,
-.rst-content a:active {
+.rst-content a:not(.reference.internal):hover,
+.rst-content a:not(.reference.internal):active {
     color: #00205b;
+    text-decoration: none !important;
 }
 
-/* Prevent old orange visited-link behavior globally */
-a:visited {
+/* Limit visited normalization to content and sidebar only */
+.rst-content a:visited,
+.wy-menu-vertical a:visited {
     color: inherit;
 }
 
@@ -152,40 +145,85 @@ a:visited {
     color: #5B7F95 !important;
 }
 
+/* Default sidebar links in blue area */
 .wy-menu-vertical a {
     background: transparent !important;
     color: #ffffff !important;
     border: none !important;
 }
 
+/* Default hover in blue area */
 .wy-menu-vertical a:hover,
 .wy-menu-vertical a:focus {
     background: #16376f !important;
     color: #ffffff !important;
 }
 
+/* Opened branch container */
 .wy-menu-vertical li.current {
-    background: rgba(255, 255, 255, 0.08) !important;
+    background: #d9d9d9 !important;
 }
 
+/* Current section title row, e.g. DATA VOLUME */
 .wy-menu-vertical li.current > a,
 .wy-menu-vertical li.toctree-l1.current > a,
 .wy-menu-vertical li.toctree-l2.current > a,
-.wy-menu-vertical li.toctree-l3.current > a,
-.wy-menu-vertical li.current a {
-    background: #5B7F95 !important;
-    color: #ffffff !important;
+.wy-menu-vertical li.toctree-l3.current > a {
+    background: #efefef !important;
+    color: #3f3f3f !important;
+    font-weight: 700 !important;
+    border-top: 1px solid #00205b !important;
+    border-bottom: 1px solid #bfbfbf !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
 }
 
-/* Kill sticky orange states in sidebar */
+/* All child links inside the expanded gray block */
+.wy-menu-vertical li.current ul,
+.wy-menu-vertical li.current ul li {
+    background: #d9d9d9 !important;
+}
+
+.wy-menu-vertical li.current ul li a {
+    background: #d9d9d9 !important;
+    color: #4a4a4a !important;
+    font-weight: 500 !important;
+    line-height: 1.15 !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+}
+
+/* Hover inside the gray expanded area */
+.wy-menu-vertical li.current ul li a:hover,
+.wy-menu-vertical li.current ul li a:focus {
+    background: #d1d1d1 !important;
+    color: #2f2f2f !important;
+}
+
+/* Keep the section title stable on hover */
+.wy-menu-vertical li.current > a:hover,
+.wy-menu-vertical li.current > a:focus {
+    background: #efefef !important;
+    color: #3f3f3f !important;
+}
+
+/* Remove sticky orange / visited leftovers */
 .wy-menu-vertical a:visited,
 .wy-menu-vertical a:active,
 .wy-menu-vertical a:focus-visible,
 .wy-menu-vertical li.current > a:visited,
 .wy-menu-vertical li.current a:visited {
-    color: #ffffff !important;
     outline: none !important;
     box-shadow: none !important;
+}
+
+/* Explicit colors for visited states */
+.wy-menu-vertical li.current > a:visited {
+    color: #3f3f3f !important;
+}
+
+.wy-menu-vertical li.current ul li a:visited {
+    color: #4a4a4a !important;
 }
 
 /* Search box */
@@ -200,7 +238,6 @@ a:visited {
    VERSION MENU CLEANUP
    ========================================================= */
 
-/* Hide "On GitHub" section from versions menu */
 div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(2),
 div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(3),
 div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(4),
@@ -272,7 +309,6 @@ html.writer-html5 .rst-content table.docutils th {
    CODE BLOCKS
    ========================================================= */
 
-/* Force all text in console code blocks to be black */
 .rst-content .highlight-console pre,
 .rst-content .highlight-console code {
     color: black !important;
@@ -283,7 +319,6 @@ html.writer-html5 .rst-content table.docutils th {
     word-break: break-word !important;
 }
 
-/* Disable syntax highlighting for console token classes */
 .rst-content .highlight-console .o,
 .rst-content .highlight-console .m,
 .rst-content .highlight-console .n,
@@ -307,7 +342,6 @@ html.writer-html5 .rst-content table.docutils th {
     font-weight: normal !important;
 }
 
-/* Keep Python code blocks unchanged */
 .rst-content .highlight-python pre {
     white-space: pre !important;
     word-break: normal !important;
@@ -350,9 +384,71 @@ html.writer-html5 .rst-content table.docutils th {
     margin: 24px 0 12px;
     padding: 0;
     border: 0;
+    border-bottom: none !important;
     color: #00205b !important;
 }
 
-.rst-content .rtd-h2 > p {
-    border-bottom: none !important;
+/* Managed Kubernetes version timeline table */
+.rst-content table.docutils.mk8s-version-table thead th,
+.rst-content table.docutils.mk8s-version-table th {
+    background: #00205b;
+    color: #ffffff !important;
+    font-weight: 700;
+    border: 1px solid #d6d6d6;
+    vertical-align: middle;
+}
+
+/* Force all text inside header cells to white */
+.rst-content table.docutils.mk8s-version-table thead th *,
+.rst-content table.docutils.mk8s-version-table th * {
+    color: #ffffff !important;
+}
+
+/* Body cells */
+.rst-content table.docutils.mk8s-version-table td {
+    border: 1px solid #d6d6d6;
+    vertical-align: top;
+}
+
+/* Remove extra paragraph spacing inside cells */
+.rst-content table.docutils.mk8s-version-table th p,
+.rst-content table.docutils.mk8s-version-table td p {
+    margin-bottom: 0;
+}
+
+/* =========================================================
+   INTERNAL DOC LINKS IN ARTICLE BODY
+   ========================================================= */
+
+.rst-content a.reference.internal,
+.rst-content a.reference.internal:visited,
+.rst-content a.reference.internal span,
+.rst-content a.reference.internal .std,
+.rst-content a.reference.internal .std-ref,
+.rst-content a.reference.internal .doc,
+.rst-content a.reference.internal .xref {
+    color: #356a95 !important;
+    text-decoration: none !important;
+}
+
+.rst-content a.reference.internal:hover,
+.rst-content a.reference.internal:focus,
+.rst-content a.reference.internal:active,
+.rst-content a.reference.internal:hover span,
+.rst-content a.reference.internal:focus span,
+.rst-content a.reference.internal:active span,
+.rst-content a.reference.internal:hover .std,
+.rst-content a.reference.internal:focus .std,
+.rst-content a.reference.internal:active .std,
+.rst-content a.reference.internal:hover .std-ref,
+.rst-content a.reference.internal:focus .std-ref,
+.rst-content a.reference.internal:active .std-ref,
+.rst-content a.reference.internal:hover .doc,
+.rst-content a.reference.internal:focus .doc,
+.rst-content a.reference.internal:active .doc,
+.rst-content a.reference.internal:hover .xref,
+.rst-content a.reference.internal:focus .xref,
+.rst-content a.reference.internal:active .xref {
+    color: #244c6a !important;
+    text-decoration: none !important;
 }

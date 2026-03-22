@@ -75,15 +75,15 @@ copybutton_prompt_text = r"^\s*(\$ |>>> |\.\.\. )"
 copybutton_prompt_is_regexp = True
 copybutton_add_css = False
 
-BRAND = os.environ.get("BRAND", "eumetsat")
+BRAND = os.environ.get("BRAND", "ecis")
 
 BRANDS = {
-    "eumetsat": {
+    "ecis": {
         "brand_name": "Eumetsat Elasticity",
         "brand_name_full": "Eumetsat Elasticity",
         "brand_name_hyphen": "Eumetsat-Elasticity",
         "brand_name_site_link": "https://horizon.cloudferro.com/auth/login/?next=/",
-        "brand_name_site_auth_link": "https://eumetsat.cloudferro.com/",
+        "brand_name_site_auth_link": "https://ecis.staging-dolores.apps.staging.intra.cloudferro.com/login",
         "images_root_accounts": "eumetsat",
         "images_root_billing": "eumetsat",
         "images_forgotten_password": "eumetsat",
@@ -91,9 +91,9 @@ BRANDS = {
         "images_use_python_2fa": "eumetsat",
         "images_kubernetes_templates" : "eumetsat",
         "project_name": "cloud_078649_2",
-        "region_name": "waw3-1",
+        "region_name": "",
         'MK8s' : 'Eumetsat Elasticity Managed Kubernetes',
-        "mk8s_url": "managed-kubernetes.cloudferro.com/",
+        "mk8s_url": "mks.cloud.eumetsat.int/",
         "server_cert": "managed-kubernetes-cloudferro-com-chain.pem",
         "main_site_url": "https://eumetsat.int",
         "main_site_name": "Eumetsat Elasticity",
@@ -114,7 +114,7 @@ rst_prolog = f"""
 .. |brand-name-site-link| replace:: {brand_cfg["brand_name_site_link"]}
 .. |brand-name-site-auth-link| replace:: {brand_cfg["brand_name_site_auth_link"]}
 
-.. |cloud-name| replace:: WAW3-1
+.. |cloud-name| replace:: {brand_cfg["region_name"]}
 .. |brand-name-support-en| replace:: https://www.eumetsat.int/contact-us
 .. |brand-name-support-de| replace:: https://www.eumetsat.int/contact-us
 .. |datahub-address| replace:: datahub.code-de.org
@@ -128,7 +128,7 @@ rst_prolog = f"""
 """
 
 brand_name = brand_cfg["brand_name"]
-cloud_name = 'WAW3-1'
+cloud_name = ''
 
 
 language = 'en'
@@ -505,7 +505,7 @@ urls_dict = get_files(
 
 
 		],
- 
+
          "kubernetes": [
             EUMETSAT_ELASTICITY_TREE + "kubernetes",
             KUBERNETES + "How-to-Create-a-Kubernetes-Cluster-Using-Eumetsat-Elasticity-OpenStack-Magnum",
@@ -558,7 +558,7 @@ urls_dict = get_files(
             CF3 + "cuttingedge/Sample-Workflow-Running-EO-Processing-MPI-jobs-on-a-SLURM-cluster-on-Eumetsat-Elasticity-WAW3-1-Cloud",
 
        ],
-       
+
 
 		"datavolume": [
 		    EUMETSAT_ELASTICITY_TREE + "datavolume",
@@ -635,6 +635,7 @@ urls_dict = get_files(
             CF3 + "networking/Load-Balancer-as-a-Service-User-Documentation-on-Eumetsat-Elasticity",
             CF3 + "openstackcli/How-to-access-object-storage-using-OpenStack-CLI-on-Eumetsat-Elasticity",
             CF3 + "networking/How-to-correctly-delete-all-the-resources-in-the-project-via-Horizon-Dashboard-on-Eumetsat-Elasticity",
+            CF3 + "networking/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer",
 
 			],
 
@@ -664,12 +665,12 @@ urls_dict = get_files(
 
 	 ],
 
-    
+
        "s3": [
            EUMETSAT_ELASTICITY_TREE + "s3",
 			CF3 + "s3/How-to-delete-large-S3-bucket-on-Eumetsat-Elasticity",
 			CF3 + "s3/How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs-on-Eumetsat-Elasticity",
-			CF3 + "s3/How-to-use-Object-Storage-on-Eumetsat-Elasticity",
+            CF3 + "s3/How-to-use-Object-Storage-on-Eumetsat-Elasticity",
 			CF3 + "s3/How-to-access-private-object-storage-using-S3cmd-or-boto3-on-Eumetsat-Elasticity",
 			CF3 + "s3/S3FS-Cache-on-Eumetsat-Elasticity",
 			CF3 + "s3/Bucket-sharing-using-s3-bucket-policy-on-Eumetsat-Elasticity",
@@ -681,7 +682,7 @@ urls_dict = get_files(
             CF3 + "s3/How-to-access-object-storage-from-Eumetsat-Elasticity-using-s3cmd",
             CF3 + "s3/S3-bucket-object-versioning-on-Eumetsat-Elasticity",
         ],
-    
+
 
          "sfs": [
             EUMETSAT_ELASTICITY_TREE + "sfs",
@@ -690,9 +691,9 @@ urls_dict = get_files(
             LOCAL_SOURCE + "sfs/How-To-Enable-Command-Line-Interface-For-Local-Horizon-User",
             LOCAL_SOURCE + "sfs/How-To-Install-Shared-File-System-Based-On-Manila-OpenStack",
             LOCAL_SOURCE + "sfs/How-To-Increase-Security-For-Shared-File-System-Based-On-Manila-OpenStack",
-     
+
            ],
-           
+
 
     "releasenotes": [
             EUMETSAT_ELASTICITY_TREE + "releasenotes",
@@ -700,7 +701,7 @@ urls_dict = get_files(
 			CF3 + "releasenotes/OpenStack-Release-Notes-on-Eumetsat-Elasticity",
 
         ],
- 
+
     "windows": [
             EUMETSAT_ELASTICITY_TREE + "windows",
 			CF3 + "windows/Connecting-to-a-Windows-VM-via-RDP-through-a-Linux-bastion-host-port-forwarding-on-Eumetsat-Elasticity",
@@ -721,7 +722,7 @@ html_context = {
     "urls_dict": urls_dict,
     "github_host": "github.com",
     "github_user": "CloudFerro",
-    "github_repo": "ecis",
+    "github_repo": LOCAL,
     "github_version": "main",
     "conf_py_path": "/source/",
     "source_suffix": ".rst",
