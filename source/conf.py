@@ -98,7 +98,6 @@ BRANDS = {
         "main_site_url": "https://eumetsat.int",
         "main_site_name": "Eumetsat Elasticity",
     },
-
 }
 
 brand_cfg = BRANDS[BRAND]
@@ -309,6 +308,10 @@ jinja_contexts = {
 		'brand_name_site_auth_link': brand_cfg["brand_name_site_auth_link"],
 		'tenant_manager_link': brand_cfg["brand_name_site_auth_link"],
 
+		'MK8s' : brand_cfg["MK8s"],
+        "mk8s_url": brand_cfg["mk8s_url"],
+        "server_cert": brand_cfg["server_cert"],
+
         'brand_name_cloud': 'Eumetsat-Elasticity-WAW3-1',
 		'ecommerce_link': 'https://ecommerce.creodias.eu',
         'satellite_repository': '/eodata',
@@ -326,7 +329,7 @@ jinja_contexts = {
         'manage_totp' : 'manage-totp-05_creodias.png',
         'brand_identity' : 'Eumetsat-elasticity',
         'keycloak_identity' : 'https://identity.cloudferro.com/auth/realms/Eumetsat-elasticity',
-        'site_link' : 'https://eumetsat.docs.cloudferro.com',
+        'site_link' : 'https://docs.cloud.eumetsat.int',
         'datavolume': 'datavolume',
 		'openstack': 'openstack', 
 		'openstackcli': 'openstackcli', 
@@ -342,9 +345,8 @@ jinja_contexts = {
 		'windows': 'windows', 
 		'security': 'security',
         'site_name': 'Eumetsat Elasticity',
-        'site_address': 'https://eo-lab.org',
+        'site_address': 'www.eumetsat.int',
         'ecommerce_link': '',
-        'MK8s' : 'Eumetsat Elasticity Managed Kubernetes'
 		 },
 
      'tenant_manager_user_and_roles': {
