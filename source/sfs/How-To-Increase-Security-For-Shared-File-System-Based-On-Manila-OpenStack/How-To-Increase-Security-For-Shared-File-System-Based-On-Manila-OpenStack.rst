@@ -41,8 +41,8 @@ What We Are Going To Cover
 
 .. Danger::
 
-   If you are using Kubenertes clusters in conjunction to shared file system, bear in mind that large groups of security rules are automatically connected to each Kubernetes instance you create (control plane or worker nodes). 
-   Pay special attention to **Prerequisite No. 5** and use procedures exposed later in this article to check the status of *manila-network* ports for instances that should have access to the shared file system.
+   If you are using Kubernetes clusters in conjunction to shared file system, bear in mind that large groups of security rules are automatically connected to each Kubernetes instance you create (control plane or worker nodes).
+   Pay special attention to **Prerequisite No. 6** and use procedures exposed later in this article to check the status of *manila-network* ports for instances that should have access to the shared file system.
 
 
 Prerequisites
