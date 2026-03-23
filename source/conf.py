@@ -482,9 +482,9 @@ KUBERNETES = CF_SHARED + "kubernetes-doc" + blob
 LOCAL_SOURCE = CF_LOCAL + LOCAL + blob
 EUMETSAT_ELASTICITY_TREE = CF_LOCAL + LOCAL + tree
 
+"""
 urls_dict = get_files(
   {
-"""
     "accountmanagement": [
             EUMETSAT_ELASTICITY_TREE + "accountmanagement",
 			CF3 + "accountmanagement/Using-KeePassXC-for-Two-Factor-Authentication-on-Eumetsat-Elasticity",
