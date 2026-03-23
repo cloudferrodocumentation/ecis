@@ -690,8 +690,6 @@ urls_dict = get_files(
 
     }
 )
-"""
-
 
 html_context = {
     "display_github": True,
