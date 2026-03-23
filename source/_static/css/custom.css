@@ -255,22 +255,6 @@ div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(7) {
     border: 2px solid black;
 }
 
-/* =========================================================
-   TABLES
-   ========================================================= */
-
-.rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td,
-.wy-table-backed,
-.wy-table-odd td,
-.wy-table-striped tr:nth-child(2n-1) td {
-    background-color: #ffffff;
-    color: #38484E;
-}
-
-html.writer-html5 .rst-content table.docutils th {
-    background-color: #00205b;
-    color: #ffffff;
-}
 
 /* =========================================================
    LEGACY NOTE
@@ -388,32 +372,85 @@ html.writer-html5 .rst-content table.docutils th {
     color: #00205b !important;
 }
 
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td,
+.wy-table-backed,
+.wy-table-odd td,
+.wy-table-striped tr:nth-child(2n-1) td {
+    background-color: #ffffff;
+    color: #38484E;
+}
+
+/* Generic docutils table headers */
+html.writer-html5 .rst-content table.docutils th,
+html.writer-html5 .rst-content table.docutils thead th,
+.rst-content table.docutils th,
+.rst-content table.docutils thead th {
+    background-color: #00205b !important;
+    color: #ffffff !important;
+    border: 1px solid #d6d6d6;
+}
+
+/* Force absolutely all text inside header cells to white */
+html.writer-html5 .rst-content table.docutils th *,
+html.writer-html5 .rst-content table.docutils thead th *,
+.rst-content table.docutils th *,
+.rst-content table.docutils thead th *,
+.rst-content table.docutils th p,
+.rst-content table.docutils thead th p,
+.rst-content table.docutils th span,
+.rst-content table.docutils thead th span,
+.rst-content table.docutils th a,
+.rst-content table.docutils thead th a,
+.rst-content table.docutils th strong,
+.rst-content table.docutils thead th strong,
+.rst-content table.docutils th em,
+.rst-content table.docutils thead th em {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+}
+
+/* Body cells */
+.rst-content table.docutils td {
+    color: #38484E !important;
+}
+
+/* Remove extra paragraph spacing inside cells */
+.rst-content table.docutils th p,
+.rst-content table.docutils td p {
+    margin-bottom: 0;
+}
+
 /* Managed Kubernetes version timeline table */
 .rst-content table.docutils.mk8s-version-table thead th,
 .rst-content table.docutils.mk8s-version-table th {
-    background: #00205b;
+    background: #00205b !important;
     color: #ffffff !important;
     font-weight: 700;
     border: 1px solid #d6d6d6;
     vertical-align: middle;
 }
 
-/* Force all text inside header cells to white */
+/* Force all text inside mk8s table header cells to white */
 .rst-content table.docutils.mk8s-version-table thead th *,
-.rst-content table.docutils.mk8s-version-table th * {
+.rst-content table.docutils.mk8s-version-table th *,
+.rst-content table.docutils.mk8s-version-table thead th p,
+.rst-content table.docutils.mk8s-version-table th p,
+.rst-content table.docutils.mk8s-version-table thead th span,
+.rst-content table.docutils.mk8s-version-table th span,
+.rst-content table.docutils.mk8s-version-table thead th a,
+.rst-content table.docutils.mk8s-version-table th a {
     color: #ffffff !important;
+    fill: #ffffff !important;
 }
 
 /* Body cells */
 .rst-content table.docutils.mk8s-version-table td {
     border: 1px solid #d6d6d6;
     vertical-align: top;
-}
-
-/* Remove extra paragraph spacing inside cells */
-.rst-content table.docutils.mk8s-version-table th p,
-.rst-content table.docutils.mk8s-version-table td p {
-    margin-bottom: 0;
 }
 
 /* =========================================================
