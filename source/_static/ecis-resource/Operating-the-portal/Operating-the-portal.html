@@ -1,0 +1,411 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <link href="../../_static/favicon/favicon-32x32.png" sizes="32x32" rel="icon" type="image/png">
+    <link href="../../_static/favicon/favicon-16x16.png" sizes="16x16" rel="icon" type="image/png">
+    <link href="../../_static/favicon/android-chrome-192x192.png" sizes="192x192" rel="icon" type="image/png">
+    <link href="../../_static/favicon/android-chrome-512x512.png" sizes="512x512" rel="icon" type="image/png">
+    <link rel="favicon/apple-touch-icon.png" href="../../_static/favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operating the portal &mdash; Destination Earth Data Lake  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/demoboost.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/cf2_badge.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/s4defs-roles.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/legal_style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/right_sidebar.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/feedback_widget.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/copybutton_custom.css" />
+
+
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/demoboost.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/js/custom.js"></script>
+    <script src="../../_static/js/feedback_widget.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Introduction to ECIS dashboard" href="../Introduction/Introduction.html" />
+
+    <style>
+        .language-selector-wrapper {
+          margin: 1em 0;
+          text-align: center;
+        }
+        .language-dropdown {
+          font-size: 14px;
+          padding: 4px 6px;
+        }
+        .language-flag {
+          width: 28px;
+          height: auto;
+          opacity: 0.6;
+          transition: transform 0.2s, opacity 0.2s;
+        }
+        .language-flag:hover,
+        .language-flag.active-flag {
+          opacity: 1;
+          transform: scale(1.1);
+          border: 2px solid #2980B9;
+          border-radius: 4px;
+        }
+        .language-codes-container {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          margin-top: 1em;
+          font-weight: bold;
+        }
+        .language-code {
+          color: #666;
+          text-decoration: none;
+        }
+        .language-code:hover,
+        .language-code.active-code {
+          color: #2980B9;
+        }
+    </style>
+
+</head>
+
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+        <div class="wy-side-scroll">
+            <div class="wy-side-nav-search" >
+
+
+
+                <a href="../../index.html">
+
+                    <img src="../../_static/logo_bar_vertical_dark_mode.png" class="logo" alt="Logo"/>
+                </a>
+                <div role="search">
+                    <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+                        <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+                        <input type="hidden" name="check_keywords" value="yes" />
+                        <input type="hidden" name="area" value="default" />
+                    </form>
+                </div>
+            </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+            <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+            <ul class="current">
+                <li class="toctree-l1"><a class="reference internal" href="../../cf3-eodata/cf3-eodata.html">CF3 EODATA</a></li>
+                <li class="toctree-l1"><a class="reference internal" href="../../cf3-cutting-edge/cf3-cutting-edge.html">CF3 CUTTING EDGE</a></li>
+                <li class="toctree-l1"><a class="reference internal" href="../../kubernetes_magnum/kubernetes_magnum.html">Kubernetes Magnum</a></li>
+                <li class="toctree-l1"><a class="reference internal" href="../../my_datalake_services_colors/my_datalake_services_colors.html">My DataLake Services COLORS</a></li>
+                <li class="toctree-l1 current"><a class="reference internal" href="../ecis_portal_management.html">ECIS Portal Management</a><ul class="current">
+                    <li class="toctree-l2"><a class="reference internal" href="../ecis_portal_management.html#user">User</a></li>
+                    <li class="toctree-l2 current"><a class="reference internal" href="../ecis_portal_management.html#operator">Operator</a><ul class="current">
+                        <li class="toctree-l3"><a class="reference internal" href="../Introduction/Introduction.html">Introduction to ECIS dashboard</a></li>
+                        <li class="toctree-l3 current"><a class="current reference internal" href="#">Operating the portal</a><ul>
+                            <li class="toctree-l4"><a class="reference internal" href="#listing-an-organizations">Listing an organizations</a></li>
+                            <li class="toctree-l4"><a class="reference internal" href="#managing-an-organization">Managing an organization</a></li>
+                            <li class="toctree-l4"><a class="reference internal" href="#managing-users-roles-passwords">Managing users, roles, passwords</a></li>
+                            <li class="toctree-l4"><a class="reference internal" href="#granting-access-to-cloud-regions-and-services">Granting access to cloud regions and services</a></li>
+                            <li class="toctree-l4"><a class="reference internal" href="#id1">Cloud regions</a></li>
+                            <li class="toctree-l4"><a class="reference internal" href="#creating-an-openstack-project">Creating an OpenStack project</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    </li>
+                </ul>
+                </li>
+            </ul>
+
+        </div>
+        </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Destination Earth Data Lake</a>
+    </nav>
+
+        <div class="wy-nav-content">
+            <div class="cf-page-grid">
+                <div class="cf-page-main">
+
+                    <div class="rst-content">
+                        <div role="navigation" aria-label="Page navigation">
+                            <ul class="wy-breadcrumbs">
+                                <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+                                <li><a href="../ecis_portal_management.html">ECIS Portal Management</a> &raquo;</li>
+                                <li>Operating the portal</li>
+                                <li class="wy-breadcrumbs-aside">
+
+
+                                    <a href="https://creodias.eu"
+                                       class="fa fa-external-link"
+                                       target="_blank"
+                                       rel="noopener">
+                                        Creodias
+                                    </a>
+
+
+                                    <span class="wy-breadcrumbs-aside__sep"> | </span>
+                                    <a href="../../_sources/ecis_portal_management/Operating-the-portal/Operating-the-portal.rst.txt" rel="nofollow"> View page source</a>
+                                </li>
+                            </ul>
+                            <hr/>
+                        </div>
+                        <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+                            <div itemprop="articleBody">
+
+                                <section id="operating-the-portal">
+                                    <h1>Operating the portal<a class="headerlink" href="#operating-the-portal" title="Permalink to this heading"></a></h1>
+                                    <p>This section describes the day-to-day administrative workflows performed by an operator. An operator is a privileged user responsible for onboarding users and managing access across the portal. It covers creating organizations, adding and managing users, granting access to cloud regions and services, assigning roles, and adjusting quotas to match evolving operational needs.</p>
+                                    <section id="listing-an-organizations">
+                                        <h2>Listing an organizations<a class="headerlink" href="#listing-an-organizations" title="Permalink to this heading"></a></h2>
+                                        <p>Operator can see the list of all organisations by going to organisations page.</p>
+                                        <figure class="align-default">
+                                            <img alt="../../_images/operator-listing-organizations-ecis-portal.png" class="image-with-border" src="../../_images/operator-listing-organizations-ecis-portal.png" />
+                                        </figure>
+                                        <ul>
+                                            <li><p>Operator can search for organisation using search field</p></li>
+                                            <li><p>Operator can also filter organisations using by</p>
+                                                <blockquote>
+                                                    <div><ul class="simple">
+                                                        <li><p>Provisioning status on selected cloud</p></li>
+                                                        <li><p>Country</p></li>
+                                                        <li><p>Organisation status (Internal/Test/Business)</p></li>
+                                                        <li><p>Is partner</p></li>
+                                                    </ul>
+                                                    </div></blockquote>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                    <section id="managing-an-organization">
+                                        <h2>Managing an organization<a class="headerlink" href="#managing-an-organization" title="Permalink to this heading"></a></h2>
+                                        <ul class="simple">
+                                            <li><p>Only Operator is allowed to create/modify/delete organisations.</p></li>
+                                            <li><p>Onboarding process in EWC IAM (internal EUMETSAT procedure)</p></li>
+                                            <li><p>After logging in as an Operator, go to the Organizations tab.</p></li>
+                                            <li><p>Click on the “Add new organization button”.</p></li>
+                                        </ul>
+                                        <figure class="align-default">
+                                            <img alt="../../_images/managining-organization-ecis-portal.png" class="image-with-border" src="../../_images/managining-organization-ecis-portal.png" />
+                                        </figure>
+                                        <p>Fill in the required fields or leave default values:</p>
+                                        <blockquote>
+                                            <div><ul class="simple">
+                                                <li><p>Address</p></li>
+                                                <li><p>City</p></li>
+                                                <li><p>Country</p></li>
+                                                <li><p>Postal Code</p></li>
+                                                <li><p>Field of Activity</p></li>
+                                            </ul>
+                                            </div></blockquote>
+                                        <figure class="align-default">
+                                            <img alt="../../_images/add-organization-operator-ecis-portal.png" class="image-with-border" src="../../_images/add-organization-operator-ecis-portal.png" />
+                                        </figure>
+                                        <p>Update information in EWC IAM</p>
+                                        <p>EUMETSAT Operator assigns id in EWC IAM in order to automate creating Organisation on ECIS Platform side.</p>
+                                    </section>
+                                    <section id="managing-users-roles-passwords">
+                                        <h2>Managing users, roles, passwords<a class="headerlink" href="#managing-users-roles-passwords" title="Permalink to this heading"></a></h2>
+                                        <section id="main-assumptions">
+                                            <h3>Main assumptions<a class="headerlink" href="#main-assumptions" title="Permalink to this heading"></a></h3>
+                                            <p>All users are managed in external identity provider EWC IAM.</p>
+                                            <p>In EWC IAM EUMETSAT Operator/ EWC IAM Tenant Admin manages among others</p>
+                                            <ul class="simple">
+                                                <li><p>Users</p></li>
+                                                <li><p>Passwords</p></li>
+                                                <li><p>Roles</p></li>
+                                            </ul>
+                                            <p>The above steps are not in the scope of this document as it is taking place in EWC IAM in accordance with its processes.</p>
+                                            <p>User can be assigned to only one Organization in EWC IAM and ECIS IAM.</p>
+                                            <p>If single person is simultaneously in multiple Organizations then in EWC IAM there will be multiple independent accounts with different access data used to authenticate in EWC IAM.</p>
+                                            <p>From the ECIS point of view, these are independent identities.</p>
+                                            <figure class="align-default">
+                                                <img alt="../../_images/ewc-users-add-user-ecis-portal.png" class="image-with-border" src="../../_images/ewc-users-add-user-ecis-portal.png" />
+                                            </figure>
+                                            <p>Also, EUM operator can manage users permissions directly in EWC IAM by predefines roles.and</p>
+                                            <figure class="align-default">
+                                                <img alt="../../_images/manage-users-permissions-ecis-portal.png" class="image-with-border" src="../../_images/manage-users-permissions-ecis-portal.png" />
+                                            </figure>
+                                        </section>
+                                        <section id="role-synchronization">
+                                            <h3>Role synchronization<a class="headerlink" href="#role-synchronization" title="Permalink to this heading"></a></h3>
+                                            <p>Role synchronization between EWC IAM and ECIS IAM relies on Keycloak’s native federation mechanism. Each time a user logs into the ECIS Platform including Dolores or another Services Control Panel the system checks for role updates. Any role assigned or removed in EWC IAM is automatically synchronized into ECIS IAM when the user logs in.</p>
+                                        </section>
+                                    </section>
+                                    <section id="granting-access-to-cloud-regions-and-services">
+                                        <h2>Granting access to cloud regions and services<a class="headerlink" href="#granting-access-to-cloud-regions-and-services" title="Permalink to this heading"></a></h2>
+                                        <section id="cloud-regions">
+                                            <h3>Cloud regions<a class="headerlink" href="#cloud-regions" title="Permalink to this heading"></a></h3>
+                                            <p>To grant or edit access to a cloud region, go to Regions, then turn on the cloud.</p>
+                                            <figure class="align-default">
+                                                <img alt="../../_images/cloud-for-organization-ecis-portal.png" class="image-with-border" src="../../_images/cloud-for-organization-ecis-portal.png" />
+                                            </figure>
+                                            <p>You can select cloud region R1 (private cloud), R2 (private cloud), and/or ELA (public cloud). You may choose a single region or any combination of regions.</p>
+                                        </section>
+                                    </section>
+                                    <section id="id1">
+                                        <h2>Cloud regions<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+                                        <p>To grant access to a service, go to Service Catalog:</p>
+                                        <figure class="align-default">
+                                            <img alt="../../_images/services-for-organization-ecis-portal.png" class="image-with-border" src="../../_images/services-for-organization-ecis-portal.png" />
+                                        </figure>
+                                        <p>You can select S3, OpenStack and/or Managed Kubernetes.</p>
+                                        <p>Note: For now you can only enable access for services and there is no option for disabling it.</p>
+                                        <div class="admonition note">
+                                            <p class="admonition-title">Note</p>
+                                            <p>Access to services is granted for all selected cloud regions.</p>
+                                        </div>
+                                    </section>
+                                    <section id="creating-an-openstack-project">
+                                        <h2>Creating an OpenStack project<a class="headerlink" href="#creating-an-openstack-project" title="Permalink to this heading"></a></h2>
+                                        <p>To provision a new OpenStack project, go to Accounts/Projects.</p>
+                                        <table class="docutils align-default">
+                                            <colgroup>
+                                                <col style="width: 24.0%" />
+                                                <col style="width: 24.0%" />
+                                                <col style="width: 52.0%" />
+                                            </colgroup>
+                                            <thead>
+                                            <tr class="row-odd"><th class="head"><p>Field</p></th>
+                                                <th class="head"><p>Type</p></th>
+                                                <th class="head"><p>Description</p></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr class="row-even"><td><p>Project name*</p></td>
+                                                <td><p>string</p></td>
+                                                <td><p>The OS project name must be unique within the organization’s context.</p></td>
+                                            </tr>
+                                            <tr class="row-odd"><td><p>Region*</p></td>
+                                                <td><p>Enum (single-select), allowed values: R1, R2, ELA</p></td>
+                                                <td><p>Cloud region</p></td>
+                                            </tr>
+                                            <tr class="row-even"><td><p>Security class*</p></td>
+                                                <td><p>Enum (single-select), allowed values: sc3, sc4, sc5</p></td>
+                                                <td><p>Mapping to workflow type</p></td>
+                                            </tr>
+                                            <tr class="row-odd"><td><p>SFS*</p></td>
+                                                <td><p>Boolean</p></td>
+                                                <td><p>Should SFS be enabled for this project</p></td>
+                                            </tr>
+                                            <tr class="row-even"><td><p>Quotas*</p></td>
+                                                <td><p>Several fields with default values, values can be changed by operator</p></td>
+                                                <td></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <p>OpenStack Domain Name - invisible in frontend, automatically derived from the Dashboard Organization name.</p>
+                                    </section>
+                                </section>
+
+
+                            </div>
+                        </div>
+                        <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+                            <a href="../Introduction/Introduction.html" class="btn btn-neutral float-left" title="Introduction to ECIS dashboard" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+                        </div>
+                            <hr/>
+                            <!-- <p>File name: Operating-the-portal</p>-->
+
+                            <!--<p>CloudFerro Logo path: ../../_static/Cloud_ferro_RGB_poziom.svg</p>
+                            <p>DEDL Logo path: ../../_static/dedl.jpg</p>-->
+                            <br>
+                            <p>© Copyright 2025, POLSA.</p>
+                            <!--
+                                <div class="logo-container">
+                                    <img src="../../_static/Cloud_ferro_RGB_poziom.svg" alt="CloudFerro Logo" class="logo-image" />
+                                </div>-->
+
+
+                        </footer>
+                    </div>
+                </div>
+
+                <aside class="cf-page-aside" aria-label="On this page">
+                    <div class="cf-aside-inner">
+
+
+                        <div class="cf-aside-box cf-aside-toc">
+                            <p class="cf-aside-title">Jump to</p>
+                            <ul>
+                                <li><a class="reference internal" href="#">Operating the portal</a><ul>
+                                    <li><a class="reference internal" href="#listing-an-organizations">Listing an organizations</a></li>
+                                    <li><a class="reference internal" href="#managing-an-organization">Managing an organization</a></li>
+                                    <li><a class="reference internal" href="#managing-users-roles-passwords">Managing users, roles, passwords</a><ul>
+                                        <li><a class="reference internal" href="#main-assumptions">Main assumptions</a></li>
+                                        <li><a class="reference internal" href="#role-synchronization">Role synchronization</a></li>
+                                    </ul>
+                                    </li>
+                                    <li><a class="reference internal" href="#granting-access-to-cloud-regions-and-services">Granting access to cloud regions and services</a><ul>
+                                        <li><a class="reference internal" href="#cloud-regions">Cloud regions</a></li>
+                                    </ul>
+                                    </li>
+                                    <li><a class="reference internal" href="#id1">Cloud regions</a></li>
+                                    <li><a class="reference internal" href="#creating-an-openstack-project">Creating an OpenStack project</a></li>
+                                </ul>
+                                </li>
+                            </ul>
+
+                        </div>
+
+
+
+
+                        <div class="cf-aside-box cf-aside-actions">
+                            <p class="cf-aside-title">Feedback</p>
+
+
+                            <div class="cf-feedback-card" data-feedback-widget>
+                                <div class="cf-feedback-title">Was this page helpful?</div>
+
+                                <div class="cf-feedback-buttons" role="group" aria-label="Page helpfulness">
+                                    <button type="button" class="cf-feedback-btn" data-vote="yes">
+                                        <span class="cf-feedback-ico" aria-hidden="true">👍</span>
+                                        <span>Yes</span>
+                                    </button>
+
+                                    <button type="button" class="cf-feedback-btn" data-vote="no">
+                                        <span class="cf-feedback-ico" aria-hidden="true">👎</span>
+                                        <span>No</span>
+                                    </button>
+                                </div>
+
+                                <div class="cf-feedback-status" aria-live="polite"></div>
+                            </div>
+
+                            <div class="cf-aside-links">
+
+                                <a class="cf-aside-link" href="https://new.cloudferro.com/panel/profile/tickets">Open a support ticket</a>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </aside>
+            </div>
+
+        </div>
+    </section>
+</div>
+<script>
+    jQuery(function () {
+        SphinxRtdTheme.Navigation.enable(true);
+    });
+</script>
+
+</body>
+</html>

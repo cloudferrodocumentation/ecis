@@ -46,17 +46,18 @@ def setup(app):
    app.add_config_value('two_fa_activated', ['Creodias', 'CloudFerro Cloud','EO-Lab', 'CODE-DE','NSIS Cloud'], True, [])
    app.add_config_value('special_eodata', ['EO-Lab', 'CODE-DE'], True, [])
    app.add_config_value('single_cloud', ['EO-Lab', 'CODE-DE', 'Eumetsat Elasticity', 'ESA HPC', 'NSIS Cloud'], True, [])
-   app.add_config_value('multi_cloud', ['Creodias', 'CloudFerro Cloud','WEkEO', 'WEkEO Elasticity'],True, [])
-   app.add_config_value('vgpu_compliant', ['EO-Lab', 'CODE-DE', 'Creodias', 'CloudFerro Cloud', 'WEkEO', 'WEkEO Elasticity', 'ESA HPC'], True, [])
+   app.add_config_value('multi_cloud', ['Creodias', 'CloudFerro Cloud','WEkEO', 'WEkEO Elasticity', 'ECIS'],True, [])
+   app.add_config_value('vgpu_compliant', ['EO-Lab', 'CODE-DE', 'Creodias', 'CloudFerro Cloud', 'WEkEO', 'WEkEO Elasticity', 'ESA HPC', 'ECIS'], True, [])
    app.add_config_value('localstorage_present', ['Creodias', 'CloudFerro Cloud', 'WEkEO', 'WEkEO Elasticity', 'ESA HPC', 'NSIS Cloud'], True, [])
-   app.add_config_value('windows_image_present', ['Creodias',  'WEkEO', 'WEkEO Elasticity', 'EO-Lab', 'CODE-DE','NSIS Cloud'], True, [])
+   app.add_config_value('windows_image_present', ['Creodias',  'WEkEO', 'WEkEO Elasticity', 'EO-Lab', 'CODE-DE','NSIS Cloud', 'ECIS'], True, [])
    app.add_config_value('with_note', ['Creodias', 'CloudFerro Cloud'], True, [])
    app.add_config_value('dashboard_extension_existing', ['Creodias', 'CloudFerro Cloud', 'WEkEO Elasticity'],True, [])
    app.add_config_value('without_ppu', ['NSIS Cloud'],True, [])
-   app.add_config_value('has_heat_templates', ['Creodias', 'CloudFerro Cloud','WEkEO', 'WEkEO Elasticity', 'ESA HPC', 'EO-Lab', 'CODE-DE', 'Destination Earth', 'Eumetsat Elasticity'],True, [])
+   app.add_config_value('has_heat_templates', ['Creodias', 'CloudFerro Cloud','WEkEO', 'WEkEO Elasticity', 'ESA HPC', 'EO-Lab', 'CODE-DE', 'Destination Earth', 'Eumetsat Elasticity', 'ECIS'],True, [])
    app.add_config_value('has_clusterapi_templates', ['Creodias', 'CloudFerro Cloud','WEkEO', 'WEkEO Elasticity','NSIS Cloud', 'Destination Earth'],True, [])
    app.add_config_value('has_dualstack_templates', ['Destination Earth'],True, [])
    app.add_config_value('has_vgpu_templates', ['ESA HPC'],True, [])
+   app.add_config_value('managed_kubernetes_with_magnum', ['Creodias', 'CloudFerro Cloud','WEkEO', 'WEkEO Elasticity', 'ESA HPC', 'EO-Lab', 'CODE-DE', 'Destination Earth', 'Eumetsat Elasticity', 'NSIS Cloud'],True, [])
 
 # -- General configuration ---------------------------------------------------
 
@@ -79,24 +80,24 @@ BRAND = os.environ.get("BRAND", "ecis")
 
 BRANDS = {
     "ecis": {
-        "brand_name": "Eumetsat Elasticity",
-        "brand_name_full": "Eumetsat Elasticity",
-        "brand_name_hyphen": "Eumetsat-Elasticity",
+        "brand_name": "ECIS",
+        "brand_name_full": "ECIS",
+        "brand_name_hyphen": "ECIS",
         "brand_name_site_link": "https://horizon.cloudferro.com/auth/login/?next=/",
-        "brand_name_site_auth_link": "https://ecis.staging-dolores.apps.staging.intra.cloudferro.com/login",
-        "images_root_accounts": "eumetsat",
-        "images_root_billing": "eumetsat",
-        "images_forgotten_password": "eumetsat",
-        "images_registration": "eumetsat",
-        "images_use_python_2fa": "eumetsat",
-        "images_kubernetes_templates" : "eumetsat",
+        "brand_name_site_auth_link": "https://my.cloud.eumetsat.int",
+        "images_root_accounts": "",
+        "images_root_billing": "ecis",
+        "images_forgotten_password": "ecis",
+        "images_registration": "ecis",
+        "images_use_python_2fa": "ecis",
+        "images_kubernetes_templates" : "ecis",
         "project_name": "cloud_078649_2",
-        "region_name": "",
-        'MK8s' : 'Eumetsat Elasticity Managed Kubernetes',
+        "region_name": "fra1-3",
+        'MK8s' : 'ECIS Managed Kubernetes',
         "mk8s_url": "mks.cloud.eumetsat.int/",
         "server_cert": "managed-kubernetes-cloudferro-com-chain.pem",
         "main_site_url": "https://eumetsat.int",
-        "main_site_name": "Eumetsat Elasticity",
+        "main_site_name": "Eumetsat",
     },
 }
 
@@ -113,9 +114,9 @@ rst_prolog = f"""
 .. |brand-name-site-link| replace:: {brand_cfg["brand_name_site_link"]}
 .. |brand-name-site-auth-link| replace:: {brand_cfg["brand_name_site_auth_link"]}
 
-.. |cloud-name| replace:: {brand_cfg["region_name"]}
-.. |brand-name-support-en| replace:: https://www.eumetsat.int/contact-us
-.. |brand-name-support-de| replace:: https://www.eumetsat.int/contact-us
+.. |cloud-name| replace:: U+00020
+.. |brand-name-support-en| replace:: cloud-helpdesk@eumetsat.int
+.. |brand-name-support-de| replace:: cloud-helpdesk@eumetsat.int
 .. |datahub-address| replace:: datahub.code-de.org
 .. |explorer| replace:: https://explore.creodias.eu
 .. |finder| replace:: https://finder.creodias.eu/www/
@@ -123,7 +124,7 @@ rst_prolog = f"""
 .. include:: <s5defs.txt>
 .. |brand-name-security-groups| replace:: https://horizon.cloudferro.com/project/security_groups/
 .. |JupyterLab| replace:: https://jupyterhub-creodias.apps.acronix.intra.cloudferro.com/
-.. |MK8s| replace:: Eumetsat Elasticity Managed Kubernetes
+.. |MK8s| replace:: ECIS Managed Kubernetes
 """
 
 brand_name = brand_cfg["brand_name"]
@@ -254,7 +255,7 @@ jinja_contexts = {
 		'ww2': 'ww2_eumetsat.png',
 		'ww3': 'ww3.png',
 		'ww4': 'ww4.png',
-		'access_option' : 'Eumetsat Elasticity',
+		'access_option' : 'ECIS',
 	},
     'rapideye': {
 		'rapideye' : 'rapideye_s3_credentials_eolab.png',
@@ -327,8 +328,8 @@ jinja_contexts = {
         'quick_look' : 'quick-look_creodias.png',
         'zipper_address' : 'zipper.creodias.eu',
         'manage_totp' : 'manage-totp-05_creodias.png',
-        'brand_identity' : 'Eumetsat-elasticity',
-        'keycloak_identity' : 'https://identity.cloudferro.com/auth/realms/Eumetsat-elasticity',
+        'brand_identity' : 'ECIS',
+        'keycloak_identity' : 'https://identity.cloudferro.com/auth/realms/ECIS',
         'site_link' : 'https://docs.cloud.eumetsat.int',
         'datavolume': 'datavolume',
 		'openstack': 'openstack', 
@@ -344,7 +345,7 @@ jinja_contexts = {
 		'networking': 'networking', 
 		'windows': 'windows', 
 		'security': 'security',
-        'site_name': 'Eumetsat Elasticity',
+        'site_name': 'Eumetsat',
         'site_address': 'www.eumetsat.int',
         'ecommerce_link': '',
 		 },
