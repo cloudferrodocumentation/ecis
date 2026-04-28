@@ -3,39 +3,6 @@ Operating the portal
 
 This section describes the day-to-day administrative workflows performed by an operator. An operator is a privileged user responsible for onboarding users and managing access across the portal. It covers creating organizations, adding and managing users, granting access to cloud regions and services, assigning roles, and adjusting quotas to match evolving operational needs.
 
-
-This guide is intended for EUMETSAT Team members operating and using the Dolores portal within their organization.
-
-Terminology
----------------
-
- .. list-table::
-    :header-rows: 1
-    :widths: 20 80
-
-    * - **Term**
-      - **Description**
-    * - Access key / Secret key
-      - The credential pair used for S3-compatible access.
-    * - End user
-      - A regular user who accesses services through the portal.
-    * - Operator
-      - A privileged user who onboards users and manages access, roles, and quotas.
-    * - Organization
-      - The client’s logical boundary in the portal.
-    * - Portal / Dolores portal
-      - The web UI used to onboard users and provide access to services (and related areas like profile/billing if applicable).
-    * - Portal role
-      - Role controlling permissions and visibility within the portal UI.
-    * - Quota
-      - A limit on usage/capacity.
-    * - Service
-      - An integrated product accessible via the portal (e.g., S3).
-    * - Service role
-      - Role controlling permissions within a specific service.
-    * - S3 Key Manager
-      - Portal components used to generate and manage S3 credentials.
-
 Listing an organizations
 ---------------------------
 
