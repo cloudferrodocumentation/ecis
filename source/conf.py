@@ -42,7 +42,7 @@ def setup(app):
    app.add_config_value('brand_name', '', True)
    app.add_config_value('cloud_name', '', True)
    app.add_config_value('second_cloud_name', '', True)
-   app.add_config_value('brands_without_eodata', ['Eumetsat Elasticity', 'CloudFerro Cloud', 'Destination Earth', 'WEkEO'], True, [])
+   app.add_config_value('brands_without_eodata', ['Eumetsat Elasticity', 'CloudFerro Cloud', 'Destination Earth', 'WEkEO', 'ECIS'], True, [])
    app.add_config_value('two_fa_activated', ['Creodias', 'CloudFerro Cloud','EO-Lab', 'CODE-DE','NSIS Cloud'], True, [])
    app.add_config_value('special_eodata', ['EO-Lab', 'CODE-DE'], True, [])
    app.add_config_value('single_cloud', ['EO-Lab', 'CODE-DE', 'Eumetsat Elasticity', 'ESA HPC', 'NSIS Cloud'], True, [])
