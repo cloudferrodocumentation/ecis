@@ -1,4 +1,4 @@
-Introduction to ECIS dashboard
+Introduction to the dashboard
 =============================================
 
 Introduction
