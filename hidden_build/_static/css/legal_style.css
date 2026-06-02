@@ -1,0 +1,47 @@
+/* Indented paragraphs for sections */
+.indented-paragraph {
+    text-indent: -2em; /* Negative indent to pull the first line left */
+    margin-left: 2em; /* Indent subsequent lines */
+    margin-top: 0.5em; /* Add space above the indented text */
+    display: block; /* Ensures block-level formatting */
+}
+
+
+/* Indented paragraphs for subsections */
+.indented-paragraph-right {
+    text-indent: -2em; /* Negative indent to pull the first line left */
+    margin-left: 4em; /* Indent subsequent lines */
+    margin-top: 0.5em; /* Add space above the indented text */
+    display: block; /* Ensures block-level formatting */
+}
+
+/* Indented paragraphs for subsubsections */
+.indented-paragraph-right-right {
+    text-indent: -2em; /* Negative indent to pull the first line left */
+    margin-left: 6em; /* Indent subsequent lines */
+    margin-top: 0.05em; /* Add space above the indented text */
+    display: block; /* Ensures block-level formatting */
+}
+
+/* Header and Section Titles */
+.header-privacy {
+    font-size: 1.5em;
+    color: #000000; /* Darker color for headers */
+    font-weight: bold; /* Emphasize headers */
+    margin-top: 20px;
+}
+
+
+/* Header and Section Titles */
+.header-terms {
+    font-size: 1.5em;
+    color: #333333; /* Darker color for headers */
+    font-weight: bold; /* Emphasize headers */
+    margin-top: 20px;
+}
+
+/* Other existing styles remain unchanged... */
+
+
+
+

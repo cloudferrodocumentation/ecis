@@ -1,0 +1,7 @@
+ECIS Resource
+=============
+
+.. toctree::
+   :maxdepth: 2
+
+   Operating-the-portal/Operating-the-portal

@@ -1,0 +1,491 @@
+@import 'theme.css';
+
+/* =========================================================
+   GLOBAL LAYOUT
+   ========================================================= */
+
+.wy-nav-top {
+    padding: 1%;
+    background-color: #00205b;
+    max-width: none;
+    height: 50px;
+    background-position: 4px 4px;
+    background-repeat: no-repeat;
+    background-size: 30%;
+    background-image: url('https://eumetsat.docs.cloudferro.com/en/latest/_static/eumetsat_logo.png');
+}
+
+.wy-nav-top a {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.wy-nav-top img {
+    margin-right: 12px;
+    height: 45px;
+    width: 45px;
+    background-color: #00205b;
+    padding: 5px;
+    border-radius: 100%;
+}
+
+.wy-nav-top i {
+    font-size: 30px;
+    float: right;
+    cursor: pointer;
+    padding-top: inherit;
+    color: #ffffff;
+}
+
+.wy-side-nav-search,
+.wy-side-scroll,
+.wy-nav-side {
+    background-color: #00205b !important;
+}
+
+.wy-nav-content,
+.wy-nav-content-wrap {
+    background-color: #ffffff !important;
+}
+
+.wy-nav-content {
+    max-width: none;
+    color: #38484E;
+}
+
+/* =========================================================
+   TYPOGRAPHY / MAIN CONTENT
+   ========================================================= */
+
+body,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+.rst-content,
+.rst-content p,
+.rst-content li,
+.rst-content ul,
+.rst-content ol,
+.rst-content div,
+.rst-content span {
+    color: #38484E;
+}
+
+.h2,
+.rst-content .toctree-wrapper > p.caption,
+.rst-content h1,
+.rst-content h2,
+.rst-content h3,
+.rst-content h4,
+.rst-content h5,
+.rst-content h6,
+.rst-content .rtd-h2 > p {
+    color: #00205b !important;
+}
+
+.rst-content .section ol li > :first-child,
+.rst-content .section ul li > :first-child,
+.rst-content .toctree-wrapper ol li > :first-child,
+.rst-content .toctree-wrapper ul li > :first-child,
+.rst-content section ol li > :first-child,
+.rst-content section ul li > :first-child,
+.rst-content .section ul li,
+.rst-content .toctree-wrapper ul li,
+.rst-content section ul li,
+.wy-plain-list-disc li,
+article ul li,
+.section ul,
+footer {
+    color: #38484E;
+}
+
+/* =========================================================
+   BREADCRUMBS / LINKS
+   ========================================================= */
+
+.wy-breadcrumbs li,
+.wy-breadcrumbs li a,
+.wy-breadcrumbs li a:first-child {
+    color: #5B7F95 !important;
+}
+
+/* General non-doc links in article body */
+.rst-content a:not(.reference.internal),
+.rst-content a:not(.reference.internal):visited {
+    color: #5B7F95;
+    text-decoration: none !important;
+}
+
+.rst-content a:not(.reference.internal):hover,
+.rst-content a:not(.reference.internal):active {
+    color: #00205b;
+    text-decoration: none !important;
+}
+
+/* Limit visited normalization to content and sidebar only */
+.rst-content a:visited,
+.wy-menu-vertical a:visited {
+    color: inherit;
+}
+
+/* =========================================================
+   LEFT NAVIGATION
+   ========================================================= */
+
+.wy-menu-vertical p.caption,
+.wy-menu-vertical header,
+.wy-menu-vertical .caption-text {
+    color: #5B7F95 !important;
+}
+
+/* Default sidebar links in blue area */
+.wy-menu-vertical a {
+    background: transparent !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+/* Default hover in blue area */
+.wy-menu-vertical a:hover,
+.wy-menu-vertical a:focus {
+    background: #16376f !important;
+    color: #ffffff !important;
+}
+
+/* Opened branch container */
+.wy-menu-vertical li.current {
+    background: #d9d9d9 !important;
+}
+
+/* Current section title row, e.g. DATA VOLUME */
+.wy-menu-vertical li.current > a,
+.wy-menu-vertical li.toctree-l1.current > a,
+.wy-menu-vertical li.toctree-l2.current > a,
+.wy-menu-vertical li.toctree-l3.current > a {
+    background: #efefef !important;
+    color: #3f3f3f !important;
+    font-weight: 700 !important;
+    border-top: 1px solid #00205b !important;
+    border-bottom: 1px solid #bfbfbf !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+}
+
+/* All child links inside the expanded gray block */
+.wy-menu-vertical li.current ul,
+.wy-menu-vertical li.current ul li {
+    background: #d9d9d9 !important;
+}
+
+.wy-menu-vertical li.current ul li a {
+    background: #d9d9d9 !important;
+    color: #4a4a4a !important;
+    font-weight: 500 !important;
+    line-height: 1.15 !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+}
+
+/* Hover inside the gray expanded area */
+.wy-menu-vertical li.current ul li a:hover,
+.wy-menu-vertical li.current ul li a:focus {
+    background: #d1d1d1 !important;
+    color: #2f2f2f !important;
+}
+
+/* Keep the section title stable on hover */
+.wy-menu-vertical li.current > a:hover,
+.wy-menu-vertical li.current > a:focus {
+    background: #efefef !important;
+    color: #3f3f3f !important;
+}
+
+/* Remove sticky orange / visited leftovers */
+.wy-menu-vertical a:visited,
+.wy-menu-vertical a:active,
+.wy-menu-vertical a:focus-visible,
+.wy-menu-vertical li.current > a:visited,
+.wy-menu-vertical li.current a:visited {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Explicit colors for visited states */
+.wy-menu-vertical li.current > a:visited {
+    color: #3f3f3f !important;
+}
+
+.wy-menu-vertical li.current ul li a:visited {
+    color: #4a4a4a !important;
+}
+
+/* Search box */
+.wy-side-nav-search input[type="text"] {
+    background: #ffffff;
+    color: #38484E;
+    border-radius: 20px;
+    border: 1px solid #5B7F95;
+}
+
+/* =========================================================
+   VERSION MENU CLEANUP
+   ========================================================= */
+
+div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(2),
+div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(3),
+div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(4),
+div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(5),
+div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(6),
+div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(7) {
+    display: none;
+}
+
+/* =========================================================
+   IMAGES
+   ========================================================= */
+
+.image-with-border {
+    border: 2px solid black;
+}
+
+
+/* =========================================================
+   LEGACY NOTE
+   ========================================================= */
+
+.admonition.legacy-note .admonition-title {
+    background-color: #00205b;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 5px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.admonition.legacy-note a {
+    color: #5B7F95;
+    text-decoration: underline;
+}
+
+.admonition.legacy-note a:hover {
+    color: #00205b;
+    text-decoration: none;
+}
+
+.admonition.legacy-note {
+    background-color: #eaf1f7;
+    border: 1px solid #00205b;
+    border-radius: 5px;
+    padding: 15px;
+    color: #38484E;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* =========================================================
+   CODE BLOCKS
+   ========================================================= */
+
+.rst-content .highlight-console pre,
+.rst-content .highlight-console code {
+    color: black !important;
+    background: none !important;
+    font-weight: normal !important;
+    text-shadow: none !important;
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+}
+
+.rst-content .highlight-console .o,
+.rst-content .highlight-console .m,
+.rst-content .highlight-console .n,
+.rst-content .highlight-console .s,
+.rst-content .highlight-console .p,
+.rst-content .highlight-console .nf,
+.rst-content .highlight-console .na,
+.rst-content .highlight-console .nn,
+.rst-content .highlight-console .nc,
+.rst-content .highlight-console .nt,
+.rst-content .highlight-console .gr,
+.rst-content .highlight-console .gd,
+.rst-content .highlight-console .gi,
+.rst-content .highlight-console .gh,
+.rst-content .highlight-console .go,
+.rst-content .highlight-console .gp,
+.rst-content .highlight-console .gs,
+.rst-content .highlight-console .gu,
+.rst-content .highlight-console .gt {
+    color: black !important;
+    font-weight: normal !important;
+}
+
+.rst-content .highlight-python pre {
+    white-space: pre !important;
+    word-break: normal !important;
+    overflow-x: auto;
+    color: inherit !important;
+}
+
+.rst-content div[class^="highlight"] div[class^="highlight"],
+.rst-content pre.literal-block div[class^="highlight"] {
+    color: black;
+}
+
+/* =========================================================
+   STANDARD NOTE
+   ========================================================= */
+
+.rst-content .admonition.note {
+    background-color: #f9f9f9 !important;
+    color: #000000 !important;
+}
+
+.rst-content .admonition.note p {
+    color: #000000 !important;
+}
+
+.rst-content .admonition.note .admonition-title {
+    background-color: #00205b !important;
+    color: #ffffff !important;
+}
+
+/* =========================================================
+   RTD-LOOKING H2 BLOCK
+   ========================================================= */
+
+.rst-content .rtd-h2 > p {
+    font-family: "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif;
+    font-size: 150%;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 24px 0 12px;
+    padding: 0;
+    border: 0;
+    border-bottom: none !important;
+    color: #00205b !important;
+}
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td,
+.wy-table-backed,
+.wy-table-odd td,
+.wy-table-striped tr:nth-child(2n-1) td {
+    background-color: #ffffff;
+    color: #38484E;
+}
+
+/* Generic docutils table headers */
+html.writer-html5 .rst-content table.docutils th,
+html.writer-html5 .rst-content table.docutils thead th,
+.rst-content table.docutils th,
+.rst-content table.docutils thead th {
+    background-color: #00205b !important;
+    color: #ffffff !important;
+    border: 1px solid #d6d6d6;
+}
+
+/* Force absolutely all text inside header cells to white */
+html.writer-html5 .rst-content table.docutils th *,
+html.writer-html5 .rst-content table.docutils thead th *,
+.rst-content table.docutils th *,
+.rst-content table.docutils thead th *,
+.rst-content table.docutils th p,
+.rst-content table.docutils thead th p,
+.rst-content table.docutils th span,
+.rst-content table.docutils thead th span,
+.rst-content table.docutils th a,
+.rst-content table.docutils thead th a,
+.rst-content table.docutils th strong,
+.rst-content table.docutils thead th strong,
+.rst-content table.docutils th em,
+.rst-content table.docutils thead th em {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+}
+
+/* Body cells */
+.rst-content table.docutils td {
+    color: #38484E !important;
+}
+
+/* Remove extra paragraph spacing inside cells */
+.rst-content table.docutils th p,
+.rst-content table.docutils td p {
+    margin-bottom: 0;
+}
+
+/* Managed Kubernetes version timeline table */
+.rst-content table.docutils.mk8s-version-table thead th,
+.rst-content table.docutils.mk8s-version-table th {
+    background: #00205b !important;
+    color: #ffffff !important;
+    font-weight: 700;
+    border: 1px solid #d6d6d6;
+    vertical-align: middle;
+}
+
+/* Force all text inside mk8s table header cells to white */
+.rst-content table.docutils.mk8s-version-table thead th *,
+.rst-content table.docutils.mk8s-version-table th *,
+.rst-content table.docutils.mk8s-version-table thead th p,
+.rst-content table.docutils.mk8s-version-table th p,
+.rst-content table.docutils.mk8s-version-table thead th span,
+.rst-content table.docutils.mk8s-version-table th span,
+.rst-content table.docutils.mk8s-version-table thead th a,
+.rst-content table.docutils.mk8s-version-table th a {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+}
+
+/* Body cells */
+.rst-content table.docutils.mk8s-version-table td {
+    border: 1px solid #d6d6d6;
+    vertical-align: top;
+}
+
+/* =========================================================
+   INTERNAL DOC LINKS IN ARTICLE BODY
+   ========================================================= */
+
+.rst-content a.reference.internal,
+.rst-content a.reference.internal:visited,
+.rst-content a.reference.internal span,
+.rst-content a.reference.internal .std,
+.rst-content a.reference.internal .std-ref,
+.rst-content a.reference.internal .doc,
+.rst-content a.reference.internal .xref {
+    color: #356a95 !important;
+    text-decoration: none !important;
+}
+
+.rst-content a.reference.internal:hover,
+.rst-content a.reference.internal:focus,
+.rst-content a.reference.internal:active,
+.rst-content a.reference.internal:hover span,
+.rst-content a.reference.internal:focus span,
+.rst-content a.reference.internal:active span,
+.rst-content a.reference.internal:hover .std,
+.rst-content a.reference.internal:focus .std,
+.rst-content a.reference.internal:active .std,
+.rst-content a.reference.internal:hover .std-ref,
+.rst-content a.reference.internal:focus .std-ref,
+.rst-content a.reference.internal:active .std-ref,
+.rst-content a.reference.internal:hover .doc,
+.rst-content a.reference.internal:focus .doc,
+.rst-content a.reference.internal:active .doc,
+.rst-content a.reference.internal:hover .xref,
+.rst-content a.reference.internal:focus .xref,
+.rst-content a.reference.internal:active .xref {
+    color: #244c6a !important;
+    text-decoration: none !important;
+}

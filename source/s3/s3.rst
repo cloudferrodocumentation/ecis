@@ -1,0 +1,40 @@
+S3
+==
+
+Object Storage lets you store files as objects in containers or buckets and access them with S3-compatible tools, Horizon, or application libraries.
+
+Use this section to find articles about working with object storage in Horizon, configuring **s3cmd**, using **boto3**, mounting object storage, and managing bucket policies, encryption, and versioning.
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Getting started
+
+   How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud/How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud
+   How-to-install-s3cmd-on-Linux-on-Eumetsat-Elasticity/How-to-install-s3cmd-on-Linux-on-Eumetsat-Elasticity
+   Configuration-files-for-s3cmd-command-on-Eumetsat-Elasticity/Configuration-files-for-s3cmd-command-on-Eumetsat-Elasticity
+   Deep-dive-into-using-s3cmd-to-access-object-storage-on-Eumetsat-Elasticity/Deep-dive-into-using-s3cmd-to-access-object-storage-on-Eumetsat-Elasticity
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Access from applications and tools
+
+   How-to-access-object-storage-from-Eumetsat-Elasticity-using-s3cmd/How-to-access-object-storage-from-Eumetsat-Elasticity-using-s3cmd
+   How-to-access-object-storage-from-Eumetsat-Elasticity-using-boto3/How-to-access-object-storage-from-Eumetsat-Elasticity-using-boto3
+   How-To-Install-boto3-In-Windows-on-Eumetsat-Elasticity/How-To-Install-boto3-In-Windows-on-Eumetsat-Elasticity
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Mount object storage
+
+   How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs-on-Eumetsat-Elasticity/How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs-on-Eumetsat-Elasticity
+   How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer
+   S3FS-Cache-on-Eumetsat-Elasticity/S3FS-Cache-on-Eumetsat-Elasticity
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Manage buckets and security
+
+   Bucket-sharing-using-s3-bucket-policy-on-Eumetsat-Elasticity/Bucket-sharing-using-s3-bucket-policy-on-Eumetsat-Elasticity
+   S3-bucket-object-versioning-on-Eumetsat-Elasticity/S3-bucket-object-versioning-on-Eumetsat-Elasticity
+   Server-Side-Encryption-with-Customer-Managed-Keys-SSE-C-on-Eumetsat-Elasticity/Server-Side-Encryption-with-Customer-Managed-Keys-SSE-C-on-Eumetsat-Elasticity
+   How-to-delete-large-S3-bucket-on-Eumetsat-Elasticity/How-to-delete-large-S3-bucket-on-Eumetsat-Elasticity
