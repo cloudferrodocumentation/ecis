@@ -1,0 +1,228 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <link href="../../_static/favicon/favicon-32x32.png" sizes="32x32" rel="icon" type="image/png">
+    <link href="../../_static/favicon/favicon-16x16.png" sizes="16x16" rel="icon" type="image/png">
+    <link href="../../_static/favicon/android-chrome-192x192.png" sizes="192x192" rel="icon" type="image/png">
+    <link href="../../_static/favicon/android-chrome-512x512.png" sizes="512x512" rel="icon" type="image/png">
+    <link rel="apple-touch-icon" href="../../_static/favicon/apple-touch-icon.png" sizes="180x180" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Service access &mdash; ECIS Hidden Resources  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/legal_style.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/s4defs-roles.css" />
+
+  
+      <script src="../../_static/jquery.js"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+      <script src="../../_static/doctools.js"></script>
+      <script src="../../_static/sphinx_highlight.js"></script>
+      <script src="../../_static/clipboard.min.js"></script>
+      <script src="../../_static/copybutton.js"></script>
+      <script src="../../_static/design-tabs.js"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="../../_static/js/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Roles and permissions model" href="../Roles-and-permissions-model/Roles-and-permissions-model.html" />
+    <link rel="prev" title="Introduction to the ECIS Dashboard" href="../Operating-the-portal/Operating-the-portal.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../ecis-resource.html">ECIS Resource</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Operating-the-portal/Operating-the-portal.html">Introduction to the ECIS Dashboard</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Service access</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#access-model">Access model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#requests">Requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#service-access-in-the-left-hand-navigation">Service access in the left-hand navigation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#openstack-access">OpenStack access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s3-access">S3 access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#managed-kubernetes-access">Managed Kubernetes access</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Roles-and-permissions-model/Roles-and-permissions-model.html">Roles and permissions model</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ECIS Hidden Resources</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+    <li><a href="../ecis-resource.html">ECIS Resource</a> &raquo;</li>
+    <li>Service access</li>
+        <li class="wy-breadcrumbs-aside">
+
+            
+            <a href="https://eumetsat.int"
+               class="fa fa-external-link"
+               target="_blank"
+               rel="noopener">
+                Eumetsat
+            </a>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="service-access">
+<h1>Service access<a class="headerlink" href="#service-access" title="Permalink to this heading"></a></h1>
+<section id="access-model">
+<h2>Access model<a class="headerlink" href="#access-model" title="Permalink to this heading"></a></h2>
+<p>For EWC users, access to the available services (OpenStack, S3, Managed Kubernetes) is granted by default as part of the operator-led onboarding process. During the onboarding process, the cloud region(s) in which services can be used are also set.</p>
+<p>For other users, services and/or cloud regions are not enabled by default. Accesses to regions and services are granted by EUMETSAT Operator as part of onboarding process. Users can request to be added but must submit an access request ticket, which is reviewed and processed by an Operator.</p>
+<p>Note:  Services make authorization decisions based on two dimensions from different sources:</p>
+<p>User-level access — set in EWC KC (e.g. “User X has access to MK8s”)</p>
+<p>Organization-level availability — set in Dolores (e.g. “Organization Y has MK8s R1 enabled”)</p>
+<p>Access requires both conditions. Neither source has visibility into the other.</p>
+<figure class="align-default">
+<img alt="../../_images/invisibility-of-intersection-ecis-portal.png" class="image-with-border" src="../../_images/invisibility-of-intersection-ecis-portal.png" />
+</figure>
+</section>
+<section id="requests">
+<h2>Requests<a class="headerlink" href="#requests" title="Permalink to this heading"></a></h2>
+<p>Users can submit request for various reasons like requesting access, additional quota or reporting a bug. Only admin can request additional quota, access to services, regions</p>
+<ul class="simple">
+<li><p>For a user to request access to a given service, they need to:</p></li>
+<li><p>Log in to the Dolores portal.</p></li>
+<li><p>Go to the left-hand navigation.</p></li>
+<li><p>In the <strong>Support</strong> section, select <strong>Tickets</strong>.</p></li>
+<li><p>Click on the <strong>Add ticket</strong> button to create a new ticket. You will be redirected to email application.</p></li>
+<li><p>Fill out the details about your request (what service, cloud etc).</p></li>
+<li><p>Send an email.</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 24.0%" />
+<col style="width: 28.0%" />
+<col style="width: 28.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Service requested</p></th>
+<th class="head"><p>Request category</p></th>
+<th class="head"><p>Summary</p></th>
+<th class="head"><p>Ticket content</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>OpenStack</p></td>
+<td><p>Service access request</p></td>
+<td><p>Enable service x for organization xxx</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>S3</p></td>
+<td><p>Service access request</p></td>
+<td><p>Enable service x for organization xxx</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Managed Kubernetes</p></td>
+<td><p>Service access request</p></td>
+<td><p>Enable service x for organization xxx</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="service-access-in-the-left-hand-navigation">
+<h2>Service access in the left-hand navigation<a class="headerlink" href="#service-access-in-the-left-hand-navigation" title="Permalink to this heading"></a></h2>
+<p>Depending on the user’s permissions, the left-hand navigation in the “Management Interfaces” section displays menu(s) for the following services:</p>
+<ul class="simple">
+<li><p>OpenStack</p></li>
+<li><p>S3</p></li>
+<li><p>Managed Kubernetes</p></li>
+</ul>
+<p>For S3 and Managed Kubernetes, there is one menu item that applies to all regions. For the OpenStack service, the portal displays a separate menu item for each cloud region.</p>
+</section>
+<section id="openstack-access">
+<h2>OpenStack access<a class="headerlink" href="#openstack-access" title="Permalink to this heading"></a></h2>
+<p>Access to OpenStack Services is managed directly within the dashboard.</p>
+<p>Users access the application via tab to Horizon (OpenStack UI), which appears as entries in the dashboard interface (separately tab for each region).</p>
+<figure class="align-default">
+<img alt="../../_images/management-interfaces-ecis-portal.png" class="image-with-border" src="../../_images/management-interfaces-ecis-portal.png" />
+</figure>
+<p>When trying to connect to Horizon without appropriate permissions you will not be able to enter.</p>
+<figure class="align-default">
+<img alt="../../_images/has-no-authentication-ecis-portal.png" class="image-with-border" src="../../_images/has-no-authentication-ecis-portal.png" />
+</figure>
+</section>
+<section id="s3-access">
+<h2>S3 access<a class="headerlink" href="#s3-access" title="Permalink to this heading"></a></h2>
+<p>S3 is an object storage service that provides access to data over HTTPS via a REST API. To use the service, the user must generate an access key and a secret key. Users can generate these credentials in S3 Key Manager. The S3 Key Manager is deployed centrally and is a single point of managing S3 Key for all regions.</p>
+<p>To access the S3 Key Manager, select the S3 Key Manager menu item.</p>
+</section>
+<section id="managed-kubernetes-access">
+<h2>Managed Kubernetes access<a class="headerlink" href="#managed-kubernetes-access" title="Permalink to this heading"></a></h2>
+<p>Access to Managed Kubernetes is managed directly within Dolores.</p>
+<p>Users access the application via dynamic tab, which appears as entries in the Dolores interface.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Operating-the-portal/Operating-the-portal.html" class="btn btn-neutral float-left" title="Introduction to the ECIS Dashboard" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Roles-and-permissions-model/Roles-and-permissions-model.html" class="btn btn-neutral float-right" title="Roles and permissions model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, EUMETSAT.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

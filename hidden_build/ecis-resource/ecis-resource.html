@@ -8,9 +8,9 @@
     <link href="../_static/favicon/favicon-16x16.png" sizes="16x16" rel="icon" type="image/png">
     <link href="../_static/favicon/android-chrome-192x192.png" sizes="192x192" rel="icon" type="image/png">
     <link href="../_static/favicon/android-chrome-512x512.png" sizes="512x512" rel="icon" type="image/png">
-    <link rel="favicon/apple-touch-icon.png" href="../_static/favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="apple-touch-icon" href="../_static/favicon/apple-touch-icon.png" sizes="180x180" type="image/png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ECIS Resource &mdash; ECIS Hidden Resources 0.0.1 documentation</title>
+  <title>ECIS Resource &mdash; ECIS Hidden Resources  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -18,7 +18,6 @@
       <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
       <link rel="stylesheet" type="text/css" href="../_static/css/legal_style.css" />
       <link rel="stylesheet" type="text/css" href="../_static/css/s4defs-roles.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/copybutton_custom.css" />
 
   
       <script src="../_static/jquery.js"></script>
@@ -29,11 +28,13 @@
       <script src="../_static/clipboard.min.js"></script>
       <script src="../_static/copybutton.js"></script>
       <script src="../_static/design-tabs.js"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="../_static/js/custom.js"></script>
-      <script defer="defer" src="../_static/readthedocs.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction to the ECIS Dashboard" href="Operating-the-portal/Operating-the-portal.html" />
+    <link rel="prev" title="ECIS Hidden Resources" href="../index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -55,8 +56,13 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../ecis-resource.html">ECIS Resource</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ECIS Resource</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Operating-the-portal/Operating-the-portal.html">Introduction to the ECIS Dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Services-access/Services-access.html">Service access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Roles-and-permissions-model/Roles-and-permissions-model.html">Roles and permissions model</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -93,18 +99,29 @@
 <h1>ECIS Resource<a class="headerlink" href="#ecis-resource" title="Permalink to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Operating-the-portal/Operating-the-portal.html">Introduction to ECIS dashboard</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="Operating-the-portal/Operating-the-portal.html">Introduction to the ECIS Dashboard</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Operating-the-portal/Operating-the-portal.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Operating-the-portal/Operating-the-portal.html#terminology">Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Operating-the-portal/Operating-the-portal.html#purpose-of-this-guide">Purpose of this guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Operating-the-portal/Operating-the-portal.html#intended-audience">Intended audience</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Operating-the-portal/Operating-the-portal.html#managing-users-in-the-ecis-portal">Managing Users in the ECIS Portal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Operating-the-portal/Operating-the-portal.html#managing-organizations-in-the-ecis-portal">Managing Organizations in the ECIS Portal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Operating-the-portal/Operating-the-portal.html#granting-access-to-cloud-regions-and-services">Granting Access to Cloud Regions and Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Operating-the-portal/Operating-the-portal.html#managing-s3-and-mk8s-quotas">Managing S3 and MK8S Quotas</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Operating-the-portal/Operating-the-portal.html#operating-the-portal">Operating the portal</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Operating-the-portal/Operating-the-portal.html#listing-an-organizations">Listing an organizations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Operating-the-portal/Operating-the-portal.html#managing-an-organization">Managing an organization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Operating-the-portal/Operating-the-portal.html#managing-users-roles-passwords">Managing users, roles, passwords</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Operating-the-portal/Operating-the-portal.html#granting-access-to-cloud-regions-and-services">Granting access to cloud regions and services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Operating-the-portal/Operating-the-portal.html#id1">Cloud regions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Operating-the-portal/Operating-the-portal.html#creating-an-openstack-project">Creating an OpenStack project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Services-access/Services-access.html">Service access</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Services-access/Services-access.html#access-model">Access model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Services-access/Services-access.html#requests">Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Services-access/Services-access.html#service-access-in-the-left-hand-navigation">Service access in the left-hand navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Services-access/Services-access.html#openstack-access">OpenStack access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Services-access/Services-access.html#s3-access">S3 access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Services-access/Services-access.html#managed-kubernetes-access">Managed Kubernetes access</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Roles-and-permissions-model/Roles-and-permissions-model.html">Roles and permissions model</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Roles-and-permissions-model/Roles-and-permissions-model.html#portal-roles-versus-services-roles">Portal roles versus services roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Roles-and-permissions-model/Roles-and-permissions-model.html#portal-roles">Portal roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Roles-and-permissions-model/Roles-and-permissions-model.html#service-roles">Service roles</a></li>
 </ul>
 </li>
 </ul>
@@ -114,12 +131,15 @@
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="ECIS Hidden Resources" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Operating-the-portal/Operating-the-portal.html" class="btn btn-neutral float-right" title="Introduction to the ECIS Dashboard" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2026, CloudFerro.</p>
+    <p>&#169; Copyright 2026, EUMETSAT.</p>
   </div>
 
    

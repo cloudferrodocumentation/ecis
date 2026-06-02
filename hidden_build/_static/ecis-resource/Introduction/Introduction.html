@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <link href="../../_static/favicon/favicon-32x32.png" sizes="32x32" rel="icon" type="image/png">
+    <link href="../../_static/favicon/favicon-16x16.png" sizes="16x16" rel="icon" type="image/png">
+    <link href="../../_static/favicon/android-chrome-192x192.png" sizes="192x192" rel="icon" type="image/png">
+    <link href="../../_static/favicon/android-chrome-512x512.png" sizes="512x512" rel="icon" type="image/png">
+    <link rel="favicon/apple-touch-icon.png" href="../../_static/favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to ECIS dashboard &mdash; Destination Earth Data Lake  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/demoboost.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/cf2_badge.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/s4defs-roles.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/legal_style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/right_sidebar.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/feedback_widget.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/copybutton_custom.css" />
+
+
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/demoboost.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/js/custom.js"></script>
+    <script src="../../_static/js/feedback_widget.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Operating the portal" href="../Operating-the-portal/Operating-the-portal.html" />
+    <link rel="prev" title="Active services" href="../Active-services/Active-services.html" />
+
+    <style>
+        .language-selector-wrapper {
+          margin: 1em 0;
+          text-align: center;
+        }
+        .language-dropdown {
+          font-size: 14px;
+          padding: 4px 6px;
+        }
+        .language-flag {
+          width: 28px;
+          height: auto;
+          opacity: 0.6;
+          transition: transform 0.2s, opacity 0.2s;
+        }
+        .language-flag:hover,
+        .language-flag.active-flag {
+          opacity: 1;
+          transform: scale(1.1);
+          border: 2px solid #2980B9;
+          border-radius: 4px;
+        }
+        .language-codes-container {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          margin-top: 1em;
+          font-weight: bold;
+        }
+        .language-code {
+          color: #666;
+          text-decoration: none;
+        }
+        .language-code:hover,
+        .language-code.active-code {
+          color: #2980B9;
+        }
+    </style>
+
+</head>
+
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+        <div class="wy-side-scroll">
+            <div class="wy-side-nav-search" >
+
+
+
+                <a href="../../index.html">
+
+                    <img src="../../_static/logo_bar_vertical_dark_mode.png" class="logo" alt="Logo"/>
+                </a>
+                <div role="search">
+                    <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+                        <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+                        <input type="hidden" name="check_keywords" value="yes" />
+                        <input type="hidden" name="area" value="default" />
+                    </form>
+                </div>
+            </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+            <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+            <ul class="current">
+                <li class="toctree-l1"><a class="reference internal" href="../../cf3-eodata/cf3-eodata.html">CF3 EODATA</a></li>
+                <li class="toctree-l1"><a class="reference internal" href="../../cf3-cutting-edge/cf3-cutting-edge.html">CF3 CUTTING EDGE</a></li>
+                <li class="toctree-l1"><a class="reference internal" href="../../kubernetes_magnum/kubernetes_magnum.html">Kubernetes Magnum</a></li>
+                <li class="toctree-l1"><a class="reference internal" href="../../my_datalake_services_colors/my_datalake_services_colors.html">My DataLake Services COLORS</a></li>
+                <li class="toctree-l1 current"><a class="reference internal" href="../ecis_portal_management.html">ECIS Portal Management</a><ul class="current">
+                    <li class="toctree-l2"><a class="reference internal" href="../ecis_portal_management.html#user">User</a></li>
+                    <li class="toctree-l2 current"><a class="reference internal" href="../ecis_portal_management.html#operator">Operator</a><ul class="current">
+                        <li class="toctree-l3 current"><a class="current reference internal" href="#">Introduction to ECIS dashboard</a><ul>
+                            <li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+                        </ul>
+                        </li>
+                        <li class="toctree-l3"><a class="reference internal" href="../Operating-the-portal/Operating-the-portal.html">Operating the portal</a></li>
+                    </ul>
+                    </li>
+                </ul>
+                </li>
+            </ul>
+
+        </div>
+        </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Destination Earth Data Lake</a>
+    </nav>
+
+        <div class="wy-nav-content">
+            <div class="cf-page-grid">
+                <div class="cf-page-main">
+
+                    <div class="rst-content">
+                        <div role="navigation" aria-label="Page navigation">
+                            <ul class="wy-breadcrumbs">
+                                <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+                                <li><a href="../ecis_portal_management.html">ECIS Portal Management</a> &raquo;</li>
+                                <li>Introduction to ECIS dashboard</li>
+                                <li class="wy-breadcrumbs-aside">
+
+
+                                    <a href="https://creodias.eu"
+                                       class="fa fa-external-link"
+                                       target="_blank"
+                                       rel="noopener">
+                                        Creodias
+                                    </a>
+
+
+                                    <span class="wy-breadcrumbs-aside__sep"> | </span>
+                                    <a href="../../_sources/ecis_portal_management/Introduction/Introduction.rst.txt" rel="nofollow"> View page source</a>
+                                </li>
+                            </ul>
+                            <hr/>
+                        </div>
+                        <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+                            <div itemprop="articleBody">
+
+                                <section id="introduction-to-ecis-dashboard">
+                                    <h1>Introduction to ECIS dashboard<a class="headerlink" href="#introduction-to-ecis-dashboard" title="Permalink to this heading"></a></h1>
+                                    <section id="introduction">
+                                        <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+                                        <section id="purpose-of-this-guide">
+                                            <h3>Purpose of this guide<a class="headerlink" href="#purpose-of-this-guide" title="Permalink to this heading"></a></h3>
+                                            <p>This guide provides an overview of the portal and how it is used to onboard users and manage access to the available services. It describes both the end-user experience (sign-in, portal navigation, accessing services, requesting quota change, etc.) and the operator experience (user onboarding and access management, including portal roles, service roles, and quota management).</p>
+                                        </section>
+                                        <section id="audience">
+                                            <h3>Audience<a class="headerlink" href="#audience" title="Permalink to this heading"></a></h3>
+                                            <p>This guide is intended for EUMETSAT Team members operating and using the Dolores portal within their organization.</p>
+                                            <blockquote>
+                                                <div><table class="docutils align-default">
+                                                    <colgroup>
+                                                        <col style="width: 20.0%" />
+                                                        <col style="width: 80.0%" />
+                                                    </colgroup>
+                                                    <thead>
+                                                    <tr class="row-odd"><th class="head"><p>Term</p></th>
+                                                        <th class="head"><p>Description</p></th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr class="row-even"><td><p>Access key / Secret key</p></td>
+                                                        <td><p>The credential pair used for S3-compatible access.</p></td>
+                                                    </tr>
+                                                    <tr class="row-odd"><td><p>End user</p></td>
+                                                        <td><p>A regular user who accesses services through the portal.</p></td>
+                                                    </tr>
+                                                    <tr class="row-even"><td><p>Operator</p></td>
+                                                        <td><p>A privileged user who onboards users and manages access, roles, and quotas.</p></td>
+                                                    </tr>
+                                                    <tr class="row-odd"><td><p>Organization</p></td>
+                                                        <td><p>The client’s logical boundary in the portal.</p></td>
+                                                    </tr>
+                                                    <tr class="row-even"><td><p>Portal / Dolores portal</p></td>
+                                                        <td><p>The web UI used to onboard users and provide access to services (and related areas like profile/billing if applicable).</p></td>
+                                                    </tr>
+                                                    <tr class="row-odd"><td><p>Portal role</p></td>
+                                                        <td><p>Role controlling permissions and visibility within the portal UI.</p></td>
+                                                    </tr>
+                                                    <tr class="row-even"><td><p>Quota</p></td>
+                                                        <td><p>A limit on usage/capacity.</p></td>
+                                                    </tr>
+                                                    <tr class="row-odd"><td><p>Service</p></td>
+                                                        <td><p>An integrated product accessible via the portal (e.g., S3).</p></td>
+                                                    </tr>
+                                                    <tr class="row-even"><td><p>Service role</p></td>
+                                                        <td><p>Role controlling permissions within a specific service.</p></td>
+                                                    </tr>
+                                                    <tr class="row-odd"><td><p>S3 Key Manager</p></td>
+                                                        <td><p>Portal components used to generate and manage S3 credentials.</p></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                </div></blockquote>
+                                        </section>
+                                    </section>
+                                </section>
+
+
+                            </div>
+                        </div>
+                        <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+                            <a href="../Active-services/Active-services.html" class="btn btn-neutral float-left" title="Active services" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+                            <a href="../Operating-the-portal/Operating-the-portal.html" class="btn btn-neutral float-right" title="Operating the portal" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+                        </div>
+                            <hr/>
+                            <!-- <p>File name: Introduction</p>-->
+
+                            <!--<p>CloudFerro Logo path: ../../_static/Cloud_ferro_RGB_poziom.svg</p>
+                            <p>DEDL Logo path: ../../_static/dedl.jpg</p>-->
+                            <br>
+                            <p>© Copyright 2025, POLSA.</p>
+                            <!--
+                                <div class="logo-container">
+                                    <img src="../../_static/Cloud_ferro_RGB_poziom.svg" alt="CloudFerro Logo" class="logo-image" />
+                                </div>-->
+
+
+                        </footer>
+                    </div>
+                </div>
+
+                <aside class="cf-page-aside" aria-label="On this page">
+                    <div class="cf-aside-inner">
+
+
+                        <div class="cf-aside-box cf-aside-toc">
+                            <p class="cf-aside-title">Jump to</p>
+                            <ul>
+                                <li><a class="reference internal" href="#">Introduction to ECIS dashboard</a><ul>
+                                    <li><a class="reference internal" href="#introduction">Introduction</a><ul>
+                                        <li><a class="reference internal" href="#purpose-of-this-guide">Purpose of this guide</a></li>
+                                        <li><a class="reference internal" href="#audience">Audience</a></li>
+                                    </ul>
+                                    </li>
+                                </ul>
+                                </li>
+                            </ul>
+
+                        </div>
+
+
+
+
+                        <div class="cf-aside-box cf-aside-actions">
+                            <p class="cf-aside-title">Feedback</p>
+
+
+                            <div class="cf-feedback-card" data-feedback-widget>
+                                <div class="cf-feedback-title">Was this page helpful?</div>
+
+                                <div class="cf-feedback-buttons" role="group" aria-label="Page helpfulness">
+                                    <button type="button" class="cf-feedback-btn" data-vote="yes">
+                                        <span class="cf-feedback-ico" aria-hidden="true">👍</span>
+                                        <span>Yes</span>
+                                    </button>
+
+                                    <button type="button" class="cf-feedback-btn" data-vote="no">
+                                        <span class="cf-feedback-ico" aria-hidden="true">👎</span>
+                                        <span>No</span>
+                                    </button>
+                                </div>
+
+                                <div class="cf-feedback-status" aria-live="polite"></div>
+                            </div>
+
+                            <div class="cf-aside-links">
+
+                                <a class="cf-aside-link" href="https://new.cloudferro.com/panel/profile/tickets">Open a support ticket</a>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </aside>
+            </div>
+
+        </div>
+    </section>
+</div>
+<script>
+    jQuery(function () {
+        SphinxRtdTheme.Navigation.enable(true);
+    });
+</script>
+
+</body>
+</html>

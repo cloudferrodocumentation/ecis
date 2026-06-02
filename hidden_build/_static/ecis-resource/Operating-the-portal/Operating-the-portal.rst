@@ -1,4 +1,4 @@
-Introduction to ECIS dashboard
+Introduction to dashboard
 =============================================
 
 Introduction
@@ -102,7 +102,7 @@ Fill in the required fields or leave default values:
 
 Update information in EWC IAM
 
-EUMETSAT Operator assigns id in EWC IAM in order to automate creating Organisation on ECIS Platform side.
+EUMETSAT Operator assigns id in EWC IAM in order to automate creating Organisation on the Platform side.
 
 Managing users, roles, passwords
 -----------------------------------
@@ -126,7 +126,7 @@ User can be assigned to only one Organization in EWC IAM and ECIS IAM.
 
 If single person is simultaneously in multiple Organizations then in EWC IAM there will be multiple independent accounts with different access data used to authenticate in EWC IAM.
 
-From the ECIS point of view, these are independent identities.
+From the local point of view, these are independent identities.
 
 .. figure:: ewc-users-add-user-ecis-portal.png
    :class: image-with-border
