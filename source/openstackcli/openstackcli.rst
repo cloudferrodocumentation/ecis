@@ -9,27 +9,27 @@ Use this section to install and configure the OpenStack client, prepare project 
    :maxdepth: 1
    :caption: Install, configure, and prepare the CLI
 
-   /openstackcli/How-to-install-OpenStackClient-for-Linux
-   /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows
-   /openstackcli/How-to-install-OpenStackClient-on-Windows-using-Windows-Subsystem-for-Linux-on-OpenStack-Hosting
-   /openstackcli/How-To-Create-and-Configure-New-Project
+   /openstackcli/How-to-install-OpenStackClient-for-Linux/How-to-install-OpenStackClient-for-Linux
+   /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows
+   /openstackcli/How-to-install-OpenStackClient-on-Windows-using-Windows-Subsystem-for-Linux-on-OpenStack-Hosting/How-to-install-OpenStackClient-on-Windows-using-Windows-Subsystem-for-Linux-on-OpenStack-Hosting
+   /openstackcli/How-To-Create-and-Configure-New-Project/How-To-Create-and-Configure-New-Project
 
 .. toctree::
    :maxdepth: 1
    :caption: Create and manage virtual machines
 
-   /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration
-   /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI
-   /openstackcli/How-to-create-a-VM-from-volume-snapshot-using-OpenStack-CLI
-   /openstackcli/How-to-start-a-VM-from-instance-snapshot-using-OpenStack-CLI
-   /openstackcli/Resizing-a-virtual-machine-using-OpenStack-CLI
+   /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration
+   /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI/How-to-create-instance-snapshot-using-OpenStack-CLI
+   /openstackcli/How-to-create-a-VM-from-volume-snapshot-using-OpenStack-CLI/How-to-create-a-VM-from-volume-snapshot-using-OpenStack-CLI
+   /openstackcli/How-to-start-a-VM-from-instance-snapshot-using-OpenStack-CLI/How-to-start-a-VM-from-instance-snapshot-using-OpenStack-CLI
+   /openstackcli/Resizing-a-virtual-machine-using-OpenStack-CLI/Resizing-a-virtual-machine-using-OpenStack-CLI
 
 .. toctree::
    :maxdepth: 1
    :caption: Volumes, transfers, and backups
 
-   /openstackcli/How-to-move-data-volume-between-two-VMs-using-OpenStack-CLI
-   /openstackcli/How-to-transfer-volumes-between-domains-and-projects-using-OpenStack-CLI-client
-   /openstackcli/How-to-backup-an-instance-and-download-it-to-the-desktop
-   /openstackcli/Use-backup-command-to-create-rotating-backups-of-virtual-machines
-   /openstackcli/Use-script-to-create-daily-weekly-and-monthly-rotating-backups-of-virtual-machines-using
+   /openstackcli/How-to-move-data-volume-between-two-VMs-using-OpenStack-CLI/How-to-move-data-volume-between-two-VMs-using-OpenStack-CLI
+   /openstackcli/How-to-transfer-volumes-between-domains-and-projects-using-OpenStack-CLI-client/How-to-transfer-volumes-between-domains-and-projects-using-OpenStack-CLI-client
+   /openstackcli/How-to-backup-an-instance-and-download-it-to-the-desktop/How-to-backup-an-instance-and-download-it-to-the-desktop
+   /openstackcli/Use-backup-command-to-create-rotating-backups-of-virtual-machines/Use-backup-command-to-create-rotating-backups-of-virtual-machines
+   /openstackcli/Use-script-to-create-daily-weekly-and-monthly-rotating-backups-of-virtual-machines-using/Use-script-to-create-daily-weekly-and-monthly-rotating-backups-of-virtual-machines-using

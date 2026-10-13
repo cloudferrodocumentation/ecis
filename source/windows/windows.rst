@@ -9,14 +9,14 @@ Use these articles to create SSH keys, connect to Linux VMs from Windows, access
    :maxdepth: 1
    :caption: SSH access from Windows
 
-   /windows/How-to-access-a-VM-from-Windows-PuTTY
-   /windows/How-to-connect-to-a-virtual-machine-via-SSH-from-Windows-10-Command-Prompt
-   /windows/How-To-Create-SSH-Key-Pair-In-Windows
-   /windows/How-To-Create-SSH-Key-Pair-In-Windows-11
+   /windows/How-to-access-a-VM-from-Windows-PuTTY/How-to-access-a-VM-from-Windows-PuTTY
+   /windows/How-to-connect-to-a-virtual-machine-via-SSH-from-Windows-10-Command-Prompt/How-to-connect-to-a-virtual-machine-via-SSH-from-Windows-10-Command-Prompt
+   /windows/How-To-Create-SSH-Key-Pair-In-Windows/How-To-Create-SSH-Key-Pair-In-Windows
+   /windows/How-To-Create-SSH-Key-Pair-In-Windows-11/How-To-Create-SSH-Key-Pair-In-Windows-11
 
 .. toctree::
    :maxdepth: 1
    :caption: RDP access and Windows VM management
 
-   /windows/Connecting-to-a-Windows-VM-via-RDP-through-a-Linux-bastion-host-port-forwarding
-   /windows/Can-I-change-my-password-through-RDP
+   /windows/Connecting-to-a-Windows-VM-via-RDP-through-a-Linux-bastion-host-port-forwarding/Connecting-to-a-Windows-VM-via-RDP-through-a-Linux-bastion-host-port-forwarding
+   /windows/Can-I-change-my-password-through-RDP/Can-I-change-my-password-through-RDP

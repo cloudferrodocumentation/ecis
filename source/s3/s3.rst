@@ -9,32 +9,32 @@ Use this section to find articles about working with object storage in Horizon, 
    :maxdepth: 1
    :caption: Getting started
 
-   /s3/How-to-use-object-storage-with-Horizon-on-FRA1-3-cloud
-   /s3/How-to-install-s3cmd-on-Linux
-   /s3/Configuration-files-for-s3cmd-command
-   /s3/Deep-dive-into-using-s3cmd-to-access-object-storage
+   /s3/How-to-use-object-storage-with-Horizon-on-FRA1-3-cloud/How-to-use-object-storage-with-Horizon-on-FRA1-3-cloud
+   /s3/How-to-install-s3cmd-on-Linux/How-to-install-s3cmd-on-Linux
+   /s3/Configuration-files-for-s3cmd-command/Configuration-files-for-s3cmd-command
+   /s3/Deep-dive-into-using-s3cmd-to-access-object-storage/Deep-dive-into-using-s3cmd-to-access-object-storage
 
 .. toctree::
    :maxdepth: 1
    :caption: Access from applications and tools
 
-   /s3/How-to-access-object-storage-using-s3cmd
-   /s3/How-to-access-object-storage-using-boto3
-   /s3/How-To-Install-boto3-In-Windows
+   /s3/How-to-access-object-storage-using-s3cmd/How-to-access-object-storage-using-s3cmd
+   /s3/How-to-access-object-storage-using-boto3/How-to-access-object-storage-using-boto3
+   /s3/How-To-Install-boto3-In-Windows/How-To-Install-boto3-In-Windows
 
 .. toctree::
    :maxdepth: 1
    :caption: Mount object storage
 
-   /s3/How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs
-   /s3/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer
-   /s3/S3FS-Cache
+   /s3/How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs/How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs
+   /s3/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer
+   /s3/S3FS-Cache/S3FS-Cache
 
 .. toctree::
    :maxdepth: 1
    :caption: Manage buckets and security
 
-   /s3/Bucket-sharing-using-s3-bucket-policy
-   /s3/S3-bucket-object-versioning
-   /s3/Server-Side-Encryption-with-Customer-Managed-Keys-SSE-C
-   /s3/How-to-delete-large-S3-bucket
+   /s3/Bucket-sharing-using-s3-bucket-policy/Bucket-sharing-using-s3-bucket-policy
+   /s3/S3-bucket-object-versioning/S3-bucket-object-versioning
+   /s3/Server-Side-Encryption-with-Customer-Managed-Keys-SSE-C/Server-Side-Encryption-with-Customer-Managed-Keys-SSE-C
+   /s3/How-to-delete-large-S3-bucket/How-to-delete-large-S3-bucket

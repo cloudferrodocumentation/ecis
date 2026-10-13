@@ -9,28 +9,28 @@ Use this section to find articles about cluster creation, node pool management, 
    :maxdepth: 1
    :caption: Create and manage clusters
 
-   /kubernetes/How-to-create-a-Managed-Kubernetes-cluster-using-launcher-GUI
-   /kubernetes/Add-node-pools-to-Managed-cluster-using-the-launcher-GUI
-   /kubernetes/Upgrade-Managed-Kubernetes
+   /kubernetes/How-to-create-a-Managed-Kubernetes-cluster-using-launcher-GUI/How-to-create-a-Managed-Kubernetes-cluster-using-launcher-GUI
+   /kubernetes/Add-node-pools-to-Managed-cluster-using-the-launcher-GUI/Add-node-pools-to-Managed-cluster-using-the-launcher-GUI
+   /kubernetes/Upgrade-Managed-Kubernetes/Upgrade-Managed-Kubernetes
 
 .. toctree::
    :maxdepth: 1
    :caption: Access and automation
 
-   /kubernetes/Obtain-managed-Kubernetes-API-token
-   /kubernetes/Programmatic-Endpoints-for-Managed-Kubernetes
-   /kubernetes/Create-a-Managed-Kubernetes-Cluster-with-Terraform
+   /kubernetes/Obtain-managed-Kubernetes-API-token/Obtain-managed-Kubernetes-API-token
+   /kubernetes/Programmatic-Endpoints-for-Managed-Kubernetes/Programmatic-Endpoints-for-Managed-Kubernetes
+   /kubernetes/Create-a-Managed-Kubernetes-Cluster-with-Terraform/Create-a-Managed-Kubernetes-Cluster-with-Terraform
 
 .. toctree::
    :maxdepth: 1
    :caption: Backups and storage
 
-   /kubernetes/Managed-Kubernetes-backups
-   /kubernetes/Create-and-use-volume-snapshots-on-Managed-Kubernetes
-   /kubernetes/Volume-cloning-on-Managed-Kubernetes
+   /kubernetes/Managed-Kubernetes-backups/Managed-Kubernetes-backups
+   /kubernetes/Create-and-use-volume-snapshots-on-Managed-Kubernetes/Create-and-use-volume-snapshots-on-Managed-Kubernetes
+   /kubernetes/Volume-cloning-on-Managed-Kubernetes/Volume-cloning-on-Managed-Kubernetes
 
 .. toctree::
    :maxdepth: 1
    :caption: Concepts
 
-   /kubernetes/Managed-Kubernetes-Shared-Responsibility-Model
+   /kubernetes/Managed-Kubernetes-Shared-Responsibility-Model/Managed-Kubernetes-Shared-Responsibility-Model
