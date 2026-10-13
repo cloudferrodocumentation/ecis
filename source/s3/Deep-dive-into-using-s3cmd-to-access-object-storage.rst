@@ -1,7 +1,7 @@
-Deep dive into using s3cmd to access object storage
-===================================================
+Deep dive into using s3cmd to access object storage on ECIS
+====================================================================================
 
-Object storage can be used to store your files in *containers*. In this article, you will create a basic object storage container and perform common object storage operations with **s3cmd**.
+Object storage on ECIS cloud can be used to store your files in *containers*. In this article, you will create a basic object storage container and perform common object storage operations with **s3cmd**.
 
 .. raw:: html
 
@@ -20,11 +20,11 @@ Prerequisites
 
 Before starting, make sure that:
 
-1. You have an admin hosting account with access to the Eumetsat cloud interface:
+1. You have an admin ECIS hosting account with access to the Eumetsat cloud interface:
 
    `my.cloud.eumetsat.int <http://my.cloud.eumetsat.int>`__
 
-2. You can sign in to the portal and open the service catalog. For more information, see :doc:`/accountmanagement/Service-catalog/Service-catalog`
+2. You can sign in to the ECIS portal and open the service catalog. For more information, see :doc:`/accountmanagement/Service-catalog/Service-catalog`
 
 3. You have S3 API keys for Object Storage.
 
@@ -38,18 +38,18 @@ Before starting, make sure that:
 
    .. jinja:: brand_names
 
-      * :doc:`/cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-{{ brand_name_hyphen }}/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-{{ brand_name_hyphen }}`
-      * :doc:`/cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-{{ brand_name_hyphen }}/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-{{ brand_name_hyphen }}`
+      * :doc:`/cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity`
+      * :doc:`/cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity`
 
-5. **s3cmd** is installed and configured for the Object Storage endpoint of the region where you want to work.
+5. **s3cmd** is installed and configured for the ECIS Object Storage endpoint of the region where you want to work.
 
    For configuration instructions, see:
 
    .. jinja:: brand_names
 
-      * :doc:`/s3/How-to-install-s3cmd-on-Linux-on-{{ brand_name_hyphen }}/How-to-install-s3cmd-on-Linux-on-{{ brand_name_hyphen }}`
-      * :doc:`/s3/Configuration-files-for-s3cmd-command-on-{{ brand_name_hyphen }}/Configuration-files-for-s3cmd-command-on-{{ brand_name_hyphen }}`
-      * :doc:`/s3/How-to-access-object-storage-from-{{ brand_name_hyphen }}-using-s3cmd/How-to-access-object-storage-from-{{ brand_name_hyphen }}-using-s3cmd`
+      * :doc:`/s3/How-to-install-s3cmd-on-Linux-on-Eumetsat-Elasticity/How-to-install-s3cmd-on-Linux-on-Eumetsat-Elasticity`
+      * :doc:`/s3/Configuration-files-for-s3cmd-command-on-Eumetsat-Elasticity/Configuration-files-for-s3cmd-command-on-Eumetsat-Elasticity`
+      * :doc:`/s3/How-to-access-object-storage-from-Eumetsat-Elasticity-using-s3cmd/How-to-access-object-storage-from-Eumetsat-Elasticity-using-s3cmd`
 
 6. To test public object download from the terminal, you can use **wget** which comes preinstalled on most modern operating systems.
 
@@ -82,13 +82,24 @@ The result is:
 
    Bucket 's3://example-bucket/' created
 
+.. warning::
+
+   If you omit the ``--region`` argument, the bucket is created in **cold-placement**, not **default-placement**.
+
 While creating the bucket, you can use the **--region** argument to specify where it should be stored. Currently, there are two available placements:
 
-:default-placement:
-   Default storage space with replicated storage backend.
+.. jinja:: caption_colors
 
-:cold-placement:
-   Slower, more space-efficient erasure-coded storage backend.
+   .. list-table:: :{{ caption }}:`Object storage placements`
+      :widths: 30 70
+      :header-rows: 1
+
+      * - :{{ header }}:`Placement`
+        - :{{ header }}:`Storage backend`
+      * - **default-placement**
+        - Storage space with replicated storage backend.
+      * - **cold-placement**
+        - Slower, more space-efficient erasure-coded storage backend.
 
 The colon before the placement name is **required**.
 
@@ -132,7 +143,7 @@ The result is:
 
    Bucket names cannot contain forward slashes (**/**).
 
-In this cloud environment, **single tenancy** is enabled. This means that two object storage containers cannot have the same name. Avoid common names such as **storage** or **files**.
+On ECIS clouds, **single tenancy** is enabled. This means that two object storage containers cannot have the same name. Avoid common names such as **storage** or **files**.
 
 Uploading a file
 ----------------
@@ -147,8 +158,8 @@ The result is:
 
 .. code-block:: bash
 
-   upload: 'file.txt' -> 's3://example-bucket/file.txt' [1 of 1]
-    0 of 0 0% in 0s 0.00 B/s done
+   upload: 'file.txt' -> 's3://example-bucket/file.txt'  [1 of 1]
+    0 of 0     0% in    0s     0.00 B/s  done
 
 To verify that the file was uploaded, list the contents of the bucket:
 
@@ -160,7 +171,7 @@ The result is:
 
 .. code-block:: bash
 
-   2026-04-24 14:51 0 s3://example-bucket/file.txt
+   2026-04-24 14:51            0  s3://example-bucket/file.txt
 
 This uploads the file to the root of the bucket.
 
@@ -179,8 +190,8 @@ The result is:
 
 .. code-block:: bash
 
-   upload: 'file.txt' -> 's3://example-bucket/directory1/directory1/file.txt' [1 of 1]
-    0 of 0 0% in 0s 0.00 B/s done
+   upload: 'file.txt' -> 's3://example-bucket/directory1/directory1/file.txt'  [1 of 1]
+    0 of 0     0% in    0s     0.00 B/s  done
 
 List the root of the bucket:
 
@@ -192,8 +203,8 @@ The result is:
 
 .. code-block:: bash
 
-                             DIR s3://example-bucket/directory1/
-   2026-04-24 14:51 0 s3://example-bucket/file.txt
+                             DIR  s3://example-bucket/directory1/
+   2026-04-24 14:51            0  s3://example-bucket/file.txt
 
 List the contents of the prefix:
 
@@ -205,7 +216,7 @@ The result is:
 
 .. code-block:: bash
 
-   2026-04-24 14:53 0 s3://example-bucket/directory1/directory1/file.txt
+   2026-04-24 14:53            0  s3://example-bucket/directory1/directory1/file.txt
 
 Uploading multiple files
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -220,10 +231,10 @@ The result is:
 
 .. code-block:: bash
 
-   upload: 'file.txt' -> 's3://example-bucket/multiple-file-upload/file.txt' [1 of 2]
-    0 of 0 0% in 0s 0.00 B/s done
-   upload: 'file2.txt' -> 's3://example-bucket/multiple-file-upload/file2.txt' [2 of 2]
-    0 of 0 0% in 0s 0.00 B/s done
+   upload: 'file.txt' -> 's3://example-bucket/multiple-file-upload/file.txt'  [1 of 2]
+    0 of 0     0% in    0s     0.00 B/s  done
+   upload: 'file2.txt' -> 's3://example-bucket/multiple-file-upload/file2.txt'  [2 of 2]
+    0 of 0     0% in    0s     0.00 B/s  done
 
 To verify the upload, use:
 
@@ -235,8 +246,8 @@ The result is:
 
 .. code-block:: bash
 
-   2026-04-24 14:54 0 s3://example-bucket/multiple-file-upload/file.txt
-   2026-04-24 14:54 0 s3://example-bucket/multiple-file-upload/file2.txt
+   2026-04-24 14:54            0  s3://example-bucket/multiple-file-upload/file.txt
+   2026-04-24 14:54            0  s3://example-bucket/multiple-file-upload/file2.txt
 
 Uploading a directory recursively
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -251,10 +262,10 @@ The result is:
 
 .. code-block:: bash
 
-   upload: 'folder-to-upload/file.txt' -> 's3://example-bucket/folder-to-upload/file.txt' [1 of 2]
-    0 of 0 0% in 0s 0.00 B/s done
-   upload: 'folder-to-upload/file2.txt' -> 's3://example-bucket/folder-to-upload/file2.txt' [2 of 2]
-    0 of 0 0% in 0s 0.00 B/s done
+   upload: 'folder-to-upload/file.txt' -> 's3://example-bucket/folder-to-upload/file.txt'  [1 of 2]
+    0 of 0     0% in    0s     0.00 B/s  done
+   upload: 'folder-to-upload/file2.txt' -> 's3://example-bucket/folder-to-upload/file2.txt'  [2 of 2]
+    0 of 0     0% in    0s     0.00 B/s  done
 
 To verify the upload, use:
 
@@ -266,8 +277,8 @@ The result is:
 
 .. code-block:: bash
 
-   2026-04-24 14:56 0 s3://example-bucket/folder-to-upload/file.txt
-   2026-04-24 14:56 0 s3://example-bucket/folder-to-upload/file2.txt
+   2026-04-24 14:56            0  s3://example-bucket/folder-to-upload/file.txt
+   2026-04-24 14:56            0  s3://example-bucket/folder-to-upload/file2.txt
 
 Deleting files from a container
 -------------------------------
@@ -401,8 +412,8 @@ The result is:
 
 .. code-block:: bash
 
-   s3://example-bucket/folder-to-upload/file.txt: ACL set to Public [1 of 2]
-   s3://example-bucket/folder-to-upload/file2.txt: ACL set to Public [2 of 2]
+   s3://example-bucket/folder-to-upload/file.txt: ACL set to Public  [1 of 2]
+   s3://example-bucket/folder-to-upload/file2.txt: ACL set to Public  [2 of 2]
 
 You can also change the ACL of the bucket itself:
 
@@ -412,7 +423,7 @@ You can also change the ACL of the bucket itself:
 
 Use this option carefully. In most cases, it is safer to make only the required object or prefix public.
 
-Object Storage endpoint depends on the region where the bucket was created. Use the endpoint that belongs to your region when creating public object URLs.
+Object Storage endpoint depends on the ECIS region where the bucket was created. Use the endpoint that belongs to your region when creating public object URLs.
 
 .. tabs::
 
@@ -449,8 +460,8 @@ The result should show the objects stored in the bucket, for example:
 
 .. code-block:: bash
 
-   2026-04-24 14:51 0 s3://example-bucket/file.txt
-                             DIR s3://example-bucket/folder-to-upload/
+   2026-04-24 14:51            0  s3://example-bucket/file.txt
+                             DIR  s3://example-bucket/folder-to-upload/
 
 To list objects inside a folder-like prefix, add the prefix to the path:
 
@@ -462,10 +473,10 @@ The result should show the objects under that prefix:
 
 .. code-block:: bash
 
-   2026-04-24 14:56 0 s3://example-bucket/folder-to-upload/file.txt
-   2026-04-24 14:56 0 s3://example-bucket/folder-to-upload/file2.txt
+   2026-04-24 14:56            0  s3://example-bucket/folder-to-upload/file.txt
+   2026-04-24 14:56            0  s3://example-bucket/folder-to-upload/file2.txt
 
-The public URL of an object consists of the Object Storage endpoint, the bucket name, and the full object path.
+The public URL of an object consists of the ECIS Object Storage endpoint, the bucket name, and the full object path.
 
 For example, this object:
 
@@ -479,7 +490,7 @@ can be accessed through the following public URL in the FRA1-3 region:
 
    https://s3.fra1-3.cloudferro.com/example-bucket/folder-to-upload/file2.txt
 
-Use the endpoint that belongs to the region where your bucket was created.
+Use the endpoint that belongs to the ECIS region where your bucket was created.
 
 .. tabs::
 
@@ -505,14 +516,14 @@ Example output:
 
 .. code-block:: bash
 
-   --2026-04-24 17:47:44-- https://s3.fra1-3.cloudferro.com/example-bucket/folder-to-upload/file2.txt
+   --2026-04-24 17:47:44--  https://s3.fra1-3.cloudferro.com/example-bucket/folder-to-upload/file2.txt
    Resolving s3.fra1-3.cloudferro.com (s3.fra1-3.cloudferro.com)... 74.63.12.97, 2a01:9aa0:45:1::100
    Connecting to s3.fra1-3.cloudferro.com (s3.fra1-3.cloudferro.com)|74.63.12.97|:443... connected.
    HTTP request sent, awaiting response... 200 OK
    Length: 0 [inode/x-empty]
    Saving to: 'file2.txt'
 
-   file2.txt [<=>] 0 --.-KB/s in 0s
+   file2.txt                 [ <=>                           ]       0  --.-KB/s    in 0s
 
    2026-04-24 17:47:44 (0.00 B/s) - 'file2.txt' saved [0/0]
 
@@ -583,6 +594,6 @@ Now that you have created your object storage container, you can mount it on the
 
 .. jinja:: brand_names
 
-   * :doc:`/s3/How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs-on-{{ brand_name_hyphen }}/How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs-on-{{ brand_name_hyphen }}`
+   * :doc:`/s3/How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs-on-Eumetsat-Elasticity/How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs-on-Eumetsat-Elasticity`
 
-   * :doc:`/s3/How-to-mount-object-storage-container-from-{{ brand_name_hyphen }}-as-file-system-on-local-Windows-computer/How-to-mount-object-storage-container-from-{{ brand_name_hyphen }}-as-file-system-on-local-Windows-computer`
+   * :doc:`/s3/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer`
