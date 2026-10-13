@@ -2,3 +2,14 @@
 
 __pycache__/
 *.pyc
+
+# Local Sphinx build output
+/build/
+/_build/
+/hidden_build/
+/local-build.log
+
+/source/_tags/
+/hidden_source/_tags/
+
+/source/**/__pycache__/
