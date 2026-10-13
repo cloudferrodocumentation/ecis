@@ -1,5 +1,5 @@
-What is an OpenStack domain on |brand-name|
-============================================
+What is an OpenStack domain
+===========================
 
 **Domain**
 
@@ -11,7 +11,8 @@ Current domain name is **visible** beside the project that is currently selected
 
 .. jinja:: openstack_domain
 
-   .. image:: /cloud/What-is-an-OpenStack-domain-on-Eumetsat-Elasticity/{{ openstack_domain }}
+   .. image:: /cloud/What-is-an-OpenStack-domain/{{ openstack_domain }}
+      :alt: What is an OpenStack domain
 
 The name of the domain is grayed out, denoting that you can use only the domain that has been allocated to you by the system.
 

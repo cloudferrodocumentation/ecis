@@ -31,9 +31,6 @@ Overview
 
 Open **Organization** in the left-side menu under **Configuration**.
 
-.. figure:: /accountmanagement/My-organization/my-organization-ecis.png
-   :class: image-with-border
-
 When your account is created, the operator usually enters the initial organization data during onboarding. You can later review this information and update it if needed.
 
 The form may include the following fields:
@@ -58,7 +55,7 @@ What to do next
 
 After reviewing or updating your organization details, you may also want to:
 
-* manage organization members in :doc:`/accountmanagement/Sub-accounts`,
+* manage organization members in :doc:`/accountmanagement/Users-and-roles`,
 * review pending access requests in :doc:`/accountmanagement/Invitations`,
 * check billing-related information in :doc:`/accountmanagement/Cloud-projects-wallets`,
 * contact the operator through :doc:`/accountmanagement/Help-Desk-And-Support` if any organization data cannot be changed from the portal.

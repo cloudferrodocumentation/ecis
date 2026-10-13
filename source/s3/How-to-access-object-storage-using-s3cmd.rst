@@ -1,11 +1,11 @@
-How to access object storage from |brand-name| using s3cmd
-==========================================================
+How to access object storage using s3cmd
+========================================
 
 In this article, you will learn how to access object storage from |brand-name|
 on Linux using `s3cmd <https://github.com/s3tools/s3cmd>`_, without mounting
 it as a file system.
 
-You can run these commands on a virtual machine hosted on |brand-name| cloud or
+You can run these commands on a virtual machine hosted on the cloud or
 on a local Linux computer.
 
 What we are going to cover
@@ -47,7 +47,7 @@ You need a Linux virtual machine or a local Linux computer. This article was
 written for Ubuntu 22.04. Other operating systems might work, but are out of
 scope of this article and might require you to adjust the commands.
 
-If you want to use a virtual machine hosted on |brand-name| cloud and you do
+If you want to use a virtual machine hosted on the cloud and you do
 not have one yet, one of these articles can help:
 
 .. jinja:: doc_links
@@ -517,11 +517,3 @@ a sharing policy.
 .. jinja:: doc_links
 
    :doc:`{{ bucket_policy }}`
-
-.. ifconfig:: brand_name not in brands_without_eodata
-
-   **s3cmd** can also be used to access the **EODATA** repository.
-
-   .. jinja:: doc_links
-
-      :doc:`{{ eodata_s3cmd_access }}`

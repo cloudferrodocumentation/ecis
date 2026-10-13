@@ -1,5 +1,5 @@
-Understand IPv6 on |brand-name|
-===============================
+Understand IPv6
+===============
 
 This article explains the technical background for IPv6 on |brand-name|.
 

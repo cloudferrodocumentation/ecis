@@ -1,5 +1,5 @@
-Resizing a virtual machine using OpenStack Horizon on |brand-name|
-===========================================================================
+Resizing a virtual machine using OpenStack Horizon
+==================================================
 
 Introduction
 ------------
@@ -52,17 +52,17 @@ To illustrate the commands in this article, let us create a new VM in order to s
 
 Use Prerequisite No. 2 to create a new VM and let it be called **Resizing**. Here is a typical list of flavors you might see:
 
-.. image:: /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon-on-Eumetsat-Elasticity/resize-vm-horizon-1.png
+.. image:: /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon/resize-vm-horizon-1.png
    :class: image-with-border
 
 For the sake of this article, let us choose a "middle" flavor -- not too large and not to small to start with. Let it be **eo2a.large**.
 
-.. image:: /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon-on-Eumetsat-Elasticity/resize-vm-horizon-2.png
+.. image:: /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon/resize-vm-horizon-2.png
    :class: image-with-border
 
 Finish the process of creating a new VM and let it spawn:
 
-.. image::  /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon-on-Eumetsat-Elasticity/resize-vm-horizon-3.png
+.. image::  /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon/resize-vm-horizon-3.png
    :class: image-with-border
 
 Let us now resize the VM called **Resizing**.
@@ -74,12 +74,12 @@ Locate the VM by using Horizon commands **Compute** -> **Instances**.
 
 Click the dropdown arrow next to the VM and select **Resize Instance**.
 
-.. image:: /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon-on-Eumetsat-Elasticity/resize-vm-horizon-4.png
+.. image:: /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon/resize-vm-horizon-4.png
    :class: image-with-border
 
 You get form **Resize Instance** on screen:
 
-.. image:: /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon-on-Eumetsat-Elasticity/resize-vm-horizon-5.png
+.. image:: /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon/resize-vm-horizon-5.png
    :class: image-with-border
 
 Assuming you wanted to scale up the VM, you could decide upon **eo2.xlarge**. Let us compare the two flavors:
@@ -109,7 +109,7 @@ Assuming you wanted to scale up the VM, you could decide upon **eo2.xlarge**. Le
 
 So, select **eo2.xlarge** as the new flavor. This screen shows its parameters:
 
-.. image:: /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon-on-Eumetsat-Elasticity/fwaas-openvpn-v2-34.png
+.. image:: /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon/fwaas-openvpn-v2-34.png
    :class: image-with-border
 
 Advanced Options
@@ -117,7 +117,7 @@ Advanced Options
 
 **Advanced Options** tab contains two further options for resizing the instance.
 
-.. image::  /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon-on-Eumetsat-Elasticity/resize-vm-horizon-10.png
+.. image::  /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon/resize-vm-horizon-10.png
    :class: image-with-border
 
 Disk Partition
@@ -129,7 +129,7 @@ Server Group
 
    The list can be quite long:
 
-   .. image:: /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon-on-Eumetsat-Elasticity/resize-vm-horizon-11.png
+   .. image:: /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon/resize-vm-horizon-11.png
       :class: image-with-border
 
 Resize the VM
@@ -137,7 +137,7 @@ Resize the VM
 
 Anyways, click on **Resize** to proceed with the resizing of the VM.
 
-.. image:: /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon-on-Eumetsat-Elasticity/resize-vm-horizon-8.png
+.. image:: /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon/resize-vm-horizon-8.png
    :class: image-with-border
 
 In **Status** column, there will be message **Confirm or Revert Resize/Migrate**. It means the system is waiting for you to decide what to do next. To confirm the resizing/migrating process, click on button **Confirm Resize/Migrate** in the **Actions** column.
@@ -155,7 +155,7 @@ If any of the flavor parameters does not match up, the resizing will fail.
 
 You will then see balloon help in the right upper corner:
 
-.. image:: /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon-on-Eumetsat-Elasticity/resize-vm-horizon-7.png
+.. image:: /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon/resize-vm-horizon-7.png
    :class: image-with-border
 
 In this case, the sizes of the disk before and after the resizing do not match.

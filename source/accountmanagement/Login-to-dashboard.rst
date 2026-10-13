@@ -8,19 +8,11 @@ First-time login to dashboard
 
 1. On the |brand-name-site-auth-link| page press **Log in**.
 
-    .. figure:: /accountmanagement/Login-to-dashboard/access-your-account-portal.png
-       :align: center
-       :class: image-with-border
-
 .. raw:: html
 
    <div style="margin-bottom: 1.2em;"></div>
 
-2. Click on **Sign in** from the following form:
-
-    .. figure:: /accountmanagement/Login-to-dashboard/sign-into-your-account-portal.png
-       :align: center
-       :class: image-with-border
+2. Click **Sign in**.
 
 .. raw:: html
 
@@ -28,21 +20,13 @@ First-time login to dashboard
 
 3. In form **Sign in to your Tenancy**, enter the name of the tenancy provided to you by the operator.
 
-.. figure:: /accountmanagement/Login-to-dashboard/sign-into-your-tenancy-portal.png
-   :align: center
-   :class: image-with-border
-
 .. raw:: html
 
    <div style="margin-bottom: 1.2em;"></div>
 
 Click on **Next**.
 
-4. Form **Sign in to your account**. Then fill in your credentials and press **Sign In**:
-
-.. figure:: /accountmanagement/Login-to-dashboard/sign-into-your-account-2-portal.png
-   :align: center
-   :class: image-with-border
+4. In **Sign in to your account**, enter your credentials and press **Sign In**.
 
 .. raw:: html
 
@@ -59,10 +43,6 @@ Click on **Next**.
    <div style="margin-bottom: 1.2em;"></div>
 
 6. Finally, log in to the portal. The **My Profile** page opens as the default landing page.
-
-.. figure:: /accountmanagement/Login-to-dashboard/finally-my-profile-portal.png
-   :align: center
-   :class: image-with-border
 
 .. raw:: html
 

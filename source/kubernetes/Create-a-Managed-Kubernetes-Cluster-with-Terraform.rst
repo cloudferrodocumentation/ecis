@@ -1,5 +1,5 @@
-Create a Managed Kubernetes Cluster with Terraform on |brand-name|
-==================================================================
+Create a Managed Kubernetes Cluster with Terraform
+==================================================
 
 You can provision and manage |MK8s| clusters declaratively using Terraform with **.tf** configuration files. This approach enables consistent, repeatable cluster deployments aligned with Infrastructure as Code.
 
@@ -84,6 +84,7 @@ Here is what it looks like:
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s084 }}
+      :alt: Create a Managed Kubernetes Cluster with Terraform
       :align: center
       :class: image-with-border
 
@@ -232,7 +233,7 @@ Open the |MK8s| dashboard, select the same region as the Terraform endpoint, sta
 
 .. note::
 
-   The flavor name is region-specific. For example, one region may use a CloudFerro-style flavor such as **eo2a.large**, while R1 may use a name such as **16cpu-128gbmem**.
+   The flavor name is region-specific. For example, one region may use a flavor such as **eo2a.large**, while R1 may use a name such as **16cpu-128gbmem**.
 
    If Terraform returns **control plane flavor not found**, the selected flavor is not available in the region used by the Terraform endpoint.
 
@@ -263,18 +264,11 @@ When prompted, type **yes** and press **Enter**.
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s018 }}
+      :alt: Initialize and create the cluster
       :align: center
       :class: image-with-border
 
 You can also see the cluster in the browser while its status is **Creating**:
-
-.. jinja:: mk8s_images
-
-   .. figure:: {{ mk8s019 }}
-      :align: center
-      :class: image-with-border
-
-      Creation of cluster started via Terraform but also visible in the GUI
 
 .. warning::
 
@@ -317,6 +311,7 @@ Verify in the |MK8s| dashboard
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s020 }}
+      :alt: Verify in the |MK8s| dashboard
       :align: center
       :class: image-with-border
 
@@ -394,6 +389,7 @@ The process of adding worker nodes starts:
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s021 }}
+      :alt: Add worker nodes
       :align: center
       :class: image-with-border
 

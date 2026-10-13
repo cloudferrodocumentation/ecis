@@ -73,6 +73,7 @@ Tenant Manager roles are managed by users with the **admin** role. Only an **adm
 After logging into |brand-name-site-auth-link| as an **admin**, click **Users and Roles** in the left sidebar menu.
 
 .. figure:: /accountmanagement/Users-and-roles/users-and-roles-ecis-portal.png
+   :alt: Users and roles in Tenant Manager
    :class: image-with-border
 
 On the **Users and Roles** page, an **admin** can:
@@ -205,9 +206,6 @@ After logging in, check the upper-left corner of the Horizon interface. It shows
         - Project name.
       * - **ECIS-R1**
         - Current region or cloud panel. You can change it by clicking the downward arrow next to the label.
-
-.. figure:: /accountmanagement/Users-and-roles/overview-ecis-r1.png
-   :class: image-with-border
 
 In Horizon, the **Identity** section may show projects and roles, depending on the permissions available to the logged-in user. However, Horizon is not used in this procedure to assign Tenant Manager roles.
 

@@ -1,5 +1,5 @@
-How to move data volume between VMs using OpenStack CLI on |brand-name|
-========================================================================================
+How to move data volume between VMs using OpenStack CLI
+=======================================================
 
 Volumes are used to store data and those data can be accessed from a virtual machine to which the volume is attached. To access data stored on a volume from another virtual machine, you need to disconnect that volume from virtual machine to which it is currently connected, and connect it to another instance.
 
@@ -22,7 +22,7 @@ You need the OpenStack CLI client installed. Use one of the following articles, 
    * :doc:`{{ openstackclient_windows_wsl }}`
    * :doc:`{{ openstackclient_windows }}`
 
-To use the OpenStack CLI client to control |brand-name| cloud, authenticate first.
+To use the OpenStack CLI client to control the cloud, authenticate first.
 
 .. jinja:: doc_links
 
@@ -147,7 +147,8 @@ Execute this command to list volumes:
 
 For each volume, you should see its ID, name, information to which virtual machine it is attached, and so on:
 
-.. figure:: /openstackcli/How-to-move-data-volume-between-two-VMs-using-OpenStack-CLI-on-Eumetsat-Elasticity/how-to-move-data-volume-cli-12_creodias.png
+.. figure:: /openstackcli/How-to-move-data-volume-between-two-VMs-using-OpenStack-CLI/how-to-move-data-volume-cli-12_creodias.png
+   :alt: Obtaining information about the volume
    :class: image-with-border
 
 In this example, we can see that the volume which we want to move, called **volume-to-move**, is attached to a virtual machine called **previous-vm** (orange rectangle). Its ID, marked with a red rectangle, is as follows: **851a3a86-d569-44e4-8c17-f3907af88500**.
@@ -167,7 +168,8 @@ Execute this command to list servers:
 
 You should see the list of your virtual machines:
 
-.. figure:: /openstackcli/How-to-move-data-volume-between-two-VMs-using-OpenStack-CLI-on-Eumetsat-Elasticity/how-to-move-data-volume-cli-31_creodias.png
+.. figure:: /openstackcli/How-to-move-data-volume-between-two-VMs-using-OpenStack-CLI/how-to-move-data-volume-cli-31_creodias.png
+   :alt: Obtaining information about the virtual machines
    :class: image-with-border
 
 In this example, we want to move the volume from the *source* VM which is here called **previous-vm**. Its ID is **b9f2017b-d8f2-420d-a0cb-36867228f17e** - on the screenshot it is marked with a red rectangle. The *destination* VM is called **newer-vm**. Its ID is **97018102-1706-43e3-933b-60e29b299a73** and is marked using a green rectangle.
@@ -214,7 +216,8 @@ After that, list the servers, possibly multiple times, until your virtual machin
 
    openstack server list
 
-.. figure:: /openstackcli/How-to-move-data-volume-between-two-VMs-using-OpenStack-CLI-on-Eumetsat-Elasticity/how-to-move-data-volume-cli-32_creodias.png
+.. figure:: /openstackcli/How-to-move-data-volume-between-two-VMs-using-OpenStack-CLI/how-to-move-data-volume-cli-32_creodias.png
+   :alt: Shutting down the source virtual machine using OpenStack CLI
    :class: image-with-border
 
 Disconnecting volume
@@ -234,7 +237,8 @@ If the operation was successful, the output should be empty. To verify, execute:
 
    openstack volume list
 
-.. figure:: /openstackcli/How-to-move-data-volume-between-two-VMs-using-OpenStack-CLI-on-Eumetsat-Elasticity/how-to-move-data-volume-cli-13_creodias.png
+.. figure:: /openstackcli/How-to-move-data-volume-between-two-VMs-using-OpenStack-CLI/how-to-move-data-volume-cli-13_creodias.png
+   :alt: Disconnecting volume
    :class: image-with-border
 
 Your volume should have the following **Status** (marked on screenshot above using red rectangle): **available**. Also, no value should be present in the **Attached to** column (this field was marked using green rectangle).
@@ -252,12 +256,14 @@ In this example, the command will be:
 
 If the operation was successful, you should get output similar to this:
 
-.. figure:: /openstackcli/How-to-move-data-volume-between-two-VMs-using-OpenStack-CLI-on-Eumetsat-Elasticity/how-to-move-data-volume-cli-14_creodias.png
+.. figure:: /openstackcli/How-to-move-data-volume-between-two-VMs-using-OpenStack-CLI/how-to-move-data-volume-cli-14_creodias.png
+   :alt: Attaching volume to the destination virtual machine
    :class: image-with-border
 
 To verify, execute the **openstack volume list** command once more:
 
-.. figure:: /openstackcli/How-to-move-data-volume-between-two-VMs-using-OpenStack-CLI-on-Eumetsat-Elasticity/how-to-move-data-volume-cli-15_creodias.png
+.. figure:: /openstackcli/How-to-move-data-volume-between-two-VMs-using-OpenStack-CLI/how-to-move-data-volume-cli-15_creodias.png
+   :alt: Attaching volume to the destination virtual machine
    :class: image-with-border
 
 The **Status** of the volume should now be **in-use** and the **Attached to** column should contain appropriate information regarding to which virtual machine your volume was attached.

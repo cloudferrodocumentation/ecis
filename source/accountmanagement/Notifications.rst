@@ -22,6 +22,7 @@ Overview
 Open option **Notifications** in the left-side menu under **Support**.
 
 .. figure:: /accountmanagement/Notifications/first-screen-for-notifications-ecis-portal.png
+   :alt: Overview
    :class: image-with-border
 
 This section displays messages sent through the portal. These messages may concern:
@@ -57,6 +58,7 @@ Service and maintenance notifications
 In regular use, the **Notifications** section is also used for operator announcements.
 
 .. figure:: /accountmanagement/Notifications/notifications-from-eumetsat-old-ecis-portal.png
+   :alt: Service and maintenance notifications
    :class: image-with-border
 
 Notifications may appear under different message labels, such as **ANNOUNCEMENT** and **INFO**. These messages may cover new portal features, planned maintenance, service upgrades, fixes, and other operational updates.

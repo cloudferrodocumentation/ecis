@@ -1,5 +1,5 @@
-Bootable versus non-bootable volumes on |brand-name|
-=====================================================================
+Bootable versus non-bootable volumes
+====================================
 
 Each volume has an indicator called **bootable** which shows whether an operating system can be booted from it or not. That indicator can be set up manually at any time. If you set it up on a volume that does not contain a bootable operating system and later try to boot a VM from it, you will see an error as a response.
 
@@ -55,12 +55,6 @@ We assume you are familiar with OpenStack CLI client. If not, here are some arti
 
     * :doc:`/openstackcli/How-to-install-OpenStackClient-on-Windows-using-Windows-Subsystem-for-Linux-on-OpenStack-Hosting`
 
-.. ifconfig:: brand_name in two_fa_activated
-
-    .. jinja:: brand_names
-
-       Once you have installed this piece of software, you need to authenticate to start using it: :doc:`/accountmanagement/How-to-activate-OpenStack-CLI-access-to-cloud`
-
 .. ifconfig:: brand_name not in two_fa_activated
 
     .. ifconfig:: brand_name != 'WEkEO'
@@ -68,10 +62,6 @@ We assume you are familiar with OpenStack CLI client. If not, here are some arti
        .. jinja:: brand_names
 
           Once you have installed this piece of software, you need to authenticate to start using it: :doc:`/accountmanagement/How-to-activate-OpenStack-CLI-access-to-cloud`
-
-    .. ifconfig:: brand_name == 'WEkEO'
-
-       Once you have installed this piece of software, you need to authenticate to start using it: :doc:`/accountmanagement/How-to-activate-OpenStack-CLI-access-to-WEkEO-cloud-using-Federated-IDP-authorization-and-application-credentials`
 
 No. 3 **Familiarity with the process of creation of virtual machines within OpenStack**
 
@@ -104,13 +94,15 @@ This is how they look like in Horizon dashboard:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/Bootable-versus-non-bootable-volumes-on-Eumetsat-Elasticity/{{ datavolume002 }}
+   .. image:: /datavolume/Bootable-versus-non-bootable-volumes/{{ datavolume002 }}
+      :alt: Which volumes appear when creating a virtual machine using Horizon dashboard?
 
 When creating an instance, if we choose **Volume** from drop-down menu **Select Boot Source**, only **second-volume** will be visible because it is bootable.
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/Bootable-versus-non-bootable-volumes-on-Eumetsat-Elasticity/{{ datavolume003 }}
+   .. image:: /datavolume/Bootable-versus-non-bootable-volumes/{{ datavolume003 }}
+      :alt: Which volumes appear when creating a virtual machine using Horizon dashboard?
 
 Attempting to create a virtual machine from non-bootable volume using OpenStack CLI
 ---------------------------------------------------------------------------------------
@@ -131,7 +123,8 @@ Navigate to **Volumes -> Volumes** of the Horizon dashboard. You should see the 
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/Bootable-versus-non-bootable-volumes-on-Eumetsat-Elasticity/{{ datavolume004 }}
+   .. image:: /datavolume/Bootable-versus-non-bootable-volumes/{{ datavolume004 }}
+      :alt: Checking whether a volume is bootable using Horizon dashboard
 
 On this screen, in the row containing the volume you want to modify, check the value of column **Bootable**. On screenshot above, **bootable** status for volume **my-volume** was highlighted using the blue rectangle. It shows that that volume is indeed **bootable**.
 
@@ -148,7 +141,8 @@ You should get output similar to this:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/Bootable-versus-non-bootable-volumes-on-Eumetsat-Elasticity/{{ datavolume005 }}
+   .. image:: /datavolume/Bootable-versus-non-bootable-volumes/{{ datavolume005 }}
+      :alt: Checking whether a volume is bootable using OpenStack CLI client
 
 This contains information about your volumes, such as their IDs, names and sizes. To check whether a volume is **bootable**, execute the command below:
 
@@ -160,7 +154,8 @@ You should get information whether the volume is **bootable**:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/Bootable-versus-non-bootable-volumes-on-Eumetsat-Elasticity/{{ datavolume006 }}
+   .. image:: /datavolume/Bootable-versus-non-bootable-volumes/{{ datavolume006 }}
+      :alt: Checking whether a volume is bootable using OpenStack CLI client
 
 Checking whether a volume snapshot was created from a bootable volume
 -----------------------------------------------------------------------
@@ -174,25 +169,29 @@ Navigate to section **Volume -> Snapshots** of the Horizon dashboard. You should
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/Bootable-versus-non-bootable-volumes-on-Eumetsat-Elasticity/{{ datavolume007 }}
+   .. image:: /datavolume/Bootable-versus-non-bootable-volumes/{{ datavolume007 }}
+      :alt: Checking whether a volume snapshot was created from a bootable volume using Horizon dashboard
 
 Click on the name of volume snapshot from which you want to create a virtual machine:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/Bootable-versus-non-bootable-volumes-on-Eumetsat-Elasticity/{{ datavolume008 }}
+   .. image:: /datavolume/Bootable-versus-non-bootable-volumes/{{ datavolume008 }}
+      :alt: Checking whether a volume snapshot was created from a bootable volume using Horizon dashboard
 
 You should see the information about the volume snapshot. Click on the name of the volume from which the snapshot was created:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/Bootable-versus-non-bootable-volumes-on-Eumetsat-Elasticity/{{ datavolume009 }}
+   .. image:: /datavolume/Bootable-versus-non-bootable-volumes/{{ datavolume009 }}
+      :alt: Checking whether a volume snapshot was created from a bootable volume using Horizon dashboard
 
 In section **Specs**, check the value called **Bootable**. Here, it is highlighted with a red rectangle:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/Bootable-versus-non-bootable-volumes-on-Eumetsat-Elasticity/{{ datavolume010 }}
+   .. image:: /datavolume/Bootable-versus-non-bootable-volumes/{{ datavolume010 }}
+      :alt: Checking whether a volume snapshot was created from a bootable volume using Horizon dashboard
 
 Checking whether a volume snapshot was created from a bootable volume using OpenStack CLI client
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -207,7 +206,8 @@ A list of volume snapshots, similar to this, will appear:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/Bootable-versus-non-bootable-volumes-on-Eumetsat-Elasticity/{{ datavolume011 }}
+   .. image:: /datavolume/Bootable-versus-non-bootable-volumes/{{ datavolume011 }}
+      :alt: Checking whether a volume snapshot was created from a bootable volume using OpenStack CLI client
 
 To see concrete data about a volume, execute this command:
 
@@ -221,7 +221,8 @@ In this example, this ID is **cd101818-d690-4905-8b4c-465d868cc07f**. Therefore,
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/Bootable-versus-non-bootable-volumes-on-Eumetsat-Elasticity/{{ datavolume012 }}
+   .. image:: /datavolume/Bootable-versus-non-bootable-volumes/{{ datavolume012 }}
+      :alt: Checking whether a volume snapshot was created from a bootable volume using OpenStack CLI client
 
 Field **volume_id** contains the ID of the volume from which the volume snapshot was created. The following command will provide information about this volume (replace **<<volume_id>>** with that ID of the volume):
 
@@ -233,7 +234,8 @@ You should get information whether the volume is **bootable**:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/Bootable-versus-non-bootable-volumes-on-Eumetsat-Elasticity/{{ datavolume006 }}
+   .. image:: /datavolume/Bootable-versus-non-bootable-volumes/{{ datavolume006 }}
+      :alt: Checking whether a volume snapshot was created from a bootable volume using OpenStack CLI client
 
 Modifying bootable status of a volume
 ------------------------------------------------------------------
@@ -247,13 +249,15 @@ If you want to change the **bootable** status of a volume, navigate to the row c
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/Bootable-versus-non-bootable-volumes-on-Eumetsat-Elasticity/{{ datavolume013 }}
+   .. image:: /datavolume/Bootable-versus-non-bootable-volumes/{{ datavolume013 }}
+      :alt: Modifying bootable status of a volume using the Horizon dashboard
 
 You should see the following window:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/Bootable-versus-non-bootable-volumes-on-Eumetsat-Elasticity/{{ datavolume014 }}
+   .. image:: /datavolume/Bootable-versus-non-bootable-volumes/{{ datavolume014 }}
+      :alt: Modifying bootable status of a volume using the Horizon dashboard
 
 To change the **bootable** status, simply check or uncheck (depending on what you want to achieve) the checkbox **Bootable** and click **Submit**.
 
@@ -261,7 +265,8 @@ In example above, the volume named **my-volume** had **bootable** status turned 
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/Bootable-versus-non-bootable-volumes-on-Eumetsat-Elasticity/{{ datavolume015 }}
+   .. image:: /datavolume/Bootable-versus-non-bootable-volumes/{{ datavolume015 }}
+      :alt: Modifying bootable status of a volume using the Horizon dashboard
 
 and click **Submit**.
 
@@ -269,13 +274,15 @@ The following message should appear next to top right corner of the Horizon dash
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/Bootable-versus-non-bootable-volumes-on-Eumetsat-Elasticity/{{ datavolume016 }}
+   .. image:: /datavolume/Bootable-versus-non-bootable-volumes/{{ datavolume016 }}
+      :alt: Modifying bootable status of a volume using the Horizon dashboard
 
 And the value of column **Bootable** should also change:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/Bootable-versus-non-bootable-volumes-on-Eumetsat-Elasticity/{{ datavolume017 }}
+   .. image:: /datavolume/Bootable-versus-non-bootable-volumes/{{ datavolume017 }}
+      :alt: Modifying bootable status of a volume using the Horizon dashboard
 
 Modifying bootable status of a volume using OpenStack CLI client
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -311,7 +318,8 @@ In this case, the virtual machine should still be spawned, but its BIOS will not
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/Bootable-versus-non-bootable-volumes-on-Eumetsat-Elasticity/{{ datavolume018 }}
+   .. image:: /datavolume/Bootable-versus-non-bootable-volumes/{{ datavolume018 }}
+      :alt: What happens if you launch a virtual machine from a volume which does not have a functional operating system?
 
 .. TODO
 

@@ -1,4 +1,4 @@
-How to activate OpenStack CLI access to |brand-name| cloud
+How to activate OpenStack CLI access to the cloud
 ==========================================================================
 
 OpenStack CLI access can be activated by sourcing an RC file downloaded from Horizon. application credential authentication is available on **R1**, **R2**, and **FRA1-3**. On **FRA1-3**, you can also use the classic OpenStack RC file with your OpenStack username and password.
@@ -77,14 +77,14 @@ Horizon provides RC files from the account menu in the upper-right corner of the
 
    .. tab:: R1 | R2
 
-        .. figure:: /accountmanagement/How-to-activate-OpenStack-CLI-access-to-Eumetsat-Elasticity-cloud/Screenshot_20260527_105024.png
+        .. figure:: /accountmanagement/How-to-activate-OpenStack-CLI-access-to-cloud/Screenshot_20260527_105024.png
            :class: image-with-border
 
            RC file download options in R1 and R2
 
    .. tab:: FRA1-3
 
-        .. figure:: /accountmanagement/How-to-activate-OpenStack-CLI-access-to-Eumetsat-Elasticity-cloud/Screenshot_20260527_104306.png
+        .. figure:: /accountmanagement/How-to-activate-OpenStack-CLI-access-to-cloud/Screenshot_20260527_104306.png
            :class: image-with-border
 
            RC file download options in FRA1-3
@@ -109,21 +109,21 @@ You can download the application credential RC file immediately after creating t
 
    .. tab:: R1
 
-        .. figure:: /accountmanagement/How-to-activate-OpenStack-CLI-access-to-Eumetsat-Elasticity-cloud/Screenshot_20260527_132457.png
+        .. figure:: /accountmanagement/How-to-activate-OpenStack-CLI-access-to-cloud/Screenshot_20260527_132457.png
            :class: image-with-border
 
            Open RC file in R1
 
    .. tab:: R2
 
-        .. figure:: /accountmanagement/How-to-activate-OpenStack-CLI-access-to-Eumetsat-Elasticity-cloud/Screenshot_20260527_132655.png
+        .. figure:: /accountmanagement/How-to-activate-OpenStack-CLI-access-to-cloud/Screenshot_20260527_132655.png
            :class: image-with-border
 
            Open RC file in R2
 
    .. tab:: FRA1-3
 
-        .. figure:: /accountmanagement/How-to-activate-OpenStack-CLI-access-to-Eumetsat-Elasticity-cloud/Screenshot_20260527_132751.png
+        .. figure:: /accountmanagement/How-to-activate-OpenStack-CLI-access-to-cloud/Screenshot_20260527_132751.png
            :class: image-with-border
 
            Open RC file download options in FRA1-3
@@ -137,7 +137,7 @@ In this environment, this option is available for **FRA1-3**. For **R1** and **R
 
 Click the RC file option that matches your authentication method. Horizon downloads a shell file with the **.sh** extension, usually into your browser's default download folder.
 
-.. figure:: /accountmanagement/How-to-activate-OpenStack-CLI-access-to-Eumetsat-Elasticity-cloud/Screenshot_20260527_132859.png
+.. figure:: /accountmanagement/How-to-activate-OpenStack-CLI-access-to-cloud/Screenshot_20260527_132859.png
    :class: image-with-border
 
    Downloaded open RC file OpenStack RC File from FRA1-3
@@ -196,7 +196,7 @@ Replace **project-name-openrc-app-credentials.sh** with the actual file name sho
 
 This is what it would look like in the Terminal window:
 
-.. figure:: /accountmanagement/How-to-activate-OpenStack-CLI-access-to-Eumetsat-Elasticity-cloud/Screenshot_20260527_134841.png
+.. figure:: /accountmanagement/How-to-activate-OpenStack-CLI-access-to-cloud/Screenshot_20260527_134841.png
    :class: image-with-border
 
    Sourcing the downloaded open RC file
@@ -207,7 +207,7 @@ After the file is sourced, test authentication:
 
    openstack flavor list
 
-.. figure:: /accountmanagement/How-to-activate-OpenStack-CLI-access-to-Eumetsat-Elasticity-cloud/Screenshot_20260527_135611.png
+.. figure:: /accountmanagement/How-to-activate-OpenStack-CLI-access-to-cloud/Screenshot_20260527_135611.png
    :class: image-with-border
 
 If authentication works, the command returns the list of flavors visible in the selected project and region. This confirms that the current terminal session is authenticated.
@@ -252,7 +252,7 @@ To see which OpenStack environment variables are currently set, run:
 
 The output may include application credential secrets, project identifiers, usernames, region names, and authentication URLs.
 
-.. figure:: /accountmanagement/How-to-activate-OpenStack-CLI-access-to-Eumetsat-Elasticity-cloud/Screenshot_20260527_135945.png
+.. figure:: /accountmanagement/How-to-activate-OpenStack-CLI-access-to-cloud/Screenshot_20260527_135945.png
    :class: image-with-border
 
    A list of env parameters the openstack commands draws data from

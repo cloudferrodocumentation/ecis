@@ -1,5 +1,5 @@
-How to install Python in Windows on |brand-name|
-==============================================================
+How to install Python in Windows
+================================
 
 Python installation is necessary in order to use **boto3** library.
 
@@ -7,30 +7,30 @@ In order to proceed a Python installation on Windows machine, please follow thos
 
 1. Type in the https://www.python.org address in your browser.
 
-.. image:: /networking/How-to-install-Python-in-Windows-on-Eumetsat-Elasticity/coz_py1.png
+.. image:: /networking/How-to-install-Python-in-Windows/coz_py1.png
 
 2. Navigate to “Downloads” button at then choose the latest version of software. (Currently it is Python 3.7.2)
 
-.. image:: /networking/How-to-install-Python-in-Windows-on-Eumetsat-Elasticity/coz_py2.png
+.. image:: /networking/How-to-install-Python-in-Windows/coz_py2.png
 
 3. Save the exe file that consists of installation packages.
 
-.. image:: /networking/How-to-install-Python-in-Windows-on-Eumetsat-Elasticity/coz_py3.png
+.. image:: /networking/How-to-install-Python-in-Windows/coz_py3.png
 
 4. Open previously saved file and look at the prompt window. It is strongly recommended to tick **Add Python 3.7 to PATH**. This option provides new environment variables.
 
 To obtain more control over installation choose “Customize installation”
 
-.. image:: /networking/How-to-install-Python-in-Windows-on-Eumetsat-Elasticity/coz_py4.png
+.. image:: /networking/How-to-install-Python-in-Windows/coz_py4.png
 
 5. In **Advances** options tab you may deliver more specific values such as debug libraries. After that, click on the **Install**.
 
-.. image:: /networking/How-to-install-Python-in-Windows-on-Eumetsat-Elasticity/coz_py5.png
+.. image:: /networking/How-to-install-Python-in-Windows/coz_py5.png
 
 6. Open the Command prompt by clicking on the “Start” button and typing in **cmd**.
 
-.. image:: /networking/How-to-install-Python-in-Windows-on-Eumetsat-Elasticity/coz_faqpython.png
+.. image:: /networking/How-to-install-Python-in-Windows/coz_faqpython.png
 
 To verify installation, use **python –version** and **pip --version** commands in order to check the current version of software.
 
-.. image:: /networking/How-to-install-Python-in-Windows-on-Eumetsat-Elasticity/coz_py6.png
+.. image:: /networking/How-to-install-Python-in-Windows/coz_py6.png

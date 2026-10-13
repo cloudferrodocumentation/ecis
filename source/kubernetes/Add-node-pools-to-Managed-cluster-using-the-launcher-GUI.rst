@@ -67,20 +67,14 @@ How to add a node pool
 
 Open your cluster and click **Node Pools**. In the following image, we see a list of existing node pools, as well as the **Create node pool** button.
 
-To start, click that button:
-
-.. jinja:: mk8s_images
-
-   .. figure:: {{ mk8s006 }}
-      :class: image-with-border
-
-      Example node pool list.
+To start, click **Add node pool**.
 
 The node pool creation form looks like this:
 
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s007 }}
+      :alt: How to add a node pool
       :class: image-with-border
 
       Node pool creation form.
@@ -94,6 +88,7 @@ Flavor
    .. jinja:: mk8s_images
 
       .. figure:: {{ mk8s008 }}
+         :alt: How to add a node pool
          :class: image-with-border
 
          Select flavor for node pool.
@@ -141,6 +136,7 @@ To change the parameters of an existing node pool, click the pen icon, |PENICON|
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s009 }}
+      :alt: How to edit a node pool
       :class: image-with-border
 
       Node pool editing screen.
@@ -153,6 +149,7 @@ Define a range
    .. jinja:: mk8s_images
 
       .. figure:: {{ mk8s010 }}
+         :alt: How to edit a node pool
          :class: image-with-border
 
          Autoscaling enabled with minimum and maximum limits.
@@ -163,6 +160,7 @@ Redefine fixed size of node pool
    .. jinja:: mk8s_images
 
       .. figure:: {{ mk8s011 }}
+         :alt: How to edit a node pool
          :class: image-with-border
 
    Worker nodes are scaled manually. The status temporarily changes to |SCALING|.
@@ -184,13 +182,6 @@ With worker nodes added, you can start deploying pods, creating services, and ru
 .. jinja:: brand_names
 
    If you already have a cluster, you can back it up with :doc:`/kubernetes/Managed-Kubernetes-backups`.
-
-.. ifconfig:: brand_name in managed_kubernetes_with_magnum
-
-   .. jinja:: brand_names
-
-      Learn how to connect a VM to your Kubernetes network: :doc:`/kubernetes/Accessing-OpenStack-resources-from-{{ brand_name_hyphen }}-Managed-Kubernetes-using-shared-networks`.
-
 
 .. jinja:: brand_names
 

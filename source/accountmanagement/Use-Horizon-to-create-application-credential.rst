@@ -1,5 +1,5 @@
-Use Horizon to create an application credential on |brand-name|
-==========================================================================
+Use Horizon to create an application credential
+===============================================
 
 Cloud parameters for authentication and later OpenStack CLI access are stored in an OpenStack environment file, often called an *RC file*. When you use application credentials, Horizon can also provide a **clouds.yaml** file.
 
@@ -67,14 +67,14 @@ In Horizon, use the following command chain:
 
 **Identity** -> **Application Credentials** -> **+ Create Application Credential**.
 
-.. figure:: /accountmanagement/Use-Horizon-to-create-application-credential-on-Eumetsat-Elasticity/Screenshot_20260526_163816.png
+.. figure:: /accountmanagement/Use-Horizon-to-create-application-credential/Screenshot_20260526_163816.png
    :class: image-with-border
 
    Opening the Application Credentials page in Horizon
 
 Then enter the required data in the **Create Application Credential** form.
 
-.. figure:: /accountmanagement/Use-Horizon-to-create-application-credential-on-Eumetsat-Elasticity/Screenshot_20260526_164020.png
+.. figure:: /accountmanagement/Use-Horizon-to-create-application-credential/Screenshot_20260526_164020.png
    :class: image-with-border
 
    Creating a new application credential
@@ -87,7 +87,7 @@ The fastest option is to enter only the credential name in the **Name** field. I
 
 After entering the name, click **Create Application Credential**.
 
-.. figure:: /accountmanagement/Use-Horizon-to-create-application-credential-on-Eumetsat-Elasticity/Screenshot_20260526_164237.png
+.. figure:: /accountmanagement/Use-Horizon-to-create-application-credential/Screenshot_20260526_164237.png
    :class: image-with-border
 
    Application credential details after creation
@@ -109,7 +109,7 @@ After the application credential is created, click **Download openrc file**.
 
 Horizon downloads a shell file similar to this:
 
-.. figure:: /accountmanagement/Use-Horizon-to-create-application-credential-on-Eumetsat-Elasticity/Screenshot_20260526_165243.png
+.. figure:: /accountmanagement/Use-Horizon-to-create-application-credential/Screenshot_20260526_165243.png
    :class: image-with-border
 
    Downloaded application credential openrc file
@@ -149,7 +149,7 @@ You can also download the **clouds.yaml** file from the same application credent
 
 It looks similar to this:
 
-.. figure:: /accountmanagement/Use-Horizon-to-create-application-credential-on-Eumetsat-Elasticity/Screenshot_20260526_165605.png
+.. figure:: /accountmanagement/Use-Horizon-to-create-application-credential/Screenshot_20260526_165605.png
    :class: image-with-border
 
    Downloaded clouds.yaml file

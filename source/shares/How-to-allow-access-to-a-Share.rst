@@ -90,6 +90,7 @@ Log in to Horizon and select the correct project. To open the **Shares** page, u
 .. jinja:: shares_images
 
    .. figure:: /shares/How-to-allow-access-to-a-Share/{{ shares021 }}
+      :alt: Open the Shares page
       :class: image-with-border
       :align: center
 
@@ -107,6 +108,7 @@ In the row of the share, open the **Actions** menu on the right side. Use comman
 .. jinja:: shares_images
 
    .. figure:: /shares/How-to-allow-access-to-a-Share/{{ shares022 }}
+      :alt: Open the share actions menu
       :class: image-with-border
       :align: center
 
@@ -124,6 +126,7 @@ Open the page or dialog used for managing access to the selected share. To reach
 .. jinja:: shares_images
 
    .. figure:: /shares/How-to-allow-access-to-a-Share/{{ shares023 }}
+      :alt: Open the access rules page
       :class: image-with-border
       :align: center
 
@@ -141,6 +144,7 @@ Click the option for adding a new rule. To add a rule, use:
 .. jinja:: shares_images
 
    .. figure:: /shares/How-to-allow-access-to-a-Share/{{ shares024 }}
+      :alt: Add a new access rule
       :class: image-with-border
       :align: center
 
@@ -157,6 +161,7 @@ Use the following fields:
 .. jinja:: shares_images
 
    .. figure:: /shares/How-to-allow-access-to-a-Share/{{ shares025 }}
+      :alt: Add a new access rule
       :class: image-with-border
       :align: center
 
@@ -174,6 +179,7 @@ In this example, the VM has addresses on two networks.
 .. jinja:: shares_images
 
    .. figure:: /shares/How-to-allow-access-to-a-Share/{{ shares026 }}
+      :alt: Example access rule
       :class: image-with-border
       :align: center
 
@@ -234,6 +240,7 @@ After the rule is created, check that it appears in the access rules list. To ve
 .. jinja:: shares_images
 
    .. figure:: /shares/How-to-allow-access-to-a-Share/{{ shares027 }}
+      :alt: Verify the access rule
       :class: image-with-border
       :align: center
 
@@ -253,6 +260,7 @@ Before mounting the share from Linux, you need the export location. Open the sha
 .. jinja:: shares_images
 
    .. figure:: /shares/How-to-allow-access-to-a-Share/{{ shares028 }}
+      :alt: Check the export location
       :class: image-with-border
       :align: center
 
@@ -315,6 +323,7 @@ You can also check the mounted filesystems:
 .. jinja:: shares_images
 
    .. figure:: /shares/How-to-allow-access-to-a-Share/{{ shares029 }}
+      :alt: Test the access from the VM
       :class: image-with-border
       :align: center
 

@@ -1,12 +1,12 @@
-How to upload custom image to |brand-name| cloud using OpenStack Horizon dashboard
+How to upload custom image to the cloud using OpenStack Horizon dashboard
 =================================================================================================
 
-In this tutorial, you will upload custom image stored on your local computer to |brand-name|  cloud, using the Horizon Dashboard. The uploaded image will be available within your project alongside default images from |brand-name|  cloud and you will be able to create virtual machines using it.
+In this tutorial, you will upload custom image stored on your local computer to the cloud, using the Horizon Dashboard. The uploaded image will be available within your project alongside default images from the cloud and you will be able to create virtual machines using it.
 
 What We Are Going To Cover
 ------------------------------
 
- * How to check for the presence of image in |brand-name|  cloud
+ * How to check for the presence of image in the cloud
  * How different images might behave
  * How to upload an image using Horizon dashboard
  * Example: how to upload image for Debian 11
@@ -41,7 +41,7 @@ The following container formats are supported:
 
 No. 3 **Uploaded public SSH key**
 
-If the image you wish to upload requires you to attach an SSH public key while creating the virtual machine, the key will need to be uploaded to |brand-name|  cloud. One of these articles should help:
+If the image you wish to upload requires you to attach an SSH public key while creating the virtual machine, the key will need to be uploaded to the cloud. One of these articles should help:
 
 .. jinja:: brand_names
 
@@ -56,7 +56,8 @@ Login to the Horizon dashboard: |brand-name-site-link|.
 
 Use main menu command  **Compute -> Images** to see a list of images available in your project:
 
-.. image:: /cloud/How-to-upload-custom-image-to-Eumetsat-Elasticity-cloud-using-OpenStack-Horizon-dashboard/upload-image-horizon-01_creodias.png
+.. image:: /cloud/How-to-upload-custom-image-to-cloud-using-OpenStack-Horizon-dashboard/upload-image-horizon-01_creodias.png
+   :alt: Step 1: Check for the presence of image in your OpenStack cloud
 
 To see whether an image for the operating system you wish to upload is already present in the cloud, you can
 
@@ -67,7 +68,7 @@ To see whether an image for the operating system you wish to upload is already p
 Step 2: Know the rules for the image before uploading it
 ---------------------------------------------------------------
 
-Different images will behave differently on |brand-name|  cloud, depending on how they are built.
+Different images will behave differently on the cloud, depending on how they are built.
 
 SSH access
    If your image has SSH access enabled, you need to know what username to provide to access virtual machines created using that image. Most images will *expect* you to use SSH for access and will both
@@ -88,13 +89,13 @@ Web console access
 Privileges
    User accounts in the image might or might not have **sudo** privileges.
 
-Here are the typical rules for default images from |brand-name| cloud:
+Here are the typical rules for default images from the cloud:
 
 Account called eoconsole
    You can login to this account via web console. First login will not require you to provide any password, but you will need to set a new password in order to access this account. It has **sudo** privileges.
 
 Account called eouser
-   This account can be accessed via SSH. You can authenticate to it using SSH key you provided during creation of your virtual machine. It also has **sudo** privileges. You will use this account in almost all applications within |brand-name| cloud.
+   This account can be accessed via SSH. You can authenticate to it using SSH key you provided during creation of your virtual machine. It also has **sudo** privileges. You will use this account in almost all applications within the cloud.
 
 .. jinja:: brand_names
 
@@ -110,11 +111,12 @@ Step 3: Upload the image
 
 Assuming you still want to upload the image, click on the **Create Image** button. You should see the following window:
 
-.. image:: /cloud/How-to-upload-custom-image-to-Eumetsat-Elasticity-cloud-using-OpenStack-Horizon-dashboard/upload-image-horizon-02_creodias.png
+.. image:: /cloud/How-to-upload-custom-image-to-cloud-using-OpenStack-Horizon-dashboard/upload-image-horizon-02_creodias.png
+   :alt: Step 3: Upload the image
 
 Click on the question mark in the right upper corner will supply the basic information about the options:
 
-.. image:: /cloud/How-to-upload-custom-image-to-Eumetsat-Elasticity-cloud-using-OpenStack-Horizon-dashboard/image_options_explanation.png
+.. image:: /cloud/How-to-upload-custom-image-to-cloud-using-OpenStack-Horizon-dashboard/image_options_explanation.png
 
 Enter the chosen name of the image to the text field **Image Name**.
 
@@ -124,7 +126,7 @@ Click the **Browse** button to start file selector and select the file on your c
 
 From the drop-down menu **Format** choose the format of your image.
 
-.. image:: /cloud/How-to-upload-custom-image-to-Eumetsat-Elasticity-cloud-using-OpenStack-Horizon-dashboard/format_image_upload.png
+.. image:: /cloud/How-to-upload-custom-image-to-cloud-using-OpenStack-Horizon-dashboard/format_image_upload.png
 
 If you don't want your image to run on flavors which have RAM and storage lower than a certain value, you can specify those values using the fields **Minimum Disk (GB)** and **Minimum RAM (MB)**.
 
@@ -137,20 +139,19 @@ Once you have performed the above steps, click **Create Image**.
 
 Wait until your image is uploaded and created. After some time, the **Create Image** window should disappear and you should see that your image has **Saving** status. Wait until it has **Active** status.
 
-If your image is in the **Saving** status for too long, it could mean that something went wrong. Please contact |brand-name| customer support in this case: :doc:`Help-Desk-And-Support`
+If your image is in the **Saving** status for too long, it could mean that something went wrong. Please contact |brand-name| customer support in this case: :doc:`/accountmanagement/Help-Desk-And-Support`
 
-Your image should now be ready. Let us now download a real image and upload it to |brand-name| cloud.
+Your image should now be ready. Let us now download a real image and upload it to the cloud.
 
 Example: How to upload image for Debian 11
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This example covers uploading of the official QCOW2 cloud image for Debian 11, which is not available on |brand-name|  cloud by default.
+This example covers uploading of the official QCOW2 cloud image for Debian 11, which is not available on the cloud by default.
 
 On virtual machines created using that image, the default user name is **debian**. You can login to that account using SSH key provided during creation of virtual machine. You cannot use the web console to login there since password login is locked.
 
 First, navigate to https://cloud.debian.org/images/cloud/bullseye/latest/ and download the image **debian-11-generic-amd64.qcow2** to your computer.
 
-.. image:: /cloud/How-to-upload-custom-image-to-Eumetsat-Elasticity-cloud-using-OpenStack-Horizon-dashboard/upload-image-horizon-10_creodias.png
 
 Back in Horizon, use command **Compute -> Images** --> **Create Image** to define parameters for the upload.
 
@@ -162,19 +163,21 @@ Select **QCOW2 - QEMU Emulator** for drop-down menu **Format**.
 
 The window should now look like this:
 
-.. image:: /cloud/How-to-upload-custom-image-to-Eumetsat-Elasticity-cloud-using-OpenStack-Horizon-dashboard/upload-image-horizon-03_creodias.png
+.. image:: /cloud/How-to-upload-custom-image-to-cloud-using-OpenStack-Horizon-dashboard/upload-image-horizon-03_creodias.png
+   :alt: Example: How to upload image for Debian 11
 
 Click **Create Image**.
 
 At first, the **Create Image** button should show an indicator that work is being performed:
 
-.. image:: /cloud/How-to-upload-custom-image-to-Eumetsat-Elasticity-cloud-using-OpenStack-Horizon-dashboard/upload-image-horizon-04_creodias.png
+.. image:: /cloud/How-to-upload-custom-image-to-cloud-using-OpenStack-Horizon-dashboard/upload-image-horizon-04_creodias.png
+   :alt: Example: How to upload image for Debian 11
 
 After some time, the **Create Image** window should disappear and you should see that your image has **Saving** status.
 
 The image should be ready when it has **Active** status:
 
-.. image:: /cloud/How-to-upload-custom-image-to-Eumetsat-Elasticity-cloud-using-OpenStack-Horizon-dashboard/debian_test_created.png
+.. image:: /cloud/How-to-upload-custom-image-to-cloud-using-OpenStack-Horizon-dashboard/debian_test_created.png
 
 In the future, when you want to create a new virtual machine, you will have the image called **Debian-test** you just uploaded available to you.
 
@@ -188,11 +191,13 @@ If you lost Internet connection while uploading an image, the process will be st
 
 Refresh the page and login again if necessary. On the **Compute -> Images** section of the Horizon dashboard the image which failed to upload this way will not have the name you chose. The column **Name** will contain its ID. The row with such an image will look similar to this:
 
-.. image:: /cloud/How-to-upload-custom-image-to-Eumetsat-Elasticity-cloud-using-OpenStack-Horizon-dashboard/upload-image-horizon-07_creodias.png
+.. image:: /cloud/How-to-upload-custom-image-to-cloud-using-OpenStack-Horizon-dashboard/upload-image-horizon-07_creodias.png
+   :alt: Internet connection lost during upload
 
 Use the **Delete Image** option do delete the image. You will get the following prompt:
 
-.. image:: /cloud/How-to-upload-custom-image-to-Eumetsat-Elasticity-cloud-using-OpenStack-Horizon-dashboard/upload-image-horizon-08_creodias.png
+.. image:: /cloud/How-to-upload-custom-image-to-cloud-using-OpenStack-Horizon-dashboard/upload-image-horizon-08_creodias.png
+   :alt: Internet connection lost during upload
 
 Click **Delete Image**.
 
@@ -217,7 +222,7 @@ If it does not have **Saving** or **Active** status, delete the image as explain
 What To Do Next
 ----------------------
 
-The following articles explain basics of creating a virtual machine using default images on |brand-name| cloud:
+The following articles explain basics of creating a virtual machine using default images on the cloud:
 
 .. jinja:: brand_names
 
@@ -231,9 +236,3 @@ Also, note that the rules of accessing your virtual machine might be different f
 .. jinja:: brand_names
 
    If you want to upload image using the OpenStack CLI client, check the following article: :doc:`/cloud/How-to-upload-your-custom-image-using-OpenStack-CLI`. Using CLI has the advantage of giving you a chance to resume the upload process should the Internet connection fail.
-
-.. ifconfig:: brand_name not in brands_without_eodata
-
-   .. jinja:: brand_names
-
-      After having created a virtual machine using your custom image, you might want to configure access to EODATA, repository which contains Earth observation data. The following article contains information on how to do that if your image is based on Ubuntu, Debian or CentOS: :doc:`/eodata/How-to-mount-eodata-using-S3FS-in-Linux-on-{{ brand_name_hyphen }}`

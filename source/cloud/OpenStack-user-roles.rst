@@ -1,5 +1,5 @@
-OpenStack User Roles on |brand-name|
-==================================================
+OpenStack User Roles
+====================
 
 A **user role** in OpenStack cloud is a set of permissions that govern how members of specific groups interact with system resources, their access scope, and capabilities.
 
@@ -54,7 +54,7 @@ Ensure you know the following OpenStack commands:
    **kubectl**
       CLI for Kubernetes clusters. Example article:
 
-      :doc:`/kubernetes/How-To-Access-Kubernetes-Cluster-Post-Deployment-Using-Kubectl-On-{{ brand_name_hyphen }}-OpenStack-Magnum`
+      `Get a shell to a running container <https://kubernetes.io/docs/tasks/debug/debug-application/get-shell-running-container/>`_
 
 Frequently used user roles
 ---------------------------------
@@ -127,36 +127,18 @@ You can view roles in Horizon by navigating to **Identity** -> **Roles**.
 .. list-table::
    :widths: 50 50
 
-   * - .. figure:: /cloud/OpenStack-user-roles-on-Eumetsat-Elasticity/user-roles-list-2.png
-     - .. figure:: /cloud/OpenStack-user-roles-on-Eumetsat-Elasticity/user-roles-list-1.png
+   * - .. figure:: /cloud/OpenStack-user-roles/user-roles-list-2.png
+     - .. figure:: /cloud/OpenStack-user-roles/user-roles-list-1.png
 
 Assigning multiple roles is best done during project creation rather than user creation.
 
-.. figure:: /cloud/OpenStack-user-roles-on-Eumetsat-Elasticity/openstack-user-roles-create-4.png
+.. figure:: /cloud/OpenStack-user-roles/openstack-user-roles-create-4.png
    :class: image-with-border
 
 Examples of using user roles
 ---------------------------------------------------
 
 The following articles, as one of many steps, describe how to assign a role to the new project, credential, user or group.
-
-
-.. ifconfig:: brand_name not in brands_without_eodata
-
-
-   Example: Using user roles while creating application credential in Horizon
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-   Normally, you access the cloud via user credentials, which may be one- or two-factor credentials. OpenStack provides a more direct procedure of gaining access to cloud with application credential and you can create a credential with several user roles.
-
-   That S3 article selects user roles when creating an application credential, through Horizon:
-
-   .. jinja:: brand_names
-
-      :doc:`/s3/Create-S3-bucket-and-use-it-in-Sentinel-Hub-requests`
-
-   .. figure:: /cloud/OpenStack-user-roles-on-Eumetsat-Elasticity/user-roles-list-create-2.png
-      :class: image-with-border
 
 
 Example: Using user roles while creating application credential via the CLI
@@ -170,7 +152,7 @@ This is the main article about application credentials; it is mostly using CLI:
 
 Here is how to specify user roles through CLI parameters:
 
-.. figure:: /cloud/OpenStack-user-roles-on-Eumetsat-Elasticity/user-roles-list-create-1.png
+.. figure:: /cloud/OpenStack-user-roles/user-roles-list-create-1.png
    :class: image-with-border
 
 Example: Using user roles while creating a new project
@@ -184,44 +166,22 @@ Example: Using user roles while creating a new project
 
 we use command **Project Members** to define which users to include into the project:
 
-.. figure:: /cloud/OpenStack-user-roles-on-Eumetsat-Elasticity/user-roles-list-create-4.png
+.. figure:: /cloud/OpenStack-user-roles/user-roles-list-create-4.png
    :class: image-with-border
 
 You would then continue by defining the roles for each user in the project:
 
-.. figure:: /cloud/OpenStack-user-roles-on-Eumetsat-Elasticity/user-roles-list-create-5.png
+.. figure:: /cloud/OpenStack-user-roles/user-roles-list-create-5.png
    :class: image-with-border
 
-.. jinja:: brand_names
-
-   See this Rancher article:
-
-   :doc:`/kubernetes/How-to-install-Rancher-RKE2-Kubernetes-on-{{ brand_name_hyphen }}-cloud`.
-
-   Then, in Preparation step 1, a new project is created, with the following user roles:
+The following example project has these user roles:
 
  * **load-balancer_member**,
  * **member** and
  * **creator**.
 
-.. figure:: /cloud/OpenStack-user-roles-on-Eumetsat-Elasticity/user-roles-list-create-6.png
+.. figure:: /cloud/OpenStack-user-roles/user-roles-list-create-6.png
    :class: image-with-border
-
-.. ifconfig:: brand_name not in brands_without_eodata
-
-    Example: Using member role only while creating a new user
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-    In SLURM article, we first create a new OpenStack Keystone user, with the role of **member**.
-
-    .. jinja:: brand_names
-
-       :doc:`/cuttingedge/Sample-SLURM-Cluster-on-{{ brand_name_hyphen }}-Cloud-with-ElastiCluster`
-
-    .. figure:: /cloud/OpenStack-user-roles-on-Eumetsat-Elasticity/user-roles-list-create-3.png
-       :class: image-with-border
-
-    That user can login to Horizon and use project resources together with other users which are defined in a similar way.
 
 Dictionary of other roles
 -------------------------

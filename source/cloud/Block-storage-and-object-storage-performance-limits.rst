@@ -1,5 +1,5 @@
-Block storage and object storage performance limits on |brand-name|
-=========================================================================================
+Block storage and object storage performance limits
+===================================================
 
 On |brand-name|, there are performance limits for **HDD**, **NVMe (SSD)**, and **Object Storage** to ensure stable operation and protect against accidental DDoS attacks.
 

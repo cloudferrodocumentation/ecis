@@ -1,5 +1,5 @@
-Upgrade Managed Kubernetes cluster on |brand-name|
-==================================================
+Upgrade Managed Kubernetes cluster
+==================================
 
 .. |RUNNING| image:: kubernetes-launcher-gui-9.png
 .. |UPGRADING| image:: ecis_select_flavor_for_node_pool.png
@@ -61,7 +61,6 @@ Upgrade availability is checked in the region where the cluster is running. Make
 Review the target Kubernetes version before upgrading. Check whether your workloads, manifests, Helm charts, operators, CRDs, admission webhooks, storage integrations, and ingress configuration are compatible with the target version.
 
 ..
-  .. jinja:: brand_names
 ..
   For more information about version availability and the Service-Active window, see :doc:`/kubernetes/Managed-Kubernetes-Version-Support-Model`.
 
@@ -71,38 +70,19 @@ Upgrading to a newer version of Managed Kubernetes
 
 First, check whether a newer Kubernetes version is available for your cluster. If your cluster is already on the highest available version, the upgrade option is not offered.
 
-.. jinja:: mk8s_images
-
-   .. figure:: {{ mk8s074 }}
-      :class: image-with-border
-
 If an upgrade is available, open the cluster details page.
-
-.. jinja:: mk8s_images
-
-   .. figure:: {{ mk8s075 }}
-      :class: image-with-border
 
 Click **Upgrade to <version>** and confirm in the modal window.
 
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s076 }}
+      :alt: Upgrading to a newer version of Managed Kubernetes
       :class: image-with-border
 
 While the upgrade runs, the cluster status changes to |UPGRADING|.
 
-.. jinja:: mk8s_images
-
-   .. figure:: {{ mk8s077 }}
-      :class: image-with-border
-
 When the upgrade completes, the cluster returns to |RUNNING| and the Kubernetes version is updated in the cluster details.
-
-.. jinja:: mk8s_images
-
-   .. figure:: {{ mk8s078 }}
-      :class: image-with-border
 
 .. note::
 
@@ -162,7 +142,6 @@ After a successful upgrade, keep monitoring the cluster for some time and review
 
 .. jinja:: brand_names
 
-   To understand the version lifecycle, see :doc:`/kubernetes/Managed-Kubernetes-Version-Support-Model`.
 
    To review responsibilities before future upgrades, see :doc:`/kubernetes/Managed-Kubernetes-Shared-Responsibility-Model`.
 

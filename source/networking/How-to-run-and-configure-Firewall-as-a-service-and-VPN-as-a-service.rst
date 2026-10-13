@@ -1,5 +1,5 @@
-How to run and configure Firewall as a service and VPN as a service on |brand-name|
-======================================================================================================================
+How to run and configure Firewall as a service and VPN as a service
+===================================================================
 
 This guide provides a sample process for configuring VPN as a service. It should not be considered the only way to configure this solution.
 
@@ -42,12 +42,6 @@ No. 3 **Graphical user interface for a VM**
 
 Click here for instructions on how to install a GUI on an Ubuntu 20.04 VM:
 
-.. ifconfig:: brand_name in special_eodata
-
-   .. jinja:: brand_names
-
-      :doc:`/cloud/cloud/How-to-use-GUI-in-VM-with-Linux-on-{{ brand_name_hyphen }}`.
-
 .. ifconfig:: brand_name not in special_eodata
 
    .. jinja:: brand_names
@@ -67,12 +61,12 @@ Creating a network called Gateway
 
 Log in to the OpenStack dashboard and go to **Network** → **Networks** and click on **Create Network** button.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/screen224.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/screen224.png
    :class: image-with-border
 
 Set the Network Name to **Gateway** and go to the **Subnet** tab.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/screen3_ds.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/screen3_ds.png
    :class: image-with-border
 
 Set the Subnet Name to **Gateway_subnet**. Use the following settings:
@@ -82,7 +76,7 @@ Set the Subnet Name to **Gateway_subnet**. Use the following settings:
 
 Click on Next to get to **Subnet Details** screen. There, ensure **Enable DHCP** is checked, leave other fields blank and click on **Create**.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/screen4_ds.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/screen4_ds.png
    :class: image-with-border
 
 The **Gateway** network is created.
@@ -99,7 +93,7 @@ Repeat the previous steps with different details:
 
 The result that these two networks are visible in **Network** → **Networks** menu:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/screen44_ds.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/screen44_ds.png
    :class: image-with-border
 
 .. note::
@@ -111,32 +105,32 @@ Create a router
 
 Click the **Create Router** button.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/screen5_ds.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/screen5_ds.png
    :class: image-with-border
 
 Name the router (e.g., **Router_Fwaas**). Select the **external** network in the **External Network** tab and click **Create Router**.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/screen6_ds.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/screen6_ds.png
    :class: image-with-border
 
 Click the name of your new router.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/screen7.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/screen7.png
    :class: image-with-border
 
 Go to the **Interfaces** tab and click **Add Interface**.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/screen8_ds.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/screen8_ds.png
    :class: image-with-border
 
 From the **Subnet** dropdown, select **Gateway_subnet** and click **Submit**.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/screen9_ds.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/screen9_ds.png
    :class: image-with-border
 
 To view the network layout, go to **Network** → **Network Topology**.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/scrn10_ds.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/scrn10_ds.png
    :class: image-with-border
 
 .. note::
@@ -152,17 +146,17 @@ Prerequisite No. 2 shows how to create a new virtual machine under OpenStack. In
 
 Navigate to **Compute** → **Instances** and click **Launch Instance**.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/screen11.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/screen11.png
    :class: image-with-border
 
 Enter a name, e.g., **Firewall_VM**, and go to the **Source** tab.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/screen12.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/screen12.png
    :class: image-with-border
 
 Choose the **opnsense** image and move it to the allocated side. Then go to the **Flavor** tab.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/screen13.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/screen13.png
    :class: image-with-border
 
 Use appropriate flavors for OPNsense
@@ -187,7 +181,7 @@ Insert networks
 
 Go to the **Networks** tab.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/screen14.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/screen14.png
    :class: image-with-border
 
 Add the created networks in this order:
@@ -195,7 +189,7 @@ Add the created networks in this order:
 1. **Internal** network
 2. **Gateway** network
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/screen15_new.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/screen15_new.png
    :class: image-with-border
 
 Clear security groups
@@ -203,7 +197,7 @@ Clear security groups
 
 Navigate to **Security Groups** and remove all attached security groups by clicking the arrow on the right of each row.
 
-.. image:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/fwaas-1.png
+.. image:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/fwaas-1.png
    :class: image-with-border
 
 .. note::
@@ -215,7 +209,7 @@ Key Pair
 
 Define or use an existing SSH key pair to access the VM later. See Prerequisite No. 2 for guidance.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/screen16.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/screen16.png
    :class: image-with-border
 
 .. note::
@@ -242,7 +236,7 @@ Paste the following script into the **Customization Script** box:
         sed -i "/<disablefilter>enabled<\/disablefilter>/d" /conf/config.xml
         reboot
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/screen17b.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/screen17b.png
    :class: image-with-border
 
 Launch the VM
@@ -252,12 +246,12 @@ Click **Launch Instance** and wait for the VM to spawn.
 
 If everything is in order, you should see at least two IP addresses for **Firewall_FM**, like this:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/screen177_new.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/screen177_new.png
    :class: image-with-border
 
 If one of these ports is missing, add them with option **Attach interface** from the action menu on the right side.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/screen178_new.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/screen178_new.png
    :class: image-with-border
 
 .. note::
@@ -269,12 +263,12 @@ Add port for Interfaces
 
 Once the VM is created, click on its name in the **Instances** tab.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/screen18_new.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/screen18_new.png
    :class: image-with-border
 
 Go to the **Interfaces** tab and click on **Edit Port** on each port.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/screen19_new.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/screen19_new.png
    :class: image-with-border
 
 Disable **Port Security** and click on **Update**.
@@ -284,17 +278,17 @@ Allocate Floating IP
 
 Go to **Network** → **Floating IPs** and click on button **Allocate IP to Project**.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/screen21.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/screen21.png
    :class: image-with-border
 
 Click on button **Allocate IP** without entering anything else.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/screen22.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/screen22.png
    :class: image-with-border
 
 Click on **Associate** next to the new Floating IP and attach it to the **Firewall_VM** port connected to the **Gateway** network (**10.100.100.130** in our case).
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/screen23_new.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/screen23_new.png
    :class: image-with-border
 
 Using this **Gateway** network interface will enable the OPNsense server to access the Internet.
@@ -310,7 +304,7 @@ Speaking in more technical terms, the LAN address for **Firewall_VM** instance i
 
 and you should see a screen like this:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/firewall-v3-15_new.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/firewall-v3-15_new.png
    :class: image-with-border
 
 The **Firewall_VM** LAN address **vtnet0** should be identical to that you see in Horizon (Network->Networks->Internal->Subnets->Gateway IP), that is, **10.200.200.1**. If the LAN address is different, you will configure it in next steps.
@@ -320,41 +314,41 @@ Add or set up the existing interfaces
 
 At the bottom of the screen, there is a prompt **Enter an option** so type **1** and press Enter on the keyboard.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/configure-firewall-1.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/configure-firewall-1.png
    :class: image-with-border
 
 Entering **1** will execute command **Assign interfaces** as shown in the red rectangle in the image above. With this, we are going to set up the interfaces, which are called **vtnet0** and **vtnet1** on OpenVPN server.
 
 After pressing **Enter**, a new question will appear:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/configure-firewall-2.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/configure-firewall-2.png
    :class: image-with-border
 
 Pressing Enter in this kind of interface will execute the option that is represented as a capital letter. Here it is **N**, so by pressing Enter you have effectively negated the option to configure **LAGGS**. Since that acronym stands for **Link Aggregation Group Interface** and we are not interested in that here, **N** means skipping it.
 
 The next question is to set up **VLANs** now; again, press Enter to skip it. The screen changes to:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/configure-firewall-3.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/configure-firewall-3.png
    :class: image-with-border
 
 WAN stands for Wide Area Network and the corresponding interface is **vtnet1** so enter that.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/configure-firewall-3.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/configure-firewall-3.png
    :class: image-with-border
 
 For question **Enter the LAN interface name or 'a' for auto-detection NOTE...** enter **vtnet0**.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/configure-firewall-4.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/configure-firewall-4.png
    :class: image-with-border
 
 The next question is **Optional interface 1** -- leave it blank and press Enter. Those steps are captured on the following picture:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/configure-firewall-5.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/configure-firewall-5.png
    :class: image-with-border
 
 You will see prompt **The interfaces will be assigned as follows: WAN -> vtnet1  LAN -> vtnet0** -- nothing to do here, as it is correct. Next, **y** for **Do you want to proceed?** and click enter to save your changes.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/firewall-v3-15_new.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/firewall-v3-15_new.png
    :class: image-with-border
 
 Setting the address of vtnet0 manually
@@ -362,7 +356,7 @@ Setting the address of vtnet0 manually
 
 We are now back to the main menu for OpenVPN. We will set up the IP address for **vtnet0** manually, by entering **2** for **Enter an option:**. That activates option **Set interface IP address** from the main menu.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/configure-firewall-7.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/configure-firewall-7.png
    :class: image-with-border
 
 Enter **1** to set up LAN and you will see this question:
@@ -371,7 +365,7 @@ Enter **1** to set up LAN and you will see this question:
 
 Press Enter for **N** and get another question:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/configure-firewall-8.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/configure-firewall-8.png
    :class: image-with-border
 
 Type your internal IP address, which in this case is **10.200.200.1**.
@@ -382,7 +376,7 @@ Type your internal IP address, which in this case is **10.200.200.1**.
 
 Then follows the question how many bits should be taken into account:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/configure-firewall-9_new.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/configure-firewall-9_new.png
    :class: image-with-border
 
 Enter **24** (CIDR notation: 255.255.255.0/24).
@@ -391,7 +385,7 @@ The result of all these entries is that the interfaces for LAN static IP address
 
 Now another series of questions will follow, but keep on pressing Enter to confirm the default values. You will end up with the following screen, which will now contain correct values for LAN and WAN interfaces:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/firewall-v3-15_new.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/firewall-v3-15_new.png
    :class: image-with-border
 
 If you made a mistake in any of the steps, please repeat procedure from the beginning, starting from **1** for **Enter an option:** in the main menu.
@@ -403,7 +397,7 @@ Checking the console log
 
 Now make sure that the changes are visible in the console logs. Since you are still in web console interface, click on back arrow of your browser and get to the submenu for **Firewall_VM** instance:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/configure-firewall-11_new.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/configure-firewall-11_new.png
    :class: image-with-border
 
 Click on **Log** as shown by the red arrow. The text in the log is shown up, and notice that there the LAN and WAN addresses are shown.
@@ -415,12 +409,12 @@ Refresh the VM
 
 Now perform **Soft Reboot Instance** in order to refresh Log data:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/configure-firewall-13.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/configure-firewall-13.png
    :class: image-with-border
 
 Check the console log once again and verify that both addresses are now correctly filled in:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/configure-firewall-14_new.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/configure-firewall-14_new.png
    :class: image-with-border
 
 The instance that OpenVPN will run on, **Firewall_VM**, has now been prepared and the next step is to provide parameters to the OpenVPN server.
@@ -458,12 +452,12 @@ and click enter. If you want to include the "secure" part of the key pair, use t
 
 where you have to replace *<floatingIP>* with Floating IP of your **Test_Ubuntu** and click enter.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/fwaas_ssh.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/fwaas_ssh.png
    :class: image-with-border
 
 Once you connected, you should see a screen with **eouser**, which in your case should be **eouser@Test_Ubuntu:~$** like this:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/fwaas_ssh2.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/fwaas_ssh2.png
    :class: image-with-border
 
 Open local web browser and type: https://localhost:8443
@@ -477,41 +471,41 @@ The credentials to log in are:
 - **Username**: **root**
 - **Password**: **opnsense**
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/firewall-v3-9_new.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/firewall-v3-9_new.png
    :class: image-with-border
 
 You will be presented with the wizard for the general setup of the OpenVPN server:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/firewall-v3-1_new.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/firewall-v3-1_new.png
    :class: image-with-border
 
 Click **Next**.
 
 Set **DNS Servers** to **10.0.8.1** and click **Next**:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/firewall-v3-2_new.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/firewall-v3-2_new.png
    :class: image-with-border
 
 Set up time server information — just click **Next** to use the defaults:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/firewall-v3-3.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/firewall-v3-3.png
    :class: image-with-border
 
 The next screen is to configure the WAN interface:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/firewall-v3-4_new.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/firewall-v3-4_new.png
    :class: image-with-border
 
 Click **Next** to use the defaults. The next screen is to configure the LAN interface:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/firewall-v3-18_new.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/firewall-v3-18_new.png
    :class: image-with-border
 
 Enter the value of **vtnet0**, starting with **10.200.200.1** — your address will be similar, but different, so be careful!
 
 Click **Next** to set the root password:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/enter_root_pass.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/enter_root_pass.png
    :class: image-with-border
 
 If you want to use the existing password, enter it in the confirmation field. If you're going to use this server seriously, be sure to enter a new and robust root password here.
@@ -520,12 +514,12 @@ Once done, click **Next** and click **Reload** on the next screen to apply the c
 
 Reloading may take a couple of minutes. Once finished, the wizard will redirect you to the dashboard.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/firewall-v3-21.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/firewall-v3-21.png
    :class: image-with-border
 
 This is the final screen for the setup wizard:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/firewall-v3-10.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/firewall-v3-10.png
    :class: image-with-border
 
 
@@ -539,12 +533,12 @@ Create authority certificate
 
 1. Click on **System** -> **Trust** -> **Authorities** to get a list of existing authorities:
 
-   .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/firewall-v3-11_new.png
+   .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/firewall-v3-11_new.png
       :class: image-with-border
 
 2. You can use any of the existing certificates, or click the plus button on the right to add a new one. Enter the following data:
 
-   .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/firewall-v3-12_new.png
+   .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/firewall-v3-12_new.png
       :class: image-with-border
 
    For **Description**, enter a meaningful certificate name, possibly with a random code like **DS** as a prefix (you can use your initials or any other prefix).
@@ -564,7 +558,7 @@ Add server certificate
 
 2. Click **Add new CA** to create a new certificate. Set the following values:
 
-   .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/fwaas-openvpn-v2-5.png
+   .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/fwaas-openvpn-v2-5.png
       :class: image-with-border
 
    Enter **internal-ca** for **Common Name**. Other fields, such as country code and city, are not mandatory.
@@ -576,28 +570,28 @@ Create a user and add a user certificate
 
 1. Navigate to **System** -> **Access** -> **Users** and ensure a user named **root** exists. You can create here new user (I have created user "test" earlier).
 
-   .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/firewall-v3-13_new.png
+   .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/firewall-v3-13_new.png
       :class: image-with-border
 
 New user should have privileges:
-    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/create_user.png
+    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/create_user.png
        :class: image-with-border
 
 2. Click the icon "Search certificates by username" to the right of the window to edit it and add a certificate. Click **Add**.
 
-   .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/fwaas-openvpn-v2-7_new.png
+   .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/fwaas-openvpn-v2-7_new.png
       :class: image-with-border
 
 3. Enter the data as shown in the image below:
 
-   .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/fwaas-openvpn-v2-8.png
+   .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/fwaas-openvpn-v2-8.png
       :class: image-with-border
 
    The rest of the fields are not mandatory. Click **Save** to save the entered data.
 
 4. You should now see two new certificates in the list:
 
-   .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/fwaas-openvpn-v2-9_new.png
+   .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/fwaas-openvpn-v2-9_new.png
       :class: image-with-border
 
 Create static key
@@ -605,19 +599,19 @@ Create static key
 
 1. To create a static key, navigate to **VPN** -> **OpenVPN** -> **Instances** -> **Static Keys**:
 
-   .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/fwaas-openvpn-v2-10.png
+   .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/fwaas-openvpn-v2-10.png
       :class: image-with-border
 
 2. Select **Add** (plus sign icon) and start the process of creating a new static key.
 
-   .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/fwaas-openvpn-v2-11.png
+   .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/fwaas-openvpn-v2-11.png
       :class: image-with-border
 
 3. Enter a new name in the **Description** field and for **Mode**, choose **crypt (Encrypt and authenticate...)**. To fill in the **Static Key** field, click the settings icon (orange rectangle in the image).
 
    The **Static Key** will be generated and filled in automatically.
 
-   .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/fwaas-openvpn-v2-12.png
+   .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/fwaas-openvpn-v2-12.png
       :class: image-with-border
 
 4. Click **Save** to save the entered data.
@@ -629,22 +623,22 @@ Now that we have everything ready, let's create a new OpenVPN instance on the OP
 
 1. Navigate to the **Instances** tab under **VPN** -> **OpenVPN** -> **Instances**.
 
-    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/fwaas-openvpn-v2-13.png
+    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/fwaas-openvpn-v2-13.png
        :class: image-with-border
 
 2. Click the orange plus button on the right.
 
-    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/fwaas-openvpn-v2-14_new.png
+    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/fwaas-openvpn-v2-14_new.png
        :class: image-with-border
 
-    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/fwaas-openvpn-v2-16_new.png
+    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/fwaas-openvpn-v2-16_new.png
        :class: image-with-border
 
 For the **TLS static key**, use the static key you created earlier (if available).
 
 3. On the next screen, click **Save**, then click **Apply**. Without applying, the system will not accept the server configuration.
 
-    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/fwaas-openvpn-v2-20_new.png
+    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/fwaas-openvpn-v2-20_new.png
        :class: image-with-border
 
 Assign an Interface to the OpenVPN Server
@@ -654,10 +648,10 @@ Next, assign an interface to the OpenVPN server.
 
 1. Navigate to **Interfaces** -> **Assignments**.
 
-    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/fwaas-openvpn-v2-21.png
+    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/fwaas-openvpn-v2-21.png
        :class: image-with-border
 
-    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/fwaas-openvpn-v2-22_new.png
+    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/fwaas-openvpn-v2-22_new.png
        :class: image-with-border
 
 Add a Rule to Connect to the OpenVPN Server
@@ -669,19 +663,19 @@ The first firewall rule allows clients to connect to the OpenVPN server.
 
    After adding the rules, it will look like this:
 
-    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/fwaas-openvpn-v2-23_new.png
+    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/fwaas-openvpn-v2-23_new.png
        :class: image-with-border
 
 2. Click **Add** to create a new rule using the values shown in this images:
 
    The first rule:
 
-    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/rule1.png
+    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/rule1.png
        :class: image-with-border
 
    The second rule:
 
-    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/rule2.png
+    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/rule2.png
        :class: image-with-border
 
 3. Click **Save**. The new rules will be applied once you click **Apply changes**.
@@ -696,11 +690,11 @@ The second rule ensures that clients can access the intended IPs.
 
 2. Click **Add New** to create a new rule.
 
-    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/OPT_interface.png
+    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/OPT_interface.png
        :class: image-with-border
 
 
-    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/rules_to_OPT.png
+    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/rules_to_OPT.png
        :class: image-with-border
 
 3. Once done, click **Apply changes**.
@@ -710,21 +704,21 @@ Add rules to LAN interface
 
 The next step is to add rules to LAN interface. The result will look like this:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/LAN_interface.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/LAN_interface.png
        :class: image-with-border
 
 Click plus icon and add 4 rules:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/LAN_rule1.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/LAN_rule1.png
        :class: image-with-border
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/LAN_rule2.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/LAN_rule2.png
        :class: image-with-border
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/LAN_rule3.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/LAN_rule3.png
        :class: image-with-border
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/LAN_rule4.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/LAN_rule4.png
        :class: image-with-border
 
 Client Export
@@ -742,7 +736,7 @@ To export the client profile for remote access, follow these steps:
 
 5. **Port**: Use the port selected in Step 5.
 
-    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/clients_export.png
+    .. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/clients_export.png
        :class: image-with-border
 
 6. Click the cloud icon to download the Client Certificate for **DS_User1**.
@@ -775,16 +769,16 @@ You should see the output 'Connection 'nameofyourovpnconffile'successfully added
 
 3. To connect, use the Ubuntu configuration bar (located at the top-right corner) and enter the appropriate credentials.
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/top_corner.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/top_corner.png
        :class: image-with-border
 
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/top_corner2.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/top_corner2.png
        :class: image-with-border
 
 Enter credentials and connect:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/top_corner3.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/top_corner3.png
        :class: image-with-border
 
 4. If you don't want to use the configuration bar, run this command:
@@ -799,17 +793,17 @@ You will be prompted to enter the **Auth Username** and **Auth Password**. Use t
 - **Auth Username**: root
 - **Auth Password**: opnsense
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/fwaas-authUser-ovpn.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/fwaas-authUser-ovpn.png
    :class: image-with-border
 
 A successful connection should look like the following:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/fwaas-ovpn-connected.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/fwaas-ovpn-connected.png
    :class: image-with-border
 
 To test the VPN connection, open your local web browser and enter the internal IP address 10.200.200.1 You should be able to connect as shown below:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/fwaas-test-connectOPN_new.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/fwaas-test-connectOPN_new.png
    :class: image-with-border
 
 The next step is to navigate to Openstack dashboard and try to ping VM with Internal network attached. You can create new VM.
@@ -817,10 +811,10 @@ The next step is to navigate to Openstack dashboard and try to ping VM with Inte
 In this example:
 
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/ping.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/ping.png
    :class: image-with-border
 
 Testing ping from your local machine with VPN enabled:
 
-.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service-on-Eumetsat-Elasticity/test_ping_ds.png
+.. figure:: /networking/How-to-run-and-configure-Firewall-as-a-service-and-VPN-as-a-service/test_ping_ds.png
    :class: image-with-border

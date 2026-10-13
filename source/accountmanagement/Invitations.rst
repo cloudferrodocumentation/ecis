@@ -10,6 +10,7 @@ To invite a new user to your organization you need to share an **invitation code
 After logging into |brand-name-site-auth-link| press **Invitations** button on the left bar menu.
 
 .. figure:: /accountmanagement/Invitations/invitation-copy-ecis-portal.png
+   :alt: Inviting new user to your Organization
    :align: center
    :class: image-with-border
 

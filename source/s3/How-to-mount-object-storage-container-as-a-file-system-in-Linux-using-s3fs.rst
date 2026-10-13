@@ -1,12 +1,12 @@
-How to mount object storage container as a file system in Linux using s3fs on |brand-name|
-===========================================================================================================
+How to mount object storage container as a file system in Linux using s3fs
+==========================================================================
 
 The following article covers mounting object storage containers using **s3fs**
 on Linux. One possible use case is easy access to the contents of such
 containers from different computers and virtual machines.
 
 You can use your local Linux computer or a virtual machine running on
-|brand-name| cloud. All operating system users can be given read, write, and
+the cloud. All operating system users can be given read, write, and
 execute privileges on the mounted contents.
 
 What we are going to cover
@@ -33,14 +33,14 @@ You need a |brand-name| hosting account with access to the Horizon interface:
 No. 2 **Machine running Linux**
 
 You need a machine running Linux. It can be a virtual machine running on
-|brand-name| cloud or your local Linux computer.
+the cloud or your local Linux computer.
 
 This article was written for Ubuntu 22.04. If you are running a different
 distribution, adjust the commands from this article accordingly.
 
 No. 3 **Object storage container**
 
-You need at least one object storage container on |brand-name| cloud.
+You need at least one object storage container on the cloud.
 
 .. jinja:: doc_links
 
@@ -52,7 +52,8 @@ dashboard:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs-on-Eumetsat-Elasticity/{{ s3070 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs/{{ s3070 }}
+      :alt: How to mount object storage container as a file system in Linux using s3fs
 
 With the proper **s3fs** command from this article, you will be able to access
 that container remotely through a local file system.
@@ -73,7 +74,7 @@ Step 1: Sign in to your Linux machine
 -------------------------------------
 
 Sign in to an Ubuntu account that has **sudo** privileges. If you are using
-SSH to connect to a virtual machine running on |brand-name| cloud, the
+SSH to connect to a virtual machine running on the cloud, the
 username will likely be **eouser**.
 
 Step 2: Install s3fs
@@ -219,7 +220,8 @@ This is what executing **ls** from the mount point could produce:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs-on-Eumetsat-Elasticity/{{ s3071 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs/{{ s3071 }}
+      :alt: Step 5: Mount a container
 
 To mount multiple containers, repeat the **s3fs** command with the relevant
 parameters as many times as needed.
@@ -251,7 +253,7 @@ First, check where **s3fs** is installed:
    which s3fs
 
 The output should contain the full path to the **s3fs** binary on your system.
-On Ubuntu virtual machines created using default images on |brand-name| cloud,
+On Ubuntu virtual machines created using default images on the cloud,
 it may be:
 
 .. code-block:: text
@@ -346,7 +348,8 @@ Here is a situation from the Horizon dashboard:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs-on-Eumetsat-Elasticity/{{ s3072 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs/{{ s3072 }}
+      :alt: Potential problems with the way s3fs handles objects
 
 The first row contains an object named **item**, with size of 10 bytes. The
 second row contains an object called **item/**, displayed in Horizon as a
@@ -362,7 +365,8 @@ only the folder:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs-on-Eumetsat-Elasticity/{{ s3073 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs/{{ s3073 }}
+      :alt: Potential problems with the way s3fs handles objects
 
 To prevent this issue, use consistent file naming and directory-like prefix
 conventions when working with object storage.
@@ -383,12 +387,3 @@ Check the following articles for more information:
 
    * :doc:`{{ s3cmd_access }}`
    * :doc:`{{ boto3_access }}`
-
-.. ifconfig:: brand_name in special_eodata
-
-   **s3fs** can also be used to access the **EODATA** repository on virtual
-   machines hosted on |brand-name| cloud.
-
-   .. jinja:: doc_links
-
-      * :doc:`{{ eodata_s3fs_mount }}`

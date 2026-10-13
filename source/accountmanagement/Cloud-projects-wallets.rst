@@ -78,6 +78,7 @@ Cloud projects/Wallets view
 After logging into |brand-name-site-auth-link|, click **Cloud projects/Wallets** in the left menu bar to view the details of your projects.
 
 .. figure:: /accountmanagement/Cloud-projects-wallets/cloud-projects-wallets-ecis-portal.png
+   :alt: Cloud projects/Wallets view
    :align: center
    :class: image-with-border
 
@@ -88,14 +89,11 @@ This view shows the table of active cloud regions for your account.
 To see what projects are active in a region, click on the row for that region. The following image shows all three regions activated in that way:
 
 .. figure:: /accountmanagement/Cloud-projects-wallets/activate-clouds-and-projects-ecis-portal.png
+   :alt: Cloud projects/Wallets view
    :align: center
    :class: image-with-border
 
-Here we see the projects that already exist in the corresponding OpenStack environment. For instance, FRA1-3 has two projects active:
-
-.. figure:: /accountmanagement/Cloud-projects-wallets/active-projects-in-fra1-3-ecis-portal.png
-   :align: center
-   :class: image-with-border
+The page lists the projects that exist in the selected OpenStack environment.
 
 If one or more projects have already been used to create resources (for example, virtual machines), the number of instances and RAM used will no longer be **0** in that region.
 
@@ -137,6 +135,7 @@ Attach the appropriate wallet to the region — this determines from which funds
 To change the wallet, click the **three-dots** menu in the row of the region and choose whether to modify the **current** or **next** wallet:
 
 .. figure:: /accountmanagement/Cloud-projects-wallets/change-current-or-next-wallet-ecis-portal.png
+   :alt: Attach wallet to a region
    :align: center
    :class: image-with-border
 
@@ -145,6 +144,7 @@ To change the wallet, click the **three-dots** menu in the row of the region and
 This opens a new entry window:
 
 .. figure:: /accountmanagement/Cloud-projects-wallets/change-current-wallet-ecis-portal.png
+   :alt: Attach wallet to a region
    :align: center
    :class: image-with-border
    :scale: 75%

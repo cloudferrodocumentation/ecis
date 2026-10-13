@@ -1,5 +1,5 @@
-How to clone existing and configured VMs on |brand-name|
-=======================================================================
+How to clone existing and configured VMs
+========================================
 
 The simplest way to create the snapshot of your machine is using "Horizon" - graphical interface of OpenStack dashboard.
 
@@ -11,18 +11,13 @@ In summary, there will be 2 operations:
 
 To start, please visit our website |brand-name-site-link| and login.
 
-.. jinja:: access_sen4cap
-
-   .. figure:: /cloud/How-to-clone-existing-and-configured-VMs-on-Eumetsat-Elasticity/{{ access_sen4cap_02 }}
-      :align: center
-
 After logon, in **"Instances"** menu select VM to be cloned, and create its snapshot by clicking "Actions" Menu
 
-.. figure:: /cloud/How-to-clone-existing-and-configured-VMs-on-Eumetsat-Elasticity/clone2.png
+.. figure:: /cloud/How-to-clone-existing-and-configured-VMs/clone2.png
 
 Once the snapshot is ready, you may see it on **"Images”** page of Horizon. Select its name to see properties.
 
-.. figure:: /cloud/How-to-clone-existing-and-configured-VMs-on-Eumetsat-Elasticity/clone3.png
+.. figure:: /cloud/How-to-clone-existing-and-configured-VMs/clone3.png
 
 Now, you may click **"Launch"** in right upper corner of the window or just go back to **"Instances”** menu and launch new instance.
 

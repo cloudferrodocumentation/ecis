@@ -1,5 +1,5 @@
-How to fix unresponsive console issue on |brand-name|
-=====================================================
+How to fix unresponsive console issue
+=====================================
 
 When you create a new virtual machine, the first thing you might want to do is to have a look at the console panel and check whether the instance has booted correctly.
 
@@ -8,7 +8,7 @@ After opening up the console in OpenStack you might encounter this error:
 * unresponsive grey screen
 * document icon in the down-right corner which informs about the issue on client side
 
-.. figure:: /cloud/How-to-fix-unresponsive-console-issue-on-Eumetsat-Elasticity/fixconsole.png
+.. figure:: /cloud/How-to-fix-unresponsive-console-issue/fixconsole.png
    :align: center
 
 **In this case:**

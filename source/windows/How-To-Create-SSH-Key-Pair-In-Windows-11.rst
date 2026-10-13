@@ -1,7 +1,7 @@
 How to Create SSH Key Pair in Windows 11 On |brand-name|
 ======================================================================
 
-This guide will show you how to generate an SSH key pair in Windows 11 using OpenSSH. You will then be able to use that key pair to control appropriately configured virtual machines hosted on |brand-name| cloud.
+This guide will show you how to generate an SSH key pair in Windows 11 using OpenSSH. You will then be able to use that key pair to control appropriately configured virtual machines hosted on the cloud.
 
 This article only covers the basics of this function and assumes that you will not change the names of generated keys.
 
@@ -19,7 +19,8 @@ Open the Command Prompt (**cmd.exe**).
 
 .. jinja:: windows_images
 
-   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11-On-Eumetsat-Elasticity/{{ windows076 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11/{{ windows076 }}
+      :alt: Step 1: Verify whether OpenSSH Client is installed
 
 Execute the following command and press Enter:
 
@@ -31,7 +32,8 @@ If SSH client is installed, the output should contain information about how to u
 
 .. jinja:: windows_images
 
-   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11-On-Eumetsat-Elasticity/{{ windows077 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11/{{ windows077 }}
+      :alt: Step 1: Verify whether OpenSSH Client is installed
 
 If, however, you got the following output:
 
@@ -53,23 +55,27 @@ Open the system **Settings** application and enter section **System** -> **Optio
 
 .. jinja:: windows_images
 
-   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11-On-Eumetsat-Elasticity/{{ windows078 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11/{{ windows078 }}
+      :alt: Step 2: Install OpenSSH
 
 In section **Add an optional feature**, click **View features**.
 
 .. jinja:: windows_images
 
-   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11-On-Eumetsat-Elasticity/{{ windows079 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11/{{ windows079 }}
+      :alt: Step 2: Install OpenSSH
 
 .. jinja:: windows_images
 
-   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11-On-Eumetsat-Elasticity/{{ windows080 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11/{{ windows080 }}
+      :alt: Step 2: Install OpenSSH
 
 In text field **Find an available optional feature**, enter **openssh**
 
 .. jinja:: windows_images
 
-   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11-On-Eumetsat-Elasticity/{{ windows081 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11/{{ windows081 }}
+      :alt: Step 2: Install OpenSSH
 
 Two features should be displayed:
 
@@ -80,13 +86,15 @@ Tick the checkbox next to **OpenSSH Client** and click **Next**
 
 .. jinja:: windows_images
 
-   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11-On-Eumetsat-Elasticity/{{ windows082 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11/{{ windows082 }}
+      :alt: Step 2: Install OpenSSH
 
 You should now get the following window:
 
 .. jinja:: windows_images
 
-   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11-On-Eumetsat-Elasticity/{{ windows083 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11/{{ windows083 }}
+      :alt: Step 2: Install OpenSSH
 
 Click **Add**
 
@@ -94,7 +102,8 @@ Wait until the process is finished:
 
 .. jinja:: windows_images
 
-   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11-On-Eumetsat-Elasticity/{{ windows084 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11/{{ windows084 }}
+      :alt: Step 2: Install OpenSSH
 
 It might last several dozen minutes.
 
@@ -102,7 +111,8 @@ Once it's over, you should see the confirmation that the component was **Added**
 
 .. jinja:: windows_images
 
-   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11-On-Eumetsat-Elasticity/{{ windows085 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11/{{ windows085 }}
+      :alt: Step 2: Install OpenSSH
 
 Step 3: Use ssh-keygen to generate an SSH key pair
 ----------------------------------------------------
@@ -115,13 +125,15 @@ Return to the Command Prompt you previously opened. Enter the following command 
 
 .. jinja:: windows_images
 
-   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11-On-Eumetsat-Elasticity/{{ windows086 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11/{{ windows086 }}
+      :alt: Step 3: Use ssh-keygen to generate an SSH key pair
 
 Of course, you can fine tune the security and other properties of this key pair during this process. However, if you're just getting started, you can simply accept default values by pressing Enter multiple times until the program finishes its operation and you are once again prompted for enterring the command.
 
 .. jinja:: windows_images
 
-   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11-On-Eumetsat-Elasticity/{{ windows087 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11/{{ windows087 }}
+      :alt: Step 3: Use ssh-keygen to generate an SSH key pair
 
 Your key pair should now be generated.
 
@@ -149,7 +161,8 @@ Enter in its text field:
 
 .. jinja:: windows_images
 
-   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11-On-Eumetsat-Elasticity/{{ windows088 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11/{{ windows088 }}
+      :alt: Step 4: See generated key pair
 
 You should get to **.ssh** folder which is located in your account profile folder.
 
@@ -157,7 +170,8 @@ You should there see your SSH keys:
 
 .. jinja:: windows_images
 
-   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11-On-Eumetsat-Elasticity/{{ windows089 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11/{{ windows089 }}
+      :alt: Step 4: See generated key pair
 
 In our example, these are two files:
 
@@ -172,11 +186,13 @@ If you want to see the full extensions of files, including **.pub**, click **Vie
 
 .. jinja:: windows_images
 
-   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11-On-Eumetsat-Elasticity/{{ windows090 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11/{{ windows090 }}
+      :alt: Step 4: See generated key pair
 
 .. jinja:: windows_images
 
-   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11-On-Eumetsat-Elasticity/{{ windows091 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-11/{{ windows091 }}
+      :alt: Step 4: See generated key pair
 
 What To Do Next
 -----------------
@@ -193,7 +209,7 @@ Learn more here:
 
    :doc:`/networking/How-to-add-SSH-key-from-Horizon-web-console`
 
-Once you've done it, you can create a new virtual machine on |brand-name| cloud and authenticate with your key pair:
+Once you've done it, you can create a new virtual machine on the cloud and authenticate with your key pair:
 
 .. jinja:: brand_names
 

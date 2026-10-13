@@ -1,5 +1,5 @@
-How to connect to a virtual machine via SSH from Windows 10 Command Prompt on |brand-name|
-==========================================================================================
+How to connect to a virtual machine via SSH from Windows 10 Command Prompt
+==========================================================================
 
 Requirements
 ------------
@@ -21,6 +21,7 @@ Check in "Installed features" if the OpenSSH client is installed, if not click *
 .. jinja:: windows_images
 
    .. figure:: {{ windows113 }}
+      :alt: Requirements
       :class: with-border
 
 Step 1 Go to the folder containing your SSH keys
@@ -57,4 +58,5 @@ You should now be able to issue commands to your VM:
 .. jinja:: windows_images
 
    .. figure:: {{ windows114 }}
+      :alt: Step 2 Connect to your VM using SSH
       :class: with-border

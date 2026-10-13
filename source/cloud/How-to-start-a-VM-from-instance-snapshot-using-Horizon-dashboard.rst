@@ -1,5 +1,5 @@
-How to start a VM from instance snapshot using Horizon dashboard on |brand-name|
-==================================================================================================
+How to start a VM from instance snapshot using Horizon dashboard
+================================================================
 
 In this article, you will learn how to create a virtual machine from an instance snapshot using Horizon dashboard.
 
@@ -20,7 +20,8 @@ No. 3 **Instance snapshot**
 
 You need to have an instance snapshot from which you are going to create your virtual machine. In this article, we will use an exemplary snapshot named **my-instance-snapshot** - here is how it can look like in section **Images -> Images** of the Horizon dashboard:
 
-.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard-on-Eumetsat-Elasticity/start_vm_instance_snapshot_horizon-09_creodias.png
+.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard/start_vm_instance_snapshot_horizon-09_creodias.png
+   :alt: How to start a VM from instance snapshot using Horizon dashboard
 
 The following articles contain information how to create such a snapshot:
 
@@ -112,42 +113,46 @@ Steps 2 and 6 will be different so in these two cases we provide detailed explan
 Identical Step 1 Name the Virtual Machine you are recreating
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard-on-Eumetsat-Elasticity/launch_instance_details.png
+.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard/launch_instance_details.png
 
 From Horizon dashboard, execute **Compute** -> **Instances** -> **Launch Instance**. As a minimum, use field **Instance Name** to enter the name of the VM that you want to recreate.
 
 Changed Step 2 Boot from the existing image snapshot
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard-on-Eumetsat-Elasticity/launch_instance_source.png
+.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard/launch_instance_source.png
 
 In Step 2 of above mentioned article, you are supposed to choose the image from which you want to create a virtual machine. Instead of that, from the drop-down menu **Select Boot Source** choose option **Instance Snapshot**. This will allow you to choose from the existing image snapshots.
 
-.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard-on-Eumetsat-Elasticity/start_vm_instance_snapshot_horizon-01_creodias.png
+.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard/start_vm_instance_snapshot_horizon-01_creodias.png
+   :alt: Changed Step 2 Boot from the existing image snapshot
 
 You should get a list of image snapshots:
 
-.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard-on-Eumetsat-Elasticity/start_vm_instance_snapshot_horizon-02_creodias.png
+.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard/start_vm_instance_snapshot_horizon-02_creodias.png
+   :alt: Changed Step 2 Boot from the existing image snapshot
 
 Click **↑** next to the image snapshot from which you want to create your virtual machine:
 
-.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard-on-Eumetsat-Elasticity/start_vm_instance_snapshot_horizon-03_creodias.png
+.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard/start_vm_instance_snapshot_horizon-03_creodias.png
+   :alt: Changed Step 2 Boot from the existing image snapshot
 
 It should now be visible in the **Allocated** section:
 
-.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard-on-Eumetsat-Elasticity/start_vm_instance_snapshot_horizon-04_creodias.png
+.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard/start_vm_instance_snapshot_horizon-04_creodias.png
+   :alt: Changed Step 2 Boot from the existing image snapshot
 
 Identical Step 3 Define the flavor of the instance
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard-on-Eumetsat-Elasticity/launch_instance_flavor.png
+.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard/launch_instance_flavor.png
 
 Use option **Flavor** in window **Launch Instance**.
 
 Identical Step 4 Define networks for the virtual machine
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard-on-Eumetsat-Elasticity/launch_instance_networks.png
+.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard/launch_instance_networks.png
 
 Use option **Networks** in window **Launch Instance**.
 
@@ -156,31 +161,32 @@ This is the end of obligatory options. To be able to access instance through an 
 Identical Step 5 Define security groups for VM
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard-on-Eumetsat-Elasticity/launch_instance_security_groups.png
+.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard/launch_instance_security_groups.png
 
 Use option **Security Groups** in window **Launch Instance**.
 
 Changed Step 6 SSH key pair
 ++++++++++++++++++++++++++++++++++++++
 
-.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard-on-Eumetsat-Elasticity/launch_instance_key_pair.png
+.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard/launch_instance_key_pair.png
 
 If your particular installation of an operating system supports "injecting" of an SSH key this way, you can perform this step just like it was done in the reference article.
 
 If, however, it does not support this process, make sure that no keys are selected in this step. If a key has already been chosen and exists in the **Allocated** section, you can click **↓** next to its name to unselect it:
 
-.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard-on-Eumetsat-Elasticity/start_vm_instance_snapshot_horizon-05_creodias.png
+.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard/start_vm_instance_snapshot_horizon-05_creodias.png
+   :alt: Changed Step 6 SSH key pair
 
 Identical Step 7 Create the instance
 ++++++++++++++++++++++++++++++++++++++
 
-.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard-on-Eumetsat-Elasticity/launch_instance_launch_instance.png
+.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard/launch_instance_launch_instance.png
 
 Finally, click on **Launch Instance**.
 
 You will see the new instance through **Compute** -> **Instances**.
 
-.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard-on-Eumetsat-Elasticity/launch_instance_created_instances.png
+.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard/launch_instance_created_instances.png
 
 Identical Step 8 Attach a Floating IP to the instance
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -189,7 +195,7 @@ You should be able to attach a floating IP to a virtual machine created in this 
 
 Take care which network you are attaching to the new instance in Step 4. If the original instance had access only networks internal to the cloud, it will not be possible to create a floating IP, as an **external** network to get out to the Internet. You may get a message like this in such a case:
 
-.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard-on-Eumetsat-Elasticity/unavailable_network.png
+.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard/unavailable_network.png
 
 The floating IP will almost certainly be different from the value provided in the reference article so adjust where needed.
 
@@ -253,17 +259,20 @@ If you created an instance from snapshot of instance which uses persistent stora
 
 Once the instance was built (its **Status** is **Active**), click on its name:
 
-.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard-on-Eumetsat-Elasticity/start_vm_instance_snapshot_horizon-06_creodias.png
+.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard/start_vm_instance_snapshot_horizon-06_creodias.png
+   :alt: Verifying volumes when using persistent storage
 
 You should get more detailed informations about your instance. Scroll to the bottom of the page. You should see section **Volumes Attached** which contains volumes attached to your instance:
 
-.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard-on-Eumetsat-Elasticity/start_vm_instance_snapshot_horizon-07_creodias.png
+.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard/start_vm_instance_snapshot_horizon-07_creodias.png
+   :alt: Verifying volumes when using persistent storage
 
 Note that the reference names of volumes are **not** preserved here. The names of volumes created by this process are the same as their respective IDs and **not** the same as IDs of their reference volumes or snapshots.
 
 You can click on each of their names to see more details, for example:
 
-.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard-on-Eumetsat-Elasticity/start_vm_instance_snapshot_horizon-08_creodias.png
+.. image:: /cloud/How-to-start-a-VM-from-instance-snapshot-using-Horizon-dashboard/start_vm_instance_snapshot_horizon-08_creodias.png
+   :alt: Verifying volumes when using persistent storage
 
 Properties such as **Size** or **Bootable** should be the same as it was in the case of reference volumes.
 

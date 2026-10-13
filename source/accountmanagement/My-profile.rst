@@ -26,15 +26,13 @@ Notifications are the email messages that the panel will send you, from time to 
 
 You cannot opt out of receiving other transactional notifications, among others those regarding your wallets status, contracts, and user management.
 
-.. figure:: /accountmanagement/My-profile/notification-preferences-ecis-portal.png
-   :class: image-with-border
-
 Change of password
 -------------------------
 
 Enter the new password twice and start using it.
 
 .. figure:: /accountmanagement/My-profile/change-password-ecis-portal.png
+   :alt: Change of password
    :class: image-with-border
 
 It is a good practice to frequently change passwords!
@@ -45,6 +43,7 @@ Accepted agreements
 View and edit accepted agreements.
 
 .. figure:: /accountmanagement/My-profile/list-of-agreements-ecis-portal.png
+   :alt: Accepted agreements
    :class: image-with-border
 
 The usual list of agreements that one can be offered when onboarding to a site may be divided into two parts:

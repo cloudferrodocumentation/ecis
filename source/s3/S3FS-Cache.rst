@@ -1,5 +1,5 @@
-S3FS cache on |brand-name|
-==========================
+S3FS cache
+==========
 
 By default, S3FS cache may be enabled in preconfigured Linux images on
 |brand-name|. If the **/eodata** repository is mounted through **s3fs**, you

@@ -1,7 +1,7 @@
-How to Use GUI in Linux VM on |brand-name| and access it From Local Linux Computer
-===============================================================================================
+How to Use GUI in Linux VM and access it From Local Linux Computer
+==================================================================
 
-In this article you will learn how to use GUI (graphical user interface) on a Linux virtual machine running on |brand-name|  cloud.
+In this article you will learn how to use GUI (graphical user interface) on a Linux virtual machine running on the cloud.
 
 For this purpose, you will install and use **X2Go** on your local Linux computer.
 
@@ -28,7 +28,7 @@ You need to have a local computer with Linux installed. This article was written
 
 No. 3 **Linux virtual machine**
 
-You need a Linux virtual machine running on |brand-name|  cloud. You need to able to access it via SSH. The following article explains how to create one such virtual machine:
+You need a Linux virtual machine running on the cloud. You need to able to access it via SSH. The following article explains how to create one such virtual machine:
 
 .. jinja:: brand_names
 
@@ -109,7 +109,8 @@ Step 3: Connect to your VM using X2Go
 
 Open X2Go on your local Linux computer. If you haven't configured any session yet, you should get the window used for creating one:
 
-.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-Eumetsat-Elasticity-and-access-it-from-local-Linux-computer/linux-gui-03_creodias.png
+.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-and-access-it-from-local-Linux-computer/linux-gui-03_creodias.png
+   :alt: Step 3: Connect to your VM using X2Go
 
 If you didn't get such window, click the **New session** button on the X2Go toolbar.
 
@@ -129,36 +130,43 @@ Click **OK**. The window should close.
 
 The session you created should now be visible in the X2Go client:
 
-.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-Eumetsat-Elasticity-and-access-it-from-local-Linux-computer/linux-gui-04_creodias.png
+.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-and-access-it-from-local-Linux-computer/linux-gui-04_creodias.png
+   :alt: Step 3: Connect to your VM using X2Go
 
 Click the name of your session to connect to your VM. Wait up to a minute until your connection is established. You should now see your desktop environment.
 
 If you chose MATE, it should look like this:
 
-.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-Eumetsat-Elasticity-and-access-it-from-local-Linux-computer/linux-gui-05_creodias.png
+.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-and-access-it-from-local-Linux-computer/linux-gui-05_creodias.png
+   :alt: Step 3: Connect to your VM using X2Go
 
 If you, however, chose XFCE, it should look like this:
 
-.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-Eumetsat-Elasticity-and-access-it-from-local-Linux-computer/linux-gui-06_creodias.png
+.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-and-access-it-from-local-Linux-computer/linux-gui-06_creodias.png
+   :alt: Step 3: Connect to your VM using X2Go
 
 Troubleshooting - Using the terminal emulator on XFCE
 ---------------------------------------------------------
 
 If the button **Terminal Emulator** on your taskbar does not launch your terminal, click the **Applications** menu in the upper left corner of the screen:
 
-.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-Eumetsat-Elasticity-and-access-it-from-local-Linux-computer/linux-gui-07_creodias.png
+.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-and-access-it-from-local-Linux-computer/linux-gui-07_creodias.png
+   :alt: Troubleshooting - Using the terminal emulator on XFCE
 
 Choose **Settings** -> **Preferred Applications**:
 
-.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-Eumetsat-Elasticity-and-access-it-from-local-Linux-computer/linux-gui-08_creodias.png
+.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-and-access-it-from-local-Linux-computer/linux-gui-08_creodias.png
+   :alt: Troubleshooting - Using the terminal emulator on XFCE
 
 You should get the following window:
 
-.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-Eumetsat-Elasticity-and-access-it-from-local-Linux-computer/linux-gui-09_creodias.png
+.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-and-access-it-from-local-Linux-computer/linux-gui-09_creodias.png
+   :alt: Troubleshooting - Using the terminal emulator on XFCE
 
 Open the tab **Utilities**. The window should now look like this:
 
-.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-Eumetsat-Elasticity-and-access-it-from-local-Linux-computer/linux-gui-11_creodias.png
+.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-and-access-it-from-local-Linux-computer/linux-gui-11_creodias.png
+   :alt: Troubleshooting - Using the terminal emulator on XFCE
 
 From the drop-down menu in the **Terminal Emulator** section choose **Xfce Terminal**.
 
@@ -176,19 +184,23 @@ MATE
 
 Click the **Menu** in the upper left corner of the screen:
 
-.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-Eumetsat-Elasticity-and-access-it-from-local-Linux-computer/linux-gui-12_creodias.png
+.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-and-access-it-from-local-Linux-computer/linux-gui-12_creodias.png
+   :alt: MATE
 
 From the **Preferences** section choose **Keyboard**:
 
-.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-Eumetsat-Elasticity-and-access-it-from-local-Linux-computer/linux-gui-13_creodias.png
+.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-and-access-it-from-local-Linux-computer/linux-gui-13_creodias.png
+   :alt: MATE
 
 You should get the following window:
 
-.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-Eumetsat-Elasticity-and-access-it-from-local-Linux-computer/linux-gui-14_creodias.png
+.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-and-access-it-from-local-Linux-computer/linux-gui-14_creodias.png
+   :alt: MATE
 
 Navigate to the **Layouts** tab:
 
-.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-Eumetsat-Elasticity-and-access-it-from-local-Linux-computer/linux-gui-15_creodias.png
+.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-and-access-it-from-local-Linux-computer/linux-gui-15_creodias.png
+   :alt: MATE
 
 Here, you can add or remove keyboard layouts depending on your needs.
 
@@ -197,10 +209,12 @@ XFCE
 
 From the **Applications** menu in the upper left corner of the screen choose **Settings** -> **Keyboard**. You should get the following window:
 
-.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-Eumetsat-Elasticity-and-access-it-from-local-Linux-computer/linux-gui-16_creodias.png
+.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-and-access-it-from-local-Linux-computer/linux-gui-16_creodias.png
+   :alt: XFCE
 
 Go to the **Layout** tab:
 
-.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-Eumetsat-Elasticity-and-access-it-from-local-Linux-computer/linux-gui-17_creodias.png
+.. image:: /cloud/How-to-use-GUI-in-Linux-VM-on-and-access-it-from-local-Linux-computer/linux-gui-17_creodias.png
+   :alt: XFCE
 
 Unselect the **Use system defaults** check box. You can now add or remove the keyboard layouts depending on your needs.

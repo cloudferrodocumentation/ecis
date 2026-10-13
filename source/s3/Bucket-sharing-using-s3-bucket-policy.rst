@@ -1,10 +1,10 @@
-Bucket sharing using s3 bucket policy on |brand-name|
-=========================================================
+Bucket sharing using s3 bucket policy
+=====================================
 
 S3 bucket policy
 -----------------------------------
 
-**Ceph** - the Software Defined Storage used in |brand-name| cloud, providing object storage compatibility with a subset of Amazon S3 API. Bucket policy in Ceph is part of the S3 API and allows for a selective access sharing to object storage buckets between users of different projects, in the same cloud.
+**Ceph** - the Software Defined Storage used in the cloud, providing object storage compatibility with a subset of Amazon S3 API. Bucket policy in Ceph is part of the S3 API and allows for a selective access sharing to object storage buckets between users of different projects, in the same cloud.
 
 Naming conventions used in this document
 -----------------------------------------------

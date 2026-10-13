@@ -24,11 +24,6 @@ The **Service Catalog** page shows the services that are available for your acco
 
 If the service you need is not available for your account, request access to it. See :ref:`request_additional_services` at the end of this article.
 
-This is what it looks like when all of the services are present:
-
-.. figure:: /accountmanagement/Service-catalog/service-catalog-available-services.png
-   :class: image-with-border
-
 The available services are **OpenStack**, **Managed Kubernetes** and **Private Object Storage**.
 
 No. 3 **Management interfaces**
@@ -50,26 +45,17 @@ For many projects, this is the most natural starting point. It suits practical w
 
         https://horizon.api.r1.cloud.eumetsat.int/
 
-        .. figure:: /accountmanagement/Service-catalog/Screenshot_20260527_161140.png
-           :class: image-with-border
-
         Horizon on R1 region
 
    .. tab:: R2
 
         https://horizon.api.r2.cloud.eumetsat.int/
 
-        .. figure:: /accountmanagement/Service-catalog/Screenshot_20260527_161323.png
-           :class: image-with-border
-
         Horizon on R2 region
 
    .. tab:: ELA
 
         https://horizon.cloudferro.com/, then choose **ECIS** and **FRA1-3** as the region.
-
-        .. figure:: /accountmanagement/Service-catalog/Screenshot_20260527_161411.png
-           :class: image-with-border
 
         Horizon on FRA1-3 region
 
@@ -83,9 +69,6 @@ Managed Kubernetes
 It is a good fit for platforms made of several components, such as a web application with an API, background workers, and scheduled jobs. It also suits projects that are expected to grow and may later need simpler scaling, rolling updates, and more structured deployment.
 
 In practice, this service is best suited to modern application platforms rather than to a simple website or a single server.
-
-.. figure:: /accountmanagement/Service-catalog/mk8s-dashboard-for-ecis.png
-   :class: image-with-border
 
 .. jinja:: brand_names
 
@@ -101,9 +84,6 @@ S3 is the standard protocol for modern object storage, may be used for large qua
 This makes it especially useful when files should be kept separately from a virtual machine or container environment.
 
 For an array of articles on using S3 standard to enter and store data, see section :doc:`/s3/s3`. Regions R1 and R2 do not have Horizon interface for private object storage, while region FRA1-3 does have it. In Horizon for FRA1-3, you would see it as option **Project** -> **Containers**.
-
-.. figure:: /accountmanagement/Service-catalog/s3-containers-fra1-3-ecis.png
-   :class: image-with-border
 
 You should also be able to use private object service as a standalone service.
 

@@ -1,12 +1,12 @@
-Status Power State and dependencies in billing of instance VMs on |brand-name|
-========================================================================================
+Status Power State and dependencies in billing of instance VMs
+==============================================================
 
 In OpenStack, instances have their own Status and Power State:
 
  * **Status** informs about the present condition of the VM, while
  * **Power** states tell us only whether virtual machines are running or not.
 
-.. figure:: /cloud/Status-Power-State-and-dependences-in-billing-of-instances-VMs-on-Eumetsat-Elasticity/statuspower.png
+.. figure:: /cloud/Status-Power-State-and-dependences-in-billing-of-instances-VMs/statuspower.png
    :align: center
 
 There are six Power states, divided into two groups, depending on whether the VM is running or not.

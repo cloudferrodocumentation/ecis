@@ -1,19 +1,11 @@
-Authenticating with OpenStackSDK using Keycloak credentials on |brand-name|
-==========================================================================
+Authenticating with OpenStackSDK using Keycloak credentials
+===========================================================
 
 If you use OpenStackSDK to write your own OpenStack automation or application,
 you need to authenticate your code before it can manage cloud resources.
 
 When users sign in to |brand-name| manually through |brand-name-site-auth-link|,
-they normally use the browser-based login flow. A screen like this appears:
-
-.. jinja:: image_names
-
-   .. figure:: /openstackdev/Authenticating-to-OpenstackSDK-using-Keycloak-Credentials-on-Eumetsat-Elasticity/{{ register }}
-      :align: center
-      :class: image-with-border
-
-      Browser-based sign-in page
+they normally use the browser-based login flow.
 
 The code in this article shows how to prepare authentication data for
 OpenStackSDK using values from an OpenStack RC file. This lets your Python

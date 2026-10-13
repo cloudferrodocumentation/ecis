@@ -1,7 +1,7 @@
-How to create a VM using the OpenStack CLI client on |brand-name| cloud
-=================================================================================================
+How to create a VM using the OpenStack CLI client
+=================================================
 
-This article will cover creating a virtual machine on |brand-name|  cloud using the OpenStack CLI client exclusively. It contains basic information to get you started.
+This article will cover creating a virtual machine on the cloud using the OpenStack CLI client exclusively. It contains basic information to get you started.
 
 What We Are Going To Cover
 ---------------------------
@@ -51,7 +51,7 @@ In general, you can create a new virtual machine from these four sources:
 
 In this article, we will use the first option, an operating system image, as a source of a new virtual machine. There are three ways you can obtain an image:
 
-Images that are automatically included on |brand-name| cloud
+Images that are automatically included on the cloud
    There is a set of images that come predefined with the cloud. Typically, that default list of images will contain Ubuntu, CentOS, and Windows 2019/22 images, with various flavors. Other default images could be available as well, say, for AlmaLinux, OPNSense, OSGeolive, Rocky Linux and so on.
 
 Images shared from other projects
@@ -109,7 +109,7 @@ To connect to the VM through SSH, you will also need its IP address. You can onl
 Always use the latest value of image id
 -------------------------------------------------------------------
 
-From time to time, the default images of operating systems in the |brand-name| cloud are upgraded to the new versions. As a consequence, their **image id** will change. Let's say that the image id for Ubuntu 20.04 LTS was **574fe1db-8099-4db4-a543-9e89526d20ae** at the time of writing of this article. While working through the article, you would normally take the **current** value of image id, and would use it to replace **574fe1db-8099-4db4-a543-9e89526d20ae** throughout the text.
+From time to time, the default images of operating systems in the cloud are upgraded to the new versions. As a consequence, their **image id** will change. Let's say that the image id for Ubuntu 20.04 LTS was **574fe1db-8099-4db4-a543-9e89526d20ae** at the time of writing of this article. While working through the article, you would normally take the **current** value of image id, and would use it to replace **574fe1db-8099-4db4-a543-9e89526d20ae** throughout the text.
 
 Now, suppose you wanted to automate processes under OpenStack, perhaps using Heat, Terraform, Ansible or any other tool for OpenStack automation; if you use the value of **574fe1db-8099-4db4-a543-9e89526d20ae** for image id, it would remain **hardcoded** and once this value gets changed during the upgrade, the automated process may stop to execute.
 
@@ -132,7 +132,7 @@ Here is how to see all of its parameters:
 
    openstack server create --help
 
-.. image:: /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-Eumetsat-Elasticity-cloud/openstack_server_create_help.png
+.. image:: /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-cloud/openstack_server_create_help.png
 
 The name of each of the parameters starts with two dashes, **-\-**, and after that comes the value of the parameter. For example, you can specify the name of the image used to create a virtual machine using parameter **\-\-image**. It will look like this within the command:
 
@@ -159,13 +159,13 @@ To discover the name of the image to use, execute the following command and see 
 
 You should get the output like this:
 
-.. image:: /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-Eumetsat-Elasticity-cloud/create_vm_cli_1.png
+.. image:: /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-cloud/create_vm_cli_1.png
 
 The parameter for **openstack server create** is **\-\-image**.
 
 On screenshot above, we can see:
 
- * the default images available on |brand-name| cloud, as well as
+ * the default images available on the cloud, as well as
  * custom image called **Debian-test** uploaded by the user while following the article mentioned in Prerequisite No. 3.
 
 In this example, we will use above mentioned custom image:
@@ -185,7 +185,7 @@ Flavors determine hardware available to the virtual machine. You can list flavor
 
 The parameter for **openstack server create** is **-\-flavor**.
 
-.. image:: /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-Eumetsat-Elasticity-cloud/Screenshot_20241006_124004.png
+.. image:: /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-cloud/Screenshot_20241006_124004.png
 
 The flavors that you can choose will depend on the image you selected. For instance, the following flavors contain access to NVIDIA GPU:
 
@@ -215,7 +215,7 @@ To list the available key pairs, execute:
 
    openstack keypair list -c Name -c Type
 
-.. image:: /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-Eumetsat-Elasticity-cloud/Screenshot_20241006_125234.png
+.. image:: /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-cloud/Screenshot_20241006_125234.png
 
 The parameter to use is **-\-key-name**
 
@@ -234,7 +234,7 @@ To list networks which can be connected to your virtual machine, execute the fol
 
    openstack network list -c Name
 
-.. image:: /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-Eumetsat-Elasticity-cloud/Screenshot_20241006_132619.png
+.. image:: /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-cloud/Screenshot_20241006_132619.png
 
 The parameter to use is **-\-network**.
 
@@ -261,11 +261,11 @@ Security groups block or allow different types of Internet traffic on your virtu
 
 Here is a list of available security groups in a system that has been used for a while:
 
-.. image:: /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-Eumetsat-Elasticity-cloud/Screenshot_20241006_125651.png
+.. image:: /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-cloud/Screenshot_20241006_125651.png
 
 The most basic security group is **default**, however, in the image above we also see group called **allow_ping_ssh_icmp_rdp** and this is what it contains:
 
-.. image:: /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-Eumetsat-Elasticity-cloud/Screenshot_20241006_130817.png
+.. image:: /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-cloud/Screenshot_20241006_130817.png
 
 There may be other security groups present, especially if you were creating Kubernetes clusters.
 
@@ -292,16 +292,7 @@ Let us use the image of Ubuntu 22.04. LTS. We do not have another image under th
     * Source: the **Ubuntu 22.04 LTS** image
     * Key Pair: **sshkey** previously uploaded to your account
     * Security groups: **default** and **allow_ping_ssh_icmp_rdp**
-    * Networks: **cloud_00341_1**, **eodata_00341_1**
-
-.. ifconfig:: brand_name not in brands_without_eodata
-
-    * Name: **Test-Ubuntu**
-    * Flavor: **eo1.small**
-    * Source: the **Ubuntu 22.04 LTS** image
-    * Key Pair: **sshkey** previously uploaded to your account
-    * Security groups: **default** and **allow_ping_ssh_icmp_rdp**
-    * Network: **cloud_00341_1**
+    * Network: **cloud_00341_3**
 
 In your case, these parameters will probably be different.
 
@@ -316,36 +307,22 @@ Here is the command to create virtual machine with the following parameters:
         --flavor eo1.small \
         --key-name sshkey \
         --network cloud_00341_3 \
-        --network eodata_00341_3 \
         --security-group default \
         --security-group allow_ping_ssh_icmp_rdp \
         Test-Ubuntu
 
-
-.. ifconfig:: brand_name not in brands_without_eodata
-
-   .. code::
-
-        openstack server create \
-        --image "Ubuntu 22.04 LTS" \
-        --flavor eo1.small \
-        --key-name sshkey \
-        --network cloud_00341_3 \
-        --security-group default \
-        --security-group allow_ping_ssh_icmp_rdp \
-        Test-Ubuntu
 
 Backslash character, **\\**, is was used to separate one command into multiple lines, for additional legibility.
 
 If you entered the command correctly, you should see the output containing the information about your VM, for example:
 
-.. image:: /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-Eumetsat-Elasticity-cloud/Screenshot_20241006_132113.png
+.. image:: /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-cloud/Screenshot_20241006_132113.png
 
 .. warning::
 
    If you repeat the same **server create** command for the second time, a new instance will be created, also named **Test-Ubuntu**. You will end up with two instances of the same name as shown here:
 
-   .. image:: /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-Eumetsat-Elasticity-cloud/Screenshot_20241006_133524.png
+   .. image:: /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-cloud/Screenshot_20241006_133524.png
 
 To differentiate between them, use their ID values. For instance, execute the command below and in it replace **debf8557-defc-4f44-8c9b-e10b7689e546** with the ID of your VM.
 
@@ -355,7 +332,7 @@ To differentiate between them, use their ID values. For instance, execute the co
 
 Typically, after up to a minute, this command should show the output with **Running** in the field **power_state**:
 
-.. image::  /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-Eumetsat-Elasticity-cloud/Screenshot_20241006_134749.png
+.. image::  /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-cloud/Screenshot_20241006_134749.png
 
 This means that your virtual machine is operational.
 
@@ -384,7 +361,7 @@ In it, **external** is the name of the external network used in your project.
 
 The output of this command should provide information about the created floating IP, for example:
 
-.. image:: /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-Eumetsat-Elasticity-cloud/Screenshot_20241006_135229.png
+.. image:: /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-cloud/Screenshot_20241006_135229.png
 
 Note down the value in field **floating_ip_address** -- it is the actual IP address for the new machine.
 
@@ -408,7 +385,7 @@ If this command is executed successfully, it should not give any output. You can
 
    openstack server list -f json
 
-.. image:: /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-Eumetsat-Elasticity-cloud/Screenshot_20241006_143434.png
+.. image:: /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-cloud/Screenshot_20241006_143434.png
 
 Step 4: Use SSH to access the VM
 ---------------------------------------
@@ -435,7 +412,7 @@ where, obviously, you would replace **185.254.222.127** with the actual floating
 
 You should receive an output similar to this:
 
-.. image:: /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-Eumetsat-Elasticity-cloud/Screenshot_20241006_145844.png
+.. image:: /cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-cloud/Screenshot_20241006_145844.png
 
 The prompt changes to **eouser@test-ubuntu** and you can now issue commands on local computer that will have effect on the remote computer.
 
@@ -446,7 +423,6 @@ You can use CLI commands for practically any task regarding the OpenStack enviro
 
 .. jinja:: brand_names
 
-    :doc:`/openstackcli/How-to-access-object-storage-using-OpenStack-CLI-on-{{ brand_name_hyphen }}`
 
     :doc:`/openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration`
 

@@ -1,7 +1,7 @@
-How to create a Linux VM and access it from Windows desktop on |brand-name|
-========================================================================================
+How to create a Linux VM and access it from Windows desktop
+===========================================================
 
-Creating a virtual machine in a |brand-name| cloud allows you to perform computations without having to engage your own infrastructure. In this article you shall create a Linux based virtual machine and access it remotely using PuTTY on Windows.
+Creating a virtual machine in a the cloud allows you to perform computations without having to engage your own infrastructure. In this article you shall create a Linux based virtual machine and access it remotely using PuTTY on Windows.
 
 .. jinja:: brand_names
 
@@ -14,7 +14,7 @@ Creating a virtual machine in a |brand-name| cloud allows you to perform computa
 What We Are Going To Cover
 ------------------------------
 
- * Creating a Linux virtual machine in |brand-name| cloud using command **Launch Instance** from Horizon Dashboard
+ * Creating a Linux virtual machine in the cloud using command **Launch Instance** from Horizon Dashboard
 
 You will enter the following data into that window:
 
@@ -99,7 +99,8 @@ Step 1 Start the Launch Instance window and name the virtual machine
 
 In the Horizon dashboard go to **Compute** -> **Instances** and click **Launch Instance**. You should get the following window:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/create-linux-linux-04_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/create-linux-linux-04_creodias.png
+   :alt: Step 1 Start the Launch Instance window and name the virtual machine
 
 Type the name for your virtual machine in the **Instance Name** text field.
 
@@ -110,15 +111,17 @@ Step 2 Define the source of the virtual machine
 
 The **Source** window appears:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/create-linux-linux-05_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/create-linux-linux-05_creodias.png
+   :alt: Step 2 Define the source of the virtual machine
 
 Make sure that from the drop-down menu **Select Boot Source** option **Image** is selected.
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/boot_source.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/boot_source.png
 
 From the **Available** list choose Linux distribution that suits you best and click **↑** next to it. It should now be visible in the **Allocated** section:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/create-linux-linux-06_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/create-linux-linux-06_creodias.png
+   :alt: Step 2 Define the source of the virtual machine
 
 This image shows that a Ubuntu 20.04 LTS was selected; if you, however, chose CentOS 7, that is what would show here instead of Ubuntu 20.04 LTS.
 
@@ -135,7 +138,8 @@ Step 3 Define the flavor of the instance
 
 You should now see the following form:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/create-linux-linux-07_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/create-linux-linux-07_creodias.png
+   :alt: Step 3 Define the flavor of the instance
 
 The standard definition of OpenStack *flavor* is the amount of resources available to the instance - like VCPU, memory and storage capacity.
 
@@ -156,7 +160,7 @@ Choose the one which suits you best and click **↑** next to it.
 
 Sometimes, a flavor might be insufficient for source you chose in the previous step. If this is the case, you will see a yellow warning sign next to at least one of the values in the row for that flavor:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/yellow_triangles.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/yellow_triangles.png
 
 To solve this issue, choose a flavor that supports your chosen source instead. In the image above, *vm.a6000.4* is not available but, say, *hm.large* is.
 
@@ -174,7 +178,8 @@ Step 4 Define networks for the virtual machine
 
 You should now see a window to choose one or several networks that you want your VM to work with:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/create-linux-linux-08_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/create-linux-linux-08_creodias.png
+   :alt: Step 4 Define networks for the virtual machine
 
 Here you can select networks that will be attached to your virtual machine. They control the way your machine is connected to the Internet, to the other machines and to other resources as well.
 
@@ -194,7 +199,8 @@ Security groups control network traffic to and from your virtual machine.
 
 Click **Security Groups**. You should see the following form:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/create-linux-linux-09_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/create-linux-linux-09_creodias.png
+   :alt: Step 5 Define security groups for VM
 
 By default, you have access to two groups:
 
@@ -211,7 +217,8 @@ To use SSH to connect your local Linux computer to the cloud Linux "computer", y
 
 Click **Key Pair**. You should now see the following window:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/create-linux-linux-10_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/create-linux-linux-10_creodias.png
+   :alt: Step 6 Create a key pair for SSH access
 
 In the image above, the key is called **test-key**. There are three ways to enter the keys into this window:
 
@@ -234,13 +241,15 @@ Once you have set everything up, click **Launch Instance**.
 
 Your instance should now be in the **Instances** list.  Initially, the instance will be in a state of "Spawning" as in this image:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/create-linux-linux-12_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/create-linux-linux-12_creodias.png
+   :alt: Step 7 Create the instance
 
 Spawning is the process of preparing the instance.
 
 Wait up to a few minutes until your instance has finished spawning. The next state is **Running** label in the **Power State** column:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/create-linux-linux-13_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/create-linux-linux-13_creodias.png
+   :alt: Step 7 Create the instance
 
 It means that the instance is ready to use.
 
@@ -257,7 +266,7 @@ Step 8 Attach a Floating IP to the instance
 
 Once you have added the floating IP, you will see it in the Horizon dashboard under header **IP Address** - just like in the last image from that article:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/ip_address_from_article.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/ip_address_from_article.png
 
 The floating IP address in that article is **64.225.132.0**. Your address will vary.
 
@@ -272,29 +281,29 @@ In order to connect to a virtual machine using PuTTY, you must first convert you
 
 If you didn't install PuTTY yet, please follow Prerequisite No. 4. You should have the following section in your **Start** menu:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/putty-02.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/putty-02.png
 
 Choose **PuTTYgen**. You should get the following window:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/putty-03.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/putty-03.png
 
 Click **Load**. A file sector should appear:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/putty-04.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/putty-04.png
 
 In the lower section of the window there should be a drop-down menu with the option **PuTTY Private Key Files** already selected. Click it and choose **All Files (*.*)** instead:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/putty-05.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/putty-05.png
 
 Find your downloaded private key and click **Open**.
 
 A following message should appear:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/putty-06.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/putty-06.png
 
 Click **OK**. You should return to the previous window (**PuTTY Key Generator**). Click **Save private key**. You should get the following question:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/putty-07.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/putty-07.png
 
 Click **Yes**.
 
@@ -302,7 +311,7 @@ In the next window **Save private key as:** choose the location in which you wis
 
 Close the **PuTTY Key Generator** window. Your saved file should like like this:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/putty-08.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/putty-08.png
 
 Of course, your file will probably have a different name than the one on the screenshot above.
 
@@ -311,15 +320,15 @@ Step 10 Configure PuTTY
 
 Run **PuTTY** from your **Start** menu. The following window should appear:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/putty-09.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/putty-09.png
 
 In the text field **Host Name (or IP address)** type the floating IP of your virtual machine - in this example it is **64.225.133.247**:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/putty-10.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/putty-10.png
 
 In the **Category** section (in the left part of the window) go to **Connection -> SSH -> Auth -> Credentials to authenticate with**. You should get the following form:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/putty-11.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/putty-11.png
 
 Click **Browse...** next to the text field **Private key file for authentictation**.
 
@@ -327,31 +336,31 @@ Choose your converted private key.
 
 The location of your key should appear in the **Private key file for authentication** text box:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/key-location-putty.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/key-location-putty.png
 
 Step 11 Save the session settings
 ---------------------------------------
 
 To save these settings for future use, return to the **Session** category in which you typed the floating IP of your virtual machine. Choose the name of your session and type it in the text field found in the **Load, save or delete a stored session**:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/putty-12.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/putty-12.png
 
 Click **Save**. Your saved session should appear on the list:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/putty-13.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/putty-13.png
 
 Step 12 Connect to your virtual machine
 -------------------------------------------------
 
 To connect to your virtual machine, click **Open**. If you are connecting to that machine for the first time, you should receive the following alert:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/putty-14.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/putty-14.png
 
 Click **Accept**.
 
 You will be asked for your username:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/putty-15.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/putty-15.png
 
 Type **eouser** and press Enter.
 
@@ -361,7 +370,7 @@ Type **eouser** and press Enter.
 
 You should now be connected to your virtual machine and be able to execute commands:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/putty-16.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/putty-16.png
 
 Using your saved PuTTY session to simplify login
 ---------------------------------------------------
@@ -370,14 +379,14 @@ In order to use your saved session, open **PuTTY**. In the **Load, save or delet
 
 All your settings, including the floating IP of your VM should now be provided:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/putty-13.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop/putty-13.png
 
 You can now start your session as explained in Step 12 above.
 
 What To Do Next
 -------------------
 
-|brand-name| cloud can be used for general hosting needs, such as
+the cloud can be used for general hosting needs, such as
 
  * installing LAMP servers,
 
@@ -387,47 +396,14 @@ What To Do Next
 
  * Kubernetes and SLURM clusters and so on.
 
-.. ifconfig:: brand_name not in  brands_without_eodata
-
-    You can also take advantage of its access to the **eodata** repository, where "eodata" stands for "Earth Observation Data" from satellites.
-
-    .. jinja:: brand_names
-
-       :doc:`/eodata/How-to-mount-eodata-using-S3FS-in-Linux-on-{{ brand_name_hyphen }}`
-
-    .. jinja:: brand_names
-
-       :doc:`/eodata/How-to-download-EODATA-files-using-s3cmd-on-{{ brand_name_hyphen }}`
-
-    .. jinja:: brand_names
-
-       :doc:`/eodata/How-to-access-EODATA-using-boto3-on-{{ brand_name_hyphen }}`.
-
-        If you need more performance for purposes such as deep learning, you can use VMs with NVIDIA hardware. The following article covers the creation of such VM:
-
-        .. jinja:: brand_names
-
-           :doc:`/cloud/How-To-Create-a-New-Linux-VM-With-NVIDIA-Virtual-GPU-in-the-OpenStack-Dashboard-Horizon-on-{{ brand_name_hyphen }}/How-To-Create-a-New-Linux-VM-With-NVIDIA-Virtual-GPU-in-the-OpenStack-Dashboard-Horizon-on-{{ brand_name_hyphen }}`
-
-        For a cutting edge example of using **eodata** and deep learning algorithms, please see:
-
-        .. jinja:: brand_names
-
-           :doc:`/cuttingedge/Sample-Deep-Learning-workflow-using-vGPU-and-EO-DATA-on-{{ brand_name_hyphen }}`.
-
-To create a *cluster* of instances, see the series of articles on Kubernetes:
-
-.. jinja:: brand_names
-
-   :doc:`/kubernetes/How-to-Create-a-Kubernetes-Cluster-Using-{{ brand_name_hyphen }}-OpenStack-Magnum`.
+To create a managed Kubernetes cluster, see
+:doc:`/kubernetes/How-to-create-a-Managed-Kubernetes-cluster-using-launcher-GUI`.
 
 If you find yourself unable to connect to your virtual machine using SSH, you can use the web console for troubleshooting and other purposes. Here's how to do it:
 
 .. jinja:: brand_names
 
    :doc:`/cloud/How-to-access-the-VM-from-OpenStack-console`
-
-.. jinja:: brand_names
 
 If you don't want the storage of your instance to be deleted while the VM is removed, you can choose to use a volume during instance creation. Please see the following articles:
 

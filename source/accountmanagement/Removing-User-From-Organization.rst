@@ -21,10 +21,6 @@ Procedure
 
 After logging in to the portal, open **Sub-accounts** from the left-side menu.
 
-.. figure:: /accountmanagement/Removing-User-From-Organization/removing-user-from-organization-ecis.png
-   :align: center
-   :class: image-with-border
-
 The page shows the users currently assigned to your organization.
 
 Select the user you want to remove, click **Unassign**, and then click **Confirm**.

@@ -1,5 +1,5 @@
-How to delete a large S3 bucket on |brand-name|
-===============================================
+How to delete a large S3 bucket
+===============================
 
 Introduction
 ------------

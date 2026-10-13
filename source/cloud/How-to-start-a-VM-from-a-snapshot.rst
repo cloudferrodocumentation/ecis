@@ -1,5 +1,5 @@
-How to start a VM from a snapshot on |brand-name|
-===================================================
+How to start a VM from a snapshot
+=================================
 
 
 a) Volume Snapshot
@@ -7,40 +7,40 @@ a) Volume Snapshot
 
 1. Choose the desired virtual machine (booted from Volume) and click on the “Create snapshot” button.
 
-.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot-on-Eumetsat-Elasticity/snap00.png
+.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot/snap00.png
 
 
 
 2. Name the snapshot. The decision is up to you to improve the personal navigation throughout image or volume snapshot repository. Confirm with the blue button.
 
-.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot-on-Eumetsat-Elasticity/snap01.png
+.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot/snap01.png
 
 
 
 3. Go to Volumes tab and press Snapshots.
 
-.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot-on-Eumetsat-Elasticity/snap3.png
+.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot/snap3.png
 
 
 
 4. Your volume snapshot is being stored in this place. To start a virtual machine from this type of snapshot, press on the arrow beside “Create Volume”.
 
-.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot-on-Eumetsat-Elasticity/snap4.png
+.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot/snap4.png
 
 
 
 5. Choose “Launch as Instance”.
 
-.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot-on-Eumetsat-Elasticity/snap5.png
+.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot/snap5.png
 
 
 6. Define Instance name and change  bookmark to “Source”.
 
-.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot-on-Eumetsat-Elasticity/snap6.png
+.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot/snap6.png
 
 7. Set Boot Source on “Volume Snapshot” and assign previously created snapshot by clicking on the arrow.
 
-.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot-on-Eumetsat-Elasticity/snap7.png
+.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot/snap7.png
 
 .. jinja:: brand_names
 
@@ -48,26 +48,26 @@ a) Volume Snapshot
 
 9. Newly created machine is visible in the Instances list.
 
-.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot-on-Eumetsat-Elasticity/snap8.png
+.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot/snap8.png
 
 b) Image Snapshot
 -----------------
 
 1.Choose the desired virtual machine (booted from Glance image) and click on the “Create snapshot” button.
 
-.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot-on-Eumetsat-Elasticity/snap1.png
+.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot/snap1.png
 
 2. Name the snapshot. The decision is up to you to improve the personal navigation throughout image or volume snapshot repository. Confirm with the blue button.
 
-.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot-on-Eumetsat-Elasticity/snap2.png
+.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot/snap2.png
 
 3. Go to Compute tab and press Images.
 
-.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot-on-Eumetsat-Elasticity/snap3.png
+.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot/snap3.png
 
 4. Scroll down and find your snapshot. Click on the “Launch”.
 
-.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot-on-Eumetsat-Elasticity/snap4.png
+.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot/snap4.png
 
 .. attention::
 
@@ -76,7 +76,7 @@ b) Image Snapshot
 
 5. Name your virtual machine and go to “Source.” Set Boot Source on “Instance snapshot" and choose previously created Snapshot in RAW format.
 
-.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot-on-Eumetsat-Elasticity/snap5.png
+.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot/snap5.png
 
 .. jinja:: brand_names
 
@@ -84,4 +84,4 @@ b) Image Snapshot
 
 7. Virtual machine has been created.
 
-.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot-on-Eumetsat-Elasticity/snap6.png
+.. figure:: /cloud/How-to-start-a-VM-from-a-snapshot/snap6.png

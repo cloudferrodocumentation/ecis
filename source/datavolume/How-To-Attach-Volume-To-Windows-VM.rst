@@ -23,7 +23,7 @@ No. 2 **Windows VM**
 
 .. jinja:: brand_names
 
-   You must operate a Microsoft Windows virtual machine running on |brand-name| |cloud-name| cloud. You can access it using the webconsole (:doc:`/cloud/How-to-access-the-VM-from-OpenStack-console`) or through RDP. If you are using RDP, we strongly recommend using a bastion host for your security: :doc:`/windows/Connecting-to-a-Windows-VM-via-RDP-through-a-Linux-bastion-host-port-forwarding`.
+   You must operate a Microsoft Windows virtual machine running on the cloud. You can access it using the webconsole (:doc:`/cloud/How-to-access-the-VM-from-OpenStack-console`) or through RDP. If you are using RDP, we strongly recommend using a bastion host for your security: :doc:`/windows/Connecting-to-a-Windows-VM-via-RDP-through-a-Linux-bastion-host-port-forwarding`.
 
 Step 1: Create a New Volume
 -------------------------------
@@ -34,7 +34,8 @@ Go to the section **Volumes -> Volumes**:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM-On-Eumetsat-Elasticity/{{ datavolume019 }}
+   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM/{{ datavolume019 }}
+      :alt: Step 1: Create a New Volume
 
 Click **Create Volume**.
 
@@ -42,7 +43,8 @@ The following window should appear:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM-On-Eumetsat-Elasticity/{{ datavolume020 }}
+   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM/{{ datavolume020 }}
+      :alt: Step 1: Create a New Volume
 
 In it provide the **Volume Name** of your choice.
 
@@ -56,7 +58,8 @@ You should now see the volume you just created. In our case it is called **data*
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM-On-Eumetsat-Elasticity/{{ datavolume021 }}
+   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM/{{ datavolume021 }}
+      :alt: Step 1: Create a New Volume
 
 Step 2: Attach the Volume to VM
 ---------------------------------------
@@ -69,13 +72,15 @@ In the **Actions** menu for that volume select the option **Manage Attachments**
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM-On-Eumetsat-Elasticity/{{ datavolume022 }}
+   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM/{{ datavolume022 }}
+      :alt: Step 2: Attach the Volume to VM
 
 You should now see the following window:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM-On-Eumetsat-Elasticity/{{ datavolume023 }}
+   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM/{{ datavolume023 }}
+      :alt: Step 2: Attach the Volume to VM
 
 Select the virtual machine to which the volume should be attached from the drop-down menu **Attach to Instance** and click **Attach Volume**.
 
@@ -83,7 +88,8 @@ Your volume should now be attached to the virtual machine:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM-On-Eumetsat-Elasticity/{{ datavolume024 }}
+   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM/{{ datavolume024 }}
+      :alt: Step 2: Attach the Volume to VM
 
 Step 3: Format the Drive
 ----------------------------
@@ -92,13 +98,15 @@ Start your VM and access it using RDP or the webconsole (see Prerequisite 2). Ri
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM-On-Eumetsat-Elasticity/{{ datavolume025 }}
+   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM/{{ datavolume025 }}
+      :alt: Step 3: Format the Drive
 
 In its lower section are the drives currently connected to your virtual machine:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM-On-Eumetsat-Elasticity/{{ datavolume026 }}
+   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM/{{ datavolume026 }}
+      :alt: Step 3: Format the Drive
 
 In this case (on the screenshot above), there are two drives:
 
@@ -109,13 +117,15 @@ Right-click the section of the window in which the label **Not Initialized** exi
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM-On-Eumetsat-Elasticity/{{ datavolume027 }}
+   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM/{{ datavolume027 }}
+      :alt: Step 3: Format the Drive
 
 From the context menu select **Initialize Disk**. You should receive the following window:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM-On-Eumetsat-Elasticity/{{ datavolume028 }}
+   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM/{{ datavolume028 }}
+      :alt: Step 3: Format the Drive
 
 In this window you are asked which partition style do you want to use: MBR or GPT. If your volume has 2 TB or less space and you intend to use 4 primary partitions or less, you can use MBR, but if your requirements are higher, you should use GPT.
 
@@ -125,7 +135,8 @@ Right-click the **Unallocated** space:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM-On-Eumetsat-Elasticity/{{ datavolume029 }}
+   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM/{{ datavolume029 }}
+      :alt: Step 3: Format the Drive
 
 Choose **New Simple Volume**.
 
@@ -133,13 +144,15 @@ You should receive the following window:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM-On-Eumetsat-Elasticity/{{ datavolume030 }}
+   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM/{{ datavolume030 }}
+      :alt: Step 3: Format the Drive
 
 Click **Next >**. The following window should appear:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM-On-Eumetsat-Elasticity/{{ datavolume031 }}
+   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM/{{ datavolume031 }}
+      :alt: Step 3: Format the Drive
 
 If you want your volume to have only one partition, leave the default value in the text field. Otherwise, enter the size of the first partition of your volume.
 
@@ -152,13 +165,15 @@ The following window should now appear:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM-On-Eumetsat-Elasticity/{{ datavolume032 }}
+   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM/{{ datavolume032 }}
+      :alt: Step 3: Format the Drive
 
 Here you can choose the formatting settings. Keep the radio button **Format this drive with the following settings:** selected. You can now enter the name which Windows will show for your new volume - it can be different then the one you typed in **Step 1**. Keep **Perform a quick format** checkbox selected. Click **Next >**. You should get the following window containing the summary of your chosen settings:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM-On-Eumetsat-Elasticity/{{ datavolume033 }}
+   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM/{{ datavolume033 }}
+      :alt: Step 3: Format the Drive
 
 Click **Finish**.
 
@@ -166,13 +181,15 @@ Once the formatting process is complete, you should see appropriate information 
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM-On-Eumetsat-Elasticity/{{ datavolume034 }}
+   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM/{{ datavolume034 }}
+      :alt: Step 3: Format the Drive
 
 Your volume should now be mounted. If you chose to assign a drive letter, it should be visible in the **This PC** window:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM-On-Eumetsat-Elasticity/{{ datavolume035 }}
+   .. image:: /datavolume/How-To-Attach-Volume-To-Windows-VM/{{ datavolume035 }}
+      :alt: Step 3: Format the Drive
 
 If you want to create more partitions, repeat right-clicking the **Unallocated** space and completing the wizard as previously explained.
 

@@ -1,5 +1,5 @@
-How to restore volume from snapshot on |brand-name|
-===============================================================================================
+How to restore volume from snapshot
+===================================
 
 In this article, you will learn how to restore volume from volume snapshot using Horizon dashboard or OpenStack CLI client.
 
@@ -18,7 +18,7 @@ You need to have a volume snapshot which you want to restore.
 
 No. 3 **OpenStack CLI client**
 
-If you want to interact with |brand-name| cloud using the OpenStack CLI client, you need to have it installed. Check one of these articles:
+If you want to interact with the cloud using the OpenStack CLI client, you need to have it installed. Check one of these articles:
 
 .. jinja:: brand_names
 
@@ -28,12 +28,6 @@ If you want to interact with |brand-name| cloud using the OpenStack CLI client, 
 
     * :doc:`/openstackcli/How-to-install-OpenStackClient-on-Windows-using-Windows-Subsystem-for-Linux-on-OpenStack-Hosting`
 
-.. ifconfig:: brand_name in two_fa_activated
-
-    .. jinja:: brand_names
-
-       Once you have installed this piece of software, you need to authenticate to start using it: :doc:`/accountmanagement/How-to-activate-OpenStack-CLI-access-to-cloud`
-
 .. ifconfig:: brand_name not in two_fa_activated
 
     .. ifconfig:: brand_name != 'WEkEO'
@@ -41,11 +35,6 @@ If you want to interact with |brand-name| cloud using the OpenStack CLI client, 
        .. jinja:: brand_names
 
           Once you have installed this piece of software, you need to authenticate to start using it: :doc:`/accountmanagement/How-to-activate-OpenStack-CLI-access-to-cloud`
-
-    .. ifconfig:: brand_name == 'WEkEO'
-
-       Once you have installed this piece of software, you need to authenticate to start using it: :doc:`/accountmanagement/How-to-activate-OpenStack-CLI-access-to-WEkEO-cloud-using-Federated-IDP-authorization-and-application-credentials`
-
 
 What We Are Going To Cover
 --------------------------------
@@ -60,19 +49,22 @@ Navigate to the **Volumes -> Snapshots** section of the Horizon dashboard:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-restore-volume-from-snapshot-on-Eumetsat-Elasticity/{{ datavolume094 }}
+   .. image:: /datavolume/How-to-restore-volume-from-snapshot/{{ datavolume094 }}
+      :alt: Restoring volume snapshot using Horizon dashboard
 
 From the row representing the snapshot you want to restore, in the **Actions** column choose **Create Volume**:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-restore-volume-from-snapshot-on-Eumetsat-Elasticity/{{ datavolume095 }}
+   .. image:: /datavolume/How-to-restore-volume-from-snapshot/{{ datavolume095 }}
+      :alt: Restoring volume snapshot using Horizon dashboard
 
 You should get the window similar to this:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-restore-volume-from-snapshot-on-Eumetsat-Elasticity/{{ datavolume096 }}
+   .. image:: /datavolume/How-to-restore-volume-from-snapshot/{{ datavolume096 }}
+      :alt: Restoring volume snapshot using Horizon dashboard
 
 If you want your new volume to have a different name than your snapshot, enter the name of your choice in text field **Volume Name**.
 
@@ -84,7 +76,8 @@ You should now be transferred to section **Volumes -> Volumes** of the Horizon d
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-restore-volume-from-snapshot-on-Eumetsat-Elasticity/{{ datavolume097 }}
+   .. image:: /datavolume/How-to-restore-volume-from-snapshot/{{ datavolume097 }}
+      :alt: Restoring volume snapshot using Horizon dashboard
 
 Make sure that the volume has the following **Status**: **Available**.
 
@@ -101,7 +94,8 @@ You should see the list of snapshots of your volumes:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-restore-volume-from-snapshot-on-Eumetsat-Elasticity/{{ datavolume098 }}
+   .. image:: /datavolume/How-to-restore-volume-from-snapshot/{{ datavolume098 }}
+      :alt: Restoring volume snapshot using OpenStack CLI client
 
 Write somewhere down the ID of the snapshot from which you want to create a volume:
 
@@ -122,7 +116,8 @@ You should get output similar to this:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-restore-volume-from-snapshot-on-Eumetsat-Elasticity/{{ datavolume099 }}
+   .. image:: /datavolume/How-to-restore-volume-from-snapshot/{{ datavolume099 }}
+      :alt: Restoring volume snapshot using OpenStack CLI client
 
 List volumes:
 
@@ -134,7 +129,8 @@ Your new volume should now be on the list:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-restore-volume-from-snapshot-on-Eumetsat-Elasticity/{{ datavolume100 }}
+   .. image:: /datavolume/How-to-restore-volume-from-snapshot/{{ datavolume100 }}
+      :alt: Restoring volume snapshot using OpenStack CLI client
 
 Make sure that newly created volume has the following **Status**: **available**.
 

@@ -1,5 +1,5 @@
-Managed Kubernetes Shared Responsibility Model on |brand-name|
-==============================================================
+Managed Kubernetes Shared Responsibility Model
+==============================================
 
 Managed Kubernetes on |brand-name| enables users to deploy ready-to-use, production-grade Kubernetes clusters. A key benefit of |MK8s| is that |brand-name| manages the lifecycle of the Kubernetes platform, including cluster provisioning and ongoing maintenance of platform components.
 

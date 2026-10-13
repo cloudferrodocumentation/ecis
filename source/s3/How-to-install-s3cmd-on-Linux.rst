@@ -1,5 +1,5 @@
-How to install s3cmd on Linux on |brand-name|
-=============================================
+How to install s3cmd on Linux
+=============================
 
 In this article, you will learn how to install
 `s3cmd <https://github.com/s3tools/s3cmd>`_ on Linux.
@@ -7,10 +7,6 @@ In this article, you will learn how to install
 **s3cmd** is a command-line tool for working with S3-compatible object storage from a terminal. After installing it, you can use commands to list buckets, upload files, download files, synchronize directories, and automate storage tasks in scripts.
 
 On |brand-name|, you can use **s3cmd** when you want to work with object storage directly from the command line instead of mounting storage as a local file system.
-
-.. ifconfig:: brand_name not in brands_without_eodata
-
-   You can also use **s3cmd** to access **EODATA** repositories. This is useful when you want to download Earth observation data directly from the terminal or include EODATA access in scripts.
 
 What we are going to cover
 --------------------------
@@ -30,7 +26,7 @@ You need a |brand-name| hosting account with access to the Horizon interface:
 No. 2 **A virtual machine or local computer**
 
 These instructions are written for Ubuntu 22.04, either on a local computer or
-on a virtual machine hosted on |brand-name| cloud.
+on a virtual machine hosted on the cloud.
 
 Other operating systems and environments are outside the scope of this article
 and may require adjusted commands.
@@ -44,7 +40,7 @@ cloud, follow one of these articles:
    * :doc:`{{ linux_vm_from_linux }}`
 
 Object storage from |brand-name| is available both from a virtual machine
-hosted on |brand-name| cloud and from a local Linux computer.
+hosted on the cloud and from a local Linux computer.
 
 Installing s3cmd using apt
 --------------------------
@@ -83,7 +79,8 @@ example:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-install-s3cmd-on-Linux-on-Eumetsat-Elasticity/{{ s3068 }}
+   .. image:: /s3/How-to-install-s3cmd-on-Linux/{{ s3068 }}
+      :alt: Installing s3cmd using apt
 
 Uninstalling s3cmd using apt
 ----------------------------
@@ -107,7 +104,8 @@ show you which packages are to be removed before proceeding.
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-install-s3cmd-on-Linux-on-Eumetsat-Elasticity/{{ s3069 }}
+   .. image:: /s3/How-to-install-s3cmd-on-Linux/{{ s3069 }}
+      :alt: Uninstalling s3cmd using apt
 
 You should get the following question:
 
@@ -122,17 +120,8 @@ If you do not want to remove them, answer with **n** and press **Enter**.
 What to do next
 ---------------
 
-.. ifconfig:: brand_name in special_eodata
-
-   To use **s3cmd** on a virtual machine hosted on |brand-name| cloud to access
-   its EO-Data repository, follow this article:
-
-   .. jinja:: doc_links
-
-      :doc:`{{ eodata_s3cmd_access }}`
-
-To access object storage buckets from |brand-name| cloud on a virtual machine
-hosted on |brand-name| cloud or on a local Linux computer, follow this article:
+To access object storage buckets from the cloud on a virtual machine
+hosted on the cloud or on a local Linux computer, follow this article:
 
 .. jinja:: doc_links
 

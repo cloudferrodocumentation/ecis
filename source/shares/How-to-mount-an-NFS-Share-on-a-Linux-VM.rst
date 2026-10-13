@@ -61,6 +61,7 @@ Before you mount an NFS share on a Linux VM, make sure that the share and VM are
    .. jinja:: shares_images
 
       .. figure:: /shares/How-to-mount-an-NFS-Share-on-a-Linux-VM/{{ shares038 }}
+         :alt: How to mount an NFS Share on a Linux VM
          :class: image-with-border
          :align: center
 
@@ -158,6 +159,7 @@ Here is what the entire process looks like in Terminal window:
 .. jinja:: shares_images
 
    .. figure:: /shares/How-to-mount-an-NFS-Share-on-a-Linux-VM/{{ shares039 }}
+      :alt: Test writing to the share
       :class: image-with-border
       :align: center
 
@@ -195,6 +197,7 @@ For example, using the export location from this article:
 .. code::
 
    10.214.37.122:/share_a6c0751e_072c_4dc5_8b53_9f69a9b0433a /mnt/share1 nfs defaults,_netdev 0 0
+
 Test the **/etc/fstab** entry before rebooting:
 
 .. code::
@@ -228,6 +231,7 @@ You can also check user messages in Horizon, via the following chain of commands
 .. jinja:: shares_images
 
    .. figure:: /shares/How-to-mount-an-NFS-Share-on-a-Linux-VM/{{ shares040 }}
+      :alt: User messages for debugging
       :class: image-with-border
       :align: center
 

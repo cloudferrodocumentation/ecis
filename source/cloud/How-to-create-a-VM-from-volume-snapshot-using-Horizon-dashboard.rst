@@ -1,5 +1,5 @@
-How to create a VM from volume snapshot using Horizon dashboard on |brand-name|
-=================================================================================
+How to create a VM from volume snapshot using Horizon dashboard
+===============================================================
 
 In this article, you will learn how to create a virtual machine from a volume snapshot using Horizon dashboard.
 
@@ -93,19 +93,23 @@ Changes to Step 2 Boot Source
 
 In Step 2 of above mentioned article, you are supposed to choose the image from which you want to create a virtual machine. Instead of that, from the drop-down menu **Select Boot Source** choose option **Volume Snapshot**. This will allow you to choose from the existing volume snapshots.
 
-.. image:: /cloud/How-to-create-a-VM-from-volume-snapshot-using-Horizon-dashboard-on-Eumetsat-Elasticity/start-vm-from-volume-snapshot-cli-08_creodias.png
+.. image:: /cloud/How-to-create-a-VM-from-volume-snapshot-using-Horizon-dashboard/start-vm-from-volume-snapshot-cli-08_creodias.png
+   :alt: Changes to Step 2 Boot Source
 
 You should get a list of volume snapshots:
 
-.. image:: /cloud/How-to-create-a-VM-from-volume-snapshot-using-Horizon-dashboard-on-Eumetsat-Elasticity/start-vm-from-volume-snapshot-cli-09_creodias.png
+.. image:: /cloud/How-to-create-a-VM-from-volume-snapshot-using-Horizon-dashboard/start-vm-from-volume-snapshot-cli-09_creodias.png
+   :alt: Changes to Step 2 Boot Source
 
 Click **↑** next to the volume snapshot from which you want to create your virtual machine:
 
-.. image:: /cloud/How-to-create-a-VM-from-volume-snapshot-using-Horizon-dashboard-on-Eumetsat-Elasticity/start-vm-from-volume-snapshot-cli-10_creodias.png
+.. image:: /cloud/How-to-create-a-VM-from-volume-snapshot-using-Horizon-dashboard/start-vm-from-volume-snapshot-cli-10_creodias.png
+   :alt: Changes to Step 2 Boot Source
 
 It should now be visible in the **Allocated** section:
 
-.. image:: /cloud/How-to-create-a-VM-from-volume-snapshot-using-Horizon-dashboard-on-Eumetsat-Elasticity/start-vm-from-volume-snapshot-cli-11_creodias.png
+.. image:: /cloud/How-to-create-a-VM-from-volume-snapshot-using-Horizon-dashboard/start-vm-from-volume-snapshot-cli-11_creodias.png
+   :alt: Changes to Step 2 Boot Source
 
 You should now be able to proceed to the next step.
 
@@ -122,7 +126,8 @@ If your particular installation of an operating system supports "injecting" of a
 
 If, however, it is not support this process, make sure that no keys are selected in this step. If a key has already been chosen and exists in the **Allocated** section, you can click **↓** next to its name to unselect it:
 
-.. image:: /cloud/How-to-create-a-VM-from-volume-snapshot-using-Horizon-dashboard-on-Eumetsat-Elasticity/start-vm-from-volume-snapshot-cli-13_creodias.png
+.. image:: /cloud/How-to-create-a-VM-from-volume-snapshot-using-Horizon-dashboard/start-vm-from-volume-snapshot-cli-13_creodias.png
+   :alt: Changes to Step 6 SSH key pair
 
 .. _step-2-other-operations:
 

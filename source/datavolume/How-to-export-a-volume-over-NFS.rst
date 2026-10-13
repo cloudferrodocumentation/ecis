@@ -1,5 +1,5 @@
-How to export a volume over NFS on |brand-name|
-================================================
+How to export a volume over NFS
+===============================
 
 **Server configuration**
 

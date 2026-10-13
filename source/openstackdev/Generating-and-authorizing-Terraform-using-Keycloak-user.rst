@@ -1,5 +1,5 @@
-Generating and authorizing Terraform using Keycloak user on |brand-name|
-===================================================================================
+Generating and authorizing Terraform using Keycloak user
+========================================================
 
 Clicking in Horizon and entering CLI commands are two main ways of using an OpenStack system. They are well suited to interactively executing one command at a time but do not scale up easily. A tool such as `Terraform, by HashiCorp corporation, <https://www.terraform.io/>`_ provides an alternative to manual ways of introducing cascading changes. Here is how you could, say, create several instances at once:
 
@@ -9,7 +9,7 @@ Clicking in Horizon and entering CLI commands are two main ways of using an Open
 
  * let Terraform automatically repeat it the prescribed number of times.
 
-The plan is to install Terraform, get OpenStack token, enter it into the configuration file and execute. You will then be able to effectively use Terraform within the |brand-name| cloud. For instance, with Terraform you can
+The plan is to install Terraform, get OpenStack token, enter it into the configuration file and execute. You will then be able to effectively use Terraform within the cloud. For instance, with Terraform you can
 
  * automate creation of a multitude of virtual machines, each with their own floating IPs, DNS and network functions or
 
@@ -33,6 +33,7 @@ What We Are Going To Do
  * Explain the meaning of the variables used
 
  * Execute the Terraform script
+
 Prerequisites
 -------------
 
@@ -60,7 +61,7 @@ That article shows how to install Python, create and activate a virtual environm
 
 No. 4 **RC file downloaded and cloud access activated**
 
-You need to download the RC file from the Horizon dashboard and use it to authenticate the OpenStack CLI client. The correct authentication article depends on the current |brand-name| cloud configuration and is resolved automatically through the documentation configuration:
+You need to download the RC file from the Horizon dashboard and use it to authenticate the OpenStack CLI client. The correct authentication article depends on the current the cloud configuration and is resolved automatically through the documentation configuration:
 
 .. jinja:: doc_links
 
@@ -92,7 +93,8 @@ Add the HashiCorp repository to the APT:
 
 .. jinja:: openstackdev_images
 
-   .. figure:: /openstackdev/Generating-and-authorizing-Terraform-using-Keycloak-user-on-Eumetsat-Elasticity/{{ openstackdev020 }}
+   .. figure:: /openstackdev/Generating-and-authorizing-Terraform-using-Keycloak-user/{{ openstackdev020 }}
+      :alt: Step 1 Install Terraform as a root user
 
 The following commands will update Ubuntu, install Terraform and check its version:
 
@@ -111,7 +113,7 @@ Now exit *root* mode and become the standard **eouser** again.
 Step 2 Reconnect to the cloud
 --------------------------------
 
-Working through Prerequisites Nos. 2 and 3, you ended up being connected up to the cloud. That connection is now lost because you have switched to **root** user and back again, to the normal **eouser** for the |brand-name| cloud. Refer to **Prerequisite No. 4 Activate the RC file** to reconnect to the cloud again. The following command will act as a test:
+Working through Prerequisites Nos. 2 and 3, you ended up being connected up to the cloud. That connection is now lost because you have switched to **root** user and back again, to the normal **eouser** for the cloud. Refer to **Prerequisite No. 4 Activate the RC file** to reconnect to the cloud again. The following command will act as a test:
 
 .. code::
 
@@ -121,7 +123,8 @@ and should present a start of a list of flavors available in the system:
 
 .. jinja:: openstackdev_images
 
-   .. figure:: /openstackdev/Generating-and-authorizing-Terraform-using-Keycloak-user-on-Eumetsat-Elasticity/{{ openstackdev021 }}
+   .. figure:: /openstackdev/Generating-and-authorizing-Terraform-using-Keycloak-user/{{ openstackdev021 }}
+      :alt: Step 2 Reconnect to the cloud
 
 **You are now ready to receive token from the cloud you are working with.** The "token" is actually a very long string of characters which serves as kind of password for your code.
 
@@ -195,7 +198,8 @@ The screen after initialization would look like this:
 
 .. jinja:: openstackdev_images
 
-   .. figure:: /openstackdev/Generating-and-authorizing-Terraform-using-Keycloak-user-on-Eumetsat-Elasticity/{{ openstackdev022 }}
+   .. figure:: /openstackdev/Generating-and-authorizing-Terraform-using-Keycloak-user/{{ openstackdev022 }}
+      :alt: Step 4 Set up the configuration file and initialize Terraform
 
 Terraform has been initialized and is working properly with your OpenStack cloud. Now add code to perform some useful tasks.
 
@@ -245,7 +249,7 @@ Append code to the contents of the **yourconffile.tf**. It will generate four vi
 Always use the latest value of image id
 -------------------------------------------------------------------
 
-From time to time, the default images of operating systems in the |brand-name| cloud are upgraded to the new versions. As a consequence, their **image id** will change. Let's say that the image id for Ubuntu 20.04 LTS was **574fe1db-8099-4db4-a543-9e89526d20ae** at the time of writing of this article. While working through the article, you would normally take the **current** value of image id, and would use it to replace **574fe1db-8099-4db4-a543-9e89526d20ae** throughout the text.
+From time to time, the default images of operating systems in the cloud are upgraded to the new versions. As a consequence, their **image id** will change. Let's say that the image id for Ubuntu 20.04 LTS was **574fe1db-8099-4db4-a543-9e89526d20ae** at the time of writing of this article. While working through the article, you would normally take the **current** value of image id, and would use it to replace **574fe1db-8099-4db4-a543-9e89526d20ae** throughout the text.
 
 Now, suppose you wanted to automate processes under OpenStack, perhaps using Heat, Terraform, Ansible or any other tool for OpenStack automation; if you use the value of **574fe1db-8099-4db4-a543-9e89526d20ae** for image id, it would remain **hardcoded** and once this value gets changed during the upgrade, the automated process may stop to execute.
 
@@ -299,7 +303,8 @@ Here is how Terraform will create four instances of Ubuntu 20.04 LTS. Command **
 
 .. jinja:: openstackdev_images
 
-   .. image:: /openstackdev/Generating-and-authorizing-Terraform-using-Keycloak-user-on-Eumetsat-Elasticity/{{ openstackdev023 }}
+   .. image:: /openstackdev/Generating-and-authorizing-Terraform-using-Keycloak-user/{{ openstackdev023 }}
+      :alt: Step 6 Execute the Terraform script
 
 Type
 
@@ -313,13 +318,15 @@ You should see output similar to this:
 
 .. jinja:: openstackdev_images
 
-   .. figure:: /openstackdev/Generating-and-authorizing-Terraform-using-Keycloak-user-on-Eumetsat-Elasticity/{{ openstackdev024 }}
+   .. figure:: /openstackdev/Generating-and-authorizing-Terraform-using-Keycloak-user/{{ openstackdev024 }}
+      :alt: Step 6 Execute the Terraform script
 
 This is how you would see those virtual machines in Horizon:
 
 .. jinja:: openstackdev_images
 
-   .. figure:: /openstackdev/Generating-and-authorizing-Terraform-using-Keycloak-user-on-Eumetsat-Elasticity/{{ openstackdev025 }}
+   .. figure:: /openstackdev/Generating-and-authorizing-Terraform-using-Keycloak-user/{{ openstackdev025 }}
+      :alt: Step 6 Execute the Terraform script
 
 If you wanted to revert the actions, that is, delete the VMs you have just created, the command would be:
 
@@ -330,7 +337,7 @@ If you wanted to revert the actions, that is, delete the VMs you have just creat
 Again, type **yes** to start the operations.
 
 What To Do Next
-----------------------
+---------------
 
 Of particular interest would be the following CLI commands for Terraform:
 

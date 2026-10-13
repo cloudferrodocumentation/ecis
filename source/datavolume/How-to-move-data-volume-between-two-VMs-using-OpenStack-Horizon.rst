@@ -1,5 +1,5 @@
-How to move data volume between two VMs using OpenStack Horizon on |brand-name|
-========================================================================================
+How to move data volume between two VMs using OpenStack Horizon
+===============================================================
 
 Volumes are used to store data and those data can be accessed from a virtual machine to which the volume is attached. To access data stored on a volume from another virtual machine, you need to disconnect that volume from virtual machine to which it is currently connected, and connect it to another instance.
 
@@ -105,7 +105,8 @@ You can check the **Status** of the volume in section **Volumes -> Volumes** of 
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-move-data-volume-between-two-VMs-using-OpenStack-Horizon-on-Eumetsat-Elasticity/{{ datavolume082 }}
+   .. image:: /datavolume/How-to-move-data-volume-between-two-VMs-using-OpenStack-Horizon/{{ datavolume082 }}
+      :alt: Other volume and instance conditions for successful transfer
 
 The instance must be:
 
@@ -116,7 +117,8 @@ The instance must be:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-move-data-volume-between-two-VMs-using-OpenStack-Horizon-on-Eumetsat-Elasticity/{{ datavolume083 }}
+   .. image:: /datavolume/How-to-move-data-volume-between-two-VMs-using-OpenStack-Horizon/{{ datavolume083 }}
+      :alt: Other volume and instance conditions for successful transfer
 
 .. jinja:: brand_names
 
@@ -133,7 +135,8 @@ Navigate to **Compute -> Instances**. You should see the table containing your v
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-move-data-volume-between-two-VMs-using-OpenStack-Horizon-on-Eumetsat-Elasticity/{{ datavolume084 }}
+   .. image:: /datavolume/How-to-move-data-volume-between-two-VMs-using-OpenStack-Horizon/{{ datavolume084 }}
+      :alt: Shutting down the source virtual machine
 
 Check the **Status** and **Power State** of the *source* virtual machine. On this screenshot, these values are marked with a green rectangle and a red rectangle, respectively.
 
@@ -160,7 +163,8 @@ From the drop-down menu in **Actions** section of the *source* virtual machine, 
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-move-data-volume-between-two-VMs-using-OpenStack-Horizon-on-Eumetsat-Elasticity/{{ datavolume085 }}
+   .. image:: /datavolume/How-to-move-data-volume-between-two-VMs-using-OpenStack-Horizon/{{ datavolume085 }}
+      :alt: Shutting down your virtual machine using Horizon dashboard
 
 Wait until the *source* virtual machine has the following **Power State**: **Shut Down**. You might need to refresh the page, possibly multiple times.
 
@@ -171,25 +175,29 @@ Navigate to section **Volumes -> Volumes** of the Horizon dashboard. You should 
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-move-data-volume-between-two-VMs-using-OpenStack-Horizon-on-Eumetsat-Elasticity/{{ datavolume086 }}
+   .. image:: /datavolume/How-to-move-data-volume-between-two-VMs-using-OpenStack-Horizon/{{ datavolume086 }}
+      :alt: Disconnecting volume
 
 In the **Actions** column of the row representing the volume you want to move, use the arrow to display the drop-down menu:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-move-data-volume-between-two-VMs-using-OpenStack-Horizon-on-Eumetsat-Elasticity/{{ datavolume087 }}
+   .. image:: /datavolume/How-to-move-data-volume-between-two-VMs-using-OpenStack-Horizon/{{ datavolume087 }}
+      :alt: Disconnecting volume
 
 Choose **Manage Attachments**. The next window should inform you to which virtual machine the volume is attached:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-move-data-volume-between-two-VMs-using-OpenStack-Horizon-on-Eumetsat-Elasticity/{{ datavolume088 }}
+   .. image:: /datavolume/How-to-move-data-volume-between-two-VMs-using-OpenStack-Horizon/{{ datavolume088 }}
+      :alt: Disconnecting volume
 
 Click **Detach Volume**. You will be asked for confirmation:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-move-data-volume-between-two-VMs-using-OpenStack-Horizon-on-Eumetsat-Elasticity/{{ datavolume089 }}
+   .. image:: /datavolume/How-to-move-data-volume-between-two-VMs-using-OpenStack-Horizon/{{ datavolume089 }}
+      :alt: Disconnecting volume
 
 To confirm, click **Detach Volume**.
 
@@ -197,7 +205,8 @@ Your volume should now not have any value under **Attached To**:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-move-data-volume-between-two-VMs-using-OpenStack-Horizon-on-Eumetsat-Elasticity/{{ datavolume090 }}
+   .. image:: /datavolume/How-to-move-data-volume-between-two-VMs-using-OpenStack-Horizon/{{ datavolume090 }}
+      :alt: Disconnecting volume
 
 Attaching volume to destination virtual machine
 ---------------------------------------------------
@@ -206,13 +215,15 @@ Make sure that you are still in section **Volumes -> Volumes** of the Horizon da
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-move-data-volume-between-two-VMs-using-OpenStack-Horizon-on-Eumetsat-Elasticity/{{ datavolume091 }}
+   .. image:: /datavolume/How-to-move-data-volume-between-two-VMs-using-OpenStack-Horizon/{{ datavolume091 }}
+      :alt: Attaching volume to destination virtual machine
 
 You should get this window:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-move-data-volume-between-two-VMs-using-OpenStack-Horizon-on-Eumetsat-Elasticity/{{ datavolume092 }}
+   .. image:: /datavolume/How-to-move-data-volume-between-two-VMs-using-OpenStack-Horizon/{{ datavolume092 }}
+      :alt: Attaching volume to destination virtual machine
 
 From the drop-down menu **Attach to Instance** choose the instance to which you want to attach your volume - the *destination* virtual machine.
 
@@ -222,7 +233,8 @@ Wait until the attaching is completed. If the process was successful, you should
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-move-data-volume-between-two-VMs-using-OpenStack-Horizon-on-Eumetsat-Elasticity/{{ datavolume093 }}
+   .. image:: /datavolume/How-to-move-data-volume-between-two-VMs-using-OpenStack-Horizon/{{ datavolume093 }}
+      :alt: Attaching volume to destination virtual machine
 
 What To Do Next
 --------------------

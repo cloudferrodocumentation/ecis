@@ -1,5 +1,5 @@
-How to mount object storage in Linux on |brand-name|
-======================================================================
+How to mount object storage in Linux
+====================================
 
 S3 is a protocol for storing and retrieving data on and from remote servers. The user has their own S3 account and is identified by a pair of identifiers, which are called Access Key and Secret Key. These keys act as a username and password for your S3 account.
 
@@ -39,17 +39,17 @@ where Access token and Secret token will be used in s3fs configuration:
 
 That command will store the credentials into a file called *passwd-s3fs*. Since it starts with a dot, it will be invisible to the usual searches under Linux.
 
-The file will be created in the present directory, but you can also create it anywhere else, for instance, in /etc/ folder and the like.
+The command above creates **.passwd-s3fs** in your home directory.
 
 Change permissions of the newly created file
 
 .. code::
 
-  chmod 600 .passwd-s3fs
+  chmod 600 ~/.passwd-s3fs
 
 Code **600** means you can read and write the file or directory but that none of the other users on the local host will have access to it.
 
-Enable 3fs
+Enable s3fs
 --------------------
 
 Uncomment "user_allow_other" in *fuse.conf* file as root
@@ -58,15 +58,17 @@ Uncomment "user_allow_other" in *fuse.conf* file as root
 
   sudo nano /etc/fuse.conf
 
-Now you are ready to mount your object storage to your Linux system. The command looks like:
+Use the following command to mount your bucket. Replace **BUCKET_NAME** with
+your bucket name, **/local/mount/point** with an existing empty directory, and
+**S3_ENDPOINT** with the full endpoint URL for the region containing the bucket.
+The region-specific endpoints and complete mounting procedure are in
+:doc:`/s3/How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs`.
 
 .. code::
 
-   s3fs w-container-1 /local/mount/point - passwd_file=~/.passwd-s3fs -o url=https://s3.waw3-1.cloudferro.com -o use_path_request_style -o umask=0002 -o allow_other
+   s3fs BUCKET_NAME /local/mount/point -o passwd_file=~/.passwd-s3fs -o url=S3_ENDPOINT -o use_path_request_style -o umask=0002 -o allow_other
 
 What To Do Next
 -----------------------
 
 If you want to access s3 files without mounting to the local computer, use command **s3cmd**.
-
-.. jinja:: brand_names

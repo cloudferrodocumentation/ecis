@@ -1,5 +1,5 @@
-How to start a VM from instance snapshot using OpenStack CLI on |brand-name|
-===================================================================================
+How to start a VM from instance snapshot using OpenStack CLI
+============================================================
 
 In this article, you will learn how to create a virtual machine from an instance snapshot using OpenStack CLI client.
 
@@ -19,7 +19,7 @@ You need to have OpenStack CLI client installed. One of the following articles s
    * :doc:`{{ openstackclient_windows }}`
    * :doc:`{{ openstackclient_windows_wsl }}`
 
-   To use OpenStack CLI client to control |brand-name| cloud, you need to prove your identity: :doc:`{{ openstack_cli_auth }}`
+   To use OpenStack CLI client to control the cloud, you need to prove your identity: :doc:`{{ openstack_cli_auth }}`
 
 No. 3 **Ephemeral storage vs. persistent storage**
 
@@ -31,7 +31,8 @@ No. 4 **Instance snapshot**
 
 You need to have an instance snapshot from which you are going to create your virtual machine. In this article, we will use an exemplary snapshot named **my-instance-snapshot**. This is how this instance can look like when executing **openstack image list** (here its name was marked using dark blue rectangle):
 
-.. figure:: /openstackcli/How-to-start-a-VM-from-instance-snapshot-using-OpenStack-CLI-on-Eumetsat-Elasticity/start_vm_instance_snapshot_cli-01_creodias.png
+.. figure:: /openstackcli/How-to-start-a-VM-from-instance-snapshot-using-OpenStack-CLI/start_vm_instance_snapshot_cli-01_creodias.png
+   :alt: How to start a VM from instance snapshot using OpenStack CLI
    :class: image-with-border
 
 The following articles contain information on how to create such a snapshot:
@@ -109,13 +110,12 @@ In this article we will use an image as a source for your virtual machine. It ca
 
     * Default images in the particular region you are using
     * Images which were shared with you from other projects and which you accepted
-    * Images you uploaded yourself, for example, by following this article:
-    * Images you uploaded yourself, for example, by following this article:
-    :doc:`{{ custom_image_upload_cli }}`
+    * Images you uploaded yourself, for example, by following
+      :doc:`{{ custom_image_upload_cli }}`
 
 For this article, your instance should be visible alongside other images, including:
 
- * the ones which are available on |brand-name| cloud by default and/or
+ * the ones which are available on the cloud by default and/or
  * the ones which you might have uploaded yourself.
 
 You can recognize it using its name or ID.
@@ -124,7 +124,8 @@ Pass it to **--image** parameter in the usual manner.
 
 In this article, our exemplary snapshot has ID of **56afe647-c49e-4f2d-892e-cd2c75f49ab3**:
 
-.. figure:: /openstackcli/How-to-start-a-VM-from-instance-snapshot-using-OpenStack-CLI-on-Eumetsat-Elasticity/start_vm_instance_snapshot_cli-01_creodias.png
+.. figure:: /openstackcli/How-to-start-a-VM-from-instance-snapshot-using-OpenStack-CLI/start_vm_instance_snapshot_cli-01_creodias.png
+   :alt: Step Choose an image
    :class: image-with-border
 
 so this is the parameter we will use:
@@ -158,12 +159,14 @@ This is how this command will look like in our example (be sure to use your own 
    --security-group default \
    instance-from-snapshot
 
-.. figure:: /openstackcli/How-to-start-a-VM-from-instance-snapshot-using-OpenStack-CLI-on-Eumetsat-Elasticity/start_vm_instance_snapshot_cli-02_creodias.png
+.. figure:: /openstackcli/How-to-start-a-VM-from-instance-snapshot-using-OpenStack-CLI/start_vm_instance_snapshot_cli-02_creodias.png
+   :alt: Creating an instance
    :class: image-with-border
 
 To check if the instance was created correctly, execute **openstack server list** - the output should include your instance alongside other instances, if there are any:
 
-.. figure:: /openstackcli/How-to-start-a-VM-from-instance-snapshot-using-OpenStack-CLI-on-Eumetsat-Elasticity/start_vm_instance_snapshot_cli-03_creodias.png
+.. figure:: /openstackcli/How-to-start-a-VM-from-instance-snapshot-using-OpenStack-CLI/start_vm_instance_snapshot_cli-03_creodias.png
+   :alt: Creating an instance
    :class: image-with-border
 
 Its **Status** should be **ACTIVE** - your VM should then be operational. If it has another **Status** like **BUILD**, execute **openstack server list** again, possibly multiple times until the status is **ACTIVE**.
@@ -229,7 +232,8 @@ Execute the following command to see volumes attached to your instance (replace 
 
    openstack server show f0734a16-60f5-4ce1-a774-2e86f7f2a6f6 -c volumes_attached
 
-.. figure:: /openstackcli/How-to-start-a-VM-from-instance-snapshot-using-OpenStack-CLI-on-Eumetsat-Elasticity/start_vm_instance_snapshot_cli-04_creodias.png
+.. figure:: /openstackcli/How-to-start-a-VM-from-instance-snapshot-using-OpenStack-CLI/start_vm_instance_snapshot_cli-04_creodias.png
+   :alt: Verifying volumes when using persistent storage
    :class: image-with-border
 
 Usually, **openstack server show** is used to show detailed information about an instance. Here, we cut its output only to volumes attached to it.
@@ -259,7 +263,8 @@ You can see detailed information regarding each of these volumes by executing th
 
    openstack volume show 3625f8fd-2837-4168-b361-ffa893a3ab17
 
-.. figure:: /openstackcli/How-to-start-a-VM-from-instance-snapshot-using-OpenStack-CLI-on-Eumetsat-Elasticity/start_vm_instance_snapshot_cli-05_creodias.png
+.. figure:: /openstackcli/How-to-start-a-VM-from-instance-snapshot-using-OpenStack-CLI/start_vm_instance_snapshot_cli-05_creodias.png
+   :alt: Verifying volumes when using persistent storage
    :class: image-with-border
 
 What To Do Next

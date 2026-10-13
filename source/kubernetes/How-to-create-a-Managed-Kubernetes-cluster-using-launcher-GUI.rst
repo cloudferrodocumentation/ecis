@@ -114,21 +114,9 @@ In this article, you will also learn how to point **kubectl** to the |MK8s| clus
 Create a new cluster
 --------------------
 
-Select the region where you want to create the cluster. If this is the very first time, it will offer you to choose from the available regions. More typically, one of more clusters will already be available so it may look like this for the chosen region:
-
-.. jinja:: mk8s_images
-
-   .. figure:: {{ mk8s027 }}
-      :class: image-with-border
-
-      Initial |MK8s| launcher interface.
+Select the region where you want to create the cluster. On your first visit, choose one of the available regions. Otherwise, the launcher lists existing clusters for the selected region.
 
 To create a new cluster, click the |CREATECLUSTER| button. A form will appear on the screen, allowing you to enter data for the new cluster.
-
-.. jinja:: mk8s_images
-
-   .. figure:: {{ mk8s028 }}
-      :class: image-with-border
 
 Define Cluster Name and Kubernetes Version
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -150,6 +138,7 @@ Flavors
    .. jinja:: mk8s_images
 
       .. figure:: {{ mk8s029 }}
+         :alt: Add Control Plane Nodes
          :class: image-with-border
 
          Control plane flavors determine the performance of control plane nodes.
@@ -177,13 +166,6 @@ Creating the cluster
 
 The status will change to |CREATING|.
 
-.. jinja:: mk8s_images
-
-   .. figure:: {{ mk8s030 }}
-      :class: image-with-border
-
-      Cluster creation in progress. Status shows |CREATING|.
-
 Once the creation starts, you see a list of existing Kubernetes clusters.
 
 Cluster list view
@@ -193,24 +175,10 @@ The *Cluster List View* appears if there is at least one cluster present.
 
 After the cluster has been created, its status becomes |RUNNING|.
 
-.. jinja:: mk8s_images
-
-   .. figure:: {{ mk8s031 }}
-      :class: image-with-border
-
-      Cluster status changes to |RUNNING| when ready.
-
 Single Cluster View: Cluster Details
 ------------------------------------
 
 Click the cluster name in the list to open its **Details** view.
-
-.. jinja:: mk8s_images
-
-   .. figure:: {{ mk8s032 }}
-      :class: image-with-border
-
-      Cluster details view.
 
 Access the cluster using kubectl
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -242,6 +210,7 @@ The following example shows the output for such a cluster:
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s033 }}
+      :alt: Access the cluster using kubectl
       :class: image-with-border
 
       The output of the **kubectl** command, showing one control plane node and one worker node.
@@ -255,19 +224,9 @@ The **Resources** section is a central place not only to browse what is running,
 
 Click **Resources** and see the main resource categories, for example **Namespaces**, **Nodes**, **Workloads**, and **Storage**:
 
-.. jinja:: mk8s_images
+Each category can be expanded to display applicable resources. Select **Namespaces** to list the available namespaces.
 
-   .. figure:: {{ mk8s034 }}
-      :class: image-with-border
-
-Each category can be expanded to display applicable resources. In the image above, the launcher shows available **Namespaces**.
-
-When you click a specific resource in the table on the right, you can access the JSON representation of that resource. Here is what a typical JSON screen might look like:
-
-.. jinja:: mk8s_images
-
-   .. figure:: {{ mk8s035 }}
-      :class: image-with-border
+When you click a specific resource in the table on the right, you can access the JSON representation of that resource.
 
 Cluster backup
 ^^^^^^^^^^^^^^
@@ -284,16 +243,10 @@ To delete the cluster, click the |TRASHCAN| icon in its row. Then confirm that y
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s036 }}
+      :alt: Deleting a cluster
       :class: image-with-border
 
       Confirm deletion using the |TRASHCAN| icon.
-
-.. jinja:: mk8s_images
-
-   .. figure:: {{ mk8s037 }}
-      :class: image-with-border
-
-      Cluster enters |DELETING| state until removal completes.
 
 Deleting a cluster also takes a few minutes.
 

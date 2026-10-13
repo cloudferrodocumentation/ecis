@@ -1,5 +1,5 @@
-Create and use volume snapshots on |brand-name| Managed Kubernetes
-==================================================================
+Create and use volume snapshots Managed Kubernetes
+==================================================
 
 Kubernetes can create a point-in-time snapshot of a persistent volume and later use that snapshot to restore data into a new PersistentVolumeClaim. Typical examples include:
 
@@ -75,6 +75,7 @@ Here is what it might look like:
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s022 }}
+      :alt: Create and use volume snapshots Managed Kubernetes
 
 A pod used to verify volume snapshots cannot run if the cluster contains only a control-plane node that is marked to reject normal workload pods.
 
@@ -99,6 +100,7 @@ The result may look like this:
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s023 }}
+      :alt: Create and use volume snapshots Managed Kubernetes
 
 Look for storage classes whose provisioner is **cinder.csi.openstack.org**. These are Cinder-backed storage classes and are suitable for the **ReadWriteOnce** PVCs used in this article.
 
@@ -275,6 +277,7 @@ When **READYTOUSE** becomes **true**, press **Ctrl+C** to stop watching.
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s024 }}
+      :alt: Verify that the snapshot is ready
 
 Create a new PVC from the snapshot
 ----------------------------------
@@ -325,6 +328,7 @@ The restored claim should show status **Bound**, which means the new volume has 
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s025 }}
+      :alt: Create a new PVC from the snapshot
 
 Mount the restored volume in a second pod
 -----------------------------------------
@@ -375,6 +379,7 @@ If the pod starts successfully, you should see:
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s026 }}
+      :alt: Verify the restored data
 
 This confirms that the snapshot captured the original data and that the restored PVC contains that data.
 
@@ -398,7 +403,7 @@ As a next step, you can compare this approach with:
 
 .. jinja:: brand_names
 
-   * :doc:`/kubernetes/Volume-cloning-Managed-Kubernetes`
+   * :doc:`/kubernetes/Volume-cloning-on-Managed-Kubernetes`
    * Cinder-backed **ReadWriteOnce** storage for standard persistence.
 
 Clean up the resources created in this article

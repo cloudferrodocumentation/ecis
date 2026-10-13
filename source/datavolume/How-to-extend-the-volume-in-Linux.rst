@@ -1,5 +1,5 @@
-How to extend the volume in Linux on |brand-name|
-==================================================
+How to extend the volume in Linux
+=================================
 
 It is possible to extend a Volume from the Horizon dashboard.
 
@@ -18,7 +18,7 @@ Another method is to create a new volume, attach it to a VM, copy all the data f
 
 .. jinja:: brand_names
 
-   You may use following guide to backup the volume: :doc:`/datavolume/How-to-create-volume-Snapshot-and-attach-as-Volume-on-Linux-or-Windows-on-Eumetsat-Elasticity`
+   You may use following guide to backup the volume: :doc:`/datavolume/How-to-create-or-delete-volume-snapshot`
 
 
 **Resizing the volume:**
@@ -32,7 +32,8 @@ Let's say that we have a 1GB volume attached to our instance as /dev/vdb:
 
 .. jinja:: datavolume_images
 
-   .. figure:: /datavolume/How-to-extend-the-volume-in-Linux-on-Eumetsat-Elasticity/{{ datavolume076 }}
+   .. figure:: /datavolume/How-to-extend-the-volume-in-Linux/{{ datavolume076 }}
+      :alt: How to extend the volume in Linux
 
 And we have it mounted in our Linux machine as /dev/vdb1:
 
@@ -64,13 +65,15 @@ Then detach it in Horizon by clicking "Manage Attachments" > "Detach Volume":
 
 .. jinja:: datavolume_images
 
-   .. figure:: /datavolume/How-to-extend-the-volume-in-Linux-on-Eumetsat-Elasticity/{{ datavolume077 }}
+   .. figure:: /datavolume/How-to-extend-the-volume-in-Linux/{{ datavolume077 }}
+      :alt: How to extend the volume in Linux
       :align: center
 
 
 .. jinja:: datavolume_images
 
-   .. figure:: /datavolume/How-to-extend-the-volume-in-Linux-on-Eumetsat-Elasticity/{{ datavolume078 }}
+   .. figure:: /datavolume/How-to-extend-the-volume-in-Linux/{{ datavolume078 }}
+      :alt: How to extend the volume in Linux
       :align: center
 
 
@@ -78,12 +81,14 @@ After detaching we will have the "Extend Volume" option available.
 
 .. jinja:: datavolume_images
 
-   .. figure:: /datavolume/How-to-extend-the-volume-in-Linux-on-Eumetsat-Elasticity/{{ datavolume079 }}
+   .. figure:: /datavolume/How-to-extend-the-volume-in-Linux/{{ datavolume079 }}
+      :alt: How to extend the volume in Linux
       :align: center
 
 .. jinja:: datavolume_images
 
-   .. figure:: /datavolume/How-to-extend-the-volume-in-Linux-on-Eumetsat-Elasticity/{{ datavolume080 }}
+   .. figure:: /datavolume/How-to-extend-the-volume-in-Linux/{{ datavolume080 }}
+      :alt: How to extend the volume in Linux
       :align: center
 
 
@@ -91,7 +96,8 @@ We enter a new size, for example 5GB and click "Extend Volume":
 
 .. jinja:: datavolume_images
 
-   .. figure:: /datavolume/How-to-extend-the-volume-in-Linux-on-Eumetsat-Elasticity/{{ datavolume081 }}
+   .. figure:: /datavolume/How-to-extend-the-volume-in-Linux/{{ datavolume081 }}
+      :alt: How to extend the volume in Linux
       :align: center
 
 Our new volume size is 5GB.

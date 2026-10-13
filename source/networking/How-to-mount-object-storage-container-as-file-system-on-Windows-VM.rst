@@ -1,7 +1,7 @@
-How To Mount Object Storage Container as File System on Windows VM on |brand-name|
-==============================================================================================
+How To Mount Object Storage Container as File System on Windows VM
+==================================================================
 
-This article covers configuring automatic mounting of object storage containers on Windows virtual machines running on |brand-name| |cloud-name| cloud. Your object storage containers will be automatically mounted to your Windows VM and you will be able to access them from **This PC** window of the **Administrator** user on that VM.
+This article covers configuring automatic mounting of object storage containers on Windows virtual machines running on the cloud. Your object storage containers will be automatically mounted to your Windows VM and you will be able to access them from **This PC** window of the **Administrator** user on that VM.
 
 What We Are Going To Cover
 -------------------------------
@@ -23,7 +23,7 @@ No. 2. **Object storage container**
 
 .. jinja:: brand_names
 
-   You need at least one object storage container on the |brand-name| |cloud-name| cloud. If you do not have one yet, please follow this article: :doc:`/s3/How-to-use-Object-Storage-on-{{ brand_name_hyphen }}`
+   You need at least one object storage container on the cloud. If you do not have one yet, please follow this article: :doc:`/s3/How-to-use-Object-Storage-on-{{ brand_name_hyphen }}`
 
 No. 3. **Generated EC2 Credentials**
 
@@ -47,7 +47,7 @@ You will need to use the OpenStack CLI client to do that. The article linked abo
 
 No. 4 **Virtual machine with Windows**
 
-You need a Windows VM on |brand-name| |cloud-name| cloud with Rclone, WinFSP and NSSM configured.
+You need a Windows VM on the cloud with Rclone, WinFSP and NSSM configured.
 
 There are three methods of fulfilling this prerequisite:
 
@@ -62,7 +62,7 @@ There are three methods of fulfilling this prerequisite:
 
    For **Source**, use a Windows image.
 
-   For **Networks**, be sure to add two networks, one starting with **cloud_** and the other starting with **eodata_**.
+   For **Networks**, select a project network that can reach your object storage endpoint.
 
    If you do not want to access your instance outside of the Horizon dashboard, you may omit the following from the workflow described in that article:
 
@@ -79,15 +79,17 @@ There are three methods of fulfilling this prerequisite:
 **Method 2: Use a virtual machine created using an image published on or after 20th of December 2022**
    If you already have a virtual machine created using an image published **on or after** 20th of December 2022, you should have appropriate software installed (unless a user later removed it). Therefore, you should be able to use one such machine for this article.
 
-**Method 3: Use a machine created using an older image and install required software manually**
-   .. jinja:: brand_names
-
-      If you have a virtual machine created using an image published **before** 20th of December 2022, you will need to install and configure appropriate software manually. Information on how to do it can be found in **Method 1** of this article: :doc:`/eodata/How-to-mount-eodata-on-Windows-virtual-machine-on-{{ brand_name_hyphen }}-hosting`. If you do not want to have access to the **EODATA** repository on your virtual machine, you can finish following that article after having created **Rclone** configuration file in the **Mounting EODATA** section of that text (you do not need to add any content to it).
+**Method 3: Install the required software on an existing Windows VM**
+   Install Rclone, WinFSP and NSSM using the installation steps in
+   :doc:`/s3/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer`.
+   Use **C:\\rclone** for Rclone and NSSM. Create the configuration folder
+   **C:\\Users\\Administrator\\.config\\rclone** and an empty **rclone.conf**
+   file in that folder if they do not exist.
 
 Software tools used in this article: Rclone, WinFSP, and NSSM
 -------------------------------------------------------------
 
-All the software used in this article comes preinstalled on |brand-name| |cloud-name| virtual machines created using default Windows images.
+All the software used in this article comes preinstalled on cloud virtual machines created using default Windows images.
 
 `Rclone <https://rclone.org/>`_ has multiple functions such as managing files in cloud storage and syncing between file systems. In this article, you will use its `rclone mount <https://rclone.org/commands/rclone_mount/>`__ command to mount object storage on your Windows VM.
 
@@ -98,22 +100,18 @@ All the software used in this article comes preinstalled on |brand-name| |cloud-
 How the Rclone configuration file will be used in this article
 -------------------------------------------------------------------------------
 
-Virtual machines created using default Windows running on |brand-name| |cloud-name| cloud have automatic mounting of the **EODATA** repository configured. This process is done using a script which creates the appropriate configuration file if it doesn't exist and mounts the repository.
+This procedure uses the Rclone configuration file on your Windows VM.
 
 In this article, you will add the appropriate login credentials for your object storage containers to that configuration file. After that, using provided program called NSSM, you will create services which will automatically mount those object storage containers.
 
-In the end, less than a minute after each login you should see the **EODATA** repository and your configured object storage containers ready to use in your **This PC** window.
+In the end, less than a minute after each login you should see your configured object storage containers ready to use in your **This PC** window.
 
 Step 1: Enter the connection data
 -----------------------------------
 
 Login to the **Administrator** account on your virtual machine.
 
-Navigate to the **C:\\Users\\Administrator\\.config\\rclone** folder using the Windows file manager. Open the file **rclone.conf** in that folder using Notepad or other plain text editor like Notepad++. If you do not see that file there, wait up to a couple of minutes and try again.
-
-The file should already contain section used for accessing the **EODATA** repository:
-
-.. image:: /networking/How-to-mount-object-storage-container-as-file-system-on-Windows-VM-on-Eumetsat-Elasticity/mount-object-storage-file-with-eodata_creodias.png
+Navigate to the **C:\\Users\\Administrator\\.config\\rclone** folder using the Windows file manager. Open the file **rclone.conf** in that folder using Notepad or other plain text editor like Notepad++. If the folder or file does not exist, create it as described in Prerequisite No. 4.
 
 If you did not configure anything there yet, it will be empty.
 
@@ -174,7 +172,7 @@ To test the mounting of one of your containers, execute the command below withou
 
 .. warning::
 
-   By default, EODATA repository is mounted on disk Y: so be sure to use some other letter for your drive.
+   Choose a drive letter that is not already in use on your VM.
 
 The option in this command **--vfs-cache-mode full** should make the mount support standard file system operations.
 
@@ -188,11 +186,13 @@ You should now get the following output:
 
 Go to **This PC** window. You should see the mounted container there:
 
-.. image:: /networking/How-to-mount-object-storage-container-as-file-system-on-Windows-VM-on-Eumetsat-Elasticity/mount-eodata-windows-rclone-01_creodias.png
+.. image:: /networking/How-to-mount-object-storage-container-as-file-system-on-Windows-VM/mount-eodata-windows-rclone-01_creodias.png
+   :alt: Step 2: Perform a test mount
 
 Enter it and you should see its content there:
 
-.. image:: /networking/How-to-mount-object-storage-container-as-file-system-on-Windows-VM-on-Eumetsat-Elasticity/mount-eodata-windows-rclone-02_creodias.png
+.. image:: /networking/How-to-mount-object-storage-container-as-file-system-on-Windows-VM/mount-eodata-windows-rclone-02_creodias.png
+   :alt: Step 2: Perform a test mount
 
 To stop the test mount, press CTRL+C in the PowerShell. You should get the following output:
 
@@ -238,7 +238,8 @@ While still in **C:\\rclone** folder, execute the command below.
 
 You should get the following window:
 
-.. image:: /networking/How-to-mount-object-storage-container-as-file-system-on-Windows-VM-on-Eumetsat-Elasticity/mount-eodata-windows-open-nssm-01_creodias.png
+.. image:: /networking/How-to-mount-object-storage-container-as-file-system-on-Windows-VM/mount-eodata-windows-open-nssm-01_creodias.png
+   :alt: Step 4: Configuring automatic mounting of your container
 
 Click the **...** button next to the **Path:** text field.
 
@@ -256,7 +257,7 @@ In the **Arguments** text field enter the following code. Replace **remote-confi
 
 .. warning::
 
-   By default, EODATA repository is mounted on disk Y: so be sure to use some other letter for your drive.
+   Choose a drive letter that is not already in use on your VM.
 
 In the text field **Service name:** enter the name for your mounting service. It can be different than the name of your connection you set in Step 1 and the name of your S3 container. In this example, the name **mounting-service** will be used.
 
@@ -272,7 +273,8 @@ You should now be able to work with your files.
 
 If you find yourself unable to delete files or folders on the object storage, you can remove them from the **Object Store -> Containers** option in the Horizon dashboard:
 
-.. image:: /networking/How-to-mount-object-storage-container-as-file-system-on-Windows-VM-on-Eumetsat-Elasticity/mount-object-storage-windows-horizon-01_creodias.png
+.. image:: /networking/How-to-mount-object-storage-container-as-file-system-on-Windows-VM/mount-object-storage-windows-horizon-01_creodias.png
+   :alt: Step 4: Configuring automatic mounting of your container
 
 Disabling automatic mounting of a container
 -------------------------------------------------
@@ -317,16 +319,11 @@ Repeat the process for each container you no longer wish to be mounted.
 
 Open the **C:\\Users\\Administrator\\.config\\rclone.conf** file using Notepad or other plain text editor and remove the lines responsible for mounting of object storage you no longer wish to be mounted.
 
-.. jinja:: brand_names
-
-   .. important::
-
-      The instructions for stopping of automatic mounting of the **EODATA** repository can be found here: :doc:`/eodata/How-to-mount-eodata-on-Windows-virtual-machine-on-{{ brand_name_hyphen }}-hosting`.
 
 What To Do Next
 ------------------
 
-Object storage containers on the |brand-name| |cloud-name| cloud can be mounted both on physical and virtual machines running Windows and Linux. To mount the object storage container on a different platform, please follow one of the articles below:
+Object storage containers on the cloud can be mounted both on physical and virtual machines running Windows and Linux. To mount the object storage container on a different platform, please follow one of the articles below:
 
 .. jinja:: brand_names
 
@@ -338,4 +335,4 @@ Object storage containers on the |brand-name| |cloud-name| cloud can be mounted 
 
 .. jinja:: brand_names
 
-   :doc:`/s3/How-to-access-private-object-storage-using-S3cmd-or-boto3-on-{{ brand_name_hyphen }}`
+   :doc:`/s3/Deep-dive-into-using-s3cmd-to-access-object-storage`

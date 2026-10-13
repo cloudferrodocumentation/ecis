@@ -47,28 +47,13 @@ Generate token from GUI
 
 To get to the tokens view in |MK8s|, find the **Tokens** button in the left sidebar:
 
-.. jinja:: mk8s_images
-
-   .. figure:: {{ mk8s053 }}
-      :class: image-with-border
-
 If the browser window or device screen is narrow, first click the hamburger icon in the upper-left corner.
 
 2) Go to **Tokens** view
 
-Click **Tokens** to open the tokens view in |MK8s|. The following screenshot shows the situation in which no tokens have been created yet:
-
-.. jinja:: mk8s_images
-
-   .. figure:: {{ mk8s054 }}
-      :class: image-with-border
+Click **Tokens** to open the tokens view in |MK8s|. The list is empty if no tokens have been created yet.
 
 3) Click **Create token**, then choose validity, permissions, and add optional information.
-
-.. jinja:: mk8s_images
-
-   .. figure:: {{ mk8s055 }}
-      :class: image-with-border
 
 4) Create the token
 
@@ -77,22 +62,19 @@ Click **Create token** in that form.
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s056 }}
+      :alt: Generate token from GUI
       :class: image-with-border
 
 As a result, the token is generated. Make sure to note it down and store it securely, because it will not be shown again.
 
 The list of tokens will now contain an additional entry:
 
-.. jinja:: mk8s_images
-
-   .. figure:: {{ mk8s057 }}
-      :class: image-with-border
-
 Click the eye icon in the **Roles** column to see the activated roles for the specific token:
 
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s058 }}
+      :alt: Generate token from GUI
       :class: image-with-border
 
 This list reflects the options you selected while creating the token.
@@ -128,24 +110,12 @@ The detailed API documentation is available in Swagger. Use the Swagger URL for 
 
    {% endif %}
 
-.. jinja:: mk8s_images
-
-   .. figure:: {{ mk8s059 }}
-      :class: image-with-border
-
-
 Obtain cluster ID
 ^^^^^^^^^^^^^^^^^
 
 API access allows you to interact with |MK8s| clusters and node pools. Most operations are performed in the context of a specific Kubernetes cluster, so you need the cluster ID before running cluster-specific API calls.
 
 To obtain the cluster ID, click **Home**, select the region, and review the list of clusters. Select the cluster you want to work with. For example, let the cluster be called **networktest**. Clicking its name displays cluster data, including the **Cluster ID**.
-
-.. jinja:: mk8s_images
-
-   .. figure:: {{ mk8s060 }}
-      :class: image-with-border
-
 
 Example: list cluster parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

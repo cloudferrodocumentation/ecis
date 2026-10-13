@@ -1,5 +1,5 @@
-Managed Kubernetes Backups on |brand-name|
-==========================================
+Managed Kubernetes Backups
+==========================
 
 .. |TRASHCAN| image:: kubernetes-launcher-gui-14.png
 .. |CONFIGURING| image:: kubernetes-launcher-gui-89.png
@@ -209,6 +209,7 @@ Click the cluster in the cluster list, then go to the **Backups** tab.
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s044 }}
+      :alt: Enable cluster backups on the cluster
       :class: image-with-border
 
 Select the **Enable cluster backups** checkbox. An additional dialog appears:
@@ -216,6 +217,7 @@ Select the **Enable cluster backups** checkbox. An additional dialog appears:
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s045 }}
+      :alt: Enable cluster backups on the cluster
       :class: image-with-border
 
 You can customize the default settings:
@@ -229,6 +231,7 @@ When ready, click **Save Changes**. The platform generates the **storage access 
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s046 }}
+      :alt: Enable cluster backups on the cluster
       :class: image-with-border
 
 Save all four values for future reference:
@@ -253,6 +256,7 @@ Once backup activation starts, the cluster may enter the |CONFIGURING| state:
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s085 }}
+      :alt: Enable cluster backups on the cluster
       :class: image-with-border
 
 Wait until the configuration process finishes before you verify Velero with **kubectl**.
@@ -307,6 +311,7 @@ With **Daily** or **Weekly** selected, the first backup may not appear immediate
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s047 }}
+      :alt: How to create your first cluster backup
       :class: image-with-border
 
 That creates a cron job that repeats every minute. The positive side is that it creates the backup immediately. The negative side is that it continues doing so, which can quickly exhaust your project storage quota.
@@ -336,6 +341,7 @@ When a backup completes, it appears in the list at the bottom of the **Backups**
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s048 }}
+      :alt: List and delete backups
       :class: image-with-border
 
 **Delete using the GUI**
@@ -533,6 +539,7 @@ Choose one backup from the list and restore it:
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s049 }}
+      :alt: Step 4 -- Restore the backup
       :class: image-with-border
 
 To monitor the restore:
@@ -574,4 +581,4 @@ What To Do Next
 
 .. jinja:: brand_names
 
-   For an introduction to object storage, see :doc:`/s3/How-to-use-Object-Storage`.
+   For an introduction to object storage, see :doc:`/s3/Deep-dive-into-using-s3cmd-to-access-object-storage`.

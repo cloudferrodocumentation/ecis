@@ -1,5 +1,5 @@
-Volume snapshot inheritance and its consequences on |brand-name|
-==================================================================
+Volume snapshot inheritance and its consequences
+================================================
 
 Performing a volume snapshot is a common form of securing your data against loss.
 There is nothing wrong with that, but you should remember what the consequences are.
@@ -9,31 +9,36 @@ We have created a volume called "Volume A".
 
 .. jinja:: datavolume_images
 
-   .. figure:: /datavolume/Volume-snapshot-inheritance-and-its-consequences-on-Eumetsat-Elasticity/{{ datavolume101 }}
+   .. figure:: /datavolume/Volume-snapshot-inheritance-and-its-consequences/{{ datavolume101 }}
+      :alt: Volume snapshot inheritance and its consequences
 
 Next we create an "SA" snapshot from the "VA" volume.
 
 .. jinja:: datavolume_images
 
-   .. figure:: /datavolume/Volume-snapshot-inheritance-and-its-consequences-on-Eumetsat-Elasticity/{{ datavolume102 }}
+   .. figure:: /datavolume/Volume-snapshot-inheritance-and-its-consequences/{{ datavolume102 }}
+      :alt: Volume snapshot inheritance and its consequences
 
 From the OpenStack dashboard we can create new volumes "Volume B" and "Volume C" based on the previously created snapshot "Snapshot A".
 
 .. jinja:: datavolume_images
 
-   .. figure:: /datavolume/Volume-snapshot-inheritance-and-its-consequences-on-Eumetsat-Elasticity/{{ datavolume103 }}
+   .. figure:: /datavolume/Volume-snapshot-inheritance-and-its-consequences/{{ datavolume103 }}
+      :alt: Volume snapshot inheritance and its consequences
 
 At the moment we have two new volumes which are based on the "Snapshot A" snapshot. Suppose we no longer need the volume called "Volume A" and we want to delete it.
 
 .. jinja:: datavolume_images
 
-   .. figure:: /datavolume/Volume-snapshot-inheritance-and-its-consequences-on-Eumetsat-Elasticity/{{ datavolume104 }}
+   .. figure:: /datavolume/Volume-snapshot-inheritance-and-its-consequences/{{ datavolume104 }}
+      :alt: Volume snapshot inheritance and its consequences
 
 Unfortunately, its deletion will not be possible directly because to delete a given volume, we have to delete its snapshots.
 
 .. jinja:: datavolume_images
 
-   .. figure:: /datavolume/Volume-snapshot-inheritance-and-its-consequences-on-Eumetsat-Elasticity/{{ datavolume105 }}
+   .. figure:: /datavolume/Volume-snapshot-inheritance-and-its-consequences/{{ datavolume105 }}
+      :alt: Volume snapshot inheritance and its consequences
 
 So we must first delete the snapshot "Snapshot A" and then the volume "Volume A".
 

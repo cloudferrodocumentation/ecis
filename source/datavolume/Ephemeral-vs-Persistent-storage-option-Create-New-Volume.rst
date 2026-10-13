@@ -1,5 +1,5 @@
-Ephemeral vs Persistent storage option Create New Volume on |brand-name|
-===============================================================================
+Ephemeral vs Persistent storage option Create New Volume
+========================================================
 
 .. jinja:: brand_names
 

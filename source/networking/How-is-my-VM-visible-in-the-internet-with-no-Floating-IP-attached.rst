@@ -1,5 +1,5 @@
-How is my VM visible in the internet with no Floating IP attached on |brand-name|
-==================================================================================
+How is my VM visible in the internet with no Floating IP attached
+=================================================================
 
 This article is written for clarification how an instance without a floating IP address would respond if we were to search for it it from an external machine.
 

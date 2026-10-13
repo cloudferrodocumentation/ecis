@@ -1,5 +1,5 @@
-Resizing a virtual machine using OpenStack CLI on |brand-name|
-======================================================================
+Resizing a virtual machine using OpenStack CLI
+==============================================
 
 Introduction
 ------------
@@ -52,7 +52,7 @@ To see all flavors:
 
    openstack flavor list
 
-.. figure:: /openstackcli/Resizing-a-virtual-machine-using-OpenStack-CLI-on-Eumetsat-Elasticity/resize-vm-horizon-cli-3.png
+.. figure:: /openstackcli/Resizing-a-virtual-machine-using-OpenStack-CLI/resize-vm-horizon-cli-3.png
    :class: image-with-border
 
 This is the command to create a new VM called **ResizingCLI**:
@@ -70,7 +70,7 @@ This is the command to create a new VM called **ResizingCLI**:
 
 This is the result:
 
-.. figure:: /openstackcli/Resizing-a-virtual-machine-using-OpenStack-CLI-on-Eumetsat-Elasticity/resize-vm-horizon-cli-2.png
+.. figure:: /openstackcli/Resizing-a-virtual-machine-using-OpenStack-CLI/resize-vm-horizon-cli-2.png
    :class: image-with-border
 
 The **id** for **ResizingCLI** is **82bba971-8ff1-4f85-93d6-9d56bb7b185d** and we can use it in various commands to denote this particular VM.
@@ -105,7 +105,7 @@ To verify the resize, check the status of the VM:
 
      openstack server show ResizingCLI
 
-.. figure:: /openstackcli/Resizing-a-virtual-machine-using-OpenStack-CLI-on-Eumetsat-Elasticity/resize-vm-horizon-cli-4.png
+.. figure:: /openstackcli/Resizing-a-virtual-machine-using-OpenStack-CLI/resize-vm-horizon-cli-4.png
    :class: image-with-border
 
 When the VM has **VERIFY_RESIZE** status, we are able to confirm the resize. The command is:

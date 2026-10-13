@@ -1,5 +1,5 @@
-Can I change my password through RDP on |brand-name|?
-======================================================================
+Can I change my password through RDP?
+=====================================
 
 In short: No, this is not possible. You have to be logged in when you want to change your password. Security measures requiring you to change your password on first login are not working with RDP and have to be disabled on administrative level.
 This article will show you how to create and configure a new account which can access the VM using RDP without the need to immediately change the password.
@@ -29,13 +29,15 @@ Log in as administrator, click on the Windows icon and type "mmc".
 
 .. jinja:: windows_images
 
-   .. image:: /windows/Can-I-change-my-password-through-RDP-on-Eumetsat-Elasticity/{{ windows058 }}
+   .. image:: /windows/Can-I-change-my-password-through-RDP/{{ windows058 }}
+      :alt: Step 1: Microsoft Management Console (mmc)
 
 Confirm the question with "Yes", select File -> Add/Remove Snap-in...
 
 .. jinja:: windows_images
 
-   .. image:: /windows/Can-I-change-my-password-through-RDP-on-Eumetsat-Elasticity/{{ windows059 }}
+   .. image:: /windows/Can-I-change-my-password-through-RDP/{{ windows059 }}
+      :alt: Step 1: Microsoft Management Console (mmc)
 
 Chose the snap-in "Local Users and Groups", click "Add >", "Finish", and "OK" in the successive windows.
 
@@ -49,32 +51,37 @@ Deselect "User must change password at next logon" and click "Create".
 
 .. jinja:: windows_images
 
-   .. image:: /windows/Can-I-change-my-password-through-RDP-on-Eumetsat-Elasticity/{{ windows060 }}
+   .. image:: /windows/Can-I-change-my-password-through-RDP/{{ windows060 }}
+      :alt: Step 2: Create and configure a user account
 
 Right-click on the newly created account and select "Properties".
 
 .. jinja:: windows_images
 
-   .. image:: /windows/Can-I-change-my-password-through-RDP-on-Eumetsat-Elasticity/{{ windows061 }}
+   .. image:: /windows/Can-I-change-my-password-through-RDP/{{ windows061 }}
+      :alt: Step 2: Create and configure a user account
 
 Navigate to "Member Of" and click "Add..."
 
 .. jinja:: windows_images
 
-   .. image:: /windows/Can-I-change-my-password-through-RDP-on-Eumetsat-Elasticity/{{ windows062 }}
+   .. image:: /windows/Can-I-change-my-password-through-RDP/{{ windows062 }}
+      :alt: Step 2: Create and configure a user account
 
 Click on "Advanced..." in the opening window, then "Find Now".
 Select "Remote Desktop Users" in the search results, click "OK" twice.
 
 .. jinja:: windows_images
 
-   .. image:: /windows/Can-I-change-my-password-through-RDP-on-Eumetsat-Elasticity/{{ windows063 }}
+   .. image:: /windows/Can-I-change-my-password-through-RDP/{{ windows063 }}
+      :alt: Step 2: Create and configure a user account
 
 If everything was done right, the selected group is now listed. Click "Apply", then "OK".
 
 .. jinja:: windows_images
 
-   .. image:: /windows/Can-I-change-my-password-through-RDP-on-Eumetsat-Elasticity/{{ windows064 }}
+   .. image:: /windows/Can-I-change-my-password-through-RDP/{{ windows064 }}
+      :alt: Step 2: Create and configure a user account
 
 What To Do Next
 -------------------

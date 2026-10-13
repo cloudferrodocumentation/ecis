@@ -1,5 +1,5 @@
-How to correctly delete all project resources using OpenStack command line clients on |brand-name|
-========================================================================================================================
+How to correctly delete all project resources using OpenStack command line clients
+==================================================================================
 
 The billing system on |brand-name| hosting will charge you for all the resources present in the system, regardless of you using them or not. You should delete the resources you are not going to use any more. Deleting the project before deleting its resources makes them *orphaned*. You will not be able to delete orphaned resources on your own but will continue paying for them.
 
@@ -18,7 +18,7 @@ To start, enter the cloud environment as usual, via the link |brand-name-site-li
 
 Note the name of the project in the left upper corner and switch to the right project, if needed. This is what it might look like:
 
-.. image:: /networking/How-to-correctly-delete-all-the-resources-in-the-project-via-OpenStack-commandline-Clients-on-Eumetsat-Elasticity/switch_to_project.png
+.. image:: /networking/How-to-correctly-delete-all-the-resources-in-the-project-via-OpenStack-commandline-Clients/switch_to_project.png
 
 If needed, prepare command line environment
 -------------------------------------------------------
@@ -42,14 +42,6 @@ Gain access to the cloud
 
 To gain access to the cloud, see this:
 
-.. ifconfig:: brand_name in two_fa_activated
-
-    .. jinja:: brand_names
-
-       .. jinja:: doc_links
-
-     :doc:`{{ openstack_cli_auth }}`
-
 .. ifconfig:: brand_name not in two_fa_activated
 
     .. ifconfig:: brand_name != 'WEkEO'
@@ -57,12 +49,6 @@ To gain access to the cloud, see this:
        .. jinja:: brand_names
 
            :doc:`/accountmanagement/How-to-activate-OpenStack-CLI-access-to-cloud`
-
-    .. ifconfig:: brand_name == 'WEkEO'
-
-       :doc:`/accountmanagement/How-to-activate-OpenStack-CLI-access-to-WEkEO-cloud-using-Federated-IDP-authorization-and-application-credentials`
-
-
 
 List all the resources in a project
 --------------------------------------------
@@ -82,7 +68,7 @@ List those resources in the project by entering the commands below:
 
 Here is the result:
 
-.. image:: /networking/How-to-correctly-delete-all-the-resources-in-the-project-via-OpenStack-commandline-Clients-on-Eumetsat-Elasticity/kra_list_all.png
+.. image:: /networking/How-to-correctly-delete-all-the-resources-in-the-project-via-OpenStack-commandline-Clients/kra_list_all.png
 
 We see that there are two servers, **sen4cap_access** and **pipenv-test**. The former has a volume **Sen4CAP Volume** attached to it so the first step is to delete that (and any other) volume.
 
@@ -124,7 +110,7 @@ Now you can delete the volume.
 
 An empty row after the list command shows that there are no more volumes left:
 
-.. image:: /networking/How-to-correctly-delete-all-the-resources-in-the-project-via-OpenStack-commandline-Clients-on-Eumetsat-Elasticity/delete_volume.png
+.. image:: /networking/How-to-correctly-delete-all-the-resources-in-the-project-via-OpenStack-commandline-Clients/delete_volume.png
 
 After that you are able to delete the server.
 
@@ -132,7 +118,7 @@ After that you are able to delete the server.
 
     openstack server delete <server_id>
 
-.. image:: /networking/How-to-correctly-delete-all-the-resources-in-the-project-via-OpenStack-commandline-Clients-on-Eumetsat-Elasticity/list_of_servers_deleted.png
+.. image:: /networking/How-to-correctly-delete-all-the-resources-in-the-project-via-OpenStack-commandline-Clients/list_of_servers_deleted.png
 
 Delete the floating IP
 ---------------------------------
@@ -143,7 +129,7 @@ Then delete the floating IP.
 
     openstack floating ip delete <floating_ip_id>
 
-.. image:: /networking/How-to-correctly-delete-all-the-resources-in-the-project-via-OpenStack-commandline-Clients-on-Eumetsat-Elasticity/delete_floating_ip.png
+.. image:: /networking/How-to-correctly-delete-all-the-resources-in-the-project-via-OpenStack-commandline-Clients/delete_floating_ip.png
 
 Delete the router
 ----------------------
@@ -204,7 +190,7 @@ Now remove the port, the subnet and, finally, the router itself:
 
 It will often not be possible to delete the resources if they are a part of the several networks or subnets. In particular, port may belong to several networks at once, preventing you from deleting *all* of the resources of a project. In this example, a router cannot be deleted as "it is required by one or more floating IPs":
 
-.. image:: /networking/How-to-correctly-delete-all-the-resources-in-the-project-via-OpenStack-commandline-Clients-on-Eumetsat-Elasticity/cannot_delete_port.png
+.. image:: /networking/How-to-correctly-delete-all-the-resources-in-the-project-via-OpenStack-commandline-Clients/cannot_delete_port.png
 
 To overcome that will require some detective work; only after all the connections are broken, will OpenStack let you delete a resource. However and as mentioned in the beginning of this article, the command to delete a project will work on its own and it may leave the system with resources without a parent and you will not be able to remove them on your own.
 
@@ -226,7 +212,7 @@ The command to list the projects is:
 
    openstack project list
 
-.. image:: /networking/How-to-correctly-delete-all-the-resources-in-the-project-via-OpenStack-commandline-Clients-on-Eumetsat-Elasticity/project_list.png
+.. image:: /networking/How-to-correctly-delete-all-the-resources-in-the-project-via-OpenStack-commandline-Clients/project_list.png
 
 To list one particular project, the command is:
 
@@ -236,7 +222,7 @@ To list one particular project, the command is:
 
 It looks like this:
 
-.. image:: /networking/How-to-correctly-delete-all-the-resources-in-the-project-via-OpenStack-commandline-Clients-on-Eumetsat-Elasticity/show_one_project.png
+.. image:: /networking/How-to-correctly-delete-all-the-resources-in-the-project-via-OpenStack-commandline-Clients/show_one_project.png
 
 After having deleted all the resources, you can try to delete the project with the command
 
@@ -246,4 +232,4 @@ After having deleted all the resources, you can try to delete the project with t
 
 If not successful, you either do not have proper permissions or there still are several parts of a project that are not deleted yet. If there is only one project in the domain, you will also not be able to delete it:
 
-.. image:: /networking/How-to-correctly-delete-all-the-resources-in-the-project-via-OpenStack-commandline-Clients-on-Eumetsat-Elasticity/cannot_delete_project.png
+.. image:: /networking/How-to-correctly-delete-all-the-resources-in-the-project-via-OpenStack-commandline-Clients/cannot_delete_project.png

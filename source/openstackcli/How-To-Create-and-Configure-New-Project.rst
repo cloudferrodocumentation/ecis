@@ -102,9 +102,6 @@ Step 1 Create Project
 
 Choose **Identity** → **Projects** menu on the left side of the screen.
 
-.. figure:: /openstackcli/How-To-Create-and-Configure-New-Project/identity_projects.png
-   :class: image-with-border
-
 Click on **Create Project** button.
 
 Complete the project name (this is obligatory) and make sure that checkbox **Enable** is ticked on so that your project becomes active.
@@ -140,18 +137,9 @@ If you have set up the configuration properly, new project should appear in the 
 
 You now have two projects at your disposal:
 
-.. figure:: /openstackcli/How-To-Create-and-Configure-New-Project/projects_present.png
-   :class: image-with-border
-
 To activate the new project, **testproject**, click on its name. The name of the active project will be available in the upper left corner:
 
-.. figure:: /openstackcli/How-To-Create-and-Configure-New-Project/testproject.png
-   :class: image-with-border
-
 As mentioned earlier, your new project will **not** have access to the external network. To verify, choose project, select **Network** -> **Networks** and you will see that the new project has no networks defined.
-
-.. figure:: /openstackcli/How-To-Create-and-Configure-New-Project/no_networks_present.png
-   :class: image-with-border
 
 For security groups, the situation is similar: the default one is present, but the **allow_ping_ssh_icmp_rdp** security group is missing.
 
@@ -207,8 +195,8 @@ If you want a new user to have access to **testproject**, the following articles
 
 .. jinja:: brand_names
 
-   :doc:`/accountmanagement/Inviting-New-User`.
+   :doc:`/accountmanagement/Invitations`.
 
    :doc:`/accountmanagement/Removing-User-From-Organization`.
 
-   :doc:`/accountmanagement/Accounts-and-Projects-Management`.
+   :doc:`/accountmanagement/Cloud-projects-wallets`.

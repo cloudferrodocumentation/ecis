@@ -22,6 +22,8 @@ Use this section to create and manage networks, connect to virtual machines, con
    /networking/How-to-add-SSH-key-from-Horizon-web-console
    /networking/How-to-Import-SSH-Public-Key-to-OpenStack-Horizon
    /networking/How-to-connect-to-your-virtual-machine-via-SSH-in-Linux
+   /networking/How-to-install-Python-in-Windows
+   /networking/How-to-connect-to-a-virtual-machine-via-SSH-from-Windows-10-Command-Prompt
    /networking/What-If-I-Forgot-To-Add-The-SSH-Key-To-My-VM-Or-Deleted-It
 
 .. toctree::

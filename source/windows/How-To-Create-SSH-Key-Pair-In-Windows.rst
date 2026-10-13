@@ -21,7 +21,8 @@ First, check to see if you have the OpenSSH client installed:
 
 .. jinja:: windows_images
 
-   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-On-Eumetsat-Elasticity/{{ windows092 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows/{{ windows092 }}
+      :alt: Step 1: Verify if OpenSSH Client is Installed
 
 3. Scroll down the list to see if OpenSSH Client is listed.
 
@@ -31,7 +32,8 @@ First, check to see if you have the OpenSSH client installed:
 
 .. jinja:: windows_images
 
-   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-On-Eumetsat-Elasticity/{{ windows093 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows/{{ windows093 }}
+      :alt: Step 1: Verify if OpenSSH Client is Installed
 
 This will install app called **ssh-keygen**.
 
@@ -50,7 +52,8 @@ Step 2: Open Command Prompt
 
 .. jinja:: windows_images
 
-   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-On-Eumetsat-Elasticity/{{ windows094 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows/{{ windows094 }}
+      :alt: Step 2: Open Command Prompt
 
 Step 3: Use OpenSSH to Generate an SSH Key Pair
 -----------------------------------------------
@@ -65,7 +68,8 @@ Finally, run **ssh-keygen** to generate the public and private keys for SSH acce
 
 .. jinja:: windows_images
 
-   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-On-Eumetsat-Elasticity/{{ windows095 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows/{{ windows095 }}
+      :alt: Step 3: Use OpenSSH to Generate an SSH Key Pair
 
 Press **ENTER** three times. This will
 
@@ -83,13 +87,15 @@ These are the default values.
 
 .. jinja:: windows_images
 
-   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-On-Eumetsat-Elasticity/{{ windows096 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows/{{ windows096 }}
+      :alt: Step 3: Use OpenSSH to Generate an SSH Key Pair
 
 To see the generated files, navigate to **C:/Users/<Your_User_Name>/.ssh** with your file explorer.
 
 .. jinja:: windows_images
 
-   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-On-Eumetsat-Elasticity/{{ windows097 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows/{{ windows097 }}
+      :alt: Step 3: Use OpenSSH to Generate an SSH Key Pair
 
 The image shows default values of files for private and public keys, in files **id_rsa** and **id_rsa.pub**, respectively.
 

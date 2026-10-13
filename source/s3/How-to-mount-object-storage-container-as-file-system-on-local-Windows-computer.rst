@@ -1,14 +1,15 @@
-How to mount object storage container from |brand-name| as file system on local Windows computer
-================================================================================================
+How to mount object storage container as file system on local Windows computer
+==============================================================================
 
 This article describes how to configure direct access to object storage
-containers from |brand-name| cloud in the **This PC** window on your local
+containers from the cloud in the **This PC** window on your local
 Windows computer. Such containers will be mounted as network drives, for
 example:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer/{{ s3074 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer/{{ s3074 }}
+      :alt: How to mount object storage container as file system on local Windows computer
 
 You will configure mounting using an account that can be elevated to
 administrative privileges through User Account Control (UAC). After this
@@ -25,7 +26,7 @@ You need a |brand-name| hosting account with access to the Horizon interface:
 
 No. 2 **Object storage container**
 
-You need at least one object storage container on the |brand-name| cloud.
+You need at least one object storage container on the cloud.
 
 .. jinja:: doc_links
 
@@ -135,7 +136,8 @@ The page contains a table with links to different versions:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer/{{ s3075 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer/{{ s3075 }}
+      :alt: Download and extract Rclone
 
 Download the version of Rclone for the **Intel/AMD - 64 Bit** platform for
 Windows.
@@ -144,14 +146,16 @@ Download the zip archive. In Microsoft Edge, it should look like this:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer/{{ s3076 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer/{{ s3076 }}
+      :alt: Download and extract Rclone
 
 Enter the zip archive. It should contain one directory. Double-click to enter
 it. Its content should look like this:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer/{{ s3077 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer/{{ s3077 }}
+      :alt: Download and extract Rclone
 
 Copy the content of that directory to the **C:\\rclone** folder that you
 created previously using PowerShell.
@@ -167,7 +171,8 @@ Click **Download WinFsp Installer**:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer/{{ s3078 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer/{{ s3078 }}
+      :alt: Download and install WinFsp
 
 Run the downloaded installer. The installation process is similar to installing
 other Windows programs. The **Custom Setup** step requires you to make a
@@ -175,7 +180,8 @@ choice:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer/{{ s3079 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer/{{ s3079 }}
+      :alt: Download and install WinFsp
 
 Leave the default values intact to install only the **Core** section and click
 **Next**. Complete the installation.
@@ -191,21 +197,24 @@ Click the link in the **Latest release** section:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer/{{ s3080 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer/{{ s3080 }}
+      :alt: Download and extract NSSM
 
 A zip file should be downloaded. It should contain one folder. The content of
 that folder should look like this:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer/{{ s3081 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer/{{ s3081 }}
+      :alt: Download and extract NSSM
 
 Navigate to the **win64** folder. It should contain one executable file called
 **nssm**:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer/{{ s3082 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer/{{ s3082 }}
+      :alt: Download and extract NSSM
 
 Copy that file to **C:\\rclone**.
 
@@ -323,13 +332,15 @@ Go to the **This PC** window. You should see the mounted container there:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer/{{ s3083 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer/{{ s3083 }}
+      :alt: Step 3: Perform a test mount
 
 Enter it. You should see its content:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer/{{ s3084 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer/{{ s3084 }}
+      :alt: Step 3: Perform a test mount
 
 To stop the test mount, press **CTRL+C** in PowerShell. You should get the
 following output:
@@ -400,7 +411,8 @@ You should get the following window:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer/{{ s3085 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer/{{ s3085 }}
+      :alt: Step 5: Configure automatic mounting of your container
 
 Click the **...** button next to the **Path:** text field.
 
@@ -434,7 +446,8 @@ Click **Install service**. You should get the following message:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer/{{ s3086 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer/{{ s3086 }}
+      :alt: Step 5: Configure automatic mounting of your container
 
 Restart your computer and check whether the drive is automatically mounted in
 the **This PC** window. If it is, the service works as intended.
@@ -450,19 +463,14 @@ remove them from **Object Store** -> **Containers** in the Horizon dashboard:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer/{{ s3087 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer/{{ s3087 }}
+      :alt: Step 5: Configure automatic mounting of your container
 
 Removing software responsible for automatic mounting of object storage
 ----------------------------------------------------------------------
 
 If you no longer want to access object storage containers from |brand-name| on
 a particular machine, you can remove the configuration and software.
-
-.. ifconfig:: brand_name == 'Creodias'
-
-   The software stack described here might also be used for mounting the
-   EODATA repository using the Remote Transfer for EODATA service. If you
-   follow this section correctly, that configuration will also be removed.
 
 The whole procedure is covered in this section:
 
@@ -510,13 +518,6 @@ You should get output similar to this:
 
    Service "mounting-service" removed successfully.
 
-.. ifconfig:: brand_name == 'Creodias'
-
-   If you have used this Rclone installation to mount other object storage
-   containers from |brand-name| or the EODATA repository using the Remote
-   Transfer for EODATA service, remove their services using NSSM in the same
-   way.
-
 .. ifconfig:: brand_name != 'Creodias'
 
    If you have used this Rclone installation to mount other object storage
@@ -531,7 +532,8 @@ You should see the following search result:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer/{{ s3088 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer/{{ s3088 }}
+      :alt: Removing software responsible for automatic mounting of object storage
 
 Click it to enter Control Panel.
 
@@ -541,31 +543,36 @@ In the **Programs** section, select **Uninstall a program**.
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer/{{ s3089 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer/{{ s3089 }}
+      :alt: Removing software responsible for automatic mounting of object storage
 
 In the list that appears, find the **WinFsp** entry:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer/{{ s3090 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer/{{ s3090 }}
+      :alt: Removing software responsible for automatic mounting of object storage
 
 Right-click it and choose **Uninstall**:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer/{{ s3091 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer/{{ s3091 }}
+      :alt: Removing software responsible for automatic mounting of object storage
 
 You will get the following question:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer/{{ s3092 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer/{{ s3092 }}
+      :alt: Removing software responsible for automatic mounting of object storage
 
 Click **Yes**. You should get the following window:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer/{{ s3093 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer/{{ s3093 }}
+      :alt: Removing software responsible for automatic mounting of object storage
 
 Close all open programs and File Explorer windows, for example **This PC** or
 **Documents** windows. Make sure that **Automatically close applications and
@@ -576,7 +583,8 @@ You will be prompted to reboot your computer:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer/{{ s3094 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer/{{ s3094 }}
+      :alt: Removing software responsible for automatic mounting of object storage
 
 Make sure that it is safe to reboot, including that you have:
 
@@ -599,7 +607,7 @@ removed.
 What to do next
 ---------------
 
-Object storage containers on the |brand-name| cloud can be mounted both on
+Object storage containers on the cloud can be mounted both on
 physical and virtual machines running Windows and Linux.
 
 To mount an object storage container on a different platform, follow one of

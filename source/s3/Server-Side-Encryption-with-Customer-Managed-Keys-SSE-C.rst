@@ -1,5 +1,5 @@
-Server-Side Encryption with Customer-Managed Keys (SSE-C) on |brand-name|
-=========================================================================================
+Server-Side Encryption with Customer-Managed Keys (SSE-C)
+=========================================================
 
 Introduction
 ------------

@@ -165,7 +165,7 @@ BRANDS = {
 
     "ecis": {
         "brand_name": "cloud environment",
-        "brand_name_full": "EUMETSAT Cloud Infrastructure Service",
+        "brand_name_full": "Cloud Infrastructure Service",
         "brand_name_hyphen": "Eumetsat-Elasticity",
         "brand_name_site_link": "https://horizon.cloudferro.com/auth/login/?next=/",
         "brand_name_site_auth_link": "https://my.cloud.eumetsat.int",
@@ -181,7 +181,7 @@ BRANDS = {
         "mk8s_url": "mks.cloud.eumetsat.int/",
         "server_cert": "managed-kubernetes-cloudferro-com-chain.pem",
         "main_site_url": "https://eumetsat.int",
-        "main_site_name": "Eumetsat",
+        "main_site_name": "Main website",
         "images_cloud": "ecis",
         "images_datavolume": "ecis",
         "images_cuttingedge": "ecis",
@@ -260,7 +260,7 @@ rst_prolog = f"""
 
 
 mk8s_url = "https://" + brand_cfg["mk8s_url"]
-brand_name = brand_cfg["brand_name"]
+brand_name = "ECIS"  # Stable identity for feature conditions; visible names come from brand_cfg.
 # brand_name = 'NSIS Cloud'
 # brand_name = 'CloudFerro Cloud'
 cloud_name = ''
@@ -649,7 +649,11 @@ DEFAULT_DOC_LINKS = {
 
 BRAND_DOC_LINK_OVERRIDES = {
     "ecis": {
-        "ec2_credentials": "/accountmanagement/S3-keys/S3-keys",
+        "eodata_boto3_access": None,
+        "eodata_s3cmd_access": None,
+        "slurm_mpi_workflow": None,
+
+        "ec2_credentials": "/accountmanagement/S3-keys",
         "magnum_kubernetes_cli": None,
         "object_storage": "/s3/Deep-dive-into-using-s3cmd-to-access-object-storage-on-{brand_name_hyphen}",
 
@@ -2922,7 +2926,7 @@ jinja_contexts = {
 		'ww2': 'ww2_eumetsat.png',
 		'ww3': 'ww3.png',
 		'ww4': 'ww4.png',
-		'access_option' : 'Eumetsat Elasticity',
+		'access_option': 'ECIS',
 	},
     'rapideye': {
 		'rapideye' : 'rapideye_s3_credentials_eolab.png',
@@ -2962,7 +2966,7 @@ jinja_contexts = {
 
   'access_sen4cap': {
 		'access_sen4cap_01': 'access_sen4cap_eo-lab.png',
-		'access_sen4cap_02': 'saml_eumetsat-elasticity.png',
+		'access_sen4cap_02': 'ecis_identity-provider-login.png',
 		'access_sen4cap_03': 'management_eo-lab.png'
 
 		 },
@@ -3003,14 +3007,9 @@ jinja_contexts = {
 		'MK8s' : brand_cfg["MK8s"],
         "mk8s_url": brand_cfg["mk8s_url"],
         "server_cert": brand_cfg["server_cert"],
-
-        'brand_name_cloud': 'Eumetsat-Elasticity-WAW3-1',
-		'ecommerce_link': 'https://ecommerce.creodias.eu',
+		'ecommerce_link': '',
         'satellite_repository': '/eodata',
-		'waw3_1': 'WAW3-1',
 		'client_id' : 'CLOUDFERRO_PUBLIC',
-        'datahub_address' : 'datahub.creodias.eu',
-        'sales_support': 'sales@cloudferro.com',
         'product_name_link' : 'S1A_IW_GRDH_1SDV_20141031T161924_20141031T161949_003076_003856_634E.SAFE',
         'product_name_image' : 'find_id_from_link_creodias.png',
         'product_name_id' : 'c23d5ffd-bc2a-54c1-a2cf-e2dc18bc945f',
@@ -3025,7 +3024,6 @@ jinja_contexts = {
         'terminal_output' : 'terminal_output_creodias.png',
         'wget_output' : 'wget_output_creodias.png',
         'quick_look' : 'quick-look_creodias.png',
-        'zipper_address' : 'zipper.creodias.eu',
 #         'zipper_address' : 'download.dataspace.copernicus.eu',
         'client_id' : 'CLOUDFERRO_PUBLIC',
 
@@ -3427,7 +3425,7 @@ else:
 #
 html_theme = "sphinx_rtd_theme"
 # html_theme = 'alabaster'
-html_static_path = ['_static','_static/include']
+html_static_path = ['_static']
 # Configure the sidebars
 html_sidebars = {
     "**": ["sidebar.html"],  # Use your custom sidebar template for all pages
@@ -3444,12 +3442,11 @@ favicons = [
      },
  ]
 
-html_logo = "logo_bar_vertical_dark_mode.png"
+html_logo = None
 highlight_language = "none"
 
 html_theme_options = {
     'logo_only': True,
-    'display_version': False,
 }
 
 # >>> CF_BRAND_BLOCK: html_context_brand_values

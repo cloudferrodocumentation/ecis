@@ -1,7 +1,7 @@
-How to create an instance snapshot using OpenStack CLI on |brand-name|
-======================================================================================
+How to create an instance snapshot using OpenStack CLI
+======================================================
 
-In this article, you will learn how to create an instance snapshot on |brand-name| cloud using OpenStack CLI.
+In this article, you will learn how to create an instance snapshot on the cloud using OpenStack CLI.
 
 Instance snapshots allow you to archive the state of the virtual machine. You can, then, use them for
 
@@ -50,7 +50,7 @@ Before you create or compare instances, make sure you understand the difference 
 
 No. 3 **Instance with ephemeral storage**
 
-You need a virtual machine hosted on |brand-name| cloud. You can create an instance with ephemeral storage by following this article:
+You need a virtual machine hosted on the cloud. You can create an instance with ephemeral storage by following this article:
 
 .. jinja:: doc_links
 
@@ -130,7 +130,7 @@ You need the OpenStack CLI client installed. Use one of the following articles, 
    * :doc:`{{ openstackclient_windows }}`
    * :doc:`{{ openstackclient_windows_wsl }}`
 
-To use the OpenStack CLI client to control |brand-name| cloud, authenticate first.
+To use the OpenStack CLI client to control the cloud, authenticate first.
 
 .. jinja:: doc_links
 
@@ -164,7 +164,8 @@ List your instances:
 
    openstack server list
 
-.. figure:: /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI-on-Eumetsat-Elasticity/how-to-create-instance-snapshot-cli-13_creodias.png
+.. figure:: /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI/how-to-create-instance-snapshot-cli-13_creodias.png
+   :alt: Create and list an instance using CLI
    :class: image-with-border
 
 If your instance in column **Status** still has **BUILD**, wait up to a couple of minutes until it has status **ACTIVE**. To refresh the list, execute **openstack server list** again.
@@ -172,7 +173,7 @@ If your instance in column **Status** still has **BUILD**, wait up to a couple o
 The output above includes ID of an instance which can be used to refer to it in other commands. This ID is a string of characters which are all in one line. The OpenStack CLI client might output that as multiple lines for better legibility. If it happens, make sure to enter it as one line regardless of that.
 
 Shut down the VM
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 Shut down your instance. It is best to do it using the functions of its operating system. If, like here, the image used was **Ubuntu 22.04 LTS**, you could use the Horizon console or SSH access to execute a command such as
 
@@ -204,7 +205,8 @@ and so the command to stop the server becomes
 
 You can verify that the instance is shut down by executing **openstack server list** again - the instance should have in column **Status** the following value: **SHUTOFF**
 
-.. figure:: /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI-on-Eumetsat-Elasticity/how-to-create-instance-snapshot-cli-12_creodias.png
+.. figure:: /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI/how-to-create-instance-snapshot-cli-12_creodias.png
+   :alt: Shut down the VM
    :class: image-with-border
 
 Create a snapshot
@@ -246,7 +248,8 @@ Parameter **\-\-wait** should cause the OpenStack CLI to return to the command p
 
 If the operation was successful, you should get output similar to this:
 
-.. figure:: /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI-on-Eumetsat-Elasticity/how-to-create-instance-snapshot-cli-14_creodias.png
+.. figure:: /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI/how-to-create-instance-snapshot-cli-14_creodias.png
+   :alt: Create a snapshot
    :class: image-with-border
 
 It contains various information about this instance snapshot. Its **size** is equal to **17179869184**, here provided in bytes, and should be the same as the size of boot drive of your virtual machine.
@@ -257,9 +260,10 @@ If you now execute
 
    openstack image list
 
-your new instance snapshot should be listed alongside other images, including the ones available on |brand-name| cloud by default. It should have the same name as your instance:
+your new instance snapshot should be listed alongside other images, including the ones available on the cloud by default. It should have the same name as your instance:
 
-.. figure:: /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI-on-Eumetsat-Elasticity/how-to-create-instance-snapshot-cli-15_creodias.png
+.. figure:: /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI/how-to-create-instance-snapshot-cli-15_creodias.png
+   :alt: Create a snapshot
    :class: image-with-border
 
 What will the snapshot contain for ephemeral storage
@@ -314,7 +318,8 @@ List your instances:
 
    openstack server list
 
-.. figure:: /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI-on-Eumetsat-Elasticity/how-to-create-instance-snapshot-cli-16_creodias.png
+.. figure:: /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI/how-to-create-instance-snapshot-cli-16_creodias.png
+   :alt: Create and list instances
    :class: image-with-border
 
 In this example, we have one virtual machine called **instance-which-uses-volume** which uses a volume as its boot drive.
@@ -343,7 +348,8 @@ and so the command to show attached volumes becomes
 
    openstack server show -c volume_attached e69f90da-60d8-4d72-9b57-35f7063bc92d
 
-.. figure:: /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI-on-Eumetsat-Elasticity/how-to-create-instance-snapshot-cli-17_creodias.png
+.. figure:: /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI/how-to-create-instance-snapshot-cli-17_creodias.png
+   :alt: Create and list instances
    :class: image-with-border
 
 The command **openstack server show** is usually used to show detailed information about a virtual machine. In this case, we cut its output so that it only shows contents of section **volumes_attached**.
@@ -377,7 +383,8 @@ Verify that it is shut down by executing
 
 Value **SHUTOFF** in column **Status** denotes that the server has stopped as planned:
 
-.. figure:: /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI-on-Eumetsat-Elasticity/how-to-create-instance-snapshot-cli-21_creodias.png
+.. figure:: /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI/how-to-create-instance-snapshot-cli-21_creodias.png
+   :alt: Shut down the VM
 
 In the screenshot above, column **ID** contains the instance ID. The instance ID is a string of characters which may be wrapped across multiple lines in the OpenStack CLI output. If that happens, make sure to copy and use it as one line.
 
@@ -412,7 +419,8 @@ Parameter **\-\-wait** should cause the OpenStack CLI to return to the command p
 
 If the operation was successful, you should get output similar to this:
 
-.. figure:: /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI-on-Eumetsat-Elasticity/how-to-create-instance-snapshot-cli-18_creodias.png
+.. figure:: /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI/how-to-create-instance-snapshot-cli-18_creodias.png
+   :alt: Creating the snapshot
 
 Your instance snapshot should now be visible when listing images:
 
@@ -420,7 +428,8 @@ Your instance snapshot should now be visible when listing images:
 
    openstack image list
 
-.. figure:: /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI-on-Eumetsat-Elasticity/how-to-create-instance-snapshot-cli-22_creodias.png
+.. figure:: /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI/how-to-create-instance-snapshot-cli-22_creodias.png
+   :alt: Creating the snapshot
 
 Exploring instance snapshot and volume snapshots which were created alongside it
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -439,7 +448,8 @@ You can check detailed information about that volume snapshot by executing the c
 
 Replace **<snapshot_id>** with the ID or name of the snapshot.
 
-.. figure:: /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI-on-Eumetsat-Elasticity/how-to-create-instance-snapshot-cli-19_creodias.png
+.. figure:: /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI/how-to-create-instance-snapshot-cli-19_creodias.png
+   :alt: Exploring instance snapshot and volume snapshots which were created alongside it
 
 Its size should be the same as the size of original volume from which it was created.
 
@@ -449,14 +459,16 @@ That volume snapshot should be visible normally when listing volume snapshots wi
 
    openstack volume snapshot list
 
-.. figure:: /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI-on-Eumetsat-Elasticity/how-to-create-instance-snapshot-cli-20_creodias.png
+.. figure:: /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI/how-to-create-instance-snapshot-cli-20_creodias.png
+   :alt: Exploring instance snapshot and volume snapshots which were created alongside it
 
 What happens if there are multiple volumes?
 ++++++++++++++++++++++++++++++++++++++++++++++++
 
 If multiple volumes were connected to your instance, snapshot of each of them should be created alongside with instance snapshot. All of these volume snapshots should appear in the **properties** section of instance snapshot, property **block_device_mapping**. This is how it could look like:
 
-.. figure:: /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI-on-Eumetsat-Elasticity/how-to-create-instance-snapshot-cli-23_creodias.png
+.. figure:: /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI/how-to-create-instance-snapshot-cli-23_creodias.png
+   :alt: What happens if there are multiple volumes?
 
 In this example, there are two volume snapshots, each created for one of the volumes of our VM:
 

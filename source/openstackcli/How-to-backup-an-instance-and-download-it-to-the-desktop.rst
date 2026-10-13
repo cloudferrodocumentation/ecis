@@ -1,5 +1,5 @@
-How to Back Up an Instance and Download it to the Desktop on |brand-name| OpenStack Hosting
-=====================================================================================================
+How to Back Up an Instance and Download it to the Desktop OpenStack Hosting
+===========================================================================
 
 This article explains how to create a virtual machine using OpenStack CLI, create a snapshot of its boot volume, and prepare the backed-up disk for download to your desktop.
 
@@ -26,7 +26,7 @@ You need OpenStack CLI client installed. One of the following articles should he
    * :doc:`{{ openstackclient_windows }}`
    * :doc:`{{ openstackclient_windows_wsl }}`
 
-   To use OpenStack CLI client to control |brand-name| cloud, you need to prove your identity: :doc:`{{ openstack_cli_auth }}`
+   To use OpenStack CLI client to control the cloud, you need to prove your identity: :doc:`{{ openstack_cli_auth }}`
 
 No. 3 **OpenStack credentials**
 

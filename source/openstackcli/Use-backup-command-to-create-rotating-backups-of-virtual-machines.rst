@@ -1,5 +1,5 @@
-Use backup command to create rotating backups of virtual machines on |brand-name| cloud
-======================================================================================
+Use backup command to create rotating backups of virtual machines
+=================================================================
 
 **Rotating backups** in OpenStack are a backup strategy where older backups are
 automatically deleted after a predefined number of backups has been created.
@@ -120,7 +120,7 @@ No. 3 **Server on which the backup process will run**
 
 You need a server from which the backup commands will be executed. This server
 may be in the same region as the backed-up instance, in another region, or
-outside |brand-name| cloud.
+outside the cloud.
 
 In this article, this server is called **backing-server**. It is assumed to be
 an **Ubuntu 24.04 LTS** machine with SSH access.
@@ -206,7 +206,7 @@ If **cron** is installed, the following command:
 
 should produce output similar to this:
 
-.. figure:: /openstackcli/Use-backup-command-to-create-rotating-backups-of-virtual-machines-on-Eumetsat-Elasticity/install-cron-1.png
+.. figure:: /openstackcli/Use-backup-command-to-create-rotating-backups-of-virtual-machines/install-cron-1.png
    :class: image-with-border
 
 If **cron** is not installed, install and enable it:
@@ -319,7 +319,8 @@ this value during later runs may lead to confusing or unexpected results.
 You will now have two backups of the same VM, named **my-backup1** and
 **my-backup2**.
 
-.. figure:: /openstackcli/Use-backup-command-to-create-rotating-backups-of-virtual-machines-on-Eumetsat-Elasticity/how-to-create-rotating-backups-05_creodias.png
+.. figure:: /openstackcli/Use-backup-command-to-create-rotating-backups-of-virtual-machines/how-to-create-rotating-backups-05_creodias.png
+   :alt: Add another backup to the series
    :class: image-with-border
 
 Run the command again with the name **my-backup3**. The rotation limit has now
@@ -391,7 +392,7 @@ your own environment.
 
 This is what the command may look like in the **nano** editor:
 
-.. figure:: /openstackcli/Use-backup-command-to-create-rotating-backups-of-virtual-machines-on-Eumetsat-Elasticity/install-cron-2.png
+.. figure:: /openstackcli/Use-backup-command-to-create-rotating-backups-of-virtual-machines/install-cron-2.png
    :class: image-with-border
 
 The line is long, so it is often easier to prepare it locally first and then

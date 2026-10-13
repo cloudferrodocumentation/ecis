@@ -1,19 +1,19 @@
-How to create key pair in OpenStack Dashboard on |brand-name|
-==============================================================
+How to create key pair in OpenStack Dashboard
+=============================================
 
 Open **Compute -> Key Pairs**
 
-.. figure:: /cloud/How-to-create-key-pair-in-OpenStack-Dashboard-on-Eumetsat-Elasticity/keypair1.png
+.. figure:: /cloud/How-to-create-key-pair-in-OpenStack-Dashboard/keypair1.png
 
 Click **Create Key Pair**, insert the name of the key (eg. "ssh-key") and Key Type.
 
-.. figure:: /cloud/How-to-create-key-pair-in-OpenStack-Dashboard-on-Eumetsat-Elasticity/keypair2.png
+.. figure:: /cloud/How-to-create-key-pair-in-OpenStack-Dashboard/keypair2.png
 
 After generating Key Pair your new Private Key download window will appear. Click **Open with Text Editor**
 
-.. figure:: /cloud/How-to-create-key-pair-in-OpenStack-Dashboard-on-Eumetsat-Elasticity/keypair3.png
+.. figure:: /cloud/How-to-create-key-pair-in-OpenStack-Dashboard/keypair3.png
 
-.. figure:: /cloud/How-to-create-key-pair-in-OpenStack-Dashboard-on-Eumetsat-Elasticity/keypair4.png
+.. figure:: /cloud/How-to-create-key-pair-in-OpenStack-Dashboard/keypair4.png
 
 Save the key as **"id_rsa"**  in the folder of your choice (in linux the keys are usually kept in **~./ssh** folder).
 
@@ -24,7 +24,7 @@ In case of linux you should change the permissions on the private key:
    $ sudo chmod 600 id_rsa
 
 
-.. figure:: /cloud/How-to-create-key-pair-in-OpenStack-Dashboard-on-Eumetsat-Elasticity/keypair5.png
+.. figure:: /cloud/How-to-create-key-pair-in-OpenStack-Dashboard/keypair5.png
 
 Click key name in **Key Pairs** menu and read your **public key**. You can also save the key to a file like the private key. For example named **"id_rsa.pub"**.
 

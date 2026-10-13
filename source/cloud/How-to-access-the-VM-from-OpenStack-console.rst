@@ -1,5 +1,5 @@
-How to access the VM from OpenStack console on |brand-name|
-========================================================================
+How to access the VM from OpenStack console
+===========================================
 
 Once you have created a virtual machine in OpenStack, you will need to perform various administrative tasks such as:
 
@@ -58,23 +58,19 @@ Using console for administrative tasks within Linux based VMs
 
 1. Go to |brand-name-site-link| and select your authentication method:
 
-.. jinja:: login_vm
-
-   .. figure:: /cloud/How-to-access-the-VM-from-OpenStack-console-on-Eumetsat-Elasticity/{{ login }}
-
 You will enter the Horizon main screen.
 
 2. Open the **Compute/Instances** tab and select the desired VM by clicking on its name:
 
-.. figure:: /cloud/How-to-access-the-VM-from-OpenStack-console-on-Eumetsat-Elasticity/accessvm2.png
+.. figure:: /cloud/How-to-access-the-VM-from-OpenStack-console/accessvm2.png
 
 3. Select **"Console"** pane
 
-.. figure:: /cloud/How-to-access-the-VM-from-OpenStack-console-on-Eumetsat-Elasticity/accessvm3.png
+.. figure:: /cloud/How-to-access-the-VM-from-OpenStack-console/accessvm3.png
 
 4. When logging in for the first time, you will see the generic console screen:
 
-.. image:: /cloud/How-to-access-the-VM-from-OpenStack-console-on-Eumetsat-Elasticity/accessvm4v2.png
+.. image:: /cloud/How-to-access-the-VM-from-OpenStack-console/accessvm4v2.png
 
 Click on link **Click here to show only console** and then click on the console surface to make it active.
 
@@ -86,7 +82,7 @@ The next step is to start using another user, called **eouser**. Just like **eoc
 
    sudo su - eouser
 
-.. image:: /cloud/How-to-access-the-VM-from-OpenStack-console-on-Eumetsat-Elasticity/sudo_su_eouser.png
+.. image:: /cloud/How-to-access-the-VM-from-OpenStack-console/sudo_su_eouser.png
 
 You will then use the console as a predefined user called **eouser**.
 
@@ -99,11 +95,11 @@ Using console to perform administrative tasks within Fedora VMs
 
 For normal VMs, choose either Ubuntu- or CentOS-based images while creating a VM -- but not Fedora. It is meant only for automatic creation of instances that belong to Kubernetes clusters. Such instances will have either word *master* or *node* in their names. Here is a typical series of instances that belong to two different clusters, called *vault* and *k8s-23*:
 
-.. figure:: /cloud/How-to-access-the-VM-from-OpenStack-console-on-Eumetsat-Elasticity/some_nodes.png
+.. figure:: /cloud/How-to-access-the-VM-from-OpenStack-console/some_nodes.png
 
 So if you click on any of these Kubernetes instances, you will be able to enter the console but will not be able to use it. In this context, Fedora image is **intentionally** set up in such a way that you **cannot enter it through the console**. You will, typically, see this after Fedora starts:
 
-.. image:: /cloud/How-to-access-the-VM-from-OpenStack-console-on-Eumetsat-Elasticity/fedora_image.png
+.. image:: /cloud/How-to-access-the-VM-from-OpenStack-console/fedora_image.png
 
 Instead, it is possible to enter one such instance using main Kubernetes command, **kubectl** with parameter **exec**. The main command would look like this:
 
@@ -117,13 +113,10 @@ Further explanations of **exec** command are out of scope of this article. The f
 
 .. jinja:: brand_names
 
-   :doc:`/kubernetes/How-To-Access-Kubernetes-Cluster-Post-Deployment-Using-Kubectl-On-{{ brand_name_hyphen }}-OpenStack-Magnum`
+   `Get a shell to a running container <https://kubernetes.io/docs/tasks/debug/debug-application/get-shell-running-container/>`_
 
-This article shows an example of an **exec** command to enter the VM and, later, save the data within it:
-
-.. jinja:: brand_names
-
-   :doc:`/kubernetes/Volume-based-vs-Ephemeral-based-Storage-for-Kubernetes-Clusters-on-{{ brand_name_hyphen }}-OpenStack-Magnum`
+For Kubernetes storage concepts, see the official
+`volumes documentation <https://kubernetes.io/docs/concepts/storage/volumes/>`_.
 
 .. ifconfig:: not (brand_name == "Destination Earth" or brand_name == "ESA HPC")
 
@@ -132,6 +125,6 @@ This article shows an example of an **exec** command to enter the VM and, later,
 
     In case of **Windows** set a new password for *Administrator* profile.
 
-    .. figure:: /cloud/How-to-access-the-VM-from-OpenStack-console-on-Eumetsat-Elasticity/accessvm5.png
+    .. figure:: /cloud/How-to-access-the-VM-from-OpenStack-console/accessvm5.png
 
     You will then be able to perform administrative tasks on your instance.

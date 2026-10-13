@@ -1,5 +1,5 @@
-What is an OpenStack project on |brand-name|
-=============================================
+What is an OpenStack project
+============================
 
 A **project** is a isolated group of zero or more users who share common access with specific privileges to the software instance in OpenStack. A project is created for each set of instances and networks that are configured as a discrete entity for the project. In Compute, a project owns virtual machines (in Compute) or containers (in Object Storage).
 
@@ -7,11 +7,11 @@ You can imagine that the whole OpenStack cloud  is a big cake of resources (vCPU
 
 Current project name is **visible** in the Horizon panel.
 
-.. figure:: /cloud/What-is-an-OpenStack-project-on-Eumetsat-Elasticity/project1.png
+.. figure:: /cloud/What-is-an-OpenStack-project/project1.png
 
 Projects are created, managed, and edited at the OpenStack **Projects** screen.
 
-.. figure:: /cloud/What-is-an-OpenStack-project-on-Eumetsat-Elasticity/project2.png
+.. figure:: /cloud/What-is-an-OpenStack-project/project2.png
 
 Users can be associated with more than one project, but once signed, they can only see and access the resources available in that project.
 Each project and user pairing can have a role associated with it.

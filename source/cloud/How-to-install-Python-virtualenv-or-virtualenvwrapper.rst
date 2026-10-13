@@ -1,5 +1,5 @@
-How to install Python virtualenv or virtualenvwrapper on |brand-name|
-======================================================================
+How to install Python virtualenv or virtualenvwrapper
+=====================================================
 
 Virtualenv is a tool with which you are able to create isolated Python environments. It is mainly used to get rid of problems with dependencies and versions.
 It also does not include permission setup. Generally virtualenvwrapper is a kind of extension for virtualenv. It owns wrappers which are in charge of creating and deleting environments. It is useful supplement for our current subject.

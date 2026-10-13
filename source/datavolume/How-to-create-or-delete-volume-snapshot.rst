@@ -1,5 +1,5 @@
-How to create or delete volume snapshot on |brand-name|
-====================================================================================================
+How to create or delete volume snapshot
+=======================================
 
 Volume snapshot allows you to save the state of volume at a specific point in time. Here is how to create or delete volume snapshot using Horizon dashboard or OpenStack CLI client.
 
@@ -23,41 +23,7 @@ To prevent data corruption while creating a snapshot, the volume should not be c
 
 No. 3 **OpenStack CLI client**
 
-If you want to interact with |brand-name| cloud using OpenStack CLI client, you need to have it installed. Check one of these articles:
-
-.. jinja:: brand_names
-
-    * :doc:`/openstackcli/How-to-install-OpenStackClient-for-Linux`
-
-    * :doc:`/openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows`
-
-    * :doc:`/openstackcli/How-to-install-OpenStackClient-on-Windows-using-Windows-Subsystem-for-Linux-on-OpenStack-Hosting`
-How to create or delete volume snapshot on |brand-name|
-====================================================================================================
-
-Volume snapshot allows you to save the state of volume at a specific point in time. Here is how to create or delete volume snapshot using Horizon dashboard or OpenStack CLI client.
-
-Prerequisites
------------------------
-
-No. 1 **Hosting**
-
-You need a |brand-name| hosting account with access to Horizon interface: |brand-name-site-link|
-
-No. 2 **A volume**
-
-You need to have the volume which will serve as a source of your volume snapshot.
-
-To prevent data corruption while creating a snapshot, the volume should not be connected to a virtual machine. If it is, disconnect it from the volume using one of these articles:
-
-.. jinja:: brand_names
-
-    * :doc:`/openstackcli/How-to-move-data-volume-between-two-VMs-using-OpenStack-CLI`
-    * :doc:`/datavolume/How-to-move-data-volume-between-two-VMs-using-OpenStack-Horizon`
-
-No. 3 **OpenStack CLI client**
-
-If you want to interact with |brand-name| cloud using OpenStack CLI client, you need to have it installed. Check one of these articles:
+If you want to interact with the cloud using OpenStack CLI client, you need to have it installed. Check one of these articles:
 
 .. jinja:: brand_names
 
@@ -91,7 +57,8 @@ Creating volume snapshot using Horizon dashboard
 
 Navigate to section **Volumes -> Volumes** of the Horizon dashboard. You should see the list of your volumes:
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-Horizon-01_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-Horizon-01_creodias.png
+   :alt: Creating volume snapshot using Horizon dashboard
 
 Make sure that the volume from which you want to create a snapshot has the following **Status**: **Available**. If the status is different, see Prerequisite No. 2.
 
@@ -99,11 +66,13 @@ In this example, volume we chose is called **my-volume** and its **Status**, mar
 
 In the row representing the volume you want to download, click the drop-down menu in column **Actions**:
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-Horizon-02_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-Horizon-02_creodias.png
+   :alt: Creating volume snapshot using Horizon dashboard
 
 From that drop-down menu, choose **Create Snapshot**. You should get this window:
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-Horizon-03_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-Horizon-03_creodias.png
+   :alt: Creating volume snapshot using Horizon dashboard
 
 You can now provide a name and/or description of the snapshot you want to create.
 
@@ -111,7 +80,8 @@ Once you're finished, click **Create Volume Snapshot**.
 
 You should now be moved to section **Volumes -> Snapshots** of the Horizon dashboards. Your new snapshot should be there. Wait until its **Status** is **Available**:
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-Horizon-04_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-Horizon-04_creodias.png
+   :alt: Creating volume snapshot using Horizon dashboard
 
 Creating volume snapshot using OpenStack CLI client
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -122,7 +92,8 @@ Execute the following command to list volumes:
 
    openstack volume list
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-cli-01_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-cli-01_creodias.png
+   :alt: Creating volume snapshot using OpenStack CLI client
 
 Make sure that the volume from which you want to create a snapshot has the following **Status**: **available**. If the status is different, see Prerequisite No. 2.
 
@@ -145,7 +116,8 @@ Make sure that the name gets passed to the shell correctly - be mindful of space
 
 You should get output like this:
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-cli-02_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-cli-02_creodias.png
+   :alt: Creating volume snapshot using OpenStack CLI client
 
 To check status of your snapshot, execute the following command:
 
@@ -155,7 +127,8 @@ To check status of your snapshot, execute the following command:
 
 You should get the list of snapshots of your volumes:
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-cli-03_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-cli-03_creodias.png
+   :alt: Creating volume snapshot using OpenStack CLI client
 
 If creating of snapshot was successful, it should have the following **Status**: **available**.
 
@@ -173,21 +146,25 @@ Deleting volume snapshot using Horizon dashboard
 
 Navigate to section **Volumes -> Snapshots** of the Horizon dashboard. You should see the list of your snapshots:
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-Horizon-05_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-Horizon-05_creodias.png
+   :alt: Deleting volume snapshot using Horizon dashboard
 
 In the row representing your snapshot, open the drop-down menu located in column **Actions**:
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-Horizon-06_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-Horizon-06_creodias.png
+   :alt: Deleting volume snapshot using Horizon dashboard
 
 You will be prompted for confirmation:
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-Horizon-07_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-Horizon-07_creodias.png
+   :alt: Deleting volume snapshot using Horizon dashboard
 
 Choose **Delete Volume Snapshot**.
 
 If the operation was successful, your volume should no longer be on the list:
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-Horizon-08_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-Horizon-08_creodias.png
+   :alt: Deleting volume snapshot using Horizon dashboard
 
 Deleting volume snapshot using OpenStack CLI client
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -200,7 +177,8 @@ Execute the following command to list volume snapshots:
 
 You should get the list of snapshots of your volumes:
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-cli-04_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-cli-04_creodias.png
+   :alt: Deleting volume snapshot using OpenStack CLI client
 
 Write somewhere down the ID of the snapshot you want to delete.
 
@@ -216,7 +194,8 @@ The output of this command should be empty.
 
 To verify, execute **openstack volume snapshot list** again:
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-cli-05_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-cli-05_creodias.png
+   :alt: Deleting volume snapshot using OpenStack CLI client
 
 In this example, since we did not have any other volume snapshots and we removed the last one, the output contains only one empty line.
 
@@ -254,7 +233,8 @@ Creating volume snapshot using Horizon dashboard
 
 Navigate to section **Volumes -> Volumes** of the Horizon dashboard. You should see the list of your volumes:
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-Horizon-01_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-Horizon-01_creodias.png
+   :alt: Creating volume snapshot using Horizon dashboard
 
 Make sure that the volume from which you want to create a snapshot has the following **Status**: **Available**. If the status is different, see Prerequisite No. 2.
 
@@ -262,11 +242,13 @@ In this example, volume we chose is called **my-volume** and its **Status**, mar
 
 In the row representing the volume you want to download, click the drop-down menu in column **Actions**:
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-Horizon-02_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-Horizon-02_creodias.png
+   :alt: Creating volume snapshot using Horizon dashboard
 
 From that drop-down menu, choose **Create Snapshot**. You should get this window:
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-Horizon-03_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-Horizon-03_creodias.png
+   :alt: Creating volume snapshot using Horizon dashboard
 
 You can now provide a name and/or description of the snapshot you want to create.
 
@@ -274,7 +256,8 @@ Once you're finished, click **Create Volume Snapshot**.
 
 You should now be moved to section **Volumes -> Snapshots** of the Horizon dashboards. Your new snapshot should be there. Wait until its **Status** is **Available**:
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-Horizon-04_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-Horizon-04_creodias.png
+   :alt: Creating volume snapshot using Horizon dashboard
 
 Creating volume snapshot using OpenStack CLI client
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -285,7 +268,8 @@ Execute the following command to list volumes:
 
    openstack volume list
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-cli-01_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-cli-01_creodias.png
+   :alt: Creating volume snapshot using OpenStack CLI client
 
 Make sure that the volume from which you want to create a snapshot has the following **Status**: **available**. If the status is different, see Prerequisite No. 2.
 
@@ -308,7 +292,8 @@ Make sure that the name gets passed to the shell correctly - be mindful of space
 
 You should get output like this:
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-cli-02_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-cli-02_creodias.png
+   :alt: Creating volume snapshot using OpenStack CLI client
 
 To check status of your snapshot, execute the following command:
 
@@ -318,7 +303,8 @@ To check status of your snapshot, execute the following command:
 
 You should get the list of snapshots of your volumes:
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-cli-03_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-cli-03_creodias.png
+   :alt: Creating volume snapshot using OpenStack CLI client
 
 If creating of snapshot was successful, it should have the following **Status**: **available**.
 
@@ -336,21 +322,25 @@ Deleting volume snapshot using Horizon dashboard
 
 Navigate to section **Volumes -> Snapshots** of the Horizon dashboard. You should see the list of your snapshots:
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-Horizon-05_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-Horizon-05_creodias.png
+   :alt: Deleting volume snapshot using Horizon dashboard
 
 In the row representing your snapshot, open the drop-down menu located in column **Actions**:
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-Horizon-06_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-Horizon-06_creodias.png
+   :alt: Deleting volume snapshot using Horizon dashboard
 
 You will be prompted for confirmation:
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-Horizon-07_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-Horizon-07_creodias.png
+   :alt: Deleting volume snapshot using Horizon dashboard
 
 Choose **Delete Volume Snapshot**.
 
 If the operation was successful, your volume should no longer be on the list:
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-Horizon-08_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-Horizon-08_creodias.png
+   :alt: Deleting volume snapshot using Horizon dashboard
 
 Deleting volume snapshot using OpenStack CLI client
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -363,7 +353,8 @@ Execute the following command to list volume snapshots:
 
 You should get the list of snapshots of your volumes:
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-cli-04_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-cli-04_creodias.png
+   :alt: Deleting volume snapshot using OpenStack CLI client
 
 Write somewhere down the ID of the snapshot you want to delete.
 
@@ -379,7 +370,8 @@ The output of this command should be empty.
 
 To verify, execute **openstack volume snapshot list** again:
 
-.. image:: /datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/how-to-create-volume-snapshot-cli-05_creodias.png
+.. image:: /datavolume/How-to-create-or-delete-volume-snapshot/how-to-create-volume-snapshot-cli-05_creodias.png
+   :alt: Deleting volume snapshot using OpenStack CLI client
 
 In this example, since we did not have any other volume snapshots and we removed the last one, the output contains only one empty line.
 

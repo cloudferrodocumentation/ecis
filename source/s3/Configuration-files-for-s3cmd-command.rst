@@ -1,9 +1,9 @@
-Configuration files for s3cmd command on |brand-name|
-==============================================================
+Configuration files for s3cmd command
+=====================================
 
 `s3cmd <https://github.com/s3tools/s3cmd>`_ can access remote data using
 the S3 protocol. This includes the **EODATA** repository and object storage
-on the |brand-name| cloud.
+on the cloud.
 
 To connect to S3 storage, **s3cmd** uses several parameters, such as an
 access key, secret key, S3 endpoint, and others. During configuration, you can
@@ -13,7 +13,7 @@ the connection described within.
 
 If you want to use multiple connections from a single virtual machine, such
 as connecting both to the **EODATA** repository and to object storage on the
-|brand-name| cloud, you can create and store multiple configuration files,
+the cloud, you can create and store multiple configuration files,
 one per connection.
 
 This article provides examples of how to create and save these configuration
@@ -364,7 +364,7 @@ Minimal content required
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Below is the minimum content required for a valid configuration file that
-connects to object storage on the |brand-name| cloud:
+connects to object storage on the cloud:
 
 .. jinja:: regional_clouds
 
@@ -489,12 +489,6 @@ What to do next
 ---------------
 
 You can use **s3cmd** for several common tasks:
-
-.. ifconfig:: brand_name not in brands_without_eodata
-
-   .. jinja:: doc_links
-
-      * :doc:`{{ eodata_s3cmd_access }}`
 
 .. jinja:: doc_links
 

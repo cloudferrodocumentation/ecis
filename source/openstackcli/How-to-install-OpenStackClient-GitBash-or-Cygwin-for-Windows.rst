@@ -1,7 +1,7 @@
-How to install OpenStackClient GitBash for Windows on |brand-name|
-=====================================================================================
+How to install OpenStackClient GitBash for Windows
+==================================================
 
-In this tutorial, you start with a standard Windows installation, then install the OpenStack CLI client and end up connecting to your project on |brand-name|  cloud.
+In this tutorial, you start with a standard Windows installation, then install the OpenStack CLI client and end up connecting to your project on the cloud.
 
 .. jinja:: doc_links
 
@@ -56,7 +56,7 @@ This file must be present on the machine on which you intend to use the OpenStac
 Step 1: Download and Install Python
 ---------------------------------------
 
-There are two ways of obtaining Python on |brand-name| cloud:
+There are two ways of obtaining Python on the cloud:
 
  * It may come preinstalled on virtual machines that were created using one of the default Windows images.
  * You may download and install the latest version from the Internet.
@@ -73,33 +73,39 @@ Pick up the latest version for Python.
 
 Download it and run that **.exe** file. Make sure to have options at the bottom of the window selected and click **Customize installation**.
 
-.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows-on-Eumetsat-Elasticity/git-bash01_creodias.png
+.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows/git-bash01_creodias.png
+   :alt: Step 1: Download and Install Python
    :class: image-with-border
 
 In the next screen, select all the **Optional Features**:
 
-.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows-on-Eumetsat-Elasticity/git-bash02_creodias.png
+.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows/git-bash02_creodias.png
+   :alt: Step 1: Download and Install Python
    :class: image-with-border
 
 Click **Next**.
 
 In the screen **Advanced Options**, select what is selected on the screenshot below and make sure that the installation location is in **Program Files** directory:
 
-.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows-on-Eumetsat-Elasticity/git-bash03_creodias.png
+.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows/git-bash03_creodias.png
+   :alt: Step 1: Download and Install Python
 
 Click **Install** and wait until the installation is completed:
 
-.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows-on-Eumetsat-Elasticity/git-bash04_creodias.png
+.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows/git-bash04_creodias.png
+   :alt: Step 1: Download and Install Python
 
 On the last screen, click option **Disable path length limit**:
 
-.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows-on-Eumetsat-Elasticity/git-bash05_creodias.png
+.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows/git-bash05_creodias.png
+   :alt: Step 1: Download and Install Python
 
 The button **Disable path length limit** should disappear. Click **Close**.
 
 Open Windows command prompt and execute **python** command in it to check whether the installation was successful. You should see output similar to this:
 
-.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows-on-Eumetsat-Elasticity/git-bash17_creodias.png
+.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows/git-bash17_creodias.png
+   :alt: Step 1: Download and Install Python
 
 Close the command prompt.
 
@@ -114,7 +120,8 @@ During the installation keep the default options selected.
 
 After installation, a Git Bash entry should appear in Start menu:
 
-.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows-on-Eumetsat-Elasticity/git-bash06_creodias.png
+.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows/git-bash06_creodias.png
+   :alt: Step 2: Install Git Bash and pip
 
 Other programs in the suite are Git CMD, Git GUI etc.
 
@@ -127,7 +134,8 @@ Step 3: Install pip and update the PythonSSL certificates
 
 Download **get-pip.py** from https://bootstrap.pypa.io/get-pip.py. If it opens in your browser as plain text document, right click anywhere on it in the browser and use the **Save as...** or similar option to save it on your computer.
 
-.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows-on-Eumetsat-Elasticity/git-bash07_creodias.png
+.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows/git-bash07_creodias.png
+   :alt: Step 3: Install pip and update the PythonSSL certificates
 
 Run the script by opening it in **Python**. If **Python** is not the default piece of software used for opening **.py** files on your system, right-click the file and use the **Open with...** or similar option and choose **Python** there.
 
@@ -141,7 +149,8 @@ In order to test whether the installation was successful, use **Start** menu to 
 
 Your output should contain the version of **pip** that you have:
 
-.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows-on-Eumetsat-Elasticity/git-bash09_creodias.png
+.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows/git-bash09_creodias.png
+   :alt: Step 3: Install pip and update the PythonSSL certificates
 
 Now update PythonSSL certificates that you have on your computer:
 
@@ -149,7 +158,8 @@ Now update PythonSSL certificates that you have on your computer:
 
    pip install -U requests[security]
 
-.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows-on-Eumetsat-Elasticity/git-bash10_creodias.png
+.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows/git-bash10_creodias.png
+   :alt: Step 3: Install pip and update the PythonSSL certificates
 
 Step 4: Install Microsoft C++ Build Tools
 ---------------------------------------------
@@ -162,7 +172,8 @@ Click **Download Build Tools**. Execute the downloaded **.exe** file.
 
 During installation, choose the **Desktop development with C++** (which was a correct option at the time of writing):
 
-.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows-on-Eumetsat-Elasticity/git-bash11_creodias.png
+.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows/git-bash11_creodias.png
+   :alt: Step 4: Install Microsoft C++ Build Tools
 
 Click **Install**. Wait until the installation process is completed.
 
@@ -205,7 +216,8 @@ A directory called **openstack_cli** should appear in the current folder. It wil
 
 From now on, the name of your isolated environment - **openstack_cli** - will be in brackets before each command prompt, indicating that you are inside it.
 
-.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows-on-Eumetsat-Elasticity/git-bash12_creodias.png
+.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows/git-bash12_creodias.png
+   :alt: Step 5: Install virtualenv and the OpenStack CLI client
 
 Closing the terminal and reopening will drop you from that environment.
 
@@ -248,7 +260,7 @@ Without leaving Git Bash, while still inside the **openstack_cli** virtual envir
 
    pip install python-openstackclient
 
-Wait until the process is completed. As the result, you will be able to run **openstack** command on terminal prompt. It, however, won't have access to the |brand-name| cloud, so the next step is to authenticate to the cloud.
+Wait until the process is completed. As the result, you will be able to run **openstack** command on terminal prompt. It, however, won't have access to the cloud, so the next step is to authenticate to the cloud.
 
 Navigate to the location of the RC file which you downloaded while following Prerequisite No. 4 and execute the **source** command on it. It could look like this (if the name of your RC file is **main-openrc.sh**):
 
@@ -262,7 +274,7 @@ If your account has two-factor authentication enabled, you will get a prompt for
 
 Here is what the two step process of authentication looks like for an RC file called **main-openrc.sh**:
 
-.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows-on-Eumetsat-Elasticity/enter_the_six_digit_code2.png
+.. figure:: /openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows/enter_the_six_digit_code2.png
 
 On the screenshot above, the username and project name were hidden for privacy reasons.
 
@@ -289,26 +301,9 @@ After that, execute the **source** command on your RC file in the same way as pr
 You can also create a batch file to automate reentering the Python environment.
 
 
-What To Do Next
-------------------------------
+What to do next
+---------------
 
-Other articles of interest:
-
-.. jinja:: doc_links
-
-   * :doc:`{{ heat_create_vms }}`
-
-.. ifconfig:: brand_name in managed_kubernetes_with_magnum
-
-   Using CLI interface for Kubernetes clusters:
-
-   .. jinja:: doc_links
-
-      * :doc:`{{ magnum_kubernetes_cli }}`
-      * :doc:`{{ openstack_magnum_clients_cli }}`
-
-Also see:
-
-.. jinja:: doc_links
-
-   * :doc:`{{ openstack_cli_auth }}`
+* :doc:`/accountmanagement/How-to-activate-OpenStack-CLI-access-to-cloud`
+* :doc:`/openstackcli/How-To-Create-and-Configure-New-Project`
+* :doc:`/openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration`

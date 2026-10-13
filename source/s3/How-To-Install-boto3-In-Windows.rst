@@ -1,5 +1,5 @@
-How to install boto3 in Windows on |brand-name|
-===============================================
+How to install boto3 in Windows
+===============================
 
 Introduction
 ------------
@@ -9,12 +9,6 @@ Introduction
    The **boto3** library for Python can be used to list and download items
    from a specified S3 bucket. In this article, you will install **boto3** on a
    Windows system.
-
-.. ifconfig:: brand_name not in brands_without_eodata
-
-   The **boto3** library for Python can be used to list and download items
-   from a specified S3 bucket or from the **EODATA** repository. In this
-   article, you will install **boto3** on a Windows system.
 
 Step 1: Ensure that Python 3 is preinstalled
 --------------------------------------------
@@ -29,10 +23,10 @@ To run **boto3**, you need to have Python installed.
    If you are running Windows on a desktop computer, the first step of this
    article shows how to install Python: :doc:`{{ openstackclient_windows }}`.
 
-On a virtual machine running in |brand-name| cloud
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+On a virtual machine running
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Virtual machines created in the |brand-name| cloud usually have Python 3
+Virtual machines created in the cloud usually have Python 3
 already preinstalled.
 
 If you want to create your own Windows VM, two steps are involved:
@@ -59,7 +53,8 @@ To install **boto3** on Windows:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-To-Install-boto3-In-Windows-on-Eumetsat-Elasticity/{{ s3062 }}
+   .. image:: /s3/How-To-Install-boto3-In-Windows/{{ s3062 }}
+      :alt: Step 2: Install boto3 on Windows
 
 Verify that you have an up-to-date Python installation:
 
@@ -69,7 +64,8 @@ Verify that you have an up-to-date Python installation:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-To-Install-boto3-In-Windows-on-Eumetsat-Elasticity/{{ s3063 }}
+   .. image:: /s3/How-To-Install-boto3-In-Windows/{{ s3063 }}
+      :alt: Step 2: Install boto3 on Windows
 
 Install **boto3** with the following command:
 
@@ -79,7 +75,8 @@ Install **boto3** with the following command:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-To-Install-boto3-In-Windows-on-Eumetsat-Elasticity/{{ s3064 }}
+   .. image:: /s3/How-To-Install-boto3-In-Windows/{{ s3064 }}
+      :alt: Step 2: Install boto3 on Windows
 
 Verify the installation:
 
@@ -89,22 +86,12 @@ Verify the installation:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-To-Install-boto3-In-Windows-on-Eumetsat-Elasticity/{{ s3065 }}
+   .. image:: /s3/How-To-Install-boto3-In-Windows/{{ s3065 }}
+      :alt: Step 2: Install boto3 on Windows
 
 What to do next
 ---------------
 
-.. jinja:: doc_links
+Use the installed library to access your buckets:
 
-   {% if eodata_boto3_access %}
-   With the **boto3** library, you can download and list satellite images from
-   buckets or from the **EODATA** repository.
-
-   * :doc:`{{ eodata_boto3_access }}`
-   {% endif %}
-
-   {% if slurm_mpi_workflow %}
-   You can also run larger processing workflows on a SLURM cluster.
-
-   * :doc:`{{ slurm_mpi_workflow }}`
-   {% endif %}
+* :doc:`/s3/How-to-access-object-storage-using-boto3`

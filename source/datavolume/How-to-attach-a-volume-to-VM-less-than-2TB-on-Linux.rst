@@ -1,5 +1,5 @@
-How to attach a volume to VM less than 2TB on Linux on |brand-name|
-====================================================================
+How to attach a volume to VM less than 2TB on Linux
+===================================================
 
 In this tutorial, you will create a volume which is smaller than 2 TB. Then, you will attach it to a VM and format it in the appropriate way.
 
@@ -25,7 +25,7 @@ No. 1 **Hosting**
 
 You need a |brand-name| hosting account with Horizon interface |brand-name-site-link|.
 
-No. 2 Linux VM running on the |brand-name| cloud
+No. 2 Linux VM running on the cloud
 
 .. jinja:: brand_names
 
@@ -62,7 +62,8 @@ Go to the section **Volumes -> Volumes**:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux-on-Eumetsat-Elasticity/{{ datavolume054 }}
+   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux/{{ datavolume054 }}
+      :alt: Step 1: Create a Volume
 
 Click **Create Volume**.
 
@@ -70,7 +71,8 @@ The following window should appear:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux-on-Eumetsat-Elasticity/{{ datavolume055 }}
+   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux/{{ datavolume055 }}
+      :alt: Step 1: Create a Volume
 
 In it provide the **Volume Name** of your choice.
 
@@ -84,7 +86,8 @@ You should now see the volume you just created. In our case it is called **volum
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux-on-Eumetsat-Elasticity/{{ datavolume056 }}
+   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux/{{ datavolume056 }}
+      :alt: Step 1: Create a Volume
 
 Step 2: Attach the Volume to VM
 -----------------------------------
@@ -95,19 +98,22 @@ In the **Actions** menu for that volume select the option **Manage Attachments**
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux-on-Eumetsat-Elasticity/{{ datavolume057 }}
+   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux/{{ datavolume057 }}
+      :alt: Step 2: Attach the Volume to VM
 
 You should now see the following window:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux-on-Eumetsat-Elasticity/{{ datavolume058 }}
+   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux/{{ datavolume058 }}
+      :alt: Step 2: Attach the Volume to VM
 
 Select the virtual machine to which the volume should be attached:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux-on-Eumetsat-Elasticity/{{ datavolume059 }}
+   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux/{{ datavolume059 }}
+      :alt: Step 2: Attach the Volume to VM
 
 Click **Attach Volume**.
 
@@ -115,7 +121,8 @@ Your volume should now be attached to the VM:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux-on-Eumetsat-Elasticity/{{ datavolume060 }}
+   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux/{{ datavolume060 }}
+      :alt: Step 2: Attach the Volume to VM
 
 Step 3: Partition the Volume
 ----------------------------------
@@ -134,7 +141,8 @@ You should see the output similar to this:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux-on-Eumetsat-Elasticity/{{ datavolume061 }}
+   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux/{{ datavolume061 }}
+      :alt: Step 3: Partition the Volume
 
 In this example, the attached volume that was previously called **volume-small** is represented by the device file **sdb**. Its size is 100 GB. Memorize the name of the *device file* representing the drive you attached or write it somewhere down - it will be needed later during starting **fdisk**.
 
@@ -196,7 +204,8 @@ The device file of the new partition should have the same name as the device fil
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux-on-Eumetsat-Elasticity/{{ datavolume062 }}
+   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux/{{ datavolume062 }}
+      :alt: Step 3: Partition the Volume
 
 Step 5: Create the File System
 --------------------------------------
@@ -240,7 +249,8 @@ Add the below line to the end of that file. Remember to replace **sdb1** with th
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux-on-Eumetsat-Elasticity/{{ datavolume063 }}
+   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux/{{ datavolume063 }}
+      :alt: Step 6: Create the mount point
 
 To save that file in **nano**, use the following combination of keys: CTRL+X, Y, Enter.
 
@@ -270,7 +280,8 @@ The output should look like this:
 
 .. jinja:: datavolume_images
 
-   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux-on-Eumetsat-Elasticity/{{ datavolume064 }}
+   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux/{{ datavolume064 }}
+      :alt: Step 6: Create the mount point
 
 The volume is owned by **root**, so **eouser** does not have access without **sudo**. To make it accessible to **eouser**, execute this command:
 
@@ -292,14 +303,3 @@ What To Do Next
 You have successfully created a volume and prepared it for use on a Linux virtual machine.
 
 You can now copy files to your new volume. If you want to move the data, attach the volume to a different machine.
-
-.. ifconfig:: brand_name not in brands_without_eodata
-
-   Volumes may be good candidates for downloading Earth Observation data from **eodata** repository and using them in your projects.
-
-   To learn more about accessing **eodata** on |brand-name| virtual machines, please have a look at articles such as:
-
-   .. jinja:: brand_names
-
-
-   .. jinja:: brand_names

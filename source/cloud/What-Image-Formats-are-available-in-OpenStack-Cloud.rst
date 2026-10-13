@@ -1,8 +1,8 @@
 .. meta::
-   :description: What image formats are available in openstack |brand-name| cloud
+   :description: What image formats are available in openstack the cloud
    :keywords: |brand-name|, formats, available, openstack, operating systems, images, image formats
 
-What Image Formats are Available in OpenStack |brand-name| cloud
+What Image Formats are Available in OpenStack the cloud
 ================================================================================
 
 In |brand-name| OpenStack ten image format extensions are available:

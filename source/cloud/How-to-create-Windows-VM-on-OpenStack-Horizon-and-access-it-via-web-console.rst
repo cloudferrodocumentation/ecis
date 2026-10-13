@@ -1,7 +1,7 @@
-How to create Windows VM on OpenStack Horizon and access it via web console on |brand-name|
-================================================================================================================
+How to create Windows VM on OpenStack Horizon and access it via web console
+===========================================================================
 
-This article shows how to create a functional Windows VM on |brand-name| cloud
+This article shows how to create a functional Windows VM on the cloud
 using the Horizon graphical interface.
 
 The workflow is to:
@@ -54,7 +54,7 @@ In the Horizon dashboard, navigate to **Compute** -> **Instances**.
 
 Click **Launch Instance** at the top of the **Instances** section.
 
-.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console-on-Eumetsat-Elasticity/create-windows-vm-horizon-web-console-01_creodias.png
+.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console/create-windows-vm-horizon-web-console-01_creodias.png
    :alt: Launch Instance button in Horizon
    :class: image-with-border
 
@@ -62,7 +62,7 @@ Click **Launch Instance** at the top of the **Instances** section.
 
 You should get the **Launch Instance** window.
 
-.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console-on-Eumetsat-Elasticity/create-windows-vm-horizon-web-console-02_creodias.png
+.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console/create-windows-vm-horizon-web-console-02_creodias.png
    :alt: Launch Instance window in Horizon
    :class: image-with-border
 
@@ -76,7 +76,7 @@ instance.
 
 In this example, the instance is called **test-windows-vm**.
 
-.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console-on-Eumetsat-Elasticity/create-windows-vm-horizon-web-console-03_creodias.png
+.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console/create-windows-vm-horizon-web-console-03_creodias.png
    :alt: Enter the Windows VM instance name
    :class: image-with-border
 
@@ -92,7 +92,7 @@ This means that you will choose from the images available in Horizon.
 
 If another value is selected, change it back to **Image**.
 
-.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console-on-Eumetsat-Elasticity/create-windows-vm-horizon-web-console-04_creodias.png
+.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console/create-windows-vm-horizon-web-console-04_creodias.png
    :alt: Select Image as the boot source
    :class: image-with-border
 
@@ -101,7 +101,7 @@ If another value is selected, change it back to **Image**.
 Enter **windows** in the search field in the **Available** section to filter
 Windows images.
 
-.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console-on-Eumetsat-Elasticity/create-windows-vm-horizon-web-console-05_creodias.png
+.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console/create-windows-vm-horizon-web-console-05_creodias.png
    :alt: Filter Windows images
    :class: image-with-border
 
@@ -109,7 +109,7 @@ Windows images.
 
 Choose the newest available Windows image by clicking **↑** next to it.
 
-.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console-on-Eumetsat-Elasticity/create-windows-vm-horizon-web-console-06_creodias.png
+.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console/create-windows-vm-horizon-web-console-06_creodias.png
    :alt: Allocate a Windows image
    :class: image-with-border
 
@@ -117,7 +117,7 @@ Choose the newest available Windows image by clicking **↑** next to it.
 
 The chosen image should appear in the **Allocated** section.
 
-.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console-on-Eumetsat-Elasticity/create-windows-vm-horizon-web-console-07_creodias.png
+.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console/create-windows-vm-horizon-web-console-07_creodias.png
    :alt: Windows image allocated as source
    :class: image-with-border
 
@@ -136,7 +136,7 @@ to resources such as vCPUs, RAM, and storage.
 
 The following screenshot shows what the flavors table looks like in general.
 
-.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console-on-Eumetsat-Elasticity/create-windows-vm-horizon-web-console-09_creodias.png
+.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console/create-windows-vm-horizon-web-console-09_creodias.png
    :alt: Flavor selection table
    :class: image-with-border
 
@@ -145,7 +145,7 @@ The following screenshot shows what the flavors table looks like in general.
 Yellow warning triangles indicate that a flavor is not available to you. To
 see the reason, hover the mouse over the warning triangle.
 
-.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console-on-Eumetsat-Elasticity/create-windows-vm-horizon-web-console-21_creodias.png
+.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console/create-windows-vm-horizon-web-console-21_creodias.png
    :alt: Flavor availability warning
    :class: image-with-border
 
@@ -178,7 +178,7 @@ Step 5: Attach networks to your virtual machine
 
 The next step contains the list of networks available to you.
 
-.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console-on-Eumetsat-Elasticity/create-windows-vm-horizon-web-console-10_creodias.png
+.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console/create-windows-vm-horizon-web-console-10_creodias.png
    :alt: Network selection in Horizon
    :class: image-with-border
 
@@ -208,7 +208,7 @@ The security group **allow_ping_ssh_icmp_rdp**, or a similarly named group,
 may expose your VM to several types of incoming traffic. Do not allocate it if
 you only intend to access the VM through the web console.
 
-.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console-on-Eumetsat-Elasticity/create-windows-vm-horizon-web-console-11_creodias.png
+.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console/create-windows-vm-horizon-web-console-11_creodias.png
    :alt: Security group selection for the Windows VM
    :class: image-with-border
 
@@ -225,7 +225,7 @@ workflow.
 
 After completing the previous steps, click **Launch Instance**.
 
-.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console-on-Eumetsat-Elasticity/create-windows-vm-horizon-web-console-12_creodias.png
+.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console/create-windows-vm-horizon-web-console-12_creodias.png
    :alt: Launch the Windows VM
    :class: image-with-border
 
@@ -234,7 +234,7 @@ After completing the previous steps, click **Launch Instance**.
 Your virtual machine should appear in the **Instances** section of the Horizon
 dashboard. Wait until its **Status** changes to **Active**.
 
-.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console-on-Eumetsat-Elasticity/create-windows-vm-horizon-web-console-13_creodias.png
+.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console/create-windows-vm-horizon-web-console-13_creodias.png
    :alt: Windows VM in Active status
    :class: image-with-border
 
@@ -247,7 +247,7 @@ Step 8: Set the Administrator password
 
 Once your instance has **Active** status, click its name.
 
-.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console-on-Eumetsat-Elasticity/create-windows-vm-horizon-web-console-14_creodias.png
+.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console/create-windows-vm-horizon-web-console-14_creodias.png
    :alt: Open the Windows VM details page
    :class: image-with-border
 
@@ -256,7 +256,7 @@ Once your instance has **Active** status, click its name.
 You should see a page containing information about your instance. Navigate to
 the **Console** tab.
 
-.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console-on-Eumetsat-Elasticity/create-windows-vm-horizon-web-console-15_creodias.png
+.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console/create-windows-vm-horizon-web-console-15_creodias.png
    :alt: Open the Console tab
    :class: image-with-border
 
@@ -268,7 +268,7 @@ from the browser.
 When Windows finishes startup, you should see a prompt to set the
 **Administrator** password.
 
-.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console-on-Eumetsat-Elasticity/create-windows-vm-horizon-web-console-16_creodias.png
+.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console/create-windows-vm-horizon-web-console-16_creodias.png
    :alt: Prompt to set the Administrator password
    :class: image-with-border
 
@@ -278,7 +278,7 @@ Click **OK**.
 
 You should now see two text fields.
 
-.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console-on-Eumetsat-Elasticity/create-windows-vm-horizon-web-console-17_creodias.png
+.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console/create-windows-vm-horizon-web-console-17_creodias.png
    :alt: Administrator password fields
    :class: image-with-border
 
@@ -290,7 +290,7 @@ Enter it again in the **Confirm password** text field.
 
 Click the right arrow next to the **Confirm password** text field.
 
-.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console-on-Eumetsat-Elasticity/create-windows-vm-horizon-web-console-18_creodias.png
+.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console/create-windows-vm-horizon-web-console-18_creodias.png
    :alt: Confirm the Administrator password
    :class: image-with-border
 
@@ -298,7 +298,7 @@ Click the right arrow next to the **Confirm password** text field.
 
 You should get a confirmation.
 
-.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console-on-Eumetsat-Elasticity/create-windows-vm-horizon-web-console-19_creodias.png
+.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console/create-windows-vm-horizon-web-console-19_creodias.png
    :alt: Administrator password confirmation
    :class: image-with-border
 
@@ -316,7 +316,7 @@ install the latest security fixes.
 
 Click **Start**, and then **Settings**.
 
-.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console-on-Eumetsat-Elasticity/create-windows-vm-horizon-web-console-26_creodias.png
+.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console/create-windows-vm-horizon-web-console-26_creodias.png
    :alt: Open Windows Settings
    :class: image-with-border
 
@@ -324,7 +324,7 @@ Click **Start**, and then **Settings**.
 
 Click **Update & Security**.
 
-.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console-on-Eumetsat-Elasticity/create-windows-vm-horizon-web-console-27_creodias.png
+.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console/create-windows-vm-horizon-web-console-27_creodias.png
    :alt: Open Update and Security
    :class: image-with-border
 
@@ -332,7 +332,7 @@ Click **Update & Security**.
 
 You should now see the **Windows Update** screen.
 
-.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console-on-Eumetsat-Elasticity/create-windows-vm-horizon-web-console-28_creodias.png
+.. figure:: /cloud/How-to-create-Windows-VM-on-OpenStack-Horizon-and-access-it-via-web-console/create-windows-vm-horizon-web-console-28_creodias.png
    :alt: Windows Update screen
    :class: image-with-border
 
@@ -342,15 +342,6 @@ Follow the prompts to update the operating system.
 
 What to do next
 ---------------
-
-.. ifconfig:: brand_name not in brands_without_eodata
-
-   To learn how to access the EODATA repository on your new Windows virtual
-   machine, check this article:
-
-   .. jinja:: doc_links
-
-      :doc:`{{ eodata_windows_vm_mount }}`
 
 If you want to access your virtual machine remotely using RDP, consider using
 a bastion host to improve security.

@@ -1,5 +1,5 @@
-How to generate or use Application Credentials via CLI on |brand-name|
-=============================================================================
+How to generate or use Application Credentials via CLI
+======================================================
 
 You can authenticate your applications to *Keystone* by creating application credentials. It is also possible to delegate a subset of role assignments on a project to an application credential, granting the same or restricted authorization to a project for the app.
 
@@ -27,15 +27,6 @@ You need a |brand-name| hosting account with Horizon interface |brand-name-site-
 
 No. 2 **Authenticate**
 
-.. ifconfig:: brand_name in two_fa_activated
-
-    .. jinja:: brand_names
-
-       Once you have installed this piece of software, you need to authenticate to start using it:
-  .. jinja:: doc_links
-
-     :doc:`{{ openstack_cli_auth }}`
-
 .. ifconfig:: brand_name not in two_fa_activated
 
     .. ifconfig:: brand_name != 'WEkEO'
@@ -43,10 +34,6 @@ No. 2 **Authenticate**
        .. jinja:: brand_names
 
           Once you have installed this piece of software, you need to authenticate to start using it: :doc:`/accountmanagement/How-to-activate-OpenStack-CLI-access-to-cloud`
-
-    .. ifconfig:: brand_name == 'WEkEO'
-
-       Once you have installed this piece of software, you need to authenticate to start using it: :doc:`/accountmanagement/How-to-activate-OpenStack-CLI-access-to-WEkEO-cloud-using-Federated-IDP-authorization-and-application-credentials`
 
 No. 3 **OpenStackClient is installed and available**
 
@@ -110,7 +97,7 @@ To see the parameters for these commands, end them with **\-\-help**, like this:
 
 Among the many lines describing all possible parameters, of particular interest are the options used to create a new credential:
 
-.. image:: /cloud/How-to-generate-or-use-Application-Credentials-via-CLI-on-Eumetsat-Elasticity/credential_create_help.png
+.. image:: /cloud/How-to-generate-or-use-Application-Credentials-via-CLI/credential_create_help.png
 
 .. note::
 
@@ -128,7 +115,7 @@ The simplest way to generate a new application credential is just to define the 
 
 The new application credential will be created and shown on the screen:
 
-.. image:: /cloud/How-to-generate-or-use-Application-Credentials-via-CLI-on-Eumetsat-Elasticity/create_new_with_name.png
+.. image:: /cloud/How-to-generate-or-use-Application-Credentials-via-CLI/create_new_with_name.png
 
 
 Step 3 Using parameters to create a new application credential
@@ -172,12 +159,6 @@ Parameters **\-\-unrestricted** and **\-\-restricted**
 
 By default, for security reasons, application credentials are forbidden from being used to create additional application credentials or Keystone trusts. If your application needs to perform these actions, use parameter **\-\-unrestricted**.
 
-.. ifconfig:: brand_name in managed_kubernetes_with_magnum
-
-    .. warning::
-
-       If your environment includes Magnum-based Kubernetes provisioning through OpenStack, creating clusters may require parameter **\-\-unrestricted**.
-
 Generally speaking, using **\-\-unrestricted** is considered a security risk. While it allows the credential to perform more powerful operations, such as creating additional application credentials, this also broadens what can be done if the credential is misused. Limit the use of **\-\-unrestricted** to trusted applications and ensure proper auditing and monitoring are in place.
 
 Example roles
@@ -199,7 +180,7 @@ Here is a complete example using several parameters to create a new application 
 
 The result is:
 
-.. image:: /cloud/How-to-generate-or-use-Application-Credentials-via-CLI-on-Eumetsat-Elasticity/complete_example.png
+.. image:: /cloud/How-to-generate-or-use-Application-Credentials-via-CLI/complete_example.png
 
 The name of the new application credential will be **foo-dev-member4** and it will use role **_member_**. The part of the command starting with **| jq -r** prints only the values of credentials **id** and **secret**, as you need to enter those values into the *clouds.yml* file in order to activate this authentication method.
 
@@ -282,7 +263,7 @@ Let us create a new application credential called *trial-member_creatornew*.
 
 This is the result:
 
-.. image:: /cloud/How-to-generate-or-use-Application-Credentials-via-CLI-on-Eumetsat-Elasticity/create_credential.png
+.. image:: /cloud/How-to-generate-or-use-Application-Credentials-via-CLI/create_credential.png
 
 Now create the *clouds.yml* file using your preferred editor. Here it is *nano*:
 
@@ -322,7 +303,7 @@ Let us dissect that file line by line:
 
 This is how it should look in the editor:
 
-.. image:: /cloud/How-to-generate-or-use-Application-Credentials-via-CLI-on-Eumetsat-Elasticity/nano_values.png
+.. image:: /cloud/How-to-generate-or-use-Application-Credentials-via-CLI/nano_values.png
 
 Save it with **Ctrl**-**X**, then press **Y** and Enter.
 
@@ -347,7 +328,7 @@ You define **OS_CLOUD** by directly assigning its value from the command line:
 
 Open a new terminal window, execute the command above, and then try to access the server:
 
-.. image:: /cloud/How-to-generate-or-use-Application-Credentials-via-CLI-on-Eumetsat-Elasticity/export_os_cloud.png
+.. image:: /cloud/How-to-generate-or-use-Application-Credentials-via-CLI/export_os_cloud.png
 
 It works.
 
@@ -359,7 +340,7 @@ You can also use that parameter directly in the command line:
 
 It works as well:
 
-.. image:: /cloud/How-to-generate-or-use-Application-Credentials-via-CLI-on-Eumetsat-Elasticity/cli_os_cloud.png
+.. image:: /cloud/How-to-generate-or-use-Application-Credentials-via-CLI/cli_os_cloud.png
 
 You have to set up **OS_CLOUD** once per newly opened terminal window, and then you can use the **openstack** command without adding the **\-\-os-cloud** parameter every time.
 

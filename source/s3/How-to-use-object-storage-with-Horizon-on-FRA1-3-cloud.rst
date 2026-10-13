@@ -41,15 +41,17 @@ You should see the list of object storage containers. If no containers have been
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud/{{ s3095 }}
+   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-FRA1-3-cloud/{{ s3095 }}
+      :alt: Create a new object storage container
 
-.. |new-container| image:: /s3/How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud/use-object-storage-new-container_creodias.png
+.. |new-container| image:: /s3/How-to-use-object-storage-with-Horizon-on-FRA1-3-cloud/use-object-storage-new-container_creodias.png
 
 To create a new object storage container, click the |new-container| button. The container creation form opens:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud/{{ s3096 }}
+   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-FRA1-3-cloud/{{ s3096 }}
+      :alt: Create a new object storage container
 
 Enter the container name in the **Container Name** field.
 
@@ -84,13 +86,15 @@ Click **Submit**. The new container appears in the list:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud/{{ s3097 }}
+   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-FRA1-3-cloud/{{ s3097 }}
+      :alt: Create a new object storage container
 
 You may encounter the following error:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud/{{ s3098 }}
+   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-FRA1-3-cloud/{{ s3098 }}
+      :alt: Create a new object storage container
 
 This usually means that another container already uses the same name. Try again with a different, more specific container name.
 
@@ -101,20 +105,22 @@ To view the contents of a container, click its name in the container list:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud/{{ s3099 }}
+   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-FRA1-3-cloud/{{ s3099 }}
+      :alt: View the container
 
 The container opens. Initially, it is empty. You can now create folders and upload files to it.
 
 Create a new folder
 -------------------
 
-.. |new-folder| image:: /s3/How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud/use-object-storage-new-folder_creodias.png
+.. |new-folder| image:: /s3/How-to-use-object-storage-with-Horizon-on-FRA1-3-cloud/use-object-storage-new-folder_creodias.png
 
 To create a new folder, click the |new-folder| button. The folder creation form opens:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud/{{ s3100 }}
+   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-FRA1-3-cloud/{{ s3100 }}
+      :alt: Create a new folder
 
 Enter the folder name in the **Folder Name** field.
 
@@ -139,7 +145,8 @@ The section above the **Click here for filters or full text search** field shows
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud/{{ s3101 }}
+   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-FRA1-3-cloud/{{ s3101 }}
+      :alt: Navigate through folders
 
 In this example, the current folder is **another-folder**, which is inside **second-folder**, which is inside **first-folder**.
 
@@ -148,13 +155,14 @@ Click the folder name you want to open.
 Upload a file
 -------------
 
-.. |upload-file| image:: /s3/How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud/use-object-storage-upload_creodias.png
+.. |upload-file| image:: /s3/How-to-use-object-storage-with-Horizon-on-FRA1-3-cloud/use-object-storage-upload_creodias.png
 
 To upload a file to your object storage container, click the |upload-file| button. The upload window opens:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud/{{ s3102 }}
+   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-FRA1-3-cloud/{{ s3102 }}
+      :alt: Upload a file
 
 Click **Browse...** to open the file browser and select the file you want to upload. The file browser depends on your operating system and desktop environment.
 
@@ -162,7 +170,8 @@ After you select the file, its name appears in the **File** section, for example
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud/{{ s3103 }}
+   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-FRA1-3-cloud/{{ s3103 }}
+      :alt: Upload a file
 
 The **File Name** field controls how the object will be stored in the container:
 
@@ -178,7 +187,8 @@ If the upload is successful, Horizon shows a confirmation message:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud/{{ s3104 }}
+   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-FRA1-3-cloud/{{ s3104 }}
+      :alt: Upload a file
 
 For example, assume that you are in the root of the container and want to upload a file called **uploaded-file.txt** into the **first-folder** folder. In the **File Name** field, enter:
 
@@ -190,7 +200,8 @@ The file is uploaded to that location:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud/{{ s3105 }}
+   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-FRA1-3-cloud/{{ s3105 }}
+      :alt: Upload a file
 
 .. warning::
 
@@ -206,7 +217,8 @@ To delete a file from a container, open the drop-down menu next to the **Downloa
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud/{{ s3106 }}
+   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-FRA1-3-cloud/{{ s3106 }}
+      :alt: Delete one file
 
 Click **Delete**.
 
@@ -214,14 +226,15 @@ A confirmation dialog appears:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud/{{ s3107 }}
+   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-FRA1-3-cloud/{{ s3107 }}
+      :alt: Delete one file
 
 Click **Delete** to confirm. The file is removed from the container.
 
 Delete one folder
 ^^^^^^^^^^^^^^^^^
 
-.. |delete-folder| image:: /s3/How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud/use-object-storage-delete-folder_creodias.png
+.. |delete-folder| image:: /s3/How-to-use-object-storage-with-Horizon-on-FRA1-3-cloud/use-object-storage-delete-folder_creodias.png
 
 To delete a folder and its contents, click the |delete-folder| button next to it.
 
@@ -234,15 +247,17 @@ To delete multiple files or folders at the same time, select them by using the c
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud/{{ s3108 }}
+   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-FRA1-3-cloud/{{ s3108 }}
+      :alt: Delete multiple files and folders
 
 You can also select all files and folders on the current page by clicking the checkbox above the list:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud/{{ s3109 }}
+   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-FRA1-3-cloud/{{ s3109 }}
+      :alt: Delete multiple files and folders
 
-.. |delete-selected| image:: /s3/How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud/use-object-storage-delete-delete-selected_creodias.png
+.. |delete-selected| image:: /s3/How-to-use-object-storage-with-Horizon-on-FRA1-3-cloud/use-object-storage-delete-delete-selected_creodias.png
 
 To delete the selected items, click the |delete-selected| button next to the button used to create folders.
 
@@ -259,7 +274,8 @@ The container details appear on the right side of the page. If they do not appea
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud/{{ s3110 }}
+   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-FRA1-3-cloud/{{ s3110 }}
+      :alt: Manage public access to a container
 
 Use the **Public Access** checkbox to enable or disable public access.
 
@@ -276,27 +292,15 @@ After public access is enabled, copy the public link and open it in a web browse
 
 You should see a list of files and folders in the container, for example:
 
-.. jinja:: s3_images
-
-   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud/{{ s3111 }}
-
 Forward slashes separate folder-like prefixes in object paths.
 
 To download a file from the root of the container, add the file name to the public link:
-
-.. jinja:: s3_images
-
-   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud/{{ s3112 }}
 
 In this example, Firefox is used to access the file **second-upload-file.txt** in the **file-container** container.
 
 Do not end a file download link with a forward slash. If you do, the browser may download an empty file instead of the object.
 
 To share a link to a file inside a folder, add the full object path to the public link:
-
-.. jinja:: s3_images
-
-   .. image:: /s3/How-to-use-object-storage-with-Horizon-on-Eumetsat-Elasticity-FRA1-3-cloud/{{ s3113 }}
 
 In this example, the file **another-uploaded-file.txt** is accessed from the **second-folder** folder in the **file-container** container.
 

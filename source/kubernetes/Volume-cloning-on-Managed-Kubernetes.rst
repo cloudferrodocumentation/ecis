@@ -1,5 +1,5 @@
-Volume cloning on |brand-name| Managed Kubernetes
-=================================================
+Volume cloning Managed Kubernetes
+=================================
 
 Kubernetes can create a new persistent volume by cloning the contents of an existing PersistentVolumeClaim. Volume cloning is useful when you want a second volume that starts with the same contents as an existing one. Typical examples include:
 
@@ -82,6 +82,7 @@ At least one worker node should be in the **Ready** state before you continue. T
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s080 }}
+      :alt: Volume cloning Managed Kubernetes
 
 5. **Basic knowledge of Kubernetes storage**
 
@@ -104,6 +105,7 @@ The result may look like this:
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s081 }}
+      :alt: Volume cloning Managed Kubernetes
 
 Look for storage classes whose provisioner is **cinder.csi.openstack.org**. These are Cinder-backed storage classes and are suitable for the **ReadWriteOnce** PVCs used in this article.
 
@@ -328,6 +330,7 @@ The output should confirm that Kubernetes created a new PersistentVolumeClaim us
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s082 }}
+      :alt: Verify that the cloned storage was created
 
 Mount the cloned volume in a second pod
 ---------------------------------------
@@ -382,6 +385,7 @@ If the pod starts successfully, you should see:
 .. jinja:: mk8s_images
 
    .. figure:: {{ mk8s083 }}
+      :alt: Verify the cloned data
 
 This confirms that:
 
@@ -413,8 +417,8 @@ As a next step, you can compare this approach with:
 .. jinja:: brand_names
 
    * Cinder-backed **ReadWriteOnce** storage for standard single-volume persistence
-   * :doc:`/kubernetes/Create-and-use-volume-snapshots-Managed-Kubernetes`
-   * :doc:`/kubernetes/Use-SFS-shared-file-storage-with-pods-in-ReadWriteMany-mode-Managed-Kubernetes`
+   * :doc:`/kubernetes/Create-and-use-volume-snapshots-on-Managed-Kubernetes`
+
 
 Clean up the resources created in this article
 ----------------------------------------------

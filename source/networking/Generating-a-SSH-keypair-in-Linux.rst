@@ -1,5 +1,5 @@
-Generating an SSH keypair in Linux on |brand-name|
-==================================================
+Generating an SSH keypair in Linux
+==================================
 
 In order to generate an SSH keypair in Linux, we recommend using the command **ssh-keygen**.
 
@@ -35,14 +35,14 @@ with additional flags:
 -N
    passphrase, can be omitted if user prefers connecting without additional key security
 
-.. figure:: /networking/Generating-a-SSH-keypair-in-Linux-on-Eumetsat-Elasticity/ssh1.png
+.. figure:: /networking/Generating-a-SSH-keypair-in-Linux/ssh1.png
 
 Application will ask for the name of the key. Press **Enter** for defaults:
 
  * **id_rsa** for private and
  * **id_rsa.pub** for public key and passphrase (pressing **Enter** ignores it).
 
-.. figure:: /networking/Generating-a-SSH-keypair-in-Linux-on-Eumetsat-Elasticity/ssh2.png
+.. figure:: /networking/Generating-a-SSH-keypair-in-Linux/ssh2.png
 
 Next, **ssh-keygen** will show
 
@@ -50,7 +50,7 @@ Next, **ssh-keygen** will show
  * fingerprint of keypair and certain
  * semi-graphic image as expression of randomness in generating unique key.
 
-.. figure:: /networking/Generating-a-SSH-keypair-in-Linux-on-Eumetsat-Elasticity/ssh3.png
+.. figure:: /networking/Generating-a-SSH-keypair-in-Linux/ssh3.png
 
 To avoid problem with rejecting files due to too open permissions, navigate to the folder containing both keys and enter command:
 

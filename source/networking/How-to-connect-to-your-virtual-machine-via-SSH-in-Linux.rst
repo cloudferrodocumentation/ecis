@@ -1,5 +1,5 @@
-How to connect to your virtual machine via SSH in Linux on |brand-name|
-==========================================================================
+How to connect to your virtual machine via SSH in Linux
+=======================================================
 
 **1. Prerequisites:**
 
@@ -9,7 +9,7 @@ How to connect to your virtual machine via SSH in Linux on |brand-name|
 
 For example, when you create an SSH key named “**testkey**” in the Horizon dashboard, its name will appear next to your VM.
 
-.. figure:: /networking/How-to-connect-to-your-virtual-machine-via-SSH-in-Linux-on-Eumetsat-Elasticity/ssh_linux1.png
+.. figure:: /networking/How-to-connect-to-your-virtual-machine-via-SSH-in-Linux/ssh_linux1.png
 
 
 **2. Connecting to a virtual machine via SSH:**
@@ -36,4 +36,4 @@ Enter your password and confirm.
 
 2.5. The username in the terminal will change to **eouser**. This means that the SSH connection was successful.
 
-.. figure:: /networking/How-to-connect-to-your-virtual-machine-via-SSH-in-Linux-on-Eumetsat-Elasticity/ssh_linux2.png
+.. figure:: /networking/How-to-connect-to-your-virtual-machine-via-SSH-in-Linux/ssh_linux2.png

@@ -1,9 +1,9 @@
-OpenStack instance migration using command line on |brand-name|
-============================================================================
+OpenStack instance migration using command line
+===============================================
 
-This article covers how to migrate an instance from one |brand-name| cloud to another, for example from one region to another.
+This article covers how to migrate an instance from one the cloud to another, for example from one region to another.
 
-The workflow involves downloading an image of that instance to your local computer or to a virtual machine on |brand-name| cloud, and then uploading it to a different cloud.
+The workflow involves downloading an image of that instance to your local computer or to a virtual machine on the cloud, and then uploading it to a different cloud.
 
 What We Are Going To Do
 -----------------------
@@ -29,7 +29,7 @@ No. 2 **Installed OpenStackClient for Linux**
 
    * install Python,
    * create and activate a virtual environment,
-   * connect to the cloud by downloading and activating the proper RC file from |brand-name| cloud.
+   * connect to the cloud by downloading and activating the proper RC file from the cloud.
 
 No. 3 **Credentials for both clouds**
 
@@ -96,7 +96,7 @@ You can use your local computer to download the instance. The exact amount of da
 A virtual machine
 ^^^^^^^^^^^^^^^^^
 
-You can also use a Linux machine running on |brand-name| cloud. This may be useful if:
+You can also use a Linux machine running on the cloud. This may be useful if:
 
 * your Internet connection has data limits,
 * you do not have enough local storage,
@@ -178,7 +178,7 @@ List your instances:
 
 The result will be similar to this output:
 
-.. image:: /networking/OpenStack-instance-migrationcommand-line-on-Eumetsat-Elasticity/migratino_server_list.png
+.. image:: /networking/OpenStack-instance-migrationcommand-line/migratino_server_list.png
 
 Assume that the instance you want to migrate has the ID **0cab85e2-4c11-4e6c-a837-e70f8289fd5d**. In your own workflow, read the correct ID from the server list and replace **0cab85e2-4c11-4e6c-a837-e70f8289fd5d** with it in the rest of this article.
 
@@ -190,7 +190,7 @@ Shut off the instance:
 
 There are two ways to check whether it is turned off. One option is to execute **openstack server list** again and check the **Status** column. If the server is stopped, the status should be **SHUTOFF**.
 
-.. image:: /networking/OpenStack-instance-migrationcommand-line-on-Eumetsat-Elasticity/instance_shut_off.png
+.. image:: /networking/OpenStack-instance-migrationcommand-line/instance_shut_off.png
 
 The other option is to show the server and print only its power state:
 
@@ -200,7 +200,7 @@ The other option is to show the server and print only its power state:
 
 With this command, the status is **Shutdown** instead of **SHUTOFF**, but the meaning is the same.
 
-.. image:: /networking/OpenStack-instance-migrationcommand-line-on-Eumetsat-Elasticity/instance_shutoff_twice.png
+.. image:: /networking/OpenStack-instance-migrationcommand-line/instance_shutoff_twice.png
 
 Create image for the migration
 ------------------------------
@@ -227,7 +227,7 @@ Regardless of which option you use, check whether the new image was created prop
 
 Here is the result in this example:
 
-.. image:: /networking/OpenStack-instance-migrationcommand-line-on-Eumetsat-Elasticity/image_created_for_migration.png
+.. image:: /networking/OpenStack-instance-migrationcommand-line/image_created_for_migration.png
 
 The image has the ID **1fedb775-deef-4bfd-9ec2-ee67f65a461b**. This ID is used in the following commands.
 
@@ -239,7 +239,7 @@ The size cannot be **0** bytes and should be similar to the size of the instance
 
 This is the result:
 
-.. image:: /networking/OpenStack-instance-migrationcommand-line-on-Eumetsat-Elasticity/min_disk_instance_migration.png
+.. image:: /networking/OpenStack-instance-migrationcommand-line/min_disk_instance_migration.png
 
 Download the newly created image to local disk. Its name will be **image.raw**. The download may take from a few minutes to a few hours, depending on the size of the image and the speed of your connection.
 
@@ -268,14 +268,14 @@ Upload the image:
 
 This may take a while. You can follow the upload process in Horizon by opening **Compute** → **Images**. Here is the beginning of the upload process:
 
-.. image:: /networking/OpenStack-instance-migrationcommand-line-on-Eumetsat-Elasticity/migration_image_upload.png
+.. image:: /networking/OpenStack-instance-migrationcommand-line/migration_image_upload.png
 
 Once uploaded to the destination cloud, you can use the image like any other image.
 
 Warning: always use the latest value of image ID
 ------------------------------------------------
 
-From time to time, the default operating system images in |brand-name| cloud are upgraded to new versions. As a consequence, their **image ID** changes. For example, the image ID for Ubuntu 20.04 LTS may have been **574fe1db-8099-4db4-a543-9e89526d20ae** at the time this article was originally written. When working through the article, you should normally use the current value of the image ID instead.
+From time to time, the default operating system images in the cloud are upgraded to new versions. As a consequence, their **image ID** changes. For example, the image ID for Ubuntu 20.04 LTS may have been **574fe1db-8099-4db4-a543-9e89526d20ae** at the time this article was originally written. When working through the article, you should normally use the current value of the image ID instead.
 
 If you automate OpenStack operations with Heat, Terraform, Ansible, or another automation tool, avoid hardcoding an old image ID. Once the default image is upgraded and its ID changes, automation that uses the old ID may stop working.
 

@@ -1,5 +1,5 @@
-How to create a VM from volume snapshot using OpenStack CLI on |brand-name|
-===============================================================================
+How to create a VM from volume snapshot using OpenStack CLI
+===========================================================
 
 In this article, you will learn how to create a virtual machine from volume snapshot using OpenStack CLI client.
 
@@ -60,12 +60,12 @@ Once you have installed the OpenStack CLI client, authenticate before using it:
 
 .. jinja:: doc_links
 
-   To use the OpenStack CLI client to control |brand-name| cloud, authenticate first: :doc:`{{ openstack_cli_auth }}`
+   To use the OpenStack CLI client to control the cloud, authenticate first: :doc:`{{ openstack_cli_auth }}`
 
 What We Are Going To Cover
 -----------------------------
 
- * :ref:`example-scenario-in-which-this-article-applies`
+ * :ref:`cli-volume-snapshot-example-scenario-in-which-this-article-applies`
 
  * :ref:`creating-a-vm-from-volume-snapshot-using-the-openstack-cli-client`
 
@@ -77,9 +77,9 @@ What We Are Going To Cover
 
      * :ref:`example-of-creating-a-vm-from-volume-snapshot-using-the-openstack-cli-client`
 
-   * :ref:`step-2-other-operations`
+   * :ref:`cli-volume-snapshot-step-2-other-operations`
 
-.. _example-scenario-in-which-this-article-applies:
+.. _cli-volume-snapshot-example-scenario-in-which-this-article-applies:
 
 Example scenario in which this article applies
 ----------------------------------------------------
@@ -193,10 +193,11 @@ In this case, this is how the command used to create your virtual machine would 
 
 The output:
 
-.. figure:: /openstackcli/How-to-create-a-VM-from-volume-snapshot-using-OpenStack-CLI-on-Eumetsat-Elasticity/start-vm-from-volume-snapshot-cli-01_creodias.png
+.. figure:: /openstackcli/How-to-create-a-VM-from-volume-snapshot-using-OpenStack-CLI/start-vm-from-volume-snapshot-cli-01_creodias.png
+   :alt: Example of creating a VM from volume snapshot using the OpenStack CLI client
    :class: image-with-border
 
-.. _step-2-other-operations:
+.. _cli-volume-snapshot-step-2-other-operations:
 
 Step 2: Other operations
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -209,7 +210,7 @@ The floating IP will almost certainly be different from the value given in that 
 
 Virtual machines are controlled using different methods, for example SSH or web console. Whatever methods are available on the operating system stored on the volume snapshot should be available on your new virtual machine, since this is the assumption of this article. However, the commands used might be different, for example if the floating IP changed, the SSH command used to access the virtual machine might also change.
 
-.. _what-to-do-next:
+.. _cli-volume-snapshot-what-to-do-next:
 
 What To Do Next
 --------------------

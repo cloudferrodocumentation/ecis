@@ -1,5 +1,5 @@
-How to import SSH public key to OpenStack Horizon on |brand-name|
-=================================================================================================
+How to import SSH public key to OpenStack Horizon
+=================================================
 
 If you already have an SSH key pair on your computer, you can import your public key to the Horizon dashboard. Then, you will be able to use that imported key when launching a new instance.
 
@@ -49,14 +49,16 @@ Login to the Horizon dashboard: |brand-name-site-link|.
 
 Go to **Compute** -> **Key Pairs**. You should see the following screen:
 
-.. image:: /networking/How-to-Import-SSH-Public-Key-to-OpenStack-Horizon-on-Eumetsat-Elasticity/ssh-import-01_creodias.png
+.. image:: /networking/How-to-Import-SSH-Public-Key-to-OpenStack-Horizon/ssh-import-01_creodias.png
+   :alt: Step 1 Preparation
 
 Step 2 Importing a Key
 ----------------------------------------------
 
 Click **Import Public Key**. The following window should appear:
 
-.. image:: /networking/How-to-Import-SSH-Public-Key-to-OpenStack-Horizon-on-Eumetsat-Elasticity/ssh-import-02_creodias.png
+.. image:: /networking/How-to-Import-SSH-Public-Key-to-OpenStack-Horizon/ssh-import-02_creodias.png
+   :alt: Step 2 Importing a Key
 
 Choose a name for that key and enter it in the **Key Pair Name** text field. In this example, we will call it **sshkey**.
 
@@ -68,13 +70,15 @@ A file selector should appear. Its look will vary depending on your operating sy
 
 It should now appear in the **Public Key** text field:
 
-.. image:: /networking/How-to-Import-SSH-Public-Key-to-OpenStack-Horizon-on-Eumetsat-Elasticity/ssh-import-03_creodias.png
+.. image:: /networking/How-to-Import-SSH-Public-Key-to-OpenStack-Horizon/ssh-import-03_creodias.png
+   :alt: Step 2 Importing a Key
 
 Click **Import Public Key**.
 
 The key should now be visible in the Horizon dashboard:
 
-.. image:: /networking/How-to-Import-SSH-Public-Key-to-OpenStack-Horizon-on-Eumetsat-Elasticity/ssh-import-04_creodias.png
+.. image:: /networking/How-to-Import-SSH-Public-Key-to-OpenStack-Horizon/ssh-import-04_creodias.png
+   :alt: Step 2 Importing a Key
 
 What To Do Next
 ----------------------------------------------

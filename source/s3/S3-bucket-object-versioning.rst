@@ -1,5 +1,5 @@
-S3 bucket object versioning on |brand-name|
-===========================================
+S3 bucket object versioning
+===========================
 
 S3 bucket versioning allows you to keep multiple versions of files stored in
 object storage. It is useful for:
@@ -69,7 +69,7 @@ know which characters are allowed in bucket names.
 No. 5 **Terminology: container vs. bucket**
 
 In this article, both **container** and **bucket** refer to object storage
-resources hosted on |brand-name| cloud.
+resources hosted on the cloud.
 
 The Horizon dashboard more often uses the term **container**. AWS CLI and
 S3-compatible tools more often use the term **bucket**.
@@ -124,7 +124,8 @@ This is how the contents of your **.aws** folder may look:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/S3-bucket-object-versioning-on-Eumetsat-Elasticity/{{ s3114 }}
+   .. image:: /s3/S3-bucket-object-versioning/{{ s3114 }}
+      :alt: Step 1: Configure AWS CLI
 
 Open the **credentials** file in a plain text editor. For example, with
 **nano**:
@@ -359,7 +360,8 @@ The file may look like this in your text editor:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/S3-bucket-object-versioning-on-Eumetsat-Elasticity/{{ s3115 }}
+   .. image:: /s3/S3-bucket-object-versioning/{{ s3115 }}
+      :alt: Uploading the first version of a file
 
 Upload the file to **$bucket_name1**:
 
@@ -441,7 +443,8 @@ The file may look like this:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/S3-bucket-object-versioning-on-Eumetsat-Elasticity/{{ s3116 }}
+   .. image:: /s3/S3-bucket-object-versioning/{{ s3116 }}
+      :alt: Uploading another version of a file
 
 Upload the modified file to the same bucket and the same key:
 
@@ -685,14 +688,16 @@ The file should be in your current working directory:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/S3-bucket-object-versioning-on-Eumetsat-Elasticity/{{ s3117 }}
+   .. image:: /s3/S3-bucket-object-versioning/{{ s3117 }}
+      :alt: Downloading a chosen version of a file
 
 Displaying its contents with **cat** confirms that it is the first version of
 the file:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/S3-bucket-object-versioning-on-Eumetsat-Elasticity/{{ s3118 }}
+   .. image:: /s3/S3-bucket-object-versioning/{{ s3118 }}
+      :alt: Downloading a chosen version of a file
 
 Deleting objects on version-enabled buckets
 -------------------------------------------
@@ -823,7 +828,8 @@ Within the Horizon dashboard, the file is also invisible:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/S3-bucket-object-versioning-on-Eumetsat-Elasticity/{{ s3119 }}
+   .. image:: /s3/S3-bucket-object-versioning/{{ s3119 }}
+      :alt: Setting up a delete marker
 
 Even though the file cannot be seen, the bucket size is still displayed
 correctly. Each stored version of each file contributes to the total size.
@@ -939,7 +945,8 @@ The file should now also be visible in Horizon again:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/S3-bucket-object-versioning-on-Eumetsat-Elasticity/{{ s3120 }}
+   .. image:: /s3/S3-bucket-object-versioning/{{ s3120 }}
+      :alt: Removing the delete marker
 
 On this screenshot, the visible file has size 18 bytes, while the total bucket
 size is 36 bytes. This is because the total size includes both stored versions
@@ -1010,7 +1017,8 @@ In the Horizon dashboard, the total size of the bucket is reduced to 18 bytes:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/S3-bucket-object-versioning-on-Eumetsat-Elasticity/{{ s3121 }}
+   .. image:: /s3/S3-bucket-object-versioning/{{ s3121 }}
+      :alt: Permanently removing file versions
 
 If you delete the last version:
 
@@ -1027,7 +1035,8 @@ be reduced to zero bytes:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/S3-bucket-object-versioning-on-Eumetsat-Elasticity/{{ s3122 }}
+   .. image:: /s3/S3-bucket-object-versioning/{{ s3122 }}
+      :alt: Permanently removing file versions
 
 If you now execute **list-object-versions**:
 

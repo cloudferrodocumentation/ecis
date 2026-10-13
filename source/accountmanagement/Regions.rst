@@ -21,9 +21,6 @@ This option, **Regions**, shows which regions are currently enabled for your acc
 
 Use it to check which regional environments are available to you before creating resources or opening a management interface.
 
-.. figure:: /accountmanagement/Regions/activated-regions-for-ecis.png
-   :class: image-with-border
-
 Only the regions shown here are available to your account in the portal.
 
 The set of available regions may differ between users and projects. If you need access to a region that is not listed, contact the operator as described in :doc:`/accountmanagement/Help-Desk-And-Support`.

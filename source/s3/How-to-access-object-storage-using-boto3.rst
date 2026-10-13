@@ -1,5 +1,5 @@
-How to access object storage from |brand-name| using boto3
-==========================================================
+How to access object storage using boto3
+========================================
 
 In this article, you will learn how to access object storage from |brand-name|
 using the Python library **boto3**.
@@ -37,7 +37,7 @@ require you to adjust the commands supplied here.
 You can use this article both on Linux or Windows virtual machines or on a
 local computer running one of those operating systems.
 
-To build a new virtual machine hosted on |brand-name| cloud, one of the
+To build a new virtual machine hosted on the cloud, one of the
 following articles can help:
 
 .. jinja:: doc_links
@@ -135,7 +135,8 @@ Each coding example has three parts:
 
 .. jinja:: s3_images
 
-   .. image:: /s3/How-to-access-object-storage-from-Eumetsat-Elasticity-using-boto3/{{ s3066 }}
+   .. image:: /s3/How-to-access-object-storage-using-boto3/{{ s3066 }}
+      :alt: How to use the examples provided
 
 :blue:`blue rectangle` Import necessary libraries
    It is a standard Python practice to import all libraries needed for the code
@@ -370,7 +371,7 @@ Create a new bucket only if you do not already have a suitable bucket and your
 project bucket quota allows another bucket to be created.
 
 To create a new bucket, first select a name and assign it to the
-**bucket_name** variable. On |brand-name| cloud, use only letters, numbers,
+**bucket_name** variable. On the cloud, use only letters, numbers,
 and hyphens.
 
 **boto3_create_bucket.py**
@@ -457,7 +458,7 @@ similar to this:
 
    Invalid bucket name "this bucket should not exist": Bucket name must match the regex "^[a-zA-Z0-9.\-_]{1,255}$" or be an ARN matching the regex "^arn:(aws).*:(s3|s3-object-lambda):[a-z\-0-9]*:[0-9]{12}:accesspoint[/:][a-zA-Z0-9\-.]{1,63}$|^arn:(aws).*:s3-outposts:[a-z\-0-9]+:[0-9]{12}:outpost[/:][a-zA-Z0-9\-]{1,63}[/:]accesspoint[/:][a-zA-Z0-9\-]{1,63}$"
 
-To resolve the problem, choose a different name. On |brand-name| cloud, use
+To resolve the problem, choose a different name. On the cloud, use
 only letters, numbers, and hyphens.
 
 Checking when a bucket was created
@@ -729,11 +730,11 @@ like in **Terminal**:
 
 .. jinja:: s3_images
 
-   .. figure:: /s3/How-to-access-object-storage-from-Eumetsat-Elasticity-using-boto3/{{ s3067 }}
+   .. figure:: /s3/How-to-access-object-storage-using-boto3/{{ s3067 }}
       :alt: Upload file to S3 bucket using boto3
       :class: image-with-border
 
-   Upload file to S3 bucket using boto3
+      Upload file to S3 bucket using boto3
 
 The code can easily be adapted to other scenarios. For example, you can:
 
@@ -1032,14 +1033,6 @@ executing. Below are two such examples:
 
 What to do next
 ---------------
-
-.. ifconfig:: brand_name not in brands_without_eodata
-
-   .. jinja:: doc_links
-
-      **boto3** can also be used to access the **EODATA** repository on virtual
-      machines hosted on |brand-name| cloud. Learn more here:
-      :doc:`{{ eodata_boto3_access }}`
 
 .. jinja:: doc_links
 

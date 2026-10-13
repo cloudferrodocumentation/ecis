@@ -58,6 +58,7 @@ Use this section when you need to create or manage virtual machines through Hori
    /cloud/How-to-generate-or-use-Application-Credentials-via-CLI
    /cloud/How-to-install-Python-virtualenv-or-virtualenvwrapper
    /cloud/How-to-use-Docker
+   /cloud/Installation-of-required-tools-on-Urbetho-VM-SNAP-and-QGIS
 
 .. toctree::
    :maxdepth: 1
@@ -74,5 +75,6 @@ Use this section when you need to create or manage virtual machines through Hori
    :caption: IPv6 and DNS
 
    /cloud/Introduction-to-IPv6
+   /cloud/DNS-as-a-Service
    /cloud/Technical-background-for-IPv6
    /cloud/Create-an-IPv6-network

@@ -1,5 +1,5 @@
-Welcome to EUMETSAT Cloud Infrastructure Service Documentation!
-======================================================================
+Cloud Infrastructure Service documentation
+==========================================
 
 
 .. toctree::

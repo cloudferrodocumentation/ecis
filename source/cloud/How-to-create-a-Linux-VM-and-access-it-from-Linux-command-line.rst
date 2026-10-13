@@ -1,7 +1,7 @@
-How to create a Linux VM and access it from Linux command line on |brand-name|
-===========================================================================================
+How to create a Linux VM and access it from Linux command line
+==============================================================
 
-Creating a virtual machine in a |brand-name| cloud allows you to perform computations without having to engage your own infrastructure. In this article you shall create a Linux based virtual machine and access it remotely from a Linux command line on a desktop or laptop.
+Creating a virtual machine in a the cloud allows you to perform computations without having to engage your own infrastructure. In this article you shall create a Linux based virtual machine and access it remotely from a Linux command line on a desktop or laptop.
 
 .. jinja:: brand_names
 
@@ -14,7 +14,7 @@ Creating a virtual machine in a |brand-name| cloud allows you to perform computa
 What We Are Going To Cover
 ------------------------------
 
- * Creating a Linux virtual machine in |brand-name| cloud using command **Launch Instance** from Horizon Dashboard
+ * Creating a Linux virtual machine in the cloud using command **Launch Instance** from Horizon Dashboard
 
 You will enter the following required data into that window:
 
@@ -101,7 +101,8 @@ Step 1 Start the Launch Instance window and name the virtual machine
 
 In the Horizon dashboard go to **Compute** -> **Instances** and click **Launch Instance**. You should get the following window:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/create-linux-linux-04_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line/create-linux-linux-04_creodias.png
+   :alt: Step 1 Start the Launch Instance window and name the virtual machine
 
 Type the name for your virtual machine in the **Instance Name** text field.
 
@@ -112,15 +113,17 @@ Step 2 Define the source of the virtual machine
 
 The **Source** window appears:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/create-linux-linux-05_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line/create-linux-linux-05_creodias.png
+   :alt: Step 2 Define the source of the virtual machine
 
 Make sure that from the drop-down menu **Select Boot Source** option **Image** is selected.
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/boot_source.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line/boot_source.png
 
 From the **Available** list choose Linux distribution that suits you best and click **↑** next to it. It should now be visible in the **Allocated** section:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/create-linux-linux-06_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line/create-linux-linux-06_creodias.png
+   :alt: Step 2 Define the source of the virtual machine
 
 This image shows that a Ubuntu 20.04 LTS was selected; if you, however, chose CentOS 7, that is what would show here instead of Ubuntu 20.04 LTS.
 
@@ -137,7 +140,8 @@ Step 3 Define the flavor of the instance
 
 You should now see the following form:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/create-linux-linux-07_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line/create-linux-linux-07_creodias.png
+   :alt: Step 3 Define the flavor of the instance
 
 The standard definition of OpenStack *flavor* is the amount of resources available to the instance - like VCPU, memory and storage capacity.
 
@@ -152,7 +156,7 @@ Make sure that you do **not** select one of the below flavors - they contain NVI
 
 Sometimes, a flavor might be insufficient for source you chose in the previous step. If this is the case, you will see a yellow warning sign next to at least one of the values in the row for that flavor:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/yellow_triangles.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line/yellow_triangles.png
 
 To solve this issue, choose a flavor that supports your chosen source instead. In the image above, *vm.a6000.4* is not available but, say, *hm.large* is.
 
@@ -170,19 +174,10 @@ Step 4 Define networks for the virtual machine
 
 You should now see the following window:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/create-linux-linux-08_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line/create-linux-linux-08_creodias.png
+   :alt: Step 4 Define networks for the virtual machine
 
 Here you can select networks that will be attached to your virtual machine. They control the way your machine is connected to the Internet, to the other machines and to other resources as well.
-
-.. ifconfig:: brand_name not in  brands_without_eodata
-
-   By default, you should have access to the following networks:
-
-    * The network whose name starts with **cloud_** and which allows you to connect your machines together. It also has access to the **external** network which gives the instance access to the Internet.
-
-    * The network whose name starts with **eodata_** which gives you access to the **eodata** repository.
-
-   **eodata** is a repository of satellite images available on your |brand-name| cloud for download or processing.
 
 .. ifconfig:: brand_name in  brands_without_eodata
 
@@ -199,7 +194,8 @@ Security groups control network traffic to and from your virtual machine.
 
 Click **Security Groups**. You should see the following form:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/create-linux-linux-09_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line/create-linux-linux-09_creodias.png
+   :alt: Step 5 Define security groups for VM
 
 By default, you have access to two groups:
 
@@ -216,7 +212,8 @@ To use SSH to connect your local Linux computer to the cloud Linux "computer", y
 
 Click **Key Pair**. You should now see the following window:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/create-linux-linux-10_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line/create-linux-linux-10_creodias.png
+   :alt: Step 6 Create a key pair for SSH access
 
 In the image above, the key is called **test-key**. There are three ways to enter the keys into this window:
 
@@ -239,13 +236,15 @@ Once you have set everything up, click **Launch Instance**.
 
 Your instance should now be in the **Instances** list.  Initially, the instance will be in a state of "Spawning" as in this image:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/create-linux-linux-12_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line/create-linux-linux-12_creodias.png
+   :alt: Step 7 Create the instance
 
 Spawning is the process of preparing the instance.
 
 Wait up to a few minutes until your instance has finished spawning. The next state is **Running** label in the **Power State** column:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/create-linux-linux-13_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line/create-linux-linux-13_creodias.png
+   :alt: Step 7 Create the instance
 
 It means that the instance is ready to use.
 
@@ -262,7 +261,7 @@ Step 8 Attach a Floating IP to the instance
 
 Once you have added the floating IP, you will see it in the Horizon dashboard under header **IP Address** - just like in the last image from that article:
 
-.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/ip_address_from_article.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line/ip_address_from_article.png
 
 The floating IP address in that article is **64.225.132.0**. Your address will vary.
 
@@ -284,7 +283,7 @@ The IP address in that article is **64.225.132.99** and is different from the ad
 What To Do Next
 ---------------------
 
-|brand-name| cloud can be used for general hosting needs, such as
+the cloud can be used for general hosting needs, such as
 
  * installing LAMP servers,
 
@@ -294,51 +293,14 @@ What To Do Next
 
  * Kubernetes and SLURM clusters and so on.
 
-.. ifconfig:: brand_name not in  brands_without_eodata
-
-    You can also take advantage of its access to the **eodata** repository, where "eodata" stands for "Earth Observation Data" from satellites.
-
-    .. jinja:: brand_names
-
-       :doc:`/eodata/How-to-mount-eodata-using-S3FS-in-Linux-on-{{ brand_name_hyphen }}`
-
-    .. jinja:: brand_names
-
-       :doc:`/eodata/How-to-mount-eodata-as-a-filesystem-using-Goofys-in-Linux-on-{{ brand_name_hyphen }}`
-
-    .. jinja:: brand_names
-
-       :doc:`/eodata/How-to-download-EODATA-files-using-s3cmd-on-{{ brand_name_hyphen }}`.
-
-    .. jinja:: brand_names
-
-       :doc:`/eodata/How-to-access-EODATA-using-boto3-on-{{ brand_name_hyphen }}`.
-
-        If you need more performance for purposes such as deep learning, you can use VMs with NVIDIA hardware. The following article covers the creation of such VM:
-
-        .. jinja:: brand_names
-
-           :doc:`/cloud/How-To-Create-a-New-Linux-VM-With-NVIDIA-Virtual-GPU-in-the-OpenStack-Dashboard-Horizon-on-{{ brand_name_hyphen }}/How-To-Create-a-New-Linux-VM-With-NVIDIA-Virtual-GPU-in-the-OpenStack-Dashboard-Horizon-on-{{ brand_name_hyphen }}`
-
-        For a cutting edge example of using **eodata** and deep learning algorithms, please see:
-
-        .. jinja:: brand_names
-
-           :doc:`/cuttingedge/Sample-Deep-Learning-workflow-using-vGPU-and-EO-DATA-on-{{ brand_name_hyphen }}`.
-
-To create a *cluster* of instances, see the series of articles on Kubernetes:
-
-.. jinja:: brand_names
-
-   :doc:`/kubernetes/How-to-Create-a-Kubernetes-Cluster-Using-{{ brand_name_hyphen }}-OpenStack-Magnum`.
+To create a managed Kubernetes cluster, see
+:doc:`/kubernetes/How-to-create-a-Managed-Kubernetes-cluster-using-launcher-GUI`.
 
 If you find yourself unable to connect to your virtual machine using SSH, you can use the web console for troubleshooting and other purposes. Here's how to do it:
 
 .. jinja:: brand_names
 
    :doc:`/cloud/How-to-access-the-VM-from-OpenStack-console`
-
-.. jinja:: brand_names
 
 If you don't want the storage of your instance to be deleted while the VM is removed, you can choose to use a volume during instance creation. Please see the following articles:
 

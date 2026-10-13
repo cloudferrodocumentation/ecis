@@ -1,5 +1,5 @@
-How to create a set of VMs using OpenStack Heat Orchestration on |brand-name|
-=============================================================================
+How to create a set of VMs using OpenStack Heat Orchestration
+=============================================================
 
 Heat is an OpenStack component responsible for orchestration. Its purpose is to provide an automation engine and optimize deployment processes.
 
@@ -33,7 +33,7 @@ No. 2 **Installed Python and its virtualenv**
 Always use the latest value of image ID
 ---------------------------------------
 
-From time to time, the default operating system images in |brand-name| cloud are upgraded to new versions. As a consequence, their **image ID** changes. For example, the image ID for Ubuntu 20.04 LTS may have been **574fe1db-8099-4db4-a543-9e89526d20ae** at the time this article was originally written. When working through the article, you should normally use the current value of the image ID instead.
+From time to time, the default operating system images in the cloud are upgraded to new versions. As a consequence, their **image ID** changes. For example, the image ID for Ubuntu 20.04 LTS may have been **574fe1db-8099-4db4-a543-9e89526d20ae** at the time this article was originally written. When working through the article, you should normally use the current value of the image ID instead.
 
 If you automate OpenStack operations with Heat, Terraform, Ansible, or another automation tool, avoid hardcoding an old image ID. Once the default image is upgraded and its ID changes, automation that uses the old ID may stop working.
 
@@ -146,17 +146,17 @@ As a result, a new stack is executed and a new instance is created. For example,
 
 produces output similar to this:
 
-.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/heat-test2.png
+.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration/heat-test2.png
    :class: image-with-border
 
 In Horizon, this is what you see under **Orchestration** → **Stacks**:
 
-.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/heat_test2_stacks.png
+.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration/heat_test2_stacks.png
    :class: image-with-border
 
 A new instance is created under **Compute** → **Instances**:
 
-.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/heat_test2_instances.png
+.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration/heat_test2_instances.png
    :class: image-with-border
 
 Using Heat with GUI
@@ -164,36 +164,36 @@ Using Heat with GUI
 
 Log in to the Horizon dashboard, choose **Orchestration**, and then open the **Stacks** tab:
 
-.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/stacks_menu.png
+.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration/stacks_menu.png
    :class: image-with-border
 
-.. |click_button_launch_stack| image:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/click_button_launch_stack.png
+.. |click_button_launch_stack| image:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration/click_button_launch_stack.png
 
 Navigate to the right side of the screen, click the |click_button_launch_stack| button, and open the **Select Template** window.
 
 Open the **Template Source** selector and choose a file, direct input, or URL to your template.
 
-.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/orch4.png
+.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration/orch4.png
    :class: image-with-border
 
 Enter the text of the template you copied from **template.yaml** directly into the form:
 
-.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/select_template_yaml.png
+.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration/select_template_yaml.png
    :class: image-with-border
 
 Provide a name for your stack and your OpenStack password:
 
-.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/launch_stack.png
+.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration/launch_stack.png
    :class: image-with-border
 
 As a result, a new Heat template is created:
 
-.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/create_new_template.png
+.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration/create_new_template.png
    :class: image-with-border
 
 By creating a stack in Horizon, you also execute that template. The result is that a new instance is created. You can see it under **Compute** → **Instances**:
 
-.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/heat_instance.png
+.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration/heat_instance.png
    :class: image-with-border
 
 At this point, there are two stacks and two new instances: one created by using CLI and the other by using Horizon.
@@ -302,12 +302,12 @@ Execute the template with the following command:
 
 The name of the stack is **four**. This is the result in the CLI window:
 
-.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/create_heat_4.png
+.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration/create_heat_4.png
    :class: image-with-border
 
 Under **Compute** → **Instances**, you see five new instances:
 
-.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/four_created.png
+.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration/four_created.png
    :class: image-with-border
 
 Four of them have names **my_vm0**, **my_vm1**, **my_vm2**, and **my_vm3**, as defined in line **name: my_vm%index%** in the template. The fifth is called **four-With_volume-lrejw222kfvi**. Its name starts with the stack name, while the rest is generated automatically.
@@ -317,7 +317,7 @@ What To Do Next
 
 You can write your own templates as **YAML** files, or you can use **Orchestration** → **Template Generator** to enter components interactively:
 
-.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/template_generator.png
+.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration/template_generator.png
    :class: image-with-border
 
 Further explanation of this option is outside the scope of this article.

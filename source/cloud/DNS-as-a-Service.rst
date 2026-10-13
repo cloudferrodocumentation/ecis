@@ -1,5 +1,5 @@
-DNS as a Service on |brand-name| hosting
-===============================================================
+DNS as a Service
+================
 
 DNS as a Service (DNSaaS) provides functionality of managing configuration of user's domains. Managing configuration means that the user is capable of creating, updating and deleting the following DNS records:
 
@@ -119,9 +119,9 @@ In both cases, the article will contain a section to connect floating IP to the 
 Step 1 Delegate domain to your registrar's system
 -------------------------------------------------------
 
-The configuration of domain name in your registrar's system must point to the NS records of CloudFerro name servers. It can be achieved in two ways:
+The configuration of domain name in your registrar's system must point to the NS records of the cloud name servers. It can be achieved in two ways:
 
-**Option 1 - Use CloudFerro name servers (recommended)**
+**Option 1 - Use the cloud name servers (recommended)**
 
 There are two distinct DNS environments, with different nameservers.
 
@@ -213,7 +213,7 @@ Zone configuration is defining parameters for the main domain name you have purc
 
 To manage domain *exampledomain.com* in OpenStack, login to OpenStack dashboard, choose the right project if different than default, go to **Project** → **DNS** → **Zones**, click **Create Zone** and fill in the required fields:
 
-.. image:: /cloud/DNS-as-a-Service-on-Eumetsat-Elasticity-WAW3-1-Hosting/dns1.png
+.. image:: /cloud/DNS-as-a-Service/dns1.png
 
 Here is what the parameters mean:
 
@@ -281,7 +281,7 @@ Step 4 Adding new record for the domain
 
 To add a new record to the domain, click on **Create Record Set** next to the domain name and fill in the required fields. The most important entry is to connect the domain name to the IP address you have. To configure an address of web server in **exampledomain.com**, so that it is resolved to **64.225.133.254** which is a Floating IP address of your server, fill the form as follows:
 
-.. image:: /cloud/DNS-as-a-Service-on-Eumetsat-Elasticity-WAW3-1-Hosting/create_main_site_dns.png
+.. image:: /cloud/DNS-as-a-Service/create_main_site_dns.png
 
 The parameters are:
 
@@ -324,7 +324,7 @@ As previously, use command is **DNS** -> **Zones** -> **Record Sets**.
 
 To configure an address of web server in **exampledomain.com**, so that **www.exampledomain.com** is resolved to **64.225.133.254** which is a Floating IP address of your server, fill the form as follows:
 
-.. image:: /cloud/DNS-as-a-Service-on-Eumetsat-Elasticity-WAW3-1-Hosting/create_www_subdomain.png
+.. image:: /cloud/DNS-as-a-Service/create_www_subdomain.png
 
 Submit the form and check whether your configuration works:
 
@@ -338,7 +338,7 @@ Step 6 Managing records
 
 Anytime you want to review, edit or delete records in your domain, visit OpenStack dashboard, **Project** → **DNS** → **Zones**. After clicking the domain name of your interest, choose **Record Sets** tab and see the list of all records:
 
-.. image:: /cloud/DNS-as-a-Service-on-Eumetsat-Elasticity-WAW3-1-Hosting/show_example_domain_record_sets.png
+.. image:: /cloud/DNS-as-a-Service/show_example_domain_record_sets.png
 
 From this screen you can update or delete records.
 
@@ -368,12 +368,3 @@ Once an OpenStack object has floating IP address, you can use the DNS service to
 
 Assign floating IP while creating a new VM from scratch
    That is the approach in articles from Prerequisite No. 5.
-
-.. ifconfig:: brand_name in managed_kubernetes_with_magnum
-
-   **Kubernetes services can have an automatically assigned floating IP**
-     The following article shows how to deploy an HTTPS service on Kubernetes:
-
-   .. jinja:: brand_names
-
-      :doc:`/kubernetes/Deploying-HTTPS-Services-on-Magnum-Kubernetes-in-{{ brand_name_cloud }}-Cloud`

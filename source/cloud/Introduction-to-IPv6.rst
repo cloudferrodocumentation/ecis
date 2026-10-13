@@ -1,5 +1,5 @@
-Introduction to IPv6 on |brand-name|
-====================================================
+Introduction to IPv6
+====================
 
 IPv6 is the latest version of the Internet Protocol that provides a vastly expanded number of IP addresses compared to the current IPv4 system. This expansion is crucial for accommodating the exponential increase in devices connecting to the Internet. IPv6 is useful for
 
@@ -48,7 +48,7 @@ You need a |brand-name| hosting account with access to the Horizon interface: |b
 
 No. 2 **OpenStack CLI client**
 
-If you want to interact with |brand-name| cloud using OpenStack CLI client, you need to have it installed. Check one of these articles:
+If you want to interact with the cloud using OpenStack CLI client, you need to have it installed. Check one of these articles:
 
 .. jinja:: brand_names
 
@@ -58,15 +58,6 @@ If you want to interact with |brand-name| cloud using OpenStack CLI client, you 
 
     * :doc:`/openstackcli/How-to-install-OpenStackClient-on-Windows-using-Windows-Subsystem-for-Linux-on-OpenStack-Hosting`
 
-.. ifconfig:: brand_name in two_fa_activated
-
-    .. jinja:: brand_names
-
-       Once you have installed this piece of software, you need to authenticate to start using it:
-  .. jinja:: doc_links
-
-     :doc:`{{ openstack_cli_auth }}`
-
 .. ifconfig:: brand_name not in two_fa_activated
 
     .. ifconfig:: brand_name != 'WEkEO'
@@ -74,10 +65,6 @@ If you want to interact with |brand-name| cloud using OpenStack CLI client, you 
        .. jinja:: brand_names
 
           Once you have installed this piece of software, you need to authenticate to start using it: :doc:`/accountmanagement/How-to-activate-OpenStack-CLI-access-to-cloud`
-
-    .. ifconfig:: brand_name == 'WEkEO'
-
-       Once you have installed this piece of software, you need to authenticate to start using it: :doc:`/accountmanagement/How-to-activate-OpenStack-CLI-access-to-WEkEO-cloud-using-Federated-IDP-authorization-and-application-credentials`
 
 To test whether the **openstack** command is working, list flavors:
 
@@ -87,7 +74,7 @@ To test whether the **openstack** command is working, list flavors:
 
 If you get a list of flavors that starts out like this:
 
-.. image:: /cloud/Introduction-to-IPv6-on-Eumetsat-Elasticity/Screenshot_20241014_112929.png
+.. image:: /cloud/Introduction-to-IPv6/Screenshot_20241014_112929.png
 
 you will know it all works.
 
@@ -249,7 +236,7 @@ Integrate the newly created subnet with the router to ensure seamless device com
 
 After finishing the outlined steps, the results can now be viewed using the Horizon interface.
 
-.. image:: /cloud/Introduction-to-IPv6-on-Eumetsat-Elasticity/image_2024-04-24-15-13-21.png
+.. image:: /cloud/Introduction-to-IPv6/image_2024-04-24-15-13-21.png
 
 Important Considerations
 ------------------------------------

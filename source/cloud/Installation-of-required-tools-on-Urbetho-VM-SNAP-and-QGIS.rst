@@ -1,5 +1,5 @@
-Installation of required tools on Urbetho VM SNAP and QGIS on |brand-name|
-============================================================================
+Installation of required tools on Urbetho VM SNAP and QGIS
+==========================================================
 
 **Prerequisites:**
 
@@ -42,7 +42,7 @@ Note: **lsb_release -c -s** in those lines will return your distro name:
 
    sudo add-apt-repository "deb https://qgis.org/ubuntu $(lsb_release -c -s) main"
 
-.. figure:: /cloud/Installation-of-required-tools-on-Urbetho-VM-SNAP-and-QGIS-on-Eumetsat-Elasticity/install01.png
+.. figure:: /cloud/Installation-of-required-tools-on-Urbetho-VM-SNAP-and-QGIS/install01.png
    :align: center
 
 Update your repository information to reflect also the just added QGIS one:
@@ -61,7 +61,7 @@ Now, install QGIS:
 
 Open the `link <https://step.esa.int/main/download/snap-download/>`_ from your virtual machine and select "Main download" for "All toolboxes" and "Unix 64-bit" from the table.
 
-.. figure:: /cloud/Installation-of-required-tools-on-Urbetho-VM-SNAP-and-QGIS-on-Eumetsat-Elasticity/install02.png
+.. figure:: /cloud/Installation-of-required-tools-on-Urbetho-VM-SNAP-and-QGIS/install02.png
    :align: center
 
 Next, switch to your terminal with an opened SSH session and go to your downloads catalog to add execute permission of downloaded file:
@@ -71,7 +71,7 @@ Next, switch to your terminal with an opened SSH session and go to your download
    cd Downloads
    chmod u+x <downloaded file name>
 
-.. figure:: /cloud/Installation-of-required-tools-on-Urbetho-VM-SNAP-and-QGIS-on-Eumetsat-Elasticity/install03.png
+.. figure:: /cloud/Installation-of-required-tools-on-Urbetho-VM-SNAP-and-QGIS/install03.png
    :align: center
 
 Execute downloaded file:
@@ -80,7 +80,7 @@ Execute downloaded file:
 
    ./<downloaded file name>
 
-.. figure:: /cloud/Installation-of-required-tools-on-Urbetho-VM-SNAP-and-QGIS-on-Eumetsat-Elasticity/install04_noted.png
+.. figure:: /cloud/Installation-of-required-tools-on-Urbetho-VM-SNAP-and-QGIS/install04_noted.png
    :align: center
 
 After "Python executable:" line, open new terminal window and check your python 3 path (by default "/usr/bin/python3")

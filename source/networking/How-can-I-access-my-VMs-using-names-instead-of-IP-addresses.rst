@@ -1,5 +1,5 @@
-How can I access my VMs using names instead of IP addresses on |brand-name|
-=============================================================================
+How can I access my VMs using names instead of IP addresses
+===========================================================
 
 The VMs are seen simultaneously in several networks, at least in your "private" LAN and in the public Internet. By default the public addresses (Floating IPs, 185.48.x.x) have no associated names. You may assign such names from your DNS domain or you may request a name from us (as an additional service). The names provided by us have the following format:
 

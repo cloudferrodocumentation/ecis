@@ -32,14 +32,14 @@ If these prerequisites are valid, you will be able to install Docker on:
 
 - a computer natively running Ubuntu 24.04
 - a VM running on a local computer
-- a VM running in the |brand-name| cloud
+- a VM running in the cloud
 
 Prerequisites for the cloud version of Docker
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No. 1 **Account**
 
-To run Docker on a VM in the cloud, you need your own cloud account. See article: :doc:`/accountmanagement/Registration-And-Account`.
+To run Docker on a VM in the cloud, you need your own cloud account. See :doc:`/accountmanagement/Login-to-dashboard` for access to an existing account.
 
 No. 2 **A VM running Ubuntu 24.04**
 
@@ -49,7 +49,7 @@ No. 2 **A VM running Ubuntu 24.04**
 
 In the **Source** option, select *Ubuntu 24.04* and then "Ubuntu 24.04 LTS":
 
-.. figure:: /cloud/How-to-use-Docker-on-Eumetsat-Elasticity/new_docker-1.png
+.. figure:: /cloud/How-to-use-Docker/new_docker-1.png
    :alt: Selecting Ubuntu 24.04 LTS
    :width: 600px
    :class: image-with-border
@@ -168,7 +168,7 @@ Enable and start Docker:
    sudo systemctl start docker
    sudo systemctl status docker
 
-.. image:: /cloud/How-to-use-Docker-on-Eumetsat-Elasticity/use-docker-9.png
+.. image:: /cloud/How-to-use-Docker/use-docker-9.png
 
 Press **Ctrl-C** to return to the prompt.
 
@@ -181,7 +181,7 @@ Run a test container:
 
    sudo docker run hello-world
 
-.. image:: /cloud/How-to-use-Docker-on-Eumetsat-Elasticity/use-docker-4.png
+.. image:: /cloud/How-to-use-Docker/use-docker-4.png
 
 This confirms Docker is correctly installed. If errors occur, read the message carefully—it often includes the fix.
 
@@ -197,7 +197,7 @@ There are hundreds of thousands of Docker images to download. For this example, 
 
    sudo docker pull ubuntu
 
-.. image:: /cloud/How-to-use-Docker-on-Eumetsat-Elasticity/use-docker-5.png
+.. image:: /cloud/How-to-use-Docker/use-docker-5.png
 
 To view downloaded images:
 
@@ -207,7 +207,7 @@ To view downloaded images:
 
 This shows available local images:
 
-.. image:: /cloud/How-to-use-Docker-on-Eumetsat-Elasticity/use-docker-6.png
+.. image:: /cloud/How-to-use-Docker/use-docker-6.png
 
 Running Docker Containers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -218,7 +218,7 @@ You can run a container interactively. The actual commands will depend on the co
 
    sudo docker run -it ubuntu
 
-.. image:: /cloud/How-to-use-Docker-on-Eumetsat-Elasticity/use-docker-7.png
+.. image:: /cloud/How-to-use-Docker/use-docker-7.png
 
 You now have a shell inside the container. The prompt for Ubuntu running inside a Docker container in our example is **root@ab3f2a78046b:/#** and it will, most probably, differ on your system.
 
@@ -320,18 +320,3 @@ If `docker run hello-world` fails:
   .. code-block:: console
 
      sudo journalctl -u docker
-
-What To Do Next
--------------------
-
-Here are some articles that build upon this tutorial:
-
-.. jinja:: brand_names
-
-   .. ifconfig:: brand_name not in brands_without_eodata
-
-      :doc:`/kubernetes/CICD-pipelines-with-GitLab-on-{{ brand_name_hyphen }}-Kubernetes-building-a-Docker-image`
-
-      :doc:`/kubernetes/Private-container-registries-with-Harbor-on-{{ brand_name_hyphen }}-Kubernetes`
-
-      :doc:`/kubernetes/Install-and-run-Argo-Workflows-on-{{ brand_name_hyphen }}-Magnum-Kubernetes`

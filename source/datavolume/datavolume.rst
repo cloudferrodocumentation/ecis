@@ -45,4 +45,3 @@ Use this section when you need to understand the difference between ephemeral an
 
    /datavolume/How-to-mount-object-storage-in-Linux
    /datavolume/How-many-objects-can-I-put-into-Object-Storage-container-bucket
-   /s3/Bucket-sharing-using-s3-bucket-policy

@@ -1,7 +1,7 @@
-How to create instance snapshot using Horizon on |brand-name|
-==============================================================
+How to create instance snapshot using Horizon
+=============================================
 
-In this article, you will learn how to create instance snapshot on |brand-name| cloud, using Horizon dashboard.
+In this article, you will learn how to create instance snapshot on the cloud, using Horizon dashboard.
 
 Instance snapshots allow you to archive the state of the virtual machine. You can, then, use them for
 
@@ -61,7 +61,7 @@ No. 2 **Ephemeral storage vs. persistent storage**
 
 No. 3 **Instance with ephemeral storage**
 
-You need a virtual machine hosted on |brand-name| cloud.
+You need a virtual machine hosted on the cloud.
 
 Using any of the following articles will produce an instance with ephemeral storage:
 
@@ -109,11 +109,11 @@ Creating a snapshot of instance which uses ephemeral storage
 Follow Prerequisite No. 3 and create an instance named **instance-which-uses-ephemeral**.
 
 Navigate to the list of instances in Horizon
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Navigate to section **Compute** -> **Instances** of the Horizon dashboard and see the list of your instances.
 
-.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon-on-Eumetsat-Elasticity/uses_ephemeral.png
+.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon/uses_ephemeral.png
 
 Shut down the VM
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -128,22 +128,22 @@ There are many other such commands and they will depend on the type of image use
 
 Another way of shutting down is the one available in Horizon. You can click on the dropdown menu to the right and click on **Shut Off Instance**.
 
-.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon-on-Eumetsat-Elasticity/shut_off_instance.png
+.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon/shut_off_instance.png
 
 Once the instance is shut down, its **Status** (on the screenshot below marked with a red rectangle) should be **Shutoff**:
 
-.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon-on-Eumetsat-Elasticity/instance_ephemeral_shut_off.png
+.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon/instance_ephemeral_shut_off.png
 
 Create a snapshot
 ^^^^^^^^^^^^^^^^^^^^^^
 
 In the row which contains your virtual machine, from the dropdown menu in the **Actions** column, choose **Create Snapshot**:
 
-.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon-on-Eumetsat-Elasticity/instance_ephemeral_create_snapshot.png
+.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon/instance_ephemeral_create_snapshot.png
 
 You should be prompted for the name of your snapshot:
 
-.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon-on-Eumetsat-Elasticity/instance_ephemeral_snapshot.png
+.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon/instance_ephemeral_snapshot.png
 
 A long term approach would be to include into that name
 
@@ -155,9 +155,9 @@ Or, it can be anything else that can later remind you which version of the snaps
 
 You should now be redirected to section **Compute** -> **Images** of the Horizon dashboard. If it didn't happen, navigate there yourself.
 
-In that section, you should see your newly created snapshot, alongside with other images, including the ones which are available by default on |brand-name| cloud. Wait until its **Status** (here marked with a dark green rectangle) is **Active**:
+In that section, you should see your newly created snapshot, alongside with other images, including the ones which are available by default on the cloud. Wait until its **Status** (here marked with a dark green rectangle) is **Active**:
 
-.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon-on-Eumetsat-Elasticity/instance_blue_green.png
+.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon/instance_blue_green.png
 
 If the window of your Internet browser is sufficiently extended, you should also see the size of your snapshot, marked with a dark blue rectangle. It should be identical to the amount of storage which the flavor of your virtual machine contains. In this example, the flavor was **eo2a.large**; it has size of 32 GB and that is exactly the number we see in the blue rectangle in the image above.
 
@@ -178,11 +178,11 @@ Navigate to the list of instances in Horizon
 
 Navigate to **Compute** -> **Instances** and see a list of existing virtual machines. The screenshot below shows both instances created in this article -- **instance-which-uses-ephemeral** and **instance-which-uses-volume**.
 
-.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon-on-Eumetsat-Elasticity/instance_persistent_created.png
+.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon/instance_persistent_created.png
 
 The volume on which the operating system of **instance-which-uses-volume** is installed can be found in section **Volumes** -> **Volumes** and has the same name as its ID -- **5f92521d-6e71-4d58-a3d9-171eeb9c1e77**:
 
-.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon-on-Eumetsat-Elasticity/instance_persistent_volumes_volumes.png
+.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon/instance_persistent_volumes_volumes.png
 
 Shut down the VM
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -191,26 +191,26 @@ Shut down **instance-which-uses-volume**. Again, the choice is between using the
 
 Once it is shut down, its **Power State** (on the screenshot below marked with a dark green rectangle) should be **Shut Down**:
 
-.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon-on-Eumetsat-Elasticity/instance_persistent_shut_down_indees.png
+.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon/instance_persistent_shut_down_indees.png
 
 Create a snapshot
 ^^^^^^^^^^^^^^^^^^^^^^
 
 In the row which contains your virtual machine, from the dropdown menu in the **Actions** column, choose **Create Snapshot**:
 
-.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon-on-Eumetsat-Elasticity/instance_persistent_create_shanpshot_button.png
+.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon/instance_persistent_create_shanpshot_button.png
 
 You should be prompted for a name of your snapshot:
 
-.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon-on-Eumetsat-Elasticity/instance_persistent_new_name.png
+.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon/instance_persistent_new_name.png
 
 Enter a descriptive name of your choice (here we are using **instance_persistent_snapshot**) and click **Create Snapshot**.
 
 You should now be redirected to section **Compute -> Images** of the Horizon dashboard. If it didn't happen, navigate there yourself.
 
-In that section, you should see your newly created snapshot, alongside with other images, including the ones which are available by default on |brand-name| cloud. Wait until its **Status** (here marked with a dark green rectangle) is **Active**
+In that section, you should see your newly created snapshot, alongside with other images, including the ones which are available by default on the cloud. Wait until its **Status** (here marked with a dark green rectangle) is **Active**
 
-.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon-on-Eumetsat-Elasticity/instance_persistent_active_0bytes.png
+.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon/instance_persistent_active_0bytes.png
 
 Because this snapshot does not contain the data stored on the hard drive of that virtual machine, its size (on screenshot above marked with a dark blue rectangle) appears to be 0 bytes.
 
@@ -235,7 +235,7 @@ Exploring instance snapshot and volume snapshots which were created alongside it
 
 While still in section **Compute -> Images** of the Horizon dashboard, click on the name of the instance snapshot you just created. You should see its properties, including:
 
-.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon-on-Eumetsat-Elasticity/instance_persistent_show_data.png
+.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon/instance_persistent_show_data.png
 
 In section **Custom Properties**, you should see property called **block_device_mapping**. This property should contain list of volume snapshots which were created
 
@@ -264,14 +264,15 @@ In this example, since this instance only had one volume attached, this list onl
 
 Value of key **snapshot_id** is the ID of this volume snapshot. To see this volume snapshot, navigate to section **Volumes -> Snapshots**
 
-.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon-on-Eumetsat-Elasticity/instance_persistent_volume_shapshot.png
+.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon/instance_persistent_volume_shapshot.png
 
 What happens if there are multiple volumes?
 ++++++++++++++++++++++++++++++++++++++++++++++++
 
 If multiple volumes were connected to your instance, snapshot of each of them should appear on the list. For example, this is how this list could look like if there are were two volumes:
 
-.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon-on-Eumetsat-Elasticity/how-to-create-instance-snapshot-horizon-13_creodias.png
+.. image:: /cloud/How-to-create-instance-snapshot-using-Horizon/how-to-create-instance-snapshot-horizon-13_creodias.png
+   :alt: What happens if there are multiple volumes?
 
 In this example, we have two volume snapshots, each created for one of the volumes of our VM:
 

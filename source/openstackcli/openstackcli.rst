@@ -20,6 +20,7 @@ Use this section to install and configure the OpenStack client, prepare project 
 
    /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration
    /openstackcli/How-to-create-instance-snapshot-using-OpenStack-CLI
+   /openstackcli/How-to-create-a-VM-from-volume-snapshot-using-OpenStack-CLI
    /openstackcli/How-to-start-a-VM-from-instance-snapshot-using-OpenStack-CLI
    /openstackcli/Resizing-a-virtual-machine-using-OpenStack-CLI
 

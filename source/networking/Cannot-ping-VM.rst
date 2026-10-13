@@ -1,5 +1,5 @@
-Cannot ping VM on |brand-name|
-======================================
+Cannot ping VM
+==============
 
 If you have problems with access to your VM - ping is not responding. Try the following:
 
