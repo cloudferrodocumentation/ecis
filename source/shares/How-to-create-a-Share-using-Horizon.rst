@@ -71,7 +71,7 @@ Log in to Horizon and select the correct project. To open the **Shares** page, u
 
 .. jinja:: shares_images
 
-   .. figure:: {{ shares030 }}
+   .. figure:: /shares/How-to-create-a-Share-using-Horizon/{{ shares030 }}
       :class: image-with-border
       :align: center
 
@@ -86,7 +86,7 @@ On the **Shares** page, click **Create Share**.
 
 .. jinja:: shares_images
 
-   .. figure:: {{ shares031 }}
+   .. figure:: /shares/How-to-create-a-Share-using-Horizon/{{ shares031 }}
       :class: image-with-border
       :align: center
 
@@ -139,7 +139,7 @@ The **Share Protocol** field defines the file-sharing protocol used by the share
 
 .. jinja:: shares_images
 
-   .. figure:: {{ shares032 }}
+   .. figure:: /shares/How-to-create-a-Share-using-Horizon/{{ shares032 }}
       :class: image-with-border
       :align: center
 
@@ -166,7 +166,7 @@ The **Size (GiB)** field is required. Enter the size of the share in gibibytes. 
 
 .. jinja:: shares_images
 
-   .. figure:: {{ shares033 }}
+   .. figure:: /shares/How-to-create-a-Share-using-Horizon/{{ shares033 }}
       :class: image-with-border
       :align: center
 
@@ -181,7 +181,7 @@ The **Share Type** field is required.
 
 .. jinja:: shares_images
 
-   .. figure:: {{ shares034 }}
+   .. figure:: /shares/How-to-create-a-Share-using-Horizon/{{ shares034 }}
       :class: image-with-border
       :align: center
 
@@ -217,7 +217,7 @@ The **Share Network** field is required.
 
 .. jinja:: shares_images
 
-   .. figure:: {{ shares035 }}
+   .. figure:: /shares/How-to-create-a-Share-using-Horizon/{{ shares035 }}
       :class: image-with-border
       :align: center
 
@@ -355,7 +355,7 @@ Click the share name to open the share details page. The details page shows info
 
 .. jinja:: shares_images
 
-   .. figure:: {{ shares036 }}
+   .. figure:: /shares/How-to-create-a-Share-using-Horizon/{{ shares036 }}
       :class: image-with-border
       :align: center
 
@@ -377,7 +377,7 @@ If the share is not created successfully, check the following:
 
 .. jinja:: shares_images
 
-   .. figure:: {{ shares037 }}
+   .. figure:: /shares/How-to-create-a-Share-using-Horizon/{{ shares037 }}
       :class: image-with-border
       :align: center
 
@@ -390,4 +390,4 @@ What to do next
 
 After creating the share, continue with the article on allowing access to it:
 
-:doc:`/shares/How-to-allow-access-to-a-Share/How-to-allow-access-to-a-Share`
+:doc:`/shares/How-to-allow-access-to-a-Share`

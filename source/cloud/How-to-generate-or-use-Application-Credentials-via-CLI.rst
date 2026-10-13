@@ -1,5 +1,5 @@
 How to generate or use Application Credentials via CLI on |brand-name|
-======================================================================
+=============================================================================
 
 You can authenticate your applications to *Keystone* by creating application credentials. It is also possible to delegate a subset of role assignments on a project to an application credential, granting the same or restricted authorization to a project for the app.
 
@@ -38,11 +38,11 @@ No. 2 **Authenticate**
 
 .. ifconfig:: brand_name not in two_fa_activated
 
-    .. ifconfig:: brand_name!= 'WEkEO'
+    .. ifconfig:: brand_name != 'WEkEO'
 
        .. jinja:: brand_names
 
-          Once you have installed this piece of software, you need to authenticate to start using it: :doc:`/accountmanagement/How-to-activate-OpenStack-CLI-access-to-{{ brand_name_hyphen }}-cloud`
+          Once you have installed this piece of software, you need to authenticate to start using it: :doc:`/accountmanagement/How-to-activate-OpenStack-CLI-access-to-cloud`
 
     .. ifconfig:: brand_name == 'WEkEO'
 
@@ -55,17 +55,17 @@ OpenStack is written in Python, it is recommended to use a dedicated virtual env
 Install GitBash on Windows
    .. jinja:: brand_names
 
-      :doc:`/openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows-on-{{ brand_name_hyphen }}`.
+      :doc:`/openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows`.
 
 Install and run WSL (Linux under Windows)
    .. jinja:: brand_names
 
-      :doc:`/openstackcli/How-to-install-OpenStackClient-on-Windows-using-Windows-Subsystem-for-Linux-on-{{ brand_name_hyphen }}-OpenStack-Hosting`.
+      :doc:`/openstackcli/How-to-install-OpenStackClient-on-Windows-using-Windows-Subsystem-for-Linux-on-OpenStack-Hosting`.
 
 Install OpenStackClient on Linux
    .. jinja:: brand_names
 
-      :doc:`/openstackcli/How-to-install-OpenStackClient-for-Linux-on-{{ brand_name_hyphen }}`.
+      :doc:`/openstackcli/How-to-install-OpenStackClient-for-Linux`.
 
 No. 4 **jq installed and running**
 
@@ -81,11 +81,11 @@ No. 5 **User roles on OpenStack**
 
 .. jinja:: brand_names
 
-   The list of user roles on OpenStack is in article :doc:`/cloud/OpenStack-user-roles-on-{{ brand_name_hyphen }}`
+   The list of user roles on OpenStack is in article :doc:`/cloud/OpenStack-user-roles`
 
 
 Step 1 CLI commands for application credentials
------------------------------------------------
+------------------------------------------------
 
 Command
 
@@ -110,7 +110,7 @@ To see the parameters for these commands, end them with **\-\-help**, like this:
 
 Among the many lines describing all possible parameters, of particular interest are the options used to create a new credential:
 
-.. image:: credential_create_help.png
+.. image:: /cloud/How-to-generate-or-use-Application-Credentials-via-CLI-on-Eumetsat-Elasticity/credential_create_help.png
 
 .. note::
 
@@ -118,7 +118,7 @@ Among the many lines describing all possible parameters, of particular interest 
 
 
 Step 2 The simplest way to create a new application credential
---------------------------------------------------------------
+---------------------------------------------------------------
 
 The simplest way to generate a new application credential is just to define the name. The remaining parameters will be defined automatically for you. The following command uses the name **cred2**:
 
@@ -128,11 +128,11 @@ The simplest way to generate a new application credential is just to define the 
 
 The new application credential will be created and shown on the screen:
 
-.. image:: create_new_with_name.png
+.. image:: /cloud/How-to-generate-or-use-Application-Credentials-via-CLI-on-Eumetsat-Elasticity/create_new_with_name.png
 
 
 Step 3 Using parameters to create a new application credential
---------------------------------------------------------------
+---------------------------------------------------------------
 
 Here is the meaning of the main parameters.
 
@@ -181,7 +181,7 @@ By default, for security reasons, application credentials are forbidden from bei
 Generally speaking, using **\-\-unrestricted** is considered a security risk. While it allows the credential to perform more powerful operations, such as creating additional application credentials, this also broadens what can be done if the credential is misused. Limit the use of **\-\-unrestricted** to trusted applications and ensure proper auditing and monitoring are in place.
 
 Example roles
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Roles like **\_member\_** grant basic access, while more specific roles such as **reader** or **load-balancer_member** are intended for narrower sets of tasks. When you assign roles to an application credential, you define what actions that credential can perform in your OpenStack project. For example, a credential with the **reader** role can be used to inspect resources, while a credential with the **load-balancer_member** role can be used to manage load balancer-related resources.
 
@@ -189,17 +189,17 @@ See Prerequisites No. 5 for a complete list of roles under OpenStack.
 
 
 Test application credentials
-++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++
 
 Here is a complete example using several parameters to create a new application credential:
 
 .. code-block:: console
 
-   openstack application credential create foo-dev-member4 --role _member_ --expiration $(date +"%Y-11-%dT%H:%M:%S") --description "Test application credentials" --unrestricted -c id -c secret -f json | jq -r '"application_credential_id: \"" +.id + "\"", "application_credential_secret: \"" +.secret + "\""'
+   openstack application credential create foo-dev-member4 --role _member_ --expiration $(date +"%Y-11-%dT%H:%M:%S") --description "Test application credentials" --unrestricted -c id -c secret -f json | jq -r '"application_credential_id: \"" + .id + "\"", "application_credential_secret: \"" + .secret + "\""'
 
 The result is:
 
-.. image:: complete_example.png
+.. image:: /cloud/How-to-generate-or-use-Application-Credentials-via-CLI-on-Eumetsat-Elasticity/complete_example.png
 
 The name of the new application credential will be **foo-dev-member4** and it will use role **_member_**. The part of the command starting with **| jq -r** prints only the values of credentials **id** and **secret**, as you need to enter those values into the *clouds.yml* file in order to activate this authentication method.
 
@@ -213,7 +213,7 @@ It is also crucial for defining basic access control in OpenStack environments. 
 
 .. code-block:: console
 
-   openstack application credential create normal-user --role member --expiration $(date +"%Y-11-%dT%H:%M:%S") --description "Normal OpenStack user credentials" -c id -c secret -f json | jq -r '"application_credential_id: \"" +.id + "\"", "application_credential_secret: \"" +.secret + "\""'
+   openstack application credential create normal-user --role member --expiration $(date +"%Y-11-%dT%H:%M:%S") --description "Normal OpenStack user credentials" -c id -c secret -f json | jq -r '"application_credential_id: \"" + .id + "\"", "application_credential_secret: \"" + .secret + "\""'
 
 
 Reader role (**reader**)
@@ -225,7 +225,7 @@ This makes it suitable for monitoring tools, inventory scripts, and reporting wo
 
 .. code-block:: console
 
-   openstack application credential create reader-user --role reader --expiration $(date +"%Y-11-%dT%H:%M:%S") --description "Read-only credentials" -c id -c secret -f json | jq -r '"application_credential_id: \"" +.id + "\"", "application_credential_secret: \"" +.secret + "\""'
+   openstack application credential create reader-user --role reader --expiration $(date +"%Y-11-%dT%H:%M:%S") --description "Read-only credentials" -c id -c secret -f json | jq -r '"application_credential_id: \"" + .id + "\"", "application_credential_secret: \"" + .secret + "\""'
 
 
 Load balancer role (**load-balancer_member**)
@@ -237,11 +237,11 @@ This role is a practical choice when you want to limit an application credential
 
 .. code-block:: console
 
-   openstack application credential create lb-member-user --role load-balancer_member --expiration $(date +"%Y-11-%dT%H:%M:%S") --description "Load balancer role credentials" -c id -c secret -f json | jq -r '"application_credential_id: \"" +.id + "\"", "application_credential_secret: \"" +.secret + "\""'
+   openstack application credential create lb-member-user --role load-balancer_member --expiration $(date +"%Y-11-%dT%H:%M:%S") --description "Load balancer role credentials" -c id -c secret -f json | jq -r '"application_credential_id: \"" + .id + "\"", "application_credential_secret: \"" + .secret + "\""'
 
 
 Step 4 Enter id and secret into clouds.yml
-------------------------------------------
+-------------------------------------------
 
 You are now going to store the values of **id** and **secret** that the cloud has sent to you. Once stored, future **openstack** commands will use these values to authenticate to the cloud without using any kind of password.
 
@@ -278,11 +278,11 @@ Let us create a new application credential called *trial-member_creatornew*.
 
 .. code-block:: console
 
-   openstack application credential create trial-member_creatornew --unrestricted -c id -c secret -f json | jq -r '"application_credential_id: \"" +.id + "\"", "application_credential_secret: \"" +.secret + "\""'
+   openstack application credential create trial-member_creatornew --unrestricted -c id -c secret -f json | jq -r '"application_credential_id: \"" + .id + "\"", "application_credential_secret: \"" + .secret + "\""'
 
 This is the result:
 
-.. image:: create_credential.png
+.. image:: /cloud/How-to-generate-or-use-Application-Credentials-via-CLI-on-Eumetsat-Elasticity/create_credential.png
 
 Now create the *clouds.yml* file using your preferred editor. Here it is *nano*:
 
@@ -322,21 +322,16 @@ Let us dissect that file line by line:
 
 This is how it should look in the editor:
 
-.. image:: nano_values.png
+.. image:: /cloud/How-to-generate-or-use-Application-Credentials-via-CLI-on-Eumetsat-Elasticity/nano_values.png
 
 Save it with **Ctrl**-**X**, then press **Y** and Enter.
 
 
 Step 5 Gain access to the cloud by specifying OS_CLOUD or \-\-os-cloud
-----------------------------------------------------------------------
+-----------------------------------------------------------------------
 
-.. ifconfig:: brand_name == ""
+Application credentials give access to all activated regions and you have to specify which one to use. Specify it as the value of parameter **\-\-os-region**, for instance **ECIS-R1** or **ECIS-R2**.
 
-   Application credentials give access to all activated regions and you have to specify which one to use. Specify it as the value of parameter **\-\-os-region**, for instance **-R1** or **-R2**.
-
-.. ifconfig:: brand_name!= ""
-
-   Application credentials give access to all activated regions and you have to specify which one to use. Specify it as the value of parameter **\-\-os-region**, for instance **R1**, **R2**, or **FRA1-3**.
 
 In the previous step you defined a *clouds.yml* file and it started with **clouds:**. The next line defined to which cloud the parameters refer, here it was *trial-member_creatornew*. By design, the *clouds.yml* file can contain information on several clouds, so it is necessary to distinguish which cloud you are going to refer to. There is a special parameter for that, called:
 
@@ -352,7 +347,7 @@ You define **OS_CLOUD** by directly assigning its value from the command line:
 
 Open a new terminal window, execute the command above, and then try to access the server:
 
-.. image:: export_os_cloud.png
+.. image:: /cloud/How-to-generate-or-use-Application-Credentials-via-CLI-on-Eumetsat-Elasticity/export_os_cloud.png
 
 It works.
 
@@ -364,7 +359,7 @@ You can also use that parameter directly in the command line:
 
 It works as well:
 
-.. image:: cli_os_cloud.png
+.. image:: /cloud/How-to-generate-or-use-Application-Credentials-via-CLI-on-Eumetsat-Elasticity/cli_os_cloud.png
 
 You have to set up **OS_CLOUD** once per newly opened terminal window, and then you can use the **openstack** command without adding the **\-\-os-cloud** parameter every time.
 
@@ -411,7 +406,7 @@ With application credentials, it is possible to create multiple application cred
 Rotating application credentials is also recommended as part of regular application maintenance.
 
 How to rotate an application credential
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Create a new application credential
    Application credential names must be unique within the user’s set of application credentials, so this new application credential must not have the same name as the old one.
@@ -442,4 +437,4 @@ For more information related to application credentials and OpenStack roles, see
 
 .. jinja:: brand_names
 
-   :doc:`/cloud/OpenStack-user-roles-on-{{ brand_name_hyphen }}`
+   :doc:`/cloud/OpenStack-user-roles`

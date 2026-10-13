@@ -101,7 +101,7 @@ No. 2 **A Managed Kubernetes cluster with kubectl access**
 
 .. jinja:: brand_names
 
-   If you need to create one, see :doc:`/kubernetes/How-to-create-a-Managed-Kubernetes-cluster-using-ECIS-launcher-GUI`.
+   If you need to create one, see :doc:`/kubernetes/How-to-create-a-Managed-Kubernetes-cluster-using-launcher-GUI`.
 
 This article assumes a running |MK8s| cluster that you can administer and connect to with **kubectl**. Export your kubeconfig and secure it:
 

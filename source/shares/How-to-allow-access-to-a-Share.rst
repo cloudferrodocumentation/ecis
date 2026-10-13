@@ -48,7 +48,7 @@ Before you allow acces to a share, make sure that the project, share, VM, and ne
 
    .. jinja:: brand_names
 
-      To create a new VM, use this article: :doc:`/cloud/How-to-create-new-Linux-VM-in-OpenStack-Dashboard-Horizon-on-{{ brand_name_hyphen }}/How-to-create-new-Linux-VM-in-OpenStack-Dashboard-Horizon-on-{{ brand_name_hyphen }}`.
+      To create a new VM, use this article: :doc:`/cloud/How-to-create-new-Linux-VM-in-OpenStack-Dashboard-Horizon`.
 
 5. You have SSH access to the Linux VM.
 
@@ -56,9 +56,9 @@ Before you allow acces to a share, make sure that the project, share, VM, and ne
 
    .. jinja:: brand_names
 
-      :doc:`/windows/How-to-connect-to-a-virtual-machine-via-SSH-from-Windows-10-Command-Prompt-on-{{ brand_name_hyphen }}/How-to-connect-to-a-virtual-machine-via-SSH-from-Windows-10-Command-Prompt-on-{{ brand_name_hyphen }}`
+      :doc:`/windows/How-to-connect-to-a-virtual-machine-via-SSH-from-Windows-10-Command-Prompt`
 
-      :doc:`/networking/How-to-connect-to-your-virtual-machine-via-SSH-in-Linux-on-{{ brand_name_hyphen }}/How-to-connect-to-your-virtual-machine-via-SSH-in-Linux-on-{{ brand_name_hyphen }}`
+      :doc:`/networking/How-to-connect-to-your-virtual-machine-via-SSH-in-Linux`
 
 6. You know which internal IP address or private subnet should be allowed.
 
@@ -89,7 +89,7 @@ Log in to Horizon and select the correct project. To open the **Shares** page, u
 
 .. jinja:: shares_images
 
-   .. figure:: {{ shares021 }}
+   .. figure:: /shares/How-to-allow-access-to-a-Share/{{ shares021 }}
       :class: image-with-border
       :align: center
 
@@ -106,7 +106,7 @@ In the row of the share, open the **Actions** menu on the right side. Use comman
 
 .. jinja:: shares_images
 
-   .. figure:: {{ shares022 }}
+   .. figure:: /shares/How-to-allow-access-to-a-Share/{{ shares022 }}
       :class: image-with-border
       :align: center
 
@@ -123,7 +123,7 @@ Open the page or dialog used for managing access to the selected share. To reach
 
 .. jinja:: shares_images
 
-   .. figure:: {{ shares023 }}
+   .. figure:: /shares/How-to-allow-access-to-a-Share/{{ shares023 }}
       :class: image-with-border
       :align: center
 
@@ -140,7 +140,7 @@ Click the option for adding a new rule. To add a rule, use:
 
 .. jinja:: shares_images
 
-   .. figure:: {{ shares024 }}
+   .. figure:: /shares/How-to-allow-access-to-a-Share/{{ shares024 }}
       :class: image-with-border
       :align: center
 
@@ -156,7 +156,7 @@ Use the following fields:
 
 .. jinja:: shares_images
 
-   .. figure:: {{ shares025 }}
+   .. figure:: /shares/How-to-allow-access-to-a-Share/{{ shares025 }}
       :class: image-with-border
       :align: center
 
@@ -173,7 +173,7 @@ In this example, the VM has addresses on two networks.
 
 .. jinja:: shares_images
 
-   .. figure:: {{ shares026 }}
+   .. figure:: /shares/How-to-allow-access-to-a-Share/{{ shares026 }}
       :class: image-with-border
       :align: center
 
@@ -233,7 +233,7 @@ After the rule is created, check that it appears in the access rules list. To ve
 
 .. jinja:: shares_images
 
-   .. figure:: {{ shares027 }}
+   .. figure:: /shares/How-to-allow-access-to-a-Share/{{ shares027 }}
       :class: image-with-border
       :align: center
 
@@ -252,7 +252,7 @@ Before mounting the share from Linux, you need the export location. Open the sha
 
 .. jinja:: shares_images
 
-   .. figure:: {{ shares028 }}
+   .. figure:: /shares/How-to-allow-access-to-a-Share/{{ shares028 }}
       :class: image-with-border
       :align: center
 
@@ -314,7 +314,7 @@ You can also check the mounted filesystems:
 
 .. jinja:: shares_images
 
-   .. figure:: {{ shares029 }}
+   .. figure:: /shares/How-to-allow-access-to-a-Share/{{ shares029 }}
       :class: image-with-border
       :align: center
 
@@ -347,4 +347,4 @@ What to do next
 
 After access has been allowed, the export location has been copied, and the test mount succeeds, continue with the article on mounting an NFS share on a Linux virtual machine:
 
-:doc:`/shares/How-to-mount-an-NFS-Share-on-a-Linux-VM/How-to-mount-an-NFS-Share-on-a-Linux-VM`.
+:doc:`/shares/How-to-mount-an-NFS-Share-on-a-Linux-VM`.

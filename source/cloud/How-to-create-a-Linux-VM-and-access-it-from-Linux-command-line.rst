@@ -1,18 +1,18 @@
 How to create a Linux VM and access it from Linux command line on |brand-name|
-==============================================================================
+===========================================================================================
 
 Creating a virtual machine in a |brand-name| cloud allows you to perform computations without having to engage your own infrastructure. In this article you shall create a Linux based virtual machine and access it remotely from a Linux command line on a desktop or laptop.
 
 .. jinja:: brand_names
 
-   If you want to access Linux VM from a Windows based command line, follow this article instead: :doc:`/cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-{{ brand_name_hyphen }}`.
+   If you want to access Linux VM from a Windows based command line, follow this article instead: :doc:`/cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop`.
 
 .. note::
 
    This article only covers the basics of creating a VM - it does not cover topics such as use of NVIDIA hardware or creating a volume during the creation of a VM.
 
 What We Are Going To Cover
---------------------------
+------------------------------
 
  * Creating a Linux virtual machine in |brand-name| cloud using command **Launch Instance** from Horizon Dashboard
 
@@ -39,11 +39,27 @@ For external access
  * Use SSH to connect to that virtual machine from another Linux based system
 
 Prerequisites
--------------
+------------------
 
 No. 1 **Hosting**
 
-You need a |brand-name| hosting account with Horizon interface |brand-name-site-link|.
+You need a |brand-name| hosting account with access to the Horizon interface:
+
+.. tabs::
+
+   .. tab:: R1
+
+      https://horizon.api.r1.cloud.eumetsat.int/
+
+   .. tab:: R2
+
+      https://horizon.api.r2.cloud.eumetsat.int/
+
+   .. tab:: ELA
+
+      https://horizon.cloudferro.com/
+
+      Choose **ECIS** and **FRA1-3** as the region.
 
 No. 2 **Basic knowledge of Linux terminal**
 
@@ -57,20 +73,20 @@ No. 4 **SSH client installed and configured on your local Linux computer**
 
 .. jinja:: brand_names
 
-   The SSH client must be installed and configured on your local Linux computer. Please see :doc:`/networking/Generating-a-SSH-keypair-in-Linux-on-{{ brand_name_hyphen }}`.
+   The SSH client must be installed and configured on your local Linux computer. Please see :doc:`/networking/Generating-a-SSH-keypair-in-Linux`.
 
 .. jinja:: brand_names
 
-   If you already have an SSH key pair and an SSH client configured, you should import your public key to the Horizon dashboard. The following article contains information how to do it: :doc:`/networking/How-to-Import-SSH-Public-Key-to-OpenStack-Horizon-on-{{ brand_name_hyphen }}`.
+   If you already have an SSH key pair and an SSH client configured, you should import your public key to the Horizon dashboard. The following article contains information how to do it: :doc:`/networking/How-to-Import-SSH-Public-Key-to-OpenStack-Horizon`.
 
 Alternatively, you can also create a key pair directly in the Horizon:
 
 .. jinja:: brand_names
 
-   :doc:`/cloud/How-to-create-key-pair-in-OpenStack-Dashboard-on-{{ brand_name_hyphen }}`.
+   :doc:`/cloud/How-to-create-key-pair-in-OpenStack-Dashboard`.
 
 Options for creation of a Virtual Machine (VM)
-----------------------------------------------
+---------------------------------------------------
 
 Creation of a virtual machine is divided into 11 sections, four of which are mandatory (denoted by an asterisk in the end of the name of the option). In addition to those four (**Details**, **Source**, **Flavor**, and **Networks**), we shall define **Security Groups** and **Key Pairs**. The rest of the options to launch an instance is out of scope of this article.
 
@@ -81,30 +97,30 @@ Creation of a virtual machine is divided into 11 sections, four of which are man
 The window to create a virtual machine is called **Launch Instance**. You will enter all the data about an instance into that window and its options.
 
 Step 1 Start the Launch Instance window and name the virtual machine
---------------------------------------------------------------------
+--------------------------------------------------------------------------------------------
 
 In the Horizon dashboard go to **Compute** -> **Instances** and click **Launch Instance**. You should get the following window:
 
-.. image:: create-linux-linux-04_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/create-linux-linux-04_creodias.png
 
 Type the name for your virtual machine in the **Instance Name** text field.
 
 Click **Next** or the **Source** option on the left side menu.
 
 Step 2 Define the source of the virtual machine
------------------------------------------------
+-----------------------------------------------------------------
 
 The **Source** window appears:
 
-.. image:: create-linux-linux-05_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/create-linux-linux-05_creodias.png
 
 Make sure that from the drop-down menu **Select Boot Source** option **Image** is selected.
 
-.. image:: boot_source.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/boot_source.png
 
 From the **Available** list choose Linux distribution that suits you best and click **↑** next to it. It should now be visible in the **Allocated** section:
 
-.. image:: create-linux-linux-06_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/create-linux-linux-06_creodias.png
 
 This image shows that a Ubuntu 20.04 LTS was selected; if you, however, chose CentOS 7, that is what would show here instead of Ubuntu 20.04 LTS.
 
@@ -117,11 +133,11 @@ Also, make sure that in the section **Create New Volume** option **No** is selec
 Click **Next** or click on button **Flavor** to define the flavor of the instance.
 
 Step 3 Define the flavor of the instance
-----------------------------------------
+---------------------------------------------
 
 You should now see the following form:
 
-.. image:: create-linux-linux-07_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/create-linux-linux-07_creodias.png
 
 The standard definition of OpenStack *flavor* is the amount of resources available to the instance - like VCPU, memory and storage capacity.
 
@@ -136,7 +152,7 @@ Make sure that you do **not** select one of the below flavors - they contain NVI
 
 Sometimes, a flavor might be insufficient for source you chose in the previous step. If this is the case, you will see a yellow warning sign next to at least one of the values in the row for that flavor:
 
-.. image:: yellow_triangles.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/yellow_triangles.png
 
 To solve this issue, choose a flavor that supports your chosen source instead. In the image above, *vm.a6000.4* is not available but, say, *hm.large* is.
 
@@ -150,15 +166,15 @@ Another possible explanation might be that your quota is too low for creating a 
 Click **Next** or click **Networks** to define networks.
 
 Step 4 Define networks for the virtual machine
-----------------------------------------------
+-----------------------------------------------------------------
 
 You should now see the following window:
 
-.. image:: create-linux-linux-08_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/create-linux-linux-08_creodias.png
 
 Here you can select networks that will be attached to your virtual machine. They control the way your machine is connected to the Internet, to the other machines and to other resources as well.
 
-.. ifconfig:: brand_name not in brands_without_eodata
+.. ifconfig:: brand_name not in  brands_without_eodata
 
    By default, you should have access to the following networks:
 
@@ -168,7 +184,7 @@ Here you can select networks that will be attached to your virtual machine. They
 
    **eodata** is a repository of satellite images available on your |brand-name| cloud for download or processing.
 
-.. ifconfig:: brand_name in brands_without_eodata
+.. ifconfig:: brand_name in  brands_without_eodata
 
    By default, you should have access to the network whose name starts with **cloud_**, which allows you to connect your machines together. It also has access to the **external** network which gives the instance access to the Internet.
 
@@ -177,13 +193,13 @@ Here you can select networks that will be attached to your virtual machine. They
 These were the obligatory options. Since you want to access the instance through an SSH connection, you will need to define **Security Groups** and **Key Pair**.
 
 Step 5 Define security groups for VM
-------------------------------------
+--------------------------------------------------
 
 Security groups control network traffic to and from your virtual machine.
 
 Click **Security Groups**. You should see the following form:
 
-.. image:: create-linux-linux-09_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/create-linux-linux-09_creodias.png
 
 By default, you have access to two groups:
 
@@ -194,13 +210,13 @@ By default, you have access to two groups:
 Enable both of these rules. One of the open ports in **allow_ping_ssh_icmp_rdp** is 22, which is a prerequisite for SSH access.
 
 Step 6 Create a key pair for SSH access
----------------------------------------
+--------------------------------------------------
 
 To use SSH to connect your local Linux computer to the cloud Linux "computer", you will need to provide one public and one secret key. (Keys are random strings, usually hundreds of characters long.)
 
 Click **Key Pair**. You should now see the following window:
 
-.. image:: create-linux-linux-10_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/create-linux-linux-10_creodias.png
 
 In the image above, the key is called **test-key**. There are three ways to enter the keys into this window:
 
@@ -217,19 +233,19 @@ Anyways, make sure that your uploaded key is in the **Allocated** section.
 .. removed this information, it is already in What To Do Next
 
 Step 7 Create the instance
---------------------------
+--------------------------------------------------
 
 Once you have set everything up, click **Launch Instance**.
 
-Your instance should now be in the **Instances** list. Initially, the instance will be in a state of "Spawning" as in this image:
+Your instance should now be in the **Instances** list.  Initially, the instance will be in a state of "Spawning" as in this image:
 
-.. image:: create-linux-linux-12_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/create-linux-linux-12_creodias.png
 
 Spawning is the process of preparing the instance.
 
 Wait up to a few minutes until your instance has finished spawning. The next state is **Running** label in the **Power State** column:
 
-.. image:: create-linux-linux-13_creodias.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/create-linux-linux-13_creodias.png
 
 It means that the instance is ready to use.
 
@@ -238,24 +254,24 @@ In Step 4 you have attached a network with the name that starts with **cloud_**.
 Just like on the above screenshot, under header **IP Address**, you will see network addresses which both start with **10.**. It means that they are local network addresses. If you want to access your instance remotely, it must have a static IP address. The way to add it is to attach a so-called *floating IP* address to the instance.
 
 Step 8 Attach a Floating IP to the instance
--------------------------------------------
+----------------------------------------------------------
 
 .. jinja:: brand_names
 
-   Here is how to create and attach a floating IP to your instance: :doc:`/networking/How-to-Add-or-Remove-Floating-IPs-to-your-VM-on-{{ brand_name_hyphen }}`.
+   Here is how to create and attach a floating IP to your instance: :doc:`/networking/How-to-Add-or-Remove-Floating-IPs-to-your-VM`.
 
 Once you have added the floating IP, you will see it in the Horizon dashboard under header **IP Address** - just like in the last image from that article:
 
-.. image:: ip_address_from_article.png
+.. image:: /cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/ip_address_from_article.png
 
 The floating IP address in that article is **64.225.132.0**. Your address will vary.
 
 Step 9 Connecting to your virtual machine using SSH
----------------------------------------------------
+-------------------------------------------------------------
 
 .. jinja:: brand_names
 
-   The following article has information about connecting to a virtual machine using SSH: :doc:`/networking/How-to-connect-to-your-virtual-machine-via-SSH-in-Linux-on-{{ brand_name_hyphen }}`.
+   The following article has information about connecting to a virtual machine using SSH: :doc:`/networking/How-to-connect-to-your-virtual-machine-via-SSH-in-Linux`.
 
 The last command in that article was:
 
@@ -266,7 +282,7 @@ The last command in that article was:
 The IP address in that article is **64.225.132.99** and is different from the address from the previous article. Instead of IP addresses used in these articles (**64.225.132.99** and **64.225.132.0**), enter the IP address of your instance which you saw after doing Step 8.
 
 What To Do Next
----------------
+---------------------
 
 |brand-name| cloud can be used for general hosting needs, such as
 
@@ -278,7 +294,7 @@ What To Do Next
 
  * Kubernetes and SLURM clusters and so on.
 
-.. ifconfig:: brand_name not in brands_without_eodata
+.. ifconfig:: brand_name not in  brands_without_eodata
 
     You can also take advantage of its access to the **eodata** repository, where "eodata" stands for "Earth Observation Data" from satellites.
 
@@ -302,7 +318,7 @@ What To Do Next
 
         .. jinja:: brand_names
 
-           :doc:`/cloud/How-To-Create-a-New-Linux-VM-With-NVIDIA-Virtual-GPU-in-the-OpenStack-Dashboard-Horizon-on-{{ brand_name_hyphen }}`
+           :doc:`/cloud/How-To-Create-a-New-Linux-VM-With-NVIDIA-Virtual-GPU-in-the-OpenStack-Dashboard-Horizon-on-{{ brand_name_hyphen }}/How-To-Create-a-New-Linux-VM-With-NVIDIA-Virtual-GPU-in-the-OpenStack-Dashboard-Horizon-on-{{ brand_name_hyphen }}`
 
         For a cutting edge example of using **eodata** and deep learning algorithms, please see:
 
@@ -320,7 +336,7 @@ If you find yourself unable to connect to your virtual machine using SSH, you ca
 
 .. jinja:: brand_names
 
-   :doc:`/cloud/How-to-access-the-VM-from-OpenStack-console-on-{{ brand_name_hyphen }}`
+   :doc:`/cloud/How-to-access-the-VM-from-OpenStack-console`
 
 .. jinja:: brand_names
 
@@ -328,11 +344,11 @@ If you don't want the storage of your instance to be deleted while the VM is rem
 
 .. jinja:: brand_names
 
-   :doc:`/cloud/VM-created-with-option-Create-New-Volume-No-on-{{ brand_name_hyphen }}`
+   :doc:`/cloud/VM-created-with-option-Create-New-Volume-No`
 
 .. jinja:: brand_names
 
-   :doc:`/cloud/VM-created-with-option-Create-New-Volume-Yes-on-{{ brand_name_hyphen }}`.
+   :doc:`/cloud/VM-created-with-option-Create-New-Volume-Yes`.
 
 .. the user might not know what a web console is
 
@@ -340,8 +356,8 @@ You can't apply the SSH keys uploaded to the Horizon dashboard directly to a VM 
 
 .. jinja:: brand_names
 
-   :doc:`/networking/How-to-add-SSH-key-from-Horizon-web-console-on-{{ brand_name_hyphen }}`.
+   :doc:`/networking/How-to-add-SSH-key-from-Horizon-web-console`.
 
 .. jinja:: brand_names
 
-   If you find that the storage of your VM is insufficient for your needs, you can attach the volume to it after its creation. The following articles contain appropriate instructions: :doc:`/datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux-on-{{ brand_name_hyphen }}` and :doc:`/datavolume/How-to-attach-a-volume-to-VM-more-than-2TB-on-Linux-on-{{ brand_name_hyphen }}`.
+   If you find that the storage of your VM is insufficient for your needs, you can attach the volume to it after its creation. The following articles contain appropriate instructions: :doc:`/datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux` and  :doc:`/datavolume/How-to-attach-a-volume-to-VM-more-than-2TB-on-Linux`.

@@ -1,5 +1,5 @@
 How to install and use Docker on Ubuntu 24.04
-=============================================
+=====================================================================
 
 This guide will walk you through
 
@@ -16,7 +16,7 @@ This guide will walk you through
    :backlinks: none
 
 Prerequisites
--------------
+---------------------
 
 Ensure your system meets the following requirements:
 
@@ -35,7 +35,7 @@ If these prerequisites are valid, you will be able to install Docker on:
 - a VM running in the |brand-name| cloud
 
 Prerequisites for the cloud version of Docker
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No. 1 **Account**
 
@@ -45,11 +45,11 @@ No. 2 **A VM running Ubuntu 24.04**
 
 .. jinja:: brand_names
 
-   Create a VM by following this or a similar article: :doc:`/cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-{{ brand_name_hyphen }}`
+   Create a VM by following this or a similar article: :doc:`/cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line`
 
 In the **Source** option, select *Ubuntu 24.04* and then "Ubuntu 24.04 LTS":
 
-.. figure:: new_docker-1.png
+.. figure:: /cloud/How-to-use-Docker-on-Eumetsat-Elasticity/new_docker-1.png
    :alt: Selecting Ubuntu 24.04 LTS
    :width: 600px
    :class: image-with-border
@@ -84,7 +84,7 @@ Use the following script to detect the codename and substitute **jammy** if need
    CODENAME=$(lsb_release -cs)
 
    # Workaround: Docker does not yet support 'noble'
-   if ["$CODENAME" = "noble"]; then
+   if [ "$CODENAME" = "noble" ]; then
        CODENAME=jammy
    fi
 
@@ -96,10 +96,10 @@ When the Docker starts supporting **noble** codename directly, only the first co
 Environment variable **CODENAME** now contains a working value and we will use it in the command to install Docker (see below).
 
 Before Docker installation
---------------------------
+---------------------------
 
 Update the system
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 Make sure your system is up to date:
 
@@ -109,7 +109,7 @@ Make sure your system is up to date:
    sudo apt upgrade -y
 
 Install required dependencies
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Install the required packages before adding Docker’s repository:
 
@@ -124,7 +124,7 @@ Install the required packages before adding Docker’s repository:
 - **lsb-release**: Detect the OS codename.
 
 Add Docker’s GPG key
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Add Docker's GPG key to ensure the integrity of downloaded packages:
 
@@ -133,7 +133,7 @@ Add Docker's GPG key to ensure the integrity of downloaded packages:
    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo tee /etc/apt/trusted.gpg.d/docker.asc
 
 Add Docker’s Official Repository
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Docker packages are distributed through codename-based repositories. We have captured the exact meaning $CODENAME so we now just use it. The following command creates a new repository file with Docker's package source:
 
@@ -144,7 +144,7 @@ Docker packages are distributed through codename-based repositories. We have cap
 That command will save the required information into the **docker.list** and the following commands will read it from there.
 
 Install Docker engine
----------------------
+----------------------
 
 Now install Docker:
 
@@ -158,7 +158,7 @@ Now install Docker:
 - **containerd.io**: Container runtime
 
 Verify that Docker is installed and running
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Enable and start Docker:
 
@@ -168,12 +168,12 @@ Enable and start Docker:
    sudo systemctl start docker
    sudo systemctl status docker
 
-.. image:: use-docker-9.png
+.. image:: /cloud/How-to-use-Docker-on-Eumetsat-Elasticity/use-docker-9.png
 
 Press **Ctrl-C** to return to the prompt.
 
 Verify Docker installation
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Run a test container:
 
@@ -181,15 +181,15 @@ Run a test container:
 
    sudo docker run hello-world
 
-.. image:: use-docker-4.png
+.. image:: /cloud/How-to-use-Docker-on-Eumetsat-Elasticity/use-docker-4.png
 
 This confirms Docker is correctly installed. If errors occur, read the message carefully—it often includes the fix.
 
 Basic Docker commands
----------------------
+----------------------------
 
 Downloading Docker Images
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 There are hundreds of thousands of Docker images to download. For this example, we choose to download the latest image of Ubuntu operating system. The command is:
 
@@ -197,7 +197,7 @@ There are hundreds of thousands of Docker images to download. For this example, 
 
    sudo docker pull ubuntu
 
-.. image:: use-docker-5.png
+.. image:: /cloud/How-to-use-Docker-on-Eumetsat-Elasticity/use-docker-5.png
 
 To view downloaded images:
 
@@ -207,10 +207,10 @@ To view downloaded images:
 
 This shows available local images:
 
-.. image:: use-docker-6.png
+.. image:: /cloud/How-to-use-Docker-on-Eumetsat-Elasticity/use-docker-6.png
 
 Running Docker Containers
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can run a container interactively. The actual commands will depend on the container downloaded; here, for Ubuntu image, we supply a command to start working within that Ubuntu container.
 
@@ -218,14 +218,14 @@ You can run a container interactively. The actual commands will depend on the co
 
    sudo docker run -it ubuntu
 
-.. image:: use-docker-7.png
+.. image:: /cloud/How-to-use-Docker-on-Eumetsat-Elasticity/use-docker-7.png
 
 You now have a shell inside the container. The prompt for Ubuntu running inside a Docker container in our example is **root@ab3f2a78046b:/#** and it will, most probably, differ on your system.
 
 Use commands like **ls** to explore the root directory. It will contain folders such as **bin**, **dev**, **home**, and other directories typical of a standard Ubuntu installation.
 
 Managing Docker containers
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - **Create a container (but don't start it):**
 
@@ -258,7 +258,7 @@ Managing Docker containers
      sudo docker rm <container_id>
 
 Listing Docker containers
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - **List running containers:**
 
@@ -273,7 +273,7 @@ Listing Docker containers
      sudo docker ps -a
 
 Other useful Docker commands
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - **Remove a Docker image:**
 
@@ -294,7 +294,7 @@ Other useful Docker commands
      sudo docker logs <container_id>
 
 Troubleshooting
----------------
+----------------
 
 If Docker commands fail with `permission denied`:
 
@@ -322,7 +322,7 @@ If `docker run hello-world` fails:
      sudo journalctl -u docker
 
 What To Do Next
----------------
+-------------------
 
 Here are some articles that build upon this tutorial:
 

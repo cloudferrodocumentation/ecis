@@ -4,7 +4,7 @@ Services available
 This article describes the services available in the Service Catalog and explains how to use the catalog to check which services are enabled for your account, choose services that fit your project needs, and request access to additional services.
 
 Prerequisites
--------------
+----------------
 
 .. jinja:: brand_names
 
@@ -26,17 +26,17 @@ If the service you need is not available for your account, request access to it.
 
 This is what it looks like when all of the services are present:
 
-.. figure:: service-catalog-available-services.png
+.. figure:: /accountmanagement/Service-catalog/service-catalog-available-services.png
    :class: image-with-border
 
 The available services are **OpenStack**, **Managed Kubernetes** and **Private Object Storage**.
 
 No. 3 **Management interfaces**
 
-See article :doc:`/accountmanagement/Management-interfaces/Management-interfaces` for instructions how to select and enter the appropriate environment towards Horizon in **R1**, **R2** or **FRA1-3** regions.
+See article :doc:`/accountmanagement/Management-interfaces` for instructions how to select and enter the appropriate environment towards Horizon in **R1**, **R2** or **FRA1-3** regions.
 
 OpenStack
----------
+-----------
 
 **OpenStack** is the core infrastructure service for running virtual machines and related cloud resources.
 
@@ -50,7 +50,7 @@ For many projects, this is the most natural starting point. It suits practical w
 
         https://horizon.api.r1.cloud.eumetsat.int/
 
-        .. figure:: Screenshot_20260527_161140.png
+        .. figure:: /accountmanagement/Service-catalog/Screenshot_20260527_161140.png
            :class: image-with-border
 
         Horizon on R1 region
@@ -59,16 +59,16 @@ For many projects, this is the most natural starting point. It suits practical w
 
         https://horizon.api.r2.cloud.eumetsat.int/
 
-        .. figure:: Screenshot_20260527_161323.png
+        .. figure:: /accountmanagement/Service-catalog/Screenshot_20260527_161323.png
            :class: image-with-border
 
         Horizon on R2 region
 
    .. tab:: ELA
 
-        https://horizon.cloudferro.com/, then choose **** and **FRA1-3** as the region.
+        https://horizon.cloudferro.com/, then choose **ECIS** and **FRA1-3** as the region.
 
-        .. figure:: Screenshot_20260527_161411.png
+        .. figure:: /accountmanagement/Service-catalog/Screenshot_20260527_161411.png
            :class: image-with-border
 
         Horizon on FRA1-3 region
@@ -76,7 +76,7 @@ For many projects, this is the most natural starting point. It suits practical w
 For Horizon, the documentation starts at :doc:`/cloud/cloud` and for the CLI, it is at :doc:`/openstackcli/openstackcli`.
 
 Managed Kubernetes
-------------------
+-------------------
 
 **Managed Kubernetes** is designed for applications built from containers.
 
@@ -84,7 +84,7 @@ It is a good fit for platforms made of several components, such as a web applica
 
 In practice, this service is best suited to modern application platforms rather than to a simple website or a single server.
 
-.. figure:: mk8s-dashboard.png
+.. figure:: /accountmanagement/Service-catalog/mk8s-dashboard-for-ecis.png
    :class: image-with-border
 
 .. jinja:: brand_names
@@ -94,7 +94,7 @@ In practice, this service is best suited to modern application platforms rather 
    The documentation for |brand-name| site is here: :doc:`/kubernetes/kubernetes`.
 
 Private Object Storage
-----------------------
+-----------------------
 
 S3 is the standard protocol for modern object storage, may be used for large quantities of data. It is well suited to backups, archives, datasets, uploaded files, media libraries, logs, and other large collections of files. The service uses an **S3-compatible** interface, so it can be accessed by many existing tools, scripts, and applications that already support the **S3** protocol.
 
@@ -102,13 +102,13 @@ This makes it especially useful when files should be kept separately from a virt
 
 For an array of articles on using S3 standard to enter and store data, see section :doc:`/s3/s3`. Regions R1 and R2 do not have Horizon interface for private object storage, while region FRA1-3 does have it. In Horizon for FRA1-3, you would see it as option **Project** -> **Containers**.
 
-.. figure:: s3-containers-fra1-3-.png
+.. figure:: /accountmanagement/Service-catalog/s3-containers-fra1-3-ecis.png
    :class: image-with-border
 
 You should also be able to use private object service as a standalone service.
 
 Which service fits which kind of project
-----------------------------------------
+-----------------------------------------
 
 A simple website, blog, **WordPress** site, or business application will usually fit best on **OpenStack**.
 
@@ -119,7 +119,7 @@ A backup repository, file archive, dataset collection, or media library will usu
 Many real projects, however, do not rely on a single service.
 
 Typical service combinations
-----------------------------
+------------------------------------
 
 **Private Object Storage** pairs well with both **OpenStack** and **Managed Kubernetes**.
 
@@ -134,7 +134,7 @@ For larger platforms, **OpenStack** and **Managed Kubernetes** can take on diffe
 In more advanced setups, all three services may be combined. In that model, **Managed Kubernetes** runs the application layer, **OpenStack** hosts supporting services or administration tools, and **Private Object Storage** keeps datasets, backups, generated files, and user uploads.
 
 A practical way to decide
--------------------------
+--------------------------
 
 For straightforward projects such as a website, a server, **JupyterLab**, or custom software, start with **OpenStack**.
 
@@ -147,11 +147,11 @@ If your project needs both computing power and data storage, plan to combine ser
 .. _request_additional_services:
 
 How to request additional services
-----------------------------------
+----------------------------------------
 
 If the service you need is not available for your account, contact the operator by email.
 
-In the dashboard, go to Account Manager > Help Desk and Support. The page provides the contact email address for support requests. Alternatively, you can visit page :doc:`/accountmanagement/Help-Desk-And-Support/Help-Desk-And-Support`.
+In the dashboard, go to Account Manager > Help Desk and Support. The page provides the contact email address for support requests. Alternatively, you can visit page  :doc:`/accountmanagement/Help-Desk-And-Support`.
 
 In your message, include:
 

@@ -1,5 +1,5 @@
 Configuration files for s3cmd command on |brand-name|
-=====================================================
+==============================================================
 
 `s3cmd <https://github.com/s3tools/s3cmd>`_ can access remote data using
 the S3 protocol. This includes the **EODATA** repository and object storage
@@ -37,7 +37,7 @@ To use **s3cmd**, it must first be installed.
 
 .. jinja:: brand_names
 
-   :doc:`/s3/How-to-install-s3cmd-on-Linux-on-{{ brand_name_hyphen }}/How-to-install-s3cmd-on-Linux-on-{{ brand_name_hyphen }}`
+   :doc:`/s3/How-to-install-s3cmd-on-Linux`
 
 No. 2 **Knowledge of using s3cmd**
 
@@ -46,7 +46,7 @@ object storage from **s3cmd**.
 
 .. jinja:: brand_names
 
-   :doc:`/s3/How-to-access-object-storage-from-{{ brand_name_hyphen }}-using-s3cmd/How-to-access-object-storage-from-{{ brand_name_hyphen }}-using-s3cmd`
+   :doc:`/s3/How-to-access-object-storage-using-s3cmd`
 
 Initializing the configuration process
 --------------------------------------
@@ -225,7 +225,7 @@ current working directory**
 
 .. code-block:: bash
 
-   s3cmd -c../object-storage-access --configure
+   s3cmd -c ../object-storage-access --configure
 
 Again, if you save the configuration file outside the default location, for
 example as **/home/eouser/eodata-access**, set proper file permissions to
@@ -241,7 +241,7 @@ This ensures your access and secret keys remain secure, just like with the
 default **.s3cfg** file.
 
 Using \-\-configure on an existing file
----------------------------------------
+------------------------------------------------
 
 When you use **\-\-configure**, **s3cmd** operates on a configuration file:
 
@@ -298,8 +298,8 @@ Example output:
 
 .. code-block:: text
 
-   2017-11-15 10:40 s3://eodata
-   2017-11-15 10:40 s3://eodata
+   2017-11-15 10:40  s3://eodata
+   2017-11-15 10:40  s3://eodata
 
 Existing and valid configuration file — default location
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

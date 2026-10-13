@@ -1,12 +1,12 @@
 How to use Security Groups in Horizon on |brand-name|
-=====================================================
+======================================================
 
 Security groups in **OpenStack** are used to filter the Internet traffic coming **to** and **from** your virtual machines. They consist of security rules and can be attached to your virtual machines during and after the creation of the machines.
 
 By default, each instance has a rule which blocks all incoming Internet traffic and allows all outgoing traffic. To modify those settings, you can apply other security groups to it.
 
 Viewing the security groups
----------------------------
+-------------------------------
 
 To check your current security groups, please follow these steps:
 
@@ -19,10 +19,10 @@ You will see the list of your security groups there. The following groups should
  * **default** which blocks all incoming traffic and allows all outgoing traffic.
  * **allow_ping_ssh_rdp** which allows incoming ping, SSH (port 22) and RDP (port 3389) connections. This group is not attached to your VMs by default.
 
-.. figure:: use-security-groups-1_creodias.png
+.. figure:: /cloud/How-to-use-Security-Groups-in-Horizon-on-Eumetsat-Elasticity/use-security-groups-1_creodias.png
 
 Creating a new security group
------------------------------
+------------------------------------
 
 In order to create a new security group, please follow these steps:
 
@@ -30,7 +30,7 @@ Click the **Create Security Group** button.
 
 The following window should appear:
 
-.. figure:: use-security-groups-2_creodias.png
+.. figure:: /cloud/How-to-use-Security-Groups-in-Horizon-on-Eumetsat-Elasticity/use-security-groups-2_creodias.png
 
 Give your security group a recognizable name in the **Name** text field. Optionally, you can also provide a description of it in the **Description** text field.
 
@@ -38,7 +38,7 @@ Confirm your choices by clicking the **Create Security Group** button.
 
 You should now be taken to the screen which allows you to modify the security rules of that security group - in our case the group is called **my-group**:
 
-.. figure:: use-security-groups-3_creodias.png
+.. figure:: /cloud/How-to-use-Security-Groups-in-Horizon-on-Eumetsat-Elasticity/use-security-groups-3_creodias.png
 
 .. note::
 
@@ -47,13 +47,13 @@ You should now be taken to the screen which allows you to modify the security ru
 By default, your new security group should contain two rules seen on the screenshot above - the first one allows all outgoing traffic on IPv4 and the second one allows all outgoing traffic on IPv6.
 
 Adding security rules to a security group
------------------------------------------
+------------------------------------------------
 
 In the **Manage Security Rules** screen that you entered in the previous step, click the **Add Rule** button.
 
 The following form will appear. In it you can define the security rule:
 
-.. figure:: use-security-groups-4_creodias.png
+.. figure:: /cloud/How-to-use-Security-Groups-in-Horizon-on-Eumetsat-Elasticity/use-security-groups-4_creodias.png
 
 The drop-down list **Rule** allows you to choose the type of rule. These types, along with the available options for them, are explained below. Once you have finished, click **Add** to finish creating your rule.
 
@@ -97,26 +97,26 @@ These options apply to all ports of ICMP, TCP and UPD, respectively.
 The drop-down list **Rule** also contains templates for commonly used services like DNS (Domain Name Services), HTTP (Hypertext Transfer Protocol) or SMTP (Simple Mail Transfer Protocol). If you choose one of them, you only have to provide the information about the **Remote** - **CIDR** or **Security Group**. The explanation for those options is in the **Custom TCP Rule** section.
 
 Adding a Security Group to your VM
-----------------------------------
+-----------------------------------------
 
 You can apply your security group to your VM either during or after creating it.
 
 During its creation
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 During the process of creating your virtual machine you can add security groups to it. This happens during the **Security Groups** step:
 
-.. figure:: use-security-groups-5_creodias.png
+.. figure:: /cloud/How-to-use-Security-Groups-in-Horizon-on-Eumetsat-Elasticity/use-security-groups-5_creodias.png
 
 You can add security groups to your VM by using the **↑** button an remove them using the **↓** button - the same as in the **Source** or **Network** steps. In this case, we have added the **my-group** group to the VM:
 
-.. figure:: use-security-groups-6_creodias.png
+.. figure:: /cloud/How-to-use-Security-Groups-in-Horizon-on-Eumetsat-Elasticity/use-security-groups-6_creodias.png
 
 After its creation
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Go to **Compute** > **Instances**. Click the drop-down menu in the row containing information about the to which you wish to apply your rule (column **Actions**). Select **Edit Security Groups**. You should see the window similar to this:
 
-.. figure:: use-security-groups-7_creodias.png
+.. figure:: /cloud/How-to-use-Security-Groups-in-Horizon-on-Eumetsat-Elasticity/use-security-groups-7_creodias.png
 
 In the left section you can see available security groups and in the right section you can see security groups already attached to your VM. To apply a security group to your VM, click the **+** button next to that group and to remove it, click the **-** button next to it.

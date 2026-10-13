@@ -1,5 +1,5 @@
 How to attach a volume to VM less than 2TB on Linux on |brand-name|
-===================================================================
+====================================================================
 
 In this tutorial, you will create a volume which is smaller than 2 TB. Then, you will attach it to a VM and format it in the appropriate way.
 
@@ -7,7 +7,7 @@ In this tutorial, you will create a volume which is smaller than 2 TB. Then, you
 
    .. note::
 
-      If you want to create and attach a volume that has more than 2 TB of storage, you will need to use different software for its formatting. If this is the case, please visit the following article instead: :doc:`/datavolume/How-to-attach-a-volume-to-VM-more-than-2TB-on-Linux-on-Eumetsat-Elasticity/How-to-attach-a-volume-to-VM-more-than-2TB-on-Linux-on-Eumetsat-Elasticity`.
+      If you want to create and attach a volume that has more than 2 TB of storage, you will need to use different software for its formatting. If this is the case, please visit the following article instead: :doc:`/datavolume/How-to-attach-a-volume-to-VM-more-than-2TB-on-Linux`.
 
 What We Are Going To Cover
 --------------------------
@@ -19,7 +19,7 @@ What We Are Going To Cover
  * Formatting and mounting of the new volume
 
 Prerequisites
--------------
+------------------
 
 No. 1 **Hosting**
 
@@ -33,13 +33,13 @@ No. 2 Linux VM running on the |brand-name| cloud
 
 .. jinja:: brand_names
 
-   :doc:`/cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity`
+   :doc:`/cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line`
 
 or here:
 
 .. jinja:: brand_names
 
-   :doc:`/cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity`.
+   :doc:`/cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop`.
 
 The instructions included in this article are designed for Ubuntu 22.04 LTS.
 
@@ -51,10 +51,10 @@ No. 4 **SSH access to the VM**
 
 .. jinja:: brand_names
 
-   :doc:`/networking/How-to-connect-to-your-virtual-machine-via-SSH-in-Linux-on-Eumetsat-Elasticity/How-to-connect-to-your-virtual-machine-via-SSH-in-Linux-on-Eumetsat-Elasticity`.
+   :doc:`/networking/How-to-connect-to-your-virtual-machine-via-SSH-in-Linux`.
 
 Step 1: Create a Volume
------------------------
+----------------------------
 
 Login to the Horizon panel available at |brand-name-site-link|.
 
@@ -62,7 +62,7 @@ Go to the section **Volumes -> Volumes**:
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume054 }}
+   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux-on-Eumetsat-Elasticity/{{ datavolume054 }}
 
 Click **Create Volume**.
 
@@ -70,7 +70,7 @@ The following window should appear:
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume055 }}
+   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux-on-Eumetsat-Elasticity/{{ datavolume055 }}
 
 In it provide the **Volume Name** of your choice.
 
@@ -84,10 +84,10 @@ You should now see the volume you just created. In our case it is called **volum
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume056 }}
+   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux-on-Eumetsat-Elasticity/{{ datavolume056 }}
 
 Step 2: Attach the Volume to VM
--------------------------------
+-----------------------------------
 
 Now that you have created your volume, you can use it as storage for one of your VMs. To do that, attach the volume to a VM.
 
@@ -95,19 +95,19 @@ In the **Actions** menu for that volume select the option **Manage Attachments**
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume057 }}
+   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux-on-Eumetsat-Elasticity/{{ datavolume057 }}
 
 You should now see the following window:
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume058 }}
+   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux-on-Eumetsat-Elasticity/{{ datavolume058 }}
 
 Select the virtual machine to which the volume should be attached:
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume059 }}
+   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux-on-Eumetsat-Elasticity/{{ datavolume059 }}
 
 Click **Attach Volume**.
 
@@ -115,10 +115,10 @@ Your volume should now be attached to the VM:
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume060 }}
+   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux-on-Eumetsat-Elasticity/{{ datavolume060 }}
 
 Step 3: Partition the Volume
-----------------------------
+----------------------------------
 
 It is time to access your virtual machine to prepare the volume for data storage.
 
@@ -134,7 +134,7 @@ You should see the output similar to this:
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume061 }}
+   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux-on-Eumetsat-Elasticity/{{ datavolume061 }}
 
 In this example, the attached volume that was previously called **volume-small** is represented by the device file **sdb**. Its size is 100 GB. Memorize the name of the *device file* representing the drive you attached or write it somewhere down - it will be needed later during starting **fdisk**.
 
@@ -157,8 +157,8 @@ Answer with **n** and press Enter. A series of prompts similar to the ones below
 .. code::
 
    Partition type
-   p primary (0 primary, 0 extended, 4 free)
-   e extended (container for logical partitions)
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended (container for logical partitions)
    Select (default p):
 
    Using default response p.
@@ -196,10 +196,10 @@ The device file of the new partition should have the same name as the device fil
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume062 }}
+   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux-on-Eumetsat-Elasticity/{{ datavolume062 }}
 
 Step 5: Create the File System
-------------------------------
+--------------------------------------
 
 In order to save data on this volume, create **ext4** filesystem on it. **ext4** is arguably the most popular filesystem on Linux distributions.
 
@@ -214,7 +214,7 @@ Replace **sdb1** with the name of the device file of the partition provided to y
 This process should take less than a minute.
 
 Step 6: Create the mount point
-------------------------------
+---------------------------------
 
 You need to specify the location in the directory structure from which you will access the data stored on that volume. In Linux it is typically done in the **/etc/fstab** config file.
 
@@ -240,7 +240,7 @@ Add the below line to the end of that file. Remember to replace **sdb1** with th
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume063 }}
+   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux-on-Eumetsat-Elasticity/{{ datavolume063 }}
 
 To save that file in **nano**, use the following combination of keys: CTRL+X, Y, Enter.
 
@@ -270,7 +270,7 @@ The output should look like this:
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume064 }}
+   .. image:: /datavolume/How-to-attach-a-volume-to-VM-less-than-2TB-on-Linux-on-Eumetsat-Elasticity/{{ datavolume064 }}
 
 The volume is owned by **root**, so **eouser** does not have access without **sudo**. To make it accessible to **eouser**, execute this command:
 
@@ -287,8 +287,19 @@ If you want everybody to have access to that directory (and you don't care about
 During the next boot of your virtual machine, the volume should be mounted automatically.
 
 What To Do Next
----------------
+------------------
 
 You have successfully created a volume and prepared it for use on a Linux virtual machine.
 
 You can now copy files to your new volume. If you want to move the data, attach the volume to a different machine.
+
+.. ifconfig:: brand_name not in brands_without_eodata
+
+   Volumes may be good candidates for downloading Earth Observation data from **eodata** repository and using them in your projects.
+
+   To learn more about accessing **eodata** on |brand-name| virtual machines, please have a look at articles such as:
+
+   .. jinja:: brand_names
+
+
+   .. jinja:: brand_names

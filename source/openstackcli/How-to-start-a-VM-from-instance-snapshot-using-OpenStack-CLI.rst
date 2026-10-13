@@ -1,10 +1,10 @@
 How to start a VM from instance snapshot using OpenStack CLI on |brand-name|
-============================================================================
+===================================================================================
 
 In this article, you will learn how to create a virtual machine from an instance snapshot using OpenStack CLI client.
 
 Prerequisites
--------------
+------------------------
 No. 1 **Account**
 
 You need a |brand-name| hosting account with access to the Horizon interface: |brand-name-site-auth-link|.
@@ -31,7 +31,7 @@ No. 4 **Instance snapshot**
 
 You need to have an instance snapshot from which you are going to create your virtual machine. In this article, we will use an exemplary snapshot named **my-instance-snapshot**. This is how this instance can look like when executing **openstack image list** (here its name was marked using dark blue rectangle):
 
-.. figure:: start_vm_instance_snapshot_cli-01_creodias.png
+.. figure:: /openstackcli/How-to-start-a-VM-from-instance-snapshot-using-OpenStack-CLI-on-Eumetsat-Elasticity/start_vm_instance_snapshot_cli-01_creodias.png
    :class: image-with-border
 
 The following articles contain information on how to create such a snapshot:
@@ -92,7 +92,7 @@ No. 6 **Following the reference article for creating a virtual machine**
 The instance snapshot used here does not have to actually contain Linux - if this is the case, you can ignore Linux-specific parts of *reference* article.
 
 Gathering information used to create an instance
-------------------------------------------------
+-------------------------------------------------------------------------
 
 These steps are the same no matter whether your instance is using ephemeral or persistent storage.
 
@@ -101,7 +101,7 @@ In this example, we will create an instance named **instance-from-snapshot** - i
 Gather information to build the **openstack server create** command as explained in the *reference* article mentioned in Prerequisite No. 6, but introduce the following modifications to your workflow
 
 Step Choose an image
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 In this article we will use an image as a source for your virtual machine. It can be one of the following:
 
@@ -124,7 +124,7 @@ Pass it to **--image** parameter in the usual manner.
 
 In this article, our exemplary snapshot has ID of **56afe647-c49e-4f2d-892e-cd2c75f49ab3**:
 
-.. figure:: start_vm_instance_snapshot_cli-01_creodias.png
+.. figure:: /openstackcli/How-to-start-a-VM-from-instance-snapshot-using-OpenStack-CLI-on-Eumetsat-Elasticity/start_vm_instance_snapshot_cli-01_creodias.png
    :class: image-with-border
 
 so this is the parameter we will use:
@@ -134,14 +134,14 @@ so this is the parameter we will use:
    --image 56afe647-c49e-4f2d-892e-cd2c75f49ab3
 
 Changes to step Key Pair
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In step **Key Pair**, if your particular installation of an operating system supports "injecting" of an SSH key this way, you can perform this step just like it was done in the reference article.
 
 If, however, it does not support this process, do not include the parameter **--key-name** or its value.
 
 Creating an instance
---------------------
+------------------------
 
 Once you have gathered all necessary information, execute appropriate **openstack server create** command, as explained in *reference* article from Prerequisite No. 6.
 
@@ -158,12 +158,12 @@ This is how this command will look like in our example (be sure to use your own 
    --security-group default \
    instance-from-snapshot
 
-.. figure:: start_vm_instance_snapshot_cli-02_creodias.png
+.. figure:: /openstackcli/How-to-start-a-VM-from-instance-snapshot-using-OpenStack-CLI-on-Eumetsat-Elasticity/start_vm_instance_snapshot_cli-02_creodias.png
    :class: image-with-border
 
 To check if the instance was created correctly, execute **openstack server list** - the output should include your instance alongside other instances, if there are any:
 
-.. figure:: start_vm_instance_snapshot_cli-03_creodias.png
+.. figure:: /openstackcli/How-to-start-a-VM-from-instance-snapshot-using-OpenStack-CLI-on-Eumetsat-Elasticity/start_vm_instance_snapshot_cli-03_creodias.png
    :class: image-with-border
 
 Its **Status** should be **ACTIVE** - your VM should then be operational. If it has another **Status** like **BUILD**, execute **openstack server list** again, possibly multiple times until the status is **ACTIVE**.
@@ -171,7 +171,7 @@ Its **Status** should be **ACTIVE** - your VM should then be operational. If it 
 If the **Status** is **ERROR**, it means that something went wrong during creation of your instance. Investigating such an issue is outside of scope of this article.
 
 What can go wrong when recreating instance from instance snapshot
------------------------------------------------------------------
+-----------------------------------------------------------------------
 
 Wrong flavors
    If you specify flavor with insufficient resources like storage, it might not be possible to create an instance, or it might run worse than previously, or not run at all.
@@ -215,7 +215,7 @@ Incompatible environments
     The instance might work incorrectly or even not work at all if it contains drivers and other software that is incompatible with the current environment - flavor and/or cloud.
 
 Verifying volumes when using persistent storage
------------------------------------------------
+--------------------------------------------------------------------
 
 Skip this section if your instance uses ephemeral storage.
 
@@ -229,7 +229,7 @@ Execute the following command to see volumes attached to your instance (replace 
 
    openstack server show f0734a16-60f5-4ce1-a774-2e86f7f2a6f6 -c volumes_attached
 
-.. figure:: start_vm_instance_snapshot_cli-04_creodias.png
+.. figure:: /openstackcli/How-to-start-a-VM-from-instance-snapshot-using-OpenStack-CLI-on-Eumetsat-Elasticity/start_vm_instance_snapshot_cli-04_creodias.png
    :class: image-with-border
 
 Usually, **openstack server show** is used to show detailed information about an instance. Here, we cut its output only to volumes attached to it.
@@ -259,11 +259,11 @@ You can see detailed information regarding each of these volumes by executing th
 
    openstack volume show 3625f8fd-2837-4168-b361-ffa893a3ab17
 
-.. figure:: start_vm_instance_snapshot_cli-05_creodias.png
+.. figure:: /openstackcli/How-to-start-a-VM-from-instance-snapshot-using-OpenStack-CLI-on-Eumetsat-Elasticity/start_vm_instance_snapshot_cli-05_creodias.png
    :class: image-with-border
 
 What To Do Next
----------------
+--------------------
 
 .. jinja:: doc_links
 

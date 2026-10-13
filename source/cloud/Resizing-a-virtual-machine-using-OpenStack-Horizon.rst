@@ -1,5 +1,5 @@
 Resizing a virtual machine using OpenStack Horizon on |brand-name|
-==================================================================
+===========================================================================
 
 Introduction
 ------------
@@ -17,7 +17,7 @@ After the instance is spawned, it is possible to change one flavor for another, 
 In this article, we are going to resize VMs using commands in OpenStack Horizon.
 
 Prerequisites
--------------
+------------------------
 
 No. 1 **Account**
 
@@ -29,15 +29,15 @@ If you are a normal user of |brand-name| hosting, you will have all prerogatives
 
 .. jinja:: brand_names
 
-   :doc:`/cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-{{ brand_name_hyphen }}`
+   :doc:`/cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line`
 
-   :doc:`/cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-{{ brand_name_hyphen }}`
+   :doc:`/cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop`
 
 No. 3 **Awareness of existing quotas and flavors limits**
 
 .. jinja:: brand_names
 
-   For general introduction to quotas and flavors, see :doc:`/cloud/Dashboard-Overview-Project-Quotas-And-Flavors-Limits-on-{{ brand_name_hyphen }}`.
+   For general introduction to quotas and flavors, see :doc:`/cloud/Dashboard-Overview-Project-Quotas-And-Flavors-Limits`.
 
 Also:
 
@@ -46,23 +46,23 @@ Also:
  * Adequate resources are available in your OpenStack environment to accommodate the resize.
 
 Creating a new VM
------------------
+------------------------------------------
 
 To illustrate the commands in this article, let us create a new VM in order to start with a clean slate. (It goes without saying that you can practice with any of the already existing VMs in your account.)
 
 Use Prerequisite No. 2 to create a new VM and let it be called **Resizing**. Here is a typical list of flavors you might see:
 
-.. image:: resize-vm-horizon-1.png
+.. image:: /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon-on-Eumetsat-Elasticity/resize-vm-horizon-1.png
    :class: image-with-border
 
 For the sake of this article, let us choose a "middle" flavor -- not too large and not to small to start with. Let it be **eo2a.large**.
 
-.. image:: resize-vm-horizon-2.png
+.. image:: /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon-on-Eumetsat-Elasticity/resize-vm-horizon-2.png
    :class: image-with-border
 
 Finish the process of creating a new VM and let it spawn:
 
-.. image:: resize-vm-horizon-3.png
+.. image::  /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon-on-Eumetsat-Elasticity/resize-vm-horizon-3.png
    :class: image-with-border
 
 Let us now resize the VM called **Resizing**.
@@ -74,12 +74,12 @@ Locate the VM by using Horizon commands **Compute** -> **Instances**.
 
 Click the dropdown arrow next to the VM and select **Resize Instance**.
 
-.. image:: resize-vm-horizon-4.png
+.. image:: /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon-on-Eumetsat-Elasticity/resize-vm-horizon-4.png
    :class: image-with-border
 
 You get form **Resize Instance** on screen:
 
-.. image:: resize-vm-horizon-5.png
+.. image:: /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon-on-Eumetsat-Elasticity/resize-vm-horizon-5.png
    :class: image-with-border
 
 Assuming you wanted to scale up the VM, you could decide upon **eo2.xlarge**. Let us compare the two flavors:
@@ -109,15 +109,15 @@ Assuming you wanted to scale up the VM, you could decide upon **eo2.xlarge**. Le
 
 So, select **eo2.xlarge** as the new flavor. This screen shows its parameters:
 
-.. image:: fwaas-openvpn-v2-34.png
+.. image:: /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon-on-Eumetsat-Elasticity/fwaas-openvpn-v2-34.png
    :class: image-with-border
 
 Advanced Options
-----------------
+----------------------
 
 **Advanced Options** tab contains two further options for resizing the instance.
 
-.. image:: resize-vm-horizon-10.png
+.. image::  /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon-on-Eumetsat-Elasticity/resize-vm-horizon-10.png
    :class: image-with-border
 
 Disk Partition
@@ -129,15 +129,15 @@ Server Group
 
    The list can be quite long:
 
-   .. image:: resize-vm-horizon-11.png
+   .. image:: /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon-on-Eumetsat-Elasticity/resize-vm-horizon-11.png
       :class: image-with-border
 
 Resize the VM
--------------
+--------------
 
 Anyways, click on **Resize** to proceed with the resizing of the VM.
 
-.. image:: resize-vm-horizon-8.png
+.. image:: /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon-on-Eumetsat-Elasticity/resize-vm-horizon-8.png
    :class: image-with-border
 
 In **Status** column, there will be message **Confirm or Revert Resize/Migrate**. It means the system is waiting for you to decide what to do next. To confirm the resizing/migrating process, click on button **Confirm Resize/Migrate** in the **Actions** column.
@@ -149,20 +149,20 @@ If you encounter issues, you can choose **Revert Resize** to return the VM to it
 Or, if the resizing is finished, you can again use option **Resize instance** and choose the flavor from which you started (**eo2a.large** in this case). This process of scaling down is much faster than the process of scaling up.
 
 Troubleshooting
----------------
+-----------------------
 
 If any of the flavor parameters does not match up, the resizing will fail.
 
 You will then see balloon help in the right upper corner:
 
-.. image:: resize-vm-horizon-7.png
+.. image:: /cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon-on-Eumetsat-Elasticity/resize-vm-horizon-7.png
    :class: image-with-border
 
 In this case, the sizes of the disk before and after the resizing do not match.
 
 What To Do Next
----------------
+-----------------------
 
 .. jinja:: brand_names
 
-   You can also resize the virtual machine using only OpenStack CLI. More details here: :doc:`/openstackcli/Resizing-a-virtual-machine-using-OpenStack-CLI-on-{{ brand_name_hyphen }}`
+   You can also resize the virtual machine using only OpenStack CLI. More details here: :doc:`/openstackcli/Resizing-a-virtual-machine-using-OpenStack-CLI`

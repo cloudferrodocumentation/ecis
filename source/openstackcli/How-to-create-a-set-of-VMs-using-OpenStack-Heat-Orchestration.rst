@@ -1,18 +1,19 @@
 How to create a set of VMs using OpenStack Heat Orchestration on |brand-name|
 =============================================================================
 
-Heat is an OpenStack component responsible for Orchestration. Its purpose is to deliver automation engine and optimize processes.
+Heat is an OpenStack component responsible for orchestration. Its purpose is to provide an automation engine and optimize deployment processes.
 
-Heat receives commands through templates which are text files in *yaml* format. A template describes the entire infrastructure that you want to deploy. The deployed environment is called a *stack* and can consist of any combination out of the **102** different resources that are available in OpenStack.
+Heat receives commands through templates, which are text files in **YAML** format. A template describes the infrastructure that you want to deploy. The deployed environment is called a **stack** and can consist of different OpenStack resources.
 
 What We Are Going To Cover
 --------------------------
- * Typical parts of a Heat template
- * Basic template for using Heat
- * How to get data for Heat Template
- * Using Heat with CLI
- * Using Heat with GUI
- * More advanced template for Heat
+
+* Typical parts of a Heat template.
+* Basic template for using Heat.
+* How to get data for a Heat template.
+* Using Heat with CLI.
+* Using Heat with GUI.
+* More advanced template for Heat.
 
 Prerequisites
 -------------
@@ -25,47 +26,47 @@ No. 2 **Installed Python and its virtualenv**
 
 .. jinja:: brand_names
 
-   If you want to use **Heat** through CLI commands, Python must be installed and its virtual environment activated. See article :doc:`/cloud/How-to-install-Python-virtualenv-or-virtualenvwrapper-on-{{ brand_name_hyphen }}/How-to-install-Python-virtualenv-or-virtualenvwrapper-on-{{ brand_name_hyphen }}`.
+   If you want to use **Heat** through CLI commands, Python must be installed and its virtual environment activated. See article :doc:`/cloud/How-to-install-Python-virtualenv-or-virtualenvwrapper`.
 
-   You must also authorize to Openstack: {{ doc_links.openstack_cli_auth }}
+   You must also authorize to OpenStack: {{ doc_links.openstack_cli_auth }}
 
-Always use the latest value of image id
+Always use the latest value of image ID
 ---------------------------------------
 
-From time to time, the default images of operating systems in the |brand-name| cloud are upgraded to the new versions. As a consequence, their **image id** will change. Let's say that the image id for Ubuntu 20.04 LTS was **574fe1db-8099-4db4-a543-9e89526d20ae** at the time of writing of this article. While working through the article, you would normally take the **current** value of image id, and would use it to replace **574fe1db-8099-4db4-a543-9e89526d20ae** throughout the text.
+From time to time, the default operating system images in |brand-name| cloud are upgraded to new versions. As a consequence, their **image ID** changes. For example, the image ID for Ubuntu 20.04 LTS may have been **574fe1db-8099-4db4-a543-9e89526d20ae** at the time this article was originally written. When working through the article, you should normally use the current value of the image ID instead.
 
-Now, suppose you wanted to automate processes under OpenStack, perhaps using Heat, Terraform, Ansible or any other tool for OpenStack automation; if you use the value of **574fe1db-8099-4db4-a543-9e89526d20ae** for image id, it would remain **hardcoded** and once this value gets changed during the upgrade, the automated process may stop to execute.
+If you automate OpenStack operations with Heat, Terraform, Ansible, or another automation tool, avoid hardcoding an old image ID. Once the default image is upgraded and its ID changes, automation that uses the old ID may stop working.
 
 .. warning::
 
-   Make sure that your automation code is using the **current value** of an OS image id, not the hardcoded one.
+   Make sure that your automation code uses the **current value** of an OS image ID, not a hardcoded historical value.
 
 Basic template for using Heat
 -----------------------------
 
-Using the following snippet, you can create one virtual machine, booted from ephemeral disk. Create a text file called **template.yaml** with your favorite text editor and save it to disk:
+Using the following snippet, you can create one virtual machine booted from an ephemeral disk. Create a text file called **template.yaml** with your preferred text editor and save it to disk:
 
 .. code::
 
-    heat_template_version: 2015-04-30
+   heat_template_version: 2015-04-30
 
-    resources:
-      instance:
-        type: OS::Nova::Server
-        properties:
-          flavor: eo1.xsmall
-          image: Ubuntu 18.04 LTS
-          networks:
-            - network: <type in your network name here, e.g. cloud_00341_3>
-            - network: <type in your network name here, e.g. eodata_00341_3>
-          key_name: <type in your ssh key name>
-          security_groups:
-            - allow_ping_ssh_icmp_rdp
-            - default
+   resources:
+     instance:
+       type: OS::Nova::Server
+       properties:
+         flavor: eo1.xsmall
+         image: Ubuntu 18.04 LTS
+         networks:
+           - network: <type in your network name here, e.g. cloud_00341_3>
+           - network: <type in your network name here, e.g. eodata_00341_3>
+         key_name: <type in your ssh key name>
+         security_groups:
+           - allow_ping_ssh_icmp_rdp
+           - default
 
 .. important::
 
-   *Yaml* format does not allow for tabs, you must enter spaces instead.
+   **YAML** format does not allow tabs. Use spaces instead.
 
 Typical parts of a Heat template
 --------------------------------
@@ -73,29 +74,28 @@ Typical parts of a Heat template
 Here are the basic elements of a Heat template:
 
 **heat_template_version**
-   The exact version of heat template. Each of them varies in many ways (including support for various modules, additional parameters, customization etc). See **Orchestration** -> **Template Versions**.
+   The exact version of the Heat template. Template versions vary in supported modules, parameters, customization options, and other features. You can view template versions in **Orchestration** → **Template Versions**.
 
 **resources**
-   Entry to commence providing particular components for deployment.
+   Entry that starts the definition of components to be deployed.
 
 **instance**
-   Name of resource (you can type in anything on your own).
+   Name of the resource. You can choose a different name.
 
 **type**
-   Definition of an OpenStack component (a comprehensive list is under **Orchestration** -> **Resource Types**)
+   Definition of an OpenStack component. A comprehensive list is available in **Orchestration** → **Resource Types**.
 
 **properties**
    Required parameters for deploying a component.
 
 .. note::
 
-   Your account will normally have a network starting with **cloud_** but it may also have other networks. In the following examples, we use network called **eodata_** as an example of an additional network that can be added while creating and using Heat templates.
+   Your account normally has a network starting with **cloud_**, but it may also have other networks. In the following examples, **eodata_** is used as an example of an additional network that can be added while creating and using Heat templates.
 
 How to get data for Heat template
 ---------------------------------
 
-Templates need data for images, flavor networks, key pairs, security groups and so on. You would normally know all these elements in advance, or you could "look around" at various parts of OpenStack environment:
-
+Templates need data for images, flavors, networks, key pairs, security groups, and other OpenStack resources. You can usually collect this information from the relevant Horizon sections.
 
 .. jinja:: caption_colors
 
@@ -116,175 +116,168 @@ Templates need data for images, flavor networks, key pairs, security groups and 
       * - **security_groups**
         - **Network** → **Security Groups**
 
-
 You can work with Heat in two ways:
 
- * through Command Line Interface (CLI), with **python-heatclient** preinstalled and
- * interactively, through Horizon commands.
+* through Command Line Interface (CLI), with **python-heatclient** installed,
+* interactively, through Horizon.
 
 Using Heat with CLI
 -------------------
 
-Assuming you have
-
- * installed Python and
- * activated its working environment
-
-as explained in Prerequisite No. 2, run **pip** command to install **python-heatclient**:
+Assuming you have installed Python and activated its working environment, as explained in Prerequisite No. 2, run the **pip** command to install **python-heatclient**:
 
 .. code::
 
-  pip install python-heatclient
+   pip install python-heatclient
 
-To run a prepared template in order to deploy a stack, this is what a general command would look like:
+To run a prepared template and deploy a stack, use the following general command:
 
 .. code::
 
    openstack stack create -t template.yaml <stackname>
 
-where **-t** assigns template for deployment and **<stackname>** defines name for the stack.
+In this command, **-t** assigns the template for deployment and **<stackname>** defines the name of the stack.
 
-As a result, a new Stack would be executed and a new instance would be created. For example, the command
+As a result, a new stack is executed and a new instance is created. For example, the command:
 
 .. code::
 
    openstack stack create -t template.yaml heat-test2
 
-would produce the following output:
+produces output similar to this:
 
-.. figure:: heat-test2.png
+.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/heat-test2.png
    :class: image-with-border
 
-In Horizon, this is what you would see under **Orchestration** -> **Stacks**:
+In Horizon, this is what you see under **Orchestration** → **Stacks**:
 
-.. figure:: heat_test2_stacks.png
+.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/heat_test2_stacks.png
    :class: image-with-border
 
-A new instance would be created under **Compute** -> **Instances**:
+A new instance is created under **Compute** → **Instances**:
 
-.. figure:: heat_test2_instances.png
+.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/heat_test2_instances.png
    :class: image-with-border
 
 Using Heat with GUI
 -------------------
 
-Log in to the Horizon dashboard, choose **Orchestration** and then **Stacks** tab:
+Log in to the Horizon dashboard, choose **Orchestration**, and then open the **Stacks** tab:
 
-.. figure:: stacks_menu.png
+.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/stacks_menu.png
    :class: image-with-border
 
-.. |click_button_launch_stack| image:: click_button_launch_stack.png
+.. |click_button_launch_stack| image:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/click_button_launch_stack.png
 
-Navigate to the right part of the screen, click on button |click_button_launch_stack| and bring **Select Template** window to the screen.
+Navigate to the right side of the screen, click the |click_button_launch_stack| button, and open the **Select Template** window.
 
-Enroll Template Source selector and choose a particular file, Direct Input or URL to your template.
+Open the **Template Source** selector and choose a file, direct input, or URL to your template.
 
-.. figure:: orch4.png
+.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/orch4.png
    :class: image-with-border
 
-Enter the text of the template you copied from file **template.yaml** directly into the form:
+Enter the text of the template you copied from **template.yaml** directly into the form:
 
-.. figure:: select_template_yaml.png
+.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/select_template_yaml.png
    :class: image-with-border
 
-Provide a name of your stack and your openstack password:
+Provide a name for your stack and your OpenStack password:
 
-.. figure:: launch_stack.png
+.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/launch_stack.png
    :class: image-with-border
 
-As a result, a new Heat template will have been created:
+As a result, a new Heat template is created:
 
-.. figure:: create_new_template.png
+.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/create_new_template.png
    :class: image-with-border
 
-By creating a stack in Horizon you have also executed that template. The result is that a new instance has been created -- see it under **Compute** -> **Instances**:
+By creating a stack in Horizon, you also execute that template. The result is that a new instance is created. You can see it under **Compute** → **Instances**:
 
-.. figure:: heat_instance.png
+.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/heat_instance.png
    :class: image-with-border
 
-We end up with two stacks and two new instances, once using a CLI and the other time, using a GUI.
+At this point, there are two stacks and two new instances: one created by using CLI and the other by using Horizon.
 
 Create four VMs using an advanced Heat template
 -----------------------------------------------
 
-In the following example we will attach parameters and then create ResourceGroup with counter, a VM booted from Cinder Volume and several predefined outputs. In parameter **count** we state that we want to generate **4** instances at once, which will yield us the automation that we wanted in the first place. Save the following code as **template4.yaml**:
+In the following example, you will attach parameters and then create a **ResourceGroup** with a counter, a VM booted from Cinder volume, and several predefined outputs. In parameter **count**, you state that you want to generate **4** instances at once. Save the following code as **template4.yaml**:
 
 .. code::
 
-    heat_template_version: 2015-04-30
+   heat_template_version: 2015-04-30
 
-    parameters:
-       key_name:
-           type: string
-           label: sshkey
-           description: SSH key to be used for all instances
-           default: <insert your ssh key name here>
-       image_id:
-           type: string
-           description: Image to be used. Check all available options in Horizon dashboard or, with CLI, use openstack image list command.
-           default: Ubuntu 18.04 LTS
-       private_net_id:
-           type: string
-           description: ID/Name of private network
-           default: <insert your network name here, e.g. cloud_00341_3>
+   parameters:
+      key_name:
+          type: string
+          label: sshkey
+          description: SSH key to be used for all instances
+          default: <insert your ssh key name here>
+      image_id:
+          type: string
+          description: Image to be used. Check all available options in Horizon dashboard or, with CLI, use openstack image list command.
+          default: Ubuntu 18.04 LTS
+      private_net_id:
+          type: string
+          description: ID/Name of private network
+          default: <insert your network name here, e.g. cloud_00341_3>
 
-    resources:
-           Group_of_VMs:
-                   type: OS::Heat::ResourceGroup
-                   properties:
-                           count: 4
-                           resource_def:
-                                   type: OS::Nova::Server
-                                   properties:
-                                           name: my_vm%index%
-                                           flavor: eo1.xsmall
-                                           image: {get_param: image_id}
-                                           networks:
-                                                   - network: {get_param: private_net_id}
-                                           key_name: {get_param: key_name}
-                                           security_groups:
-                                                   - allow_ping_ssh_icmp_rdp
-                                                   - default
+   resources:
+          Group_of_VMs:
+                  type: OS::Heat::ResourceGroup
+                  properties:
+                          count: 4
+                          resource_def:
+                                  type: OS::Nova::Server
+                                  properties:
+                                          name: my_vm%index%
+                                          flavor: eo1.xsmall
+                                          image: { get_param: image_id }
+                                          networks:
+                                                  - network: { get_param: private_net_id }
+                                          key_name: { get_param: key_name }
+                                          security_groups:
+                                                  - allow_ping_ssh_icmp_rdp
+                                                  - default
 
-           VOL_FAQ:
-                   type: OS::Cinder::Volume
-                   properties:
-                           name: vol
-                           size: 20
-                           image : {get_param: image_id}
+          VOL_FAQ:
+                  type: OS::Cinder::Volume
+                  properties:
+                          name: vol
+                          size: 20
+                          image: { get_param: image_id }
 
+          With_volume:
+                  type: OS::Nova::Server
+                  properties:
+                          flavor: eo1.xsmall
+                          block_device_mapping: [{"volume_size": 20, "volume_id": { get_resource: VOL_FAQ }, "delete_on_termination": False, "device_name": "/dev/vda" }]
+                          networks:
+                                   - network: { get_param: private_net_id }
+                          key_name: { get_param: key_name }
+                          security_groups:
+                                   - allow_ping_ssh_icmp_rdp
+                                   - default
+                          image: { get_param: image_id }
 
-           With_volume:
-                   type: OS::Nova::Server
-                   properties:
-                           flavor: eo1.xsmall
-                           block_device_mapping: [{"volume_size": 20, "volume_id": {get_resource: VOL_FAQ}, "delete_on_termination": False, "device_name": "/dev/vda"}]
-                           networks:
-                                    - network: {get_param: private_net_id}
-                           key_name: {get_param: key_name}
-                           security_groups:
-                                    - allow_ping_ssh_icmp_rdp
-                                    - default
-                           image : {get_param: image_id}
+   outputs:
+          SERVER_DETAILS:
+                  description: Shows details of all virtual servers.
+                  value: { get_attr: [ Group_of_VMs, show ] }
 
-    outputs:
-           SERVER_DETAILS:
-                   description: Shows details of all virtual servers.
-                   value: {get_attr: [Group_of_VMs, show]}
-
-The first step is to create a real volume (called VOL_FAQ) and the second is to create a VM (With_volume).
+The first step is to create a real volume called **VOL_FAQ**. The second step is to create a VM called **With_volume**.
 
 **Explanation**
 
 **Parameters**
-   Here you provide default values (**key_name**, **image_id**, **private_net_id** in this case) and later inject them into resource definitions. The syntax is:
+   Here you provide default values, such as **key_name**, **image_id**, and **private_net_id**, and later inject them into resource definitions. The syntax is:
 
    .. code::
 
-      {get param: param_name}
+      { get_param: param_name }
 
 **ResourceGroup**
-   Component being used for repeating deployment, e.g two identical VM’s.
+   Component used for repeated deployment, for example two or more identical VMs.
 
 **Count**
    Defines a variable for iterative operations.
@@ -293,13 +286,13 @@ The first step is to create a real volume (called VOL_FAQ) and the second is to 
    Starting statement for defining group resources.
 
 **%index%**
-   This is how you add iterative number to the VM name, increasing values starting from 0.
+   Adds an iterative number to the VM name, increasing values starting from 0.
 
 **block_device_mapping**
-   Property to define a bootable Cinder volume for instance.
+   Property used to define a bootable Cinder volume for an instance.
 
 **outputs**
-   Additional information concerning deployed elements of the stack. In this case it returns a “show” attribute output. You can examine this kind of information by using openstack stack output list. Available attributes for every component `can be found here. <https://docs.openstack.org/heat/latest/template_guide/openstack.html>`_.
+   Additional information concerning deployed elements of the stack. In this case, it returns a **show** attribute output. You can examine this kind of information by using **openstack stack output list**. Available attributes for every component `can be found here <https://docs.openstack.org/heat/latest/template_guide/openstack.html>`_.
 
 Execute the template with the following command:
 
@@ -307,25 +300,24 @@ Execute the template with the following command:
 
    openstack stack create -t template4.yaml four
 
-The name of the stack will be *four*. This is the result in CLI window:
+The name of the stack is **four**. This is the result in the CLI window:
 
-.. figure:: create_heat_4.png
+.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/create_heat_4.png
    :class: image-with-border
 
-Under **Compute** -> **Instance** you would see five new instances created:
+Under **Compute** → **Instances**, you see five new instances:
 
-.. figure:: four_created.png
+.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/four_created.png
    :class: image-with-border
 
-Four of them have names *my_vm0*, *my_vm1*, *my_vm1* and *my_vm1*, as defined in line **name: my_vm%index%** in the template. The fifth is called **four-With_volume-lrejw222kfvi**. Its name starts the same as the name of the template itself while the rest is automatically generated.
+Four of them have names **my_vm0**, **my_vm1**, **my_vm2**, and **my_vm3**, as defined in line **name: my_vm%index%** in the template. The fifth is called **four-With_volume-lrejw222kfvi**. Its name starts with the stack name, while the rest is generated automatically.
 
 What To Do Next
 ---------------
 
-You can write your own templates as *yaml* files or you can use option **Orchestration** -> **Template Generator**, which will enable you to enter components in an interactive way:
+You can write your own templates as **YAML** files, or you can use **Orchestration** → **Template Generator** to enter components interactively:
 
-.. figure:: template_generator.png
+.. figure:: /openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-Eumetsat-Elasticity/template_generator.png
    :class: image-with-border
 
-Further explanation of this option is out of scope of this article.
-
+Further explanation of this option is outside the scope of this article.

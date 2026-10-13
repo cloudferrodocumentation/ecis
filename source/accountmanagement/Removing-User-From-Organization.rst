@@ -21,7 +21,7 @@ Procedure
 
 After logging in to the portal, open **Sub-accounts** from the left-side menu.
 
-.. figure:: removing-user-from-organization-.png
+.. figure:: /accountmanagement/Removing-User-From-Organization/removing-user-from-organization-ecis.png
    :align: center
    :class: image-with-border
 

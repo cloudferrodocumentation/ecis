@@ -1,5 +1,5 @@
 Server-Side Encryption with Customer-Managed Keys (SSE-C) on |brand-name|
-=========================================================================
+=========================================================================================
 
 Introduction
 ------------
@@ -143,7 +143,7 @@ Alternatively, you can generate the key and store it in a file:
    keymd5=$(cat sse-c.key | openssl dgst -md5 -binary | base64)
 
 Example No. 2: Upload an object with aws-cli s3api
---------------------------------------------------
+-----------------------------------------------------
 
 Use the following command to upload an object with SSE-C encryption enabled.
 

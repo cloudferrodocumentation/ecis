@@ -8,7 +8,7 @@ After opening up the console in OpenStack you might encounter this error:
 * unresponsive grey screen
 * document icon in the down-right corner which informs about the issue on client side
 
-.. figure:: fixconsole.png
+.. figure:: /cloud/How-to-fix-unresponsive-console-issue-on-Eumetsat-Elasticity/fixconsole.png
    :align: center
 
 **In this case:**

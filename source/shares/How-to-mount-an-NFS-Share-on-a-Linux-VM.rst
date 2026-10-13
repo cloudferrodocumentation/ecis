@@ -43,8 +43,8 @@ Before you mount an NFS share on a Linux VM, make sure that the share and VM are
 
    To prepare the share and access rule, use the previous articles in this series:
 
-   * :doc:`/shares/How-to-create-a-Share-using-Horizon/How-to-create-a-Share-using-Horizon`
-   * :doc:`/shares/How-to-allow-access-to-a-Share/How-to-allow-access-to-a-Share`
+   * :doc:`/shares/How-to-create-a-Share-using-Horizon`
+   * :doc:`/shares/How-to-allow-access-to-a-Share`
 
 4. You have copied the preferred NFS export location from Horizon.
 
@@ -60,7 +60,7 @@ Before you mount an NFS share on a Linux VM, make sure that the share and VM are
 
    .. jinja:: shares_images
 
-      .. figure:: {{ shares038 }}
+      .. figure:: /shares/How-to-mount-an-NFS-Share-on-a-Linux-VM/{{ shares038 }}
          :class: image-with-border
          :align: center
 
@@ -157,7 +157,7 @@ Here is what the entire process looks like in Terminal window:
 
 .. jinja:: shares_images
 
-   .. figure:: {{ shares039 }}
+   .. figure:: /shares/How-to-mount-an-NFS-Share-on-a-Linux-VM/{{ shares039 }}
       :class: image-with-border
       :align: center
 
@@ -166,7 +166,7 @@ Here is what the entire process looks like in Terminal window:
 If you configured the share access rule as **read-only**, the write test will fail. In that case, use a read-only test instead.
 
 Optional: mount the share automatically after reboot
-----------------------------------------------------
+--------------------------------------------------------------
 
 To mount the share automatically after reboot, add it to **/etc/fstab**.
 
@@ -219,7 +219,7 @@ If the mount command fails, check the following:
 * You copied the export location exactly as shown in Horizon.
 
 User messages for debugging
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can also check user messages in Horizon, via the following chain of commands:
 
@@ -227,7 +227,7 @@ You can also check user messages in Horizon, via the following chain of commands
 
 .. jinja:: shares_images
 
-   .. figure:: {{ shares040 }}
+   .. figure:: /shares/How-to-mount-an-NFS-Share-on-a-Linux-VM/{{ shares040 }}
       :class: image-with-border
       :align: center
 

@@ -6,15 +6,15 @@ Requirements
 
 .. jinja:: brand_names
 
-   The private and public keys were created and saved on the local disk of your computer. (:doc:`/cloud/How-to-create-key-pair-in-OpenStack-Dashboard-on-{{ brand_name_hyphen }}/How-to-create-key-pair-in-OpenStack-Dashboard-on-{{ brand_name_hyphen }}`)
+   The private and public keys were created and saved on the local disk of your computer. (:doc:`/cloud/How-to-create-key-pair-in-OpenStack-Dashboard`)
 
 .. jinja:: brand_names
 
-   During the virtual machine creation procedure, the generated key was attached. (:doc:`/cloud/How-to-create-new-Linux-VM-in-OpenStack-Dashboard-Horizon-on-{{ brand_name_hyphen }}/How-to-create-new-Linux-VM-in-OpenStack-Dashboard-Horizon-on-{{ brand_name_hyphen }}`)
+   During the virtual machine creation procedure, the generated key was attached. (:doc:`/cloud/How-to-create-new-Linux-VM-in-OpenStack-Dashboard-Horizon`)
 
 .. jinja:: brand_names
 
-   A floating IP was assigned to your VM. (:doc:`/networking/How-to-Add-or-Remove-Floating-IPs-to-your-VM-on-{{ brand_name_hyphen }}/How-to-Add-or-Remove-Floating-IPs-to-your-VM-on-{{ brand_name_hyphen }}`)
+   A floating IP was assigned to your VM. (:doc:`/networking/How-to-Add-or-Remove-Floating-IPs-to-your-VM`)
 
 Check in "Installed features" if the OpenSSH client is installed, if not click **Add a feature**, search for **OpenSSH client** and install it.
 

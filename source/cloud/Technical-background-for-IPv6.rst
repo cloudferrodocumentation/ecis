@@ -7,7 +7,7 @@ If you want to create an IPv6-enabled tenant network first, follow the companion
 
 .. jinja:: brand_names
 
-   * :doc:`/cloud/Create-an-IPv6-network-on-{{ brand_name_hyphen }}/Create-an-IPv6-network-on-{{ brand_name_hyphen }}`
+   * :doc:`/cloud/Create-an-IPv6-network`
 
 This follow-up article is for readers who want to understand why the recommended settings are used, how IPv6 behaves in practice, and which limitations are important in everyday work.
 
@@ -173,4 +173,4 @@ After reading this article, you may want to continue with one of the following t
 
    See also:
 
-   * :doc:`/cloud/Create-an-IPv6-network-on-{{ brand_name_hyphen }}/Create-an-IPv6-network-on-{{ brand_name_hyphen }}`
+   * :doc:`/cloud/Create-an-IPv6-network`

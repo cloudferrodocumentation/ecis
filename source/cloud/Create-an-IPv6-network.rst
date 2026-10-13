@@ -40,11 +40,11 @@ If you want to interact with the |brand-name| cloud by using the OpenStack CLI c
 
 .. jinja:: brand_names
 
-    * :doc:`/openstackcli/How-to-install-OpenStackClient-for-Linux-on-{{ brand_name_hyphen }}/How-to-install-OpenStackClient-for-Linux-on-{{ brand_name_hyphen }}`
+    * :doc:`/openstackcli/How-to-install-OpenStackClient-for-Linux`
 
-    * :doc:`/openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows-on-{{ brand_name_hyphen }}/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows-on-{{ brand_name_hyphen }}`
+    * :doc:`/openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows`
 
-    * :doc:`/openstackcli/How-to-install-OpenStackClient-on-Windows-using-Windows-Subsystem-for-Linux-on-{{ brand_name_hyphen }}-OpenStack-Hosting/How-to-install-OpenStackClient-on-Windows-using-Windows-Subsystem-for-Linux-on-{{ brand_name_hyphen }}-OpenStack-Hosting`
+    * :doc:`/openstackcli/How-to-install-OpenStackClient-on-Windows-using-Windows-Subsystem-for-Linux-on-OpenStack-Hosting`
 
 .. ifconfig:: brand_name in two_fa_activated
 
@@ -57,11 +57,11 @@ If you want to interact with the |brand-name| cloud by using the OpenStack CLI c
 
 .. ifconfig:: brand_name not in two_fa_activated
 
-    .. ifconfig:: brand_name!= 'WEkEO'
+    .. ifconfig:: brand_name != 'WEkEO'
 
        .. jinja:: brand_names
 
-          Once you have installed this software, you need to authenticate before you can start using it: :doc:`/accountmanagement/How-to-activate-OpenStack-CLI-access-to-{{ brand_name_hyphen }}-cloud/How-to-activate-OpenStack-CLI-access-to-{{ brand_name_hyphen }}-cloud`
+          Once you have installed this software, you need to authenticate before you can start using it: :doc:`/accountmanagement/How-to-activate-OpenStack-CLI-access-to-cloud`
 
     .. ifconfig:: brand_name == 'WEkEO'
 
@@ -96,7 +96,7 @@ Start by creating a network:
 
 This is the result in Terminal.
 
-.. figure:: openstack-flavor-list.png
+.. figure:: /cloud/Create-an-IPv6-network-on-Eumetsat-Elasticity/openstack-flavor-list.png
 
 
 
@@ -117,7 +117,7 @@ Create the IPv6 subnet and enable SLAAC:
 
 This creates an IPv6 subnet on the network and enables automatic address assignment by using SLAAC.
 
-.. figure:: ipv6-network-subnet.png
+.. figure:: /cloud/Create-an-IPv6-network-on-Eumetsat-Elasticity/ipv6-network-subnet.png
    :class: image-with-border
 
    IPv6 subnet details for the tenant network. Open **Network > Networks**, select your network, and open the **Subnets** tab.
@@ -131,10 +131,10 @@ Create a router so that the subnet can communicate beyond its local segment:
 
    openstack router create router1
 
-.. figure:: openstack-router-create-router1.png
+.. figure:: /cloud/Create-an-IPv6-network-on-Eumetsat-Elasticity/openstack-router-create-router1.png
    :class: image-with-border
 
-   Newly created router in Horizon. Open **Network > Routers**.
+   Newly created router in Horizon. Open **Network > Routers** .
 
 Step 4: Set the external gateway
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -147,7 +147,7 @@ Configure the router to connect to an external network:
 
 This step gives the router a path toward the external network.
 
-.. figure:: router-ste-router1-external.png
+.. figure:: /cloud/Create-an-IPv6-network-on-Eumetsat-Elasticity/router-ste-router1-external.png
    :class: image-with-border
 
    Router with external gateway configured. Open **Network > Routers**, select the router, and review its overview or details page.
@@ -163,10 +163,10 @@ Attach the subnet to the router:
 
 After finishing these steps, the result can be reviewed in the network topology.
 
-.. figure:: network-topology-see-the-network.png
+.. figure:: /cloud/Create-an-IPv6-network-on-Eumetsat-Elasticity/network-topology-see-the-network.png
    :class: image-with-border
 
-   IPv6 network connected to the router in Horizon topology view. Open **Network > Network Topology**.
+   IPv6 network connected to the router in Horizon topology view. Open **Network > Network Topology** .
 
 At this point, your IPv6 subnet is ready to be used by instances attached to this network.
 
@@ -176,7 +176,7 @@ Attach an instance and verify IPv6
 The final step is to attach an instance to the network and confirm that it actually receives and uses IPv6 as expected.
 
 Step 6: Attach a new or existing instance to the network
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can either launch a new instance on the network or attach an additional interface from an existing instance to it.
 
@@ -185,7 +185,7 @@ For example, to create a new instance on the IPv6-enabled network:
 .. code::
 
    openstack server create \
-   --flavor eo1a.xmedium \
+   --flavor eo1a.xmedium  \
    --image "Ubuntu 24.04 LTS" \
    --network ipv6-network \
    --key-name sshkey \
@@ -196,7 +196,7 @@ Replace the image name, flavor, and key pair with values available in your proje
 If you want to use an existing instance instead, first list its ports and networks, then add a port or interface connected to the IPv6-enabled network.
 
 Step 7: Confirm that the instance received an IPv6 address
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Display the instance details:
 
@@ -212,14 +212,14 @@ You can also display the server addresses more directly:
 
    openstack server show ipv6-test-server -c addresses
 
-.. figure:: show-addresses-directly.png
+.. figure:: /cloud/Create-an-IPv6-network-on-Eumetsat-Elasticity/show-addresses-directly.png
    :class: image-with-border
 
    Instance connected to the IPv6-enabled network and showing an IPv6 address.
 
 The same data, only visible from Horizon:
 
-.. figure:: image_2024-04-24-15-13-21.png
+.. figure:: /cloud/Create-an-IPv6-network-on-Eumetsat-Elasticity/image_2024-04-24-15-13-21.png
    :class: image-with-border
 
    Open **Compute > Instances**, select the instance, and review its details or interfaces.
@@ -237,7 +237,7 @@ For example, display the security groups attached to the instance:
 
 The result is:
 
-.. figure:: see-the-security-group.png
+.. figure:: /cloud/Create-an-IPv6-network-on-Eumetsat-Elasticity/see-the-security-group.png
    :class: image-with-border
 
    The security group which allows IPv6 traffic.
@@ -249,7 +249,7 @@ If needed, inspect the rules of the relevant security group:
 
    openstack security group rule list <security-group-name>
 
-.. figure:: the-security-group-using-ipv6.png
+.. figure:: /cloud/Create-an-IPv6-network-on-Eumetsat-Elasticity/the-security-group-using-ipv6.png
    :class: image-with-border
 
    The internal data of the security group 'default'
@@ -267,7 +267,7 @@ Once the instance has an IPv6 address, sign in to it and inspect its network con
 
 You should see the IPv6 address assigned to the interface connected to **ipv6-network**.
 
-.. figure:: ipv6-adresses-assigned.png
+.. figure:: /cloud/Create-an-IPv6-network-on-Eumetsat-Elasticity/ipv6-adresses-assigned.png
    :class: image-with-border
 
    The addresses to which IPv6 is assigne.

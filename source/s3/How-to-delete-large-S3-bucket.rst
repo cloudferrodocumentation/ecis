@@ -26,7 +26,7 @@ recursively through the S3 interface.
 Prerequisites
 -------------
 
-No. 1 **Generated credentials**
+No. 1 **Generated  credentials**
 
 You need S3 credentials for accessing object storage through S3-compatible
 tools.
@@ -66,7 +66,7 @@ The output should list the buckets available to your credentials. For example:
 
 .. code-block:: text
 
-   2022-02-02 22:22 s3://large-bucket
+   2022-02-02 22:22  s3://large-bucket
 
 Choose the bucket that you want to remove.
 

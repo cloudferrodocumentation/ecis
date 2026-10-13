@@ -1,5 +1,5 @@
 Active services
-===============
+=================
 
 Monitoring cloud costs regularly helps you manage resource consumption and optimize spending.
 Click on **Active services** to view your usage and costs in two distinct ways:
@@ -12,7 +12,7 @@ No. 1 **Hosting account**
 You need an active user account and access to the |brand-name| Dashboard at |brand-name-site-auth-link|.
 
 Check active resources in Horizon
----------------------------------
+------------------------------------------
 
 We will now gather data about the instances we used so that we can see the exact cost, using either of the billing reports options.
 
@@ -26,7 +26,7 @@ Before comparing billing reports, it helps to know which instances and flavors a
 
 Table **Usage** displays instances active on that cloud in that period:
 
-.. figure:: track-usage-summary-fra1-3--portal.png
+.. figure:: /accountmanagement/Active-services/track-usage-summary-fra1-3-ecis-portal.png
    :alt: Usage summary in Horizon
    :align: center
    :width: 85%
@@ -39,11 +39,11 @@ Table **Usage** displays instances active on that cloud in that period:
    As an example, click the name of the first instance and see which flavor it uses. You can directly see which resources are used on that cloud, in that period of time, and, consequently, you will be able to see how much they cost.
 
 Open billing reports in Dashboard
----------------------------------
+--------------------------------------
 
 Enter the Dashboard via |brand-name-site-auth-link| and click on **Services** -> **Active services**. This is the starting form to enter the data into:
 
-.. figure:: active-service-billing--portal.png
+.. figure:: /accountmanagement/Active-services/active-service-billing-ecis-portal.png
    :alt: First time see Billing Reports screen
    :align: center
    :width: 85%
@@ -52,15 +52,15 @@ Enter the Dashboard via |brand-name-site-auth-link| and click on **Services** ->
    *Active services screen*
 
 Define report filters
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The same filter panel is used for both report types. It defines the time window, project, and cloud, and allows you to narrow your report by product, billing mode, and wallet.
 
 Filters include:
 
 * **Project** – Choose one of your OpenStack projects.
-* **Cloud** – Available regions include *FRA1-3*, **R1** and **R2** denoted as **-r1**, **-pr2** and **fra1-3**.
-* **Product** – Combination of cloud and product type (e.g. *-r1 / 1cpu-4gbmem*). Use **search** files to narrow down the number of options.
+* **Cloud** – Available regions include *FRA1-3*, **R1** and **R2** denoted as **ecis-r1**, **ecis-pr2** and **fra1-3**.
+* **Product** – Combination of cloud and product type (e.g. *ecis-r1 / 1cpu-4gbmem*). Use **search** files to narrow down the number of options.
 * **Billing mode** – *PPU*, *PAYG*, or *FIXED-TERM*.
 * **Wallet** – Payment source.
 * **Contract** – Predefined contract.

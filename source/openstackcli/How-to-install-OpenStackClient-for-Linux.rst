@@ -1,5 +1,5 @@
 How to install OpenStackClient for Linux on |brand-name|
-========================================================
+=======================================================
 
 The OpenStack CLI client allows you to manage OpenStack environments from the
 command line. You can use it to perform tasks such as:
@@ -127,7 +127,7 @@ Activate the environment:
 
 After activation, the prompt should show **(openstack_cli)** as a prefix:
 
-.. figure:: activate_environment.png
+.. figure:: /openstackcli/How-to-install-OpenStackClient-for-Linux-on-Eumetsat-Elasticity/activate_environment.png
    :class: image-with-border
 
 Install OpenStackClient
@@ -139,7 +139,7 @@ Before installing OpenStackClient, upgrade **pip**:
 
    pip install --upgrade pip
 
-.. figure:: install_new_pip.png
+.. figure:: /openstackcli/How-to-install-OpenStackClient-for-Linux-on-Eumetsat-Elasticity/install_new_pip.png
    :class: image-with-border
 
 Install the **python-openstackclient** package:
@@ -175,7 +175,7 @@ Execute:
 You should see information about using the OpenStack CLI command. The
 beginning of the output should look like this:
 
-.. figure:: openstack_cli_install_linux_help.png
+.. figure:: /openstackcli/How-to-install-OpenStackClient-for-Linux-on-Eumetsat-Elasticity/openstack_cli_install_linux_help.png
    :class: image-with-border
 
 If the command shows its output in a pager, use the arrow keys, or **vim**
@@ -206,7 +206,7 @@ After successful authentication, you will be able to run commands such as:
 This command lists flavors available in your project. The output may look like
 this:
 
-.. figure:: openstackcli_flavor_list.png
+.. figure:: /openstackcli/How-to-install-OpenStackClient-for-Linux-on-Eumetsat-Elasticity/openstackcli_flavor_list.png
    :class: image-with-border
 
 Install additional OpenStack clients

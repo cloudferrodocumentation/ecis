@@ -124,7 +124,7 @@ This is how the contents of your **.aws** folder may look:
 
 .. jinja:: s3_images
 
-   .. image:: {{ s3114 }}
+   .. image:: /s3/S3-bucket-object-versioning-on-Eumetsat-Elasticity/{{ s3114 }}
 
 Open the **credentials** file in a plain text editor. For example, with
 **nano**:
@@ -359,7 +359,7 @@ The file may look like this in your text editor:
 
 .. jinja:: s3_images
 
-   .. image:: {{ s3115 }}
+   .. image:: /s3/S3-bucket-object-versioning-on-Eumetsat-Elasticity/{{ s3115 }}
 
 Upload the file to **$bucket_name1**:
 
@@ -441,7 +441,7 @@ The file may look like this:
 
 .. jinja:: s3_images
 
-   .. image:: {{ s3116 }}
+   .. image:: /s3/S3-bucket-object-versioning-on-Eumetsat-Elasticity/{{ s3116 }}
 
 Upload the modified file to the same bucket and the same key:
 
@@ -685,14 +685,14 @@ The file should be in your current working directory:
 
 .. jinja:: s3_images
 
-   .. image:: {{ s3117 }}
+   .. image:: /s3/S3-bucket-object-versioning-on-Eumetsat-Elasticity/{{ s3117 }}
 
 Displaying its contents with **cat** confirms that it is the first version of
 the file:
 
 .. jinja:: s3_images
 
-   .. image:: {{ s3118 }}
+   .. image:: /s3/S3-bucket-object-versioning-on-Eumetsat-Elasticity/{{ s3118 }}
 
 Deleting objects on version-enabled buckets
 -------------------------------------------
@@ -823,7 +823,7 @@ Within the Horizon dashboard, the file is also invisible:
 
 .. jinja:: s3_images
 
-   .. image:: {{ s3119 }}
+   .. image:: /s3/S3-bucket-object-versioning-on-Eumetsat-Elasticity/{{ s3119 }}
 
 Even though the file cannot be seen, the bucket size is still displayed
 correctly. Each stored version of each file contributes to the total size.
@@ -939,7 +939,7 @@ The file should now also be visible in Horizon again:
 
 .. jinja:: s3_images
 
-   .. image:: {{ s3120 }}
+   .. image:: /s3/S3-bucket-object-versioning-on-Eumetsat-Elasticity/{{ s3120 }}
 
 On this screenshot, the visible file has size 18 bytes, while the total bucket
 size is 36 bytes. This is because the total size includes both stored versions
@@ -1010,7 +1010,7 @@ In the Horizon dashboard, the total size of the bucket is reduced to 18 bytes:
 
 .. jinja:: s3_images
 
-   .. image:: {{ s3121 }}
+   .. image:: /s3/S3-bucket-object-versioning-on-Eumetsat-Elasticity/{{ s3121 }}
 
 If you delete the last version:
 
@@ -1027,7 +1027,7 @@ be reduced to zero bytes:
 
 .. jinja:: s3_images
 
-   .. image:: {{ s3122 }}
+   .. image:: /s3/S3-bucket-object-versioning-on-Eumetsat-Elasticity/{{ s3122 }}
 
 If you now execute **list-object-versions**:
 

@@ -1,5 +1,5 @@
 Generating and authorizing Terraform using Keycloak user on |brand-name|
-========================================================================
+===================================================================================
 
 Clicking in Horizon and entering CLI commands are two main ways of using an OpenStack system. They are well suited to interactively executing one command at a time but do not scale up easily. A tool such as `Terraform, by HashiCorp corporation, <https://www.terraform.io/>`_ provides an alternative to manual ways of introducing cascading changes. Here is how you could, say, create several instances at once:
 
@@ -18,7 +18,7 @@ The plan is to install Terraform, get OpenStack token, enter it into the configu
 and so on.
 
 What We Are Going To Do
------------------------
+---------------------------
 
  * Install Terraform as a root user
 
@@ -33,44 +33,43 @@ What We Are Going To Do
  * Explain the meaning of the variables used
 
  * Execute the Terraform script
-
 Prerequisites
 -------------
 
 No. 1 **Account**
 
-You need a |brand-name| hosting account with access to the Horizon interface: |brand-name-site-link|. In particular, you will need the password for the account so have it ready in advance.
+You need a |brand-name| hosting account with access to the Horizon interface: |brand-name-site-link|. You will also need the password for the account, so have it ready before you start.
 
 No. 2 **Installed version of Linux**
 
-You can use your current Linux installation, however, in this article we shall start with a clean slate. Create a new VM with Ubuntu as defined in this article:
+You can use your current Linux installation. In this article, however, we start from a clean environment. Create a new Ubuntu VM by following this article:
 
-.. jinja:: brand_names
+.. jinja:: doc_links
 
-  :doc:`/cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-{{ brand_name_hyphen }}`.
+   * :doc:`{{ linux_vm_from_linux }}`
 
 No. 3 **Installed OpenStackClient for Linux**
 
-To get token from the cloud, you will first need to enable access from the Ubuntu VM you just created:
+To obtain a token from the cloud, you first need the OpenStack CLI client installed on the Ubuntu VM created in Prerequisite No. 2.
 
-.. jinja:: brand_names
+.. jinja:: doc_links
 
-   :doc:`/openstackcli/How-to-install-OpenStackClient-for-Linux-on-{{ brand_name_hyphen }}`
+   * :doc:`{{ openstackclient_linux }}`
 
-It will show you how to install Python, create and activate a virtual environment, and then connect to the cloud by downloading and activating the proper RC file from the |brand-name| cloud.
+That article shows how to install Python, create and activate a virtual environment, install the OpenStack CLI client, and prepare the environment for cloud authentication.
 
-No. 4 **Connect to the cloud via an RC file**
+No. 4 **RC file downloaded and cloud access activated**
 
-.. jinja:: brand_names
+You need to download the RC file from the Horizon dashboard and use it to authenticate the OpenStack CLI client. The correct authentication article depends on the current |brand-name| cloud configuration and is resolved automatically through the documentation configuration:
 
-   .. jinja:: doc_links
+.. jinja:: doc_links
 
-      Another article, :doc:`{{ openstack_cli_auth }}`, explains how to connect to the cloud using the authentication procedure enabled on your account. It also covers the main platforms: Linux, macOS, and Windows.
+   * :doc:`{{ openstack_cli_auth }}`
 
-You will use both the Python virtual environment and the downloaded RC file **after** Terraform has been installed.
+You will use both the Python virtual environment from Prerequisite No. 3 and the downloaded RC file after Terraform has been installed.
 
 Step 1 Install Terraform as a root user
----------------------------------------
+--------------------------------------------
 
 Install the required dependencies using the following command:
 
@@ -91,15 +90,17 @@ Add the HashiCorp repository to the APT:
 
    sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 
-.. figure:: terraform_adding_repository.png
+.. jinja:: openstackdev_images
+
+   .. figure:: /openstackdev/Generating-and-authorizing-Terraform-using-Keycloak-user-on-Eumetsat-Elasticity/{{ openstackdev020 }}
 
 The following commands will update Ubuntu, install Terraform and check its version:
 
 .. code::
 
-   apt-get update -y #update Ubuntu
+   apt-get update -y            #update Ubuntu
    apt-get install terraform -y # install Terraform
-   terraform -v # check the version
+   terraform -v                 # check the version
 
 Now exit *root* mode and become the standard **eouser** again.
 
@@ -108,7 +109,7 @@ Now exit *root* mode and become the standard **eouser** again.
    su eouser # Exit root mode
 
 Step 2 Reconnect to the cloud
------------------------------
+--------------------------------
 
 Working through Prerequisites Nos. 2 and 3, you ended up being connected up to the cloud. That connection is now lost because you have switched to **root** user and back again, to the normal **eouser** for the |brand-name| cloud. Refer to **Prerequisite No. 4 Activate the RC file** to reconnect to the cloud again. The following command will act as a test:
 
@@ -118,12 +119,14 @@ Working through Prerequisites Nos. 2 and 3, you ended up being connected up to t
 
 and should present a start of a list of flavors available in the system:
 
-.. figure:: terraform_flavor_list_short.png
+.. jinja:: openstackdev_images
+
+   .. figure:: /openstackdev/Generating-and-authorizing-Terraform-using-Keycloak-user-on-Eumetsat-Elasticity/{{ openstackdev021 }}
 
 **You are now ready to receive token from the cloud you are working with.** The "token" is actually a very long string of characters which serves as kind of password for your code.
 
 Step 3 Download OpenStack token
--------------------------------
+--------------------------------
 
 Get token with the following command:
 
@@ -140,7 +143,7 @@ This is the result:
 Value of variable **id** is the token you need. Copy and save it so that you can enter it into the configuration file for Terraform.
 
 Step 4 Set up the configuration file and initialize Terraform
--------------------------------------------------------------
+--------------------------------------------------------------------
 
 Create new directory where your Terraform files will be stored and switch to it:
 
@@ -190,7 +193,9 @@ and so on.
 
 The screen after initialization would look like this:
 
-.. figure:: terraform_init.png
+.. jinja:: openstackdev_images
+
+   .. figure:: /openstackdev/Generating-and-authorizing-Terraform-using-Keycloak-user-on-Eumetsat-Elasticity/{{ openstackdev022 }}
 
 Terraform has been initialized and is working properly with your OpenStack cloud. Now add code to perform some useful tasks.
 
@@ -199,7 +204,7 @@ Terraform has been initialized and is working properly with your OpenStack cloud
    In examples that follow, we use two networks, one with name starting with **cloud_** and the name of the other starting with **eodata_**. The former network should always be present in the account, but the latter may or may not present. If you do not have network which name starts with **eodata_**, you may create it or use any other network that you already have and want to use.
 
 Step 5 Create Terraform code
-----------------------------
+-----------------------------------------------------
 
 Append code to the contents of the **yourconffile.tf**. It will generate four virtual machines as specified in the value of variable **count**. The entire file **yourconffile.tf** should now look like this:
 
@@ -227,8 +232,8 @@ Append code to the contents of the **yourconffile.tf**. It will generate four vi
 	name = "test-instance-${count.index}"
 	image_id = "d7ba6aa0-d5d8-41ed-b29b-3f5336d87340"
 	flavor_id = "eo2.medium"
-	security_groups = [
-	"default", "allow_ping_ssh_icmp_rdp"]
+	security_groups  = [
+	"default", "allow_ping_ssh_icmp_rdp" ]
 	network {
 	name = "eodata_00aaa_3"
 	}
@@ -238,7 +243,7 @@ Append code to the contents of the **yourconffile.tf**. It will generate four vi
 	}
 
 Always use the latest value of image id
----------------------------------------
+-------------------------------------------------------------------
 
 From time to time, the default images of operating systems in the |brand-name| cloud are upgraded to the new versions. As a consequence, their **image id** will change. Let's say that the image id for Ubuntu 20.04 LTS was **574fe1db-8099-4db4-a543-9e89526d20ae** at the time of writing of this article. While working through the article, you would normally take the **current** value of image id, and would use it to replace **574fe1db-8099-4db4-a543-9e89526d20ae** throughout the text.
 
@@ -249,7 +254,7 @@ Now, suppose you wanted to automate processes under OpenStack, perhaps using Hea
    Make sure that your automation code is using the **current value** of an OS image id, not the hardcoded one.
 
 The meaning of the variables used
----------------------------------
+----------------------------------
 
 The meaning of the variables used is as follows:
 
@@ -278,13 +283,13 @@ The meaning of the variables used is as follows:
    Name of the flavor that each VM will have. You get these names from command **openstack flavor list**.
 
 **security_groups**
-   Here, it is an array of two security groups -- **default** and **allow_ping_ssh_icmp_rdp**. These are the basic security groups that should be used as a start for all VMs.
+   Here, it is an array of two security groups -- **default** and  **allow_ping_ssh_icmp_rdp**. These are the basic security groups that should be used as a start for all VMs.
 
 **network**
    Name of the network to use. In this case, we include network **eodata_00aaa_3** for eodata and **cloud_00aaa_3** for general communication within the cloud.
 
 Step 6 Execute the Terraform script
------------------------------------
+------------------------------------
 
 Here is how Terraform will create four instances of Ubuntu 20.04 LTS. Command **apply** will execute the script; when asked for confirmation to proceed, type **yes** to start the operation:
 
@@ -292,7 +297,9 @@ Here is how Terraform will create four instances of Ubuntu 20.04 LTS. Command **
 
   terraform apply
 
-.. image:: terraform_yes.png
+.. jinja:: openstackdev_images
+
+   .. image:: /openstackdev/Generating-and-authorizing-Terraform-using-Keycloak-user-on-Eumetsat-Elasticity/{{ openstackdev023 }}
 
 Type
 
@@ -304,11 +311,15 @@ It will create four VMs as defined by variable **count**.
 
 You should see output similar to this:
 
-.. figure:: terraform_apply.png
+.. jinja:: openstackdev_images
+
+   .. figure:: /openstackdev/Generating-and-authorizing-Terraform-using-Keycloak-user-on-Eumetsat-Elasticity/{{ openstackdev024 }}
 
 This is how you would see those virtual machines in Horizon:
 
-.. figure:: terraform_horizon.png
+.. jinja:: openstackdev_images
+
+   .. figure:: /openstackdev/Generating-and-authorizing-Terraform-using-Keycloak-user-on-Eumetsat-Elasticity/{{ openstackdev025 }}
 
 If you wanted to revert the actions, that is, delete the VMs you have just created, the command would be:
 
@@ -319,7 +330,7 @@ If you wanted to revert the actions, that is, delete the VMs you have just creat
 Again, type **yes** to start the operations.
 
 What To Do Next
----------------
+----------------------
 
 Of particular interest would be the following CLI commands for Terraform:
 
@@ -343,6 +354,10 @@ to learn other commands Terraform can offer.
 What To Do Next
 ---------------
 
-.. jinja:: brand_names
+For another automation approach, see:
 
-   Article :doc:`/openstackcli/How-to-create-a-set-of-VMs-using-OpenStack-Heat-Orchestration-on-{{ brand_name_hyphen }}` uses orchestration capabilities of OpenStack to automate creation of virtual machines. It is a different approach compared to Terraform but both can lead to automation under OpenStack.
+.. jinja:: doc_links
+
+   * :doc:`{{ heat_create_vms }}`
+
+That article uses OpenStack Heat orchestration to automate the creation of virtual machines. Heat and Terraform are different automation approaches, but both can be used to describe and create OpenStack infrastructure in a repeatable way.

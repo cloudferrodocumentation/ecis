@@ -1,5 +1,5 @@
 Load Balancer as a Service - user documentation on |brand-name|
-===============================================================
+===========================================================================================
 
 Load Balancer is a service that listens for requests, and then forwards those requests on to servers within a pool.
 There are many reasons why you should take advantage of this functionality, but the most common situations are when you are trying to get a
@@ -9,7 +9,7 @@ The following figure presents the general concept of LBaaS service and its main 
 
 .. jinja:: networking_images
 
-   .. figure:: {{ networking002 }}
+   .. figure:: /networking/Load-Balancer-as-a-Service-User-Documentation-on-Eumetsat-Elasticity/{{ networking002 }}
       :class: with-border
 
 The load balancer occupies Openstack neutron network port and has an IP address assigned from a subnet. Load balancers can listen for requests on multiple ports. Each one of those ports is specified by a listener. A pool holds a list of members that serve content through the load balancer. Members are servers that serve traffic behind a load balancer. Each member is specified by the IP address and port that it uses to serve traffic. Members may go offline from time to time and health monitors divert traffic away from members that are not responding properly. Health monitors are associated with pools.
@@ -31,7 +31,7 @@ We strongly recommend to run flavors in high availability mode, non-HA flavors s
 
 .. jinja:: networking_images
 
-   .. figure:: {{ networking003 }}
+   .. figure:: /networking/Load-Balancer-as-a-Service-User-Documentation-on-Eumetsat-Elasticity/{{ networking003 }}
       :class: with-border
 
 .. attention::
@@ -47,7 +47,7 @@ If flavor is not selected, the load balancer will be launched with the default f
 
 .. jinja:: networking_images
 
-   .. figure:: {{ networking004 }}
+   .. figure:: /networking/Load-Balancer-as-a-Service-User-Documentation-on-Eumetsat-Elasticity/{{ networking004 }}
       :class: with-border
 
 Now you should provide the details for the listener (listening endpoint of a load balanced service).
@@ -56,26 +56,26 @@ For HTTP protocol, you can choose whether to include headers into the request to
 
 .. jinja:: networking_images
 
-   .. figure:: {{ networking005 }}
+   .. figure:: /networking/Load-Balancer-as-a-Service-User-Documentation-on-Eumetsat-Elasticity/{{ networking005 }}
       :class: with-border
 
-Provide details for the pool as well as pool members (pool is the object representing the grouping of members to which the listener forwards client requests). Pool members can be also added after creation of Load Balancer.
+Provide details for the pool as well as pool members ( pool is the object representing the grouping of members to which the listener forwards client requests). Pool members can be also added after creation of Load Balancer.
 
 .. jinja:: networking_images
 
-   .. figure:: {{ networking006 }}
+   .. figure:: /networking/Load-Balancer-as-a-Service-User-Documentation-on-Eumetsat-Elasticity/{{ networking006 }}
       :class: with-border
 
 .. jinja:: networking_images
 
-   .. figure:: {{ networking007 }}
+   .. figure:: /networking/Load-Balancer-as-a-Service-User-Documentation-on-Eumetsat-Elasticity/{{ networking007 }}
       :class: with-border
 
 Now you can define the detail for health monitor, which is an object that defines a check method for each member of the pool.
 
 .. jinja:: networking_images
 
-   .. figure:: {{ networking008 }}
+   .. figure:: /networking/Load-Balancer-as-a-Service-User-Documentation-on-Eumetsat-Elasticity/{{ networking008 }}
       :class: with-border
 
 
@@ -85,7 +85,7 @@ After creation Floating IP can be associated to Load Balancer, if such associati
 
 .. jinja:: networking_images
 
-   .. figure:: {{ networking009 }}
+   .. figure:: /networking/Load-Balancer-as-a-Service-User-Documentation-on-Eumetsat-Elasticity/{{ networking009 }}
       :class: with-border
 
 **Python Octavia Client**
@@ -186,7 +186,7 @@ Daemon with access to both the LB Network and OpenStack components which coordin
 
 *HAProxy*
 
-Load balancing software used in the reference implementation for Octavia. (See http://www.haproxy.org/). HAProxy processes run on amphorae and actually accomplish the task of delivering the load balancing service.
+Load balancing software used in the reference implementation for Octavia. (See http://www.haproxy.org/ ). HAProxy processes run on amphorae and actually accomplish the task of delivering the load balancing service.
 
 *Health Monitor*
 

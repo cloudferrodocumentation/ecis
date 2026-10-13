@@ -1,5 +1,5 @@
 Use backup command to create rotating backups of virtual machines on |brand-name| cloud
-=======================================================================================
+======================================================================================
 
 **Rotating backups** in OpenStack are a backup strategy where older backups are
 automatically deleted after a predefined number of backups has been created.
@@ -104,7 +104,7 @@ create it by following one of these articles:
    * :doc:`{{ linux_vm_from_windows }}`
    * :doc:`{{ linux_vm_from_linux }}`
 
-.. ifconfig:: brand_name!= 'ESA HPC'
+.. ifconfig:: brand_name != 'ESA HPC'
 
    To learn how to create a Windows virtual machine, see this article:
 
@@ -206,7 +206,7 @@ If **cron** is installed, the following command:
 
 should produce output similar to this:
 
-.. figure:: install-cron-1.png
+.. figure:: /openstackcli/Use-backup-command-to-create-rotating-backups-of-virtual-machines-on-Eumetsat-Elasticity/install-cron-1.png
    :class: image-with-border
 
 If **cron** is not installed, install and enable it:
@@ -319,7 +319,7 @@ this value during later runs may lead to confusing or unexpected results.
 You will now have two backups of the same VM, named **my-backup1** and
 **my-backup2**.
 
-.. figure:: how-to-create-rotating-backups-05_creodias.png
+.. figure:: /openstackcli/Use-backup-command-to-create-rotating-backups-of-virtual-machines-on-Eumetsat-Elasticity/how-to-create-rotating-backups-05_creodias.png
    :class: image-with-border
 
 Run the command again with the name **my-backup3**. The rotation limit has now
@@ -391,7 +391,7 @@ your own environment.
 
 This is what the command may look like in the **nano** editor:
 
-.. figure:: install-cron-2.png
+.. figure:: /openstackcli/Use-backup-command-to-create-rotating-backups-of-virtual-machines-on-Eumetsat-Elasticity/install-cron-2.png
    :class: image-with-border
 
 The line is long, so it is often easier to prepare it locally first and then
@@ -456,7 +456,7 @@ Example output:
 .. code-block:: text
 
    +--------------------------------------+------------+--------+
-   | ID | Name | Status |
+   | ID                                   | Name       | Status |
    +--------------------------------------+------------+--------+
    | 3efb29d5-40bb-44aa-ad4e-3b66bc4fd5a3 | my-backup1 | active |
    | 37f1510b-ff4f-4dc0-9fea-e310cf987de6 | my-backup2 | active |
@@ -482,20 +482,20 @@ You should get output similar to this:
 .. code-block:: text
 
    +-------------------+----------------------------------------------------------+
-   | Field | Value |
+   | Field             | Value                                                    |
    +-------------------+----------------------------------------------------------+
-   | OS-DCF:diskConfig | MANUAL |
-   | accessIPv4 | |
-   | accessIPv6 | |
-   | addresses | private-network=10.0.0.56 |
-   | adminPass | zrWv6nfof7Mn |
-   | created | 2025-02-13T09:40:23Z |
-   | flavor | eo1.xsmall (eo1.xsmall) |
-   | id | 3a42cda7-ab72-4c6a-a6f3-11000e6e54ac |
-   | image | my-backup2 (37f1510b-ff4f-4dc0-9fea-e310cf987de6) |
-   | name | vm-to-backup |
-   | progress | 0 |
-   | status | REBUILD |
+   | OS-DCF:diskConfig | MANUAL                                                   |
+   | accessIPv4        |                                                          |
+   | accessIPv6        |                                                          |
+   | addresses         | private-network=10.0.0.56                                |
+   | adminPass         | zrWv6nfof7Mn                                             |
+   | created           | 2025-02-13T09:40:23Z                                     |
+   | flavor            | eo1.xsmall (eo1.xsmall)                                  |
+   | id                | 3a42cda7-ab72-4c6a-a6f3-11000e6e54ac                     |
+   | image             | my-backup2 (37f1510b-ff4f-4dc0-9fea-e310cf987de6)        |
+   | name              | vm-to-backup                                             |
+   | progress          | 0                                                        |
+   | status            | REBUILD                                                  |
    +-------------------+----------------------------------------------------------+
 
 Wait until the restore operation finishes.

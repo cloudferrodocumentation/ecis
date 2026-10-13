@@ -19,6 +19,9 @@ import shutil
 from pathlib import Path
 from datetime import date, datetime
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
 from get_rst_files import get_files
 
 # -- Project information -----------------------------------------------------
@@ -3199,12 +3202,8 @@ jinja_contexts["horizon_interfaces"] = {
 # <<< CF_BRAND_BLOCK: jinja_horizon_interfaces
 
 
-RUN_REMOTE_IMPORTS = os.environ.get("CF_RUN_REMOTE_IMPORTS", "0").strip().lower() in {
-    "1",
-    "true",
-    "yes",
-    "on",
-}
+# Canonical articles are committed locally; imports must not recreate duplicate pages.
+RUN_REMOTE_IMPORTS = False
 
 if RUN_REMOTE_IMPORTS:
 
@@ -3508,3 +3507,6 @@ html_context.update({
     'current_language': current_language,
 })
 
+
+# Resolve legacy document references and retain redirects to canonical URLs.
+extensions.append("local_sources")

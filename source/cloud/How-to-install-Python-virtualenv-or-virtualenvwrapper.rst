@@ -1,5 +1,5 @@
 How to install Python virtualenv or virtualenvwrapper on |brand-name|
-=====================================================================
+======================================================================
 
 Virtualenv is a tool with which you are able to create isolated Python environments. It is mainly used to get rid of problems with dependencies and versions.
 It also does not include permission setup. Generally virtualenvwrapper is a kind of extension for virtualenv. It owns wrappers which are in charge of creating and deleting environments. It is useful supplement for our current subject.
@@ -47,17 +47,17 @@ Create a new directory to store your virtual environments, for example:
 
 ::
 
-  mkdir.virtualenvs
+  mkdir .virtualenvs
 
 Now we are going to modify **.bashrc** file by adding a row that will adjust every new virtual environment to use Python 3.
 We will point virtual environments to the directory we created above (.virtualenvs) and we will also point to the locations of the virtualenv and virtualenvwrapper.
-Open.bashrc file using editor, for example:
+Open .bashrc file using editor, for example:
 
 ::
 
   vim ~/.bashrc
 
-Navigate to the bottom of the.bashrc file and add following rows:
+Navigate to the bottom of the .bashrc file and add following rows:
 
 ::
 
@@ -65,9 +65,9 @@ Navigate to the bottom of the.bashrc file and add following rows:
    export WORKON_HOME=$HOME/.virtualenvs
    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
    export VIRTUALENVWRAPPER_VIRTUALENV=/home/eouser/.local/bin/virtualenv
-   source./.local/bin/virtualenvwrapper.sh
+   source ./.local/bin/virtualenvwrapper.sh
 
-After that save the.bashrc file.
+After that save the .bashrc file.
 
 Now we have to reload the bashrc script, to do it execute the command:
 

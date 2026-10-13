@@ -1,5 +1,5 @@
 How to transfer volumes between domains and projects using Horizon dashboard on |brand-name|
-============================================================================================
+=============================================================================================================
 
 Volumes in OpenStack can be used to store data. They are visible to virtual
 machines as drives.
@@ -42,7 +42,7 @@ You can check the status of the volume in **Volumes** -> **Volumes** in the
 Horizon dashboard. In the screenshot below, the status is marked with a green
 rectangle.
 
-.. figure:: transfer-volume-between-projects-horizon-32_creodias.png
+.. figure:: /cloud/How-to-transfer-volumes-between-domains-and-projects-using-Horizon-dashboard-on-Eumetsat-Elasticity/transfer-volume-between-projects-horizon-32_creodias.png
    :alt: Volume status in Horizon
    :class: image-with-border
 
@@ -67,7 +67,7 @@ workflow.
 To access each project directly, you can sign in to the appropriate account or
 use the project switcher at the top of the Horizon dashboard.
 
-.. figure:: transfer-volume-between-projects-horizon-37_creodias.png
+.. figure:: /cloud/How-to-transfer-volumes-between-domains-and-projects-using-Horizon-dashboard-on-Eumetsat-Elasticity/transfer-volume-between-projects-horizon-37_creodias.png
    :alt: Project switcher in Horizon
    :class: image-with-border
 
@@ -84,7 +84,7 @@ Confirm that the volume you want to transfer has **Status** set to
 **Available**. In the example below, this requirement is met. The value is
 marked with a blue rectangle.
 
-.. figure:: transfer-volume-between-projects-horizon-33_creodias.png
+.. figure:: /cloud/How-to-transfer-volumes-between-domains-and-projects-using-Horizon-dashboard-on-Eumetsat-Elasticity/transfer-volume-between-projects-horizon-33_creodias.png
    :alt: Available volume in the source project
    :class: image-with-border
 
@@ -96,7 +96,7 @@ No. 2 and detach the volume if needed.
 In the row representing the volume you want to transfer, open the drop-down
 menu in the **Actions** column and choose **Create Transfer**.
 
-.. figure:: transfer-volume-between-projects-horizon-15_creodias.png
+.. figure:: /cloud/How-to-transfer-volumes-between-domains-and-projects-using-Horizon-dashboard-on-Eumetsat-Elasticity/transfer-volume-between-projects-horizon-15_creodias.png
    :alt: Create Transfer action in Horizon
    :class: image-with-border
 
@@ -104,7 +104,7 @@ menu in the **Actions** column and choose **Create Transfer**.
 
 You should see the following window.
 
-.. figure:: transfer-volume-between-projects-horizon-16_creodias.png
+.. figure:: /cloud/How-to-transfer-volumes-between-domains-and-projects-using-Horizon-dashboard-on-Eumetsat-Elasticity/transfer-volume-between-projects-horizon-16_creodias.png
    :alt: Create Volume Transfer window
    :class: image-with-border
 
@@ -115,7 +115,7 @@ Enter a descriptive name in the **Transfer Name** text field and click
 
 You should now see the transfer credentials.
 
-.. figure:: transfer-volume-between-projects-horizon-17_creodias.png
+.. figure:: /cloud/How-to-transfer-volumes-between-domains-and-projects-using-Horizon-dashboard-on-Eumetsat-Elasticity/transfer-volume-between-projects-horizon-17_creodias.png
    :alt: Volume transfer credentials
    :class: image-with-border
 
@@ -135,7 +135,7 @@ After saving the credentials, click **Close**.
 
 The volume should now have **Status** set to **Awaiting Transfer**.
 
-.. figure:: transfer-volume-between-projects-horizon-18_creodias.png
+.. figure:: /cloud/How-to-transfer-volumes-between-domains-and-projects-using-Horizon-dashboard-on-Eumetsat-Elasticity/transfer-volume-between-projects-horizon-18_creodias.png
    :alt: Volume awaiting transfer
    :class: image-with-border
 
@@ -152,7 +152,7 @@ Perform this step in the **destination** project.
 Navigate to **Volumes** -> **Volumes** in the Horizon dashboard and click
 **Accept Transfer**.
 
-.. figure:: transfer-volume-between-projects-horizon-19_creodias.png
+.. figure:: /cloud/How-to-transfer-volumes-between-domains-and-projects-using-Horizon-dashboard-on-Eumetsat-Elasticity/transfer-volume-between-projects-horizon-19_creodias.png
    :alt: Accept Transfer button in Horizon
    :class: image-with-border
 
@@ -160,7 +160,7 @@ Navigate to **Volumes** -> **Volumes** in the Horizon dashboard and click
 
 You should see the following window.
 
-.. figure:: transfer-volume-between-projects-horizon-20_creodias.png
+.. figure:: /cloud/How-to-transfer-volumes-between-domains-and-projects-using-Horizon-dashboard-on-Eumetsat-Elasticity/transfer-volume-between-projects-horizon-20_creodias.png
    :alt: Accept Volume Transfer window
    :class: image-with-border
 
@@ -172,7 +172,7 @@ Click **Accept Volume Transfer**.
 
 The volume should now be visible in the destination project.
 
-.. figure:: transfer-volume-between-projects-horizon-21_creodias.png
+.. figure:: /cloud/How-to-transfer-volumes-between-domains-and-projects-using-Horizon-dashboard-on-Eumetsat-Elasticity/transfer-volume-between-projects-horizon-21_creodias.png
    :alt: Transferred volume visible in the destination project
    :class: image-with-border
 
@@ -188,7 +188,7 @@ Perform this step in the **source** project.
 
 Navigate to **Volumes** -> **Volumes** in the Horizon dashboard.
 
-.. figure:: transfer-volume-between-projects-horizon-21_creodias.png
+.. figure:: /cloud/How-to-transfer-volumes-between-domains-and-projects-using-Horizon-dashboard-on-Eumetsat-Elasticity/transfer-volume-between-projects-horizon-21_creodias.png
    :alt: Volumes list in Horizon
    :class: image-with-border
 
@@ -201,7 +201,7 @@ volume cannot be attached to an instance while the transfer remains active.
 To cancel the transfer, click **Cancel Transfer** in the **Actions** column of
 the volume row.
 
-.. figure:: transfer-volume-between-projects-horizon-35_creodias.png
+.. figure:: /cloud/How-to-transfer-volumes-between-domains-and-projects-using-Horizon-dashboard-on-Eumetsat-Elasticity/transfer-volume-between-projects-horizon-35_creodias.png
    :alt: Cancel Transfer action in Horizon
    :class: image-with-border
 
@@ -209,7 +209,7 @@ the volume row.
 
 You will be asked for confirmation.
 
-.. figure:: transfer-volume-between-projects-horizon-36_creodias.png
+.. figure:: /cloud/How-to-transfer-volumes-between-domains-and-projects-using-Horizon-dashboard-on-Eumetsat-Elasticity/transfer-volume-between-projects-horizon-36_creodias.png
    :alt: Confirm cancellation of volume transfer
    :class: image-with-border
 
@@ -220,7 +220,7 @@ Click **Cancel Transfer**.
 If the operation is successful, you should get a message in the top-right
 corner of the Horizon dashboard.
 
-.. figure:: transfer-volume-between-projects-horizon-38_creodias.png
+.. figure:: /cloud/How-to-transfer-volumes-between-domains-and-projects-using-Horizon-dashboard-on-Eumetsat-Elasticity/transfer-volume-between-projects-horizon-38_creodias.png
    :alt: Volume transfer cancellation message
    :class: image-with-border
 
@@ -232,7 +232,7 @@ that the volume was removed. It means that the volume transfer was cancelled.
 After cancellation, the volume should again have **Status** set to
 **Available**.
 
-.. figure:: transfer-volume-between-projects-horizon-11_creodias.png
+.. figure:: /cloud/How-to-transfer-volumes-between-domains-and-projects-using-Horizon-dashboard-on-Eumetsat-Elasticity/transfer-volume-between-projects-horizon-11_creodias.png
    :alt: Volume available after cancelling transfer
    :class: image-with-border
 

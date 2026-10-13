@@ -1,12 +1,12 @@
 How to restore volume from snapshot on |brand-name|
-===================================================
+===============================================================================================
 
 In this article, you will learn how to restore volume from volume snapshot using Horizon dashboard or OpenStack CLI client.
 
 This can be achieved by creating a new volume from existing snapshot. You can then delete the previous snapshot and, optionally, previous volume.
 
 Prerequisites
--------------
+-------------------
 
 No. 1 **Hosting**
 
@@ -22,25 +22,25 @@ If you want to interact with |brand-name| cloud using the OpenStack CLI client, 
 
 .. jinja:: brand_names
 
-    * :doc:`/openstackcli/How-to-install-OpenStackClient-for-Linux-on-Eumetsat-Elasticity/How-to-install-OpenStackClient-for-Linux-on-Eumetsat-Elasticity`
+    * :doc:`/openstackcli/How-to-install-OpenStackClient-for-Linux`
 
-    * :doc:`/openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows-on-Eumetsat-Elasticity/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows-on-Eumetsat-Elasticity`
+    * :doc:`/openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows`
 
-    * :doc:`/openstackcli/How-to-install-OpenStackClient-on-Windows-using-Windows-Subsystem-for-Linux-on-Eumetsat-Elasticity-OpenStack-Hosting/How-to-install-OpenStackClient-on-Windows-using-Windows-Subsystem-for-Linux-on-Eumetsat-Elasticity-OpenStack-Hosting`
+    * :doc:`/openstackcli/How-to-install-OpenStackClient-on-Windows-using-Windows-Subsystem-for-Linux-on-OpenStack-Hosting`
 
 .. ifconfig:: brand_name in two_fa_activated
 
     .. jinja:: brand_names
 
-       Once you have installed this piece of software, you need to authenticate to start using it: :doc:`/accountmanagement/How-to-activate-OpenStack-CLI-access-to-Eumetsat-Elasticity-cloud/How-to-activate-OpenStack-CLI-access-to-Eumetsat-Elasticity-cloud`
+       Once you have installed this piece of software, you need to authenticate to start using it: :doc:`/accountmanagement/How-to-activate-OpenStack-CLI-access-to-cloud`
 
 .. ifconfig:: brand_name not in two_fa_activated
 
-    .. ifconfig:: brand_name!= 'WEkEO'
+    .. ifconfig:: brand_name != 'WEkEO'
 
        .. jinja:: brand_names
 
-          Once you have installed this piece of software, you need to authenticate to start using it: :doc:`/accountmanagement/How-to-activate-OpenStack-CLI-access-to-Eumetsat-Elasticity-cloud/How-to-activate-OpenStack-CLI-access-to-Eumetsat-Elasticity-cloud`
+          Once you have installed this piece of software, you need to authenticate to start using it: :doc:`/accountmanagement/How-to-activate-OpenStack-CLI-access-to-cloud`
 
     .. ifconfig:: brand_name == 'WEkEO'
 
@@ -48,31 +48,31 @@ If you want to interact with |brand-name| cloud using the OpenStack CLI client, 
 
 
 What We Are Going To Cover
---------------------------
+--------------------------------
 
  * Restoring volume snapshot using Horizon dashboard
  * Restoring volume snapshot using OpenStack CLI client
 
 Restoring volume snapshot using Horizon dashboard
--------------------------------------------------
+--------------------------------------------------------------------
 
 Navigate to the **Volumes -> Snapshots** section of the Horizon dashboard:
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume094 }}
+   .. image:: /datavolume/How-to-restore-volume-from-snapshot-on-Eumetsat-Elasticity/{{ datavolume094 }}
 
 From the row representing the snapshot you want to restore, in the **Actions** column choose **Create Volume**:
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume095 }}
+   .. image:: /datavolume/How-to-restore-volume-from-snapshot-on-Eumetsat-Elasticity/{{ datavolume095 }}
 
 You should get the window similar to this:
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume096 }}
+   .. image:: /datavolume/How-to-restore-volume-from-snapshot-on-Eumetsat-Elasticity/{{ datavolume096 }}
 
 If you want your new volume to have a different name than your snapshot, enter the name of your choice in text field **Volume Name**.
 
@@ -84,12 +84,12 @@ You should now be transferred to section **Volumes -> Volumes** of the Horizon d
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume097 }}
+   .. image:: /datavolume/How-to-restore-volume-from-snapshot-on-Eumetsat-Elasticity/{{ datavolume097 }}
 
 Make sure that the volume has the following **Status**: **Available**.
 
 Restoring volume snapshot using OpenStack CLI client
-----------------------------------------------------
+----------------------------------------------------------------------
 
 Execute the following command:
 
@@ -101,7 +101,7 @@ You should see the list of snapshots of your volumes:
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume098 }}
+   .. image:: /datavolume/How-to-restore-volume-from-snapshot-on-Eumetsat-Elasticity/{{ datavolume098 }}
 
 Write somewhere down the ID of the snapshot from which you want to create a volume:
 
@@ -122,7 +122,7 @@ You should get output similar to this:
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume099 }}
+   .. image:: /datavolume/How-to-restore-volume-from-snapshot-on-Eumetsat-Elasticity/{{ datavolume099 }}
 
 List volumes:
 
@@ -134,26 +134,26 @@ Your new volume should now be on the list:
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume100 }}
+   .. image:: /datavolume/How-to-restore-volume-from-snapshot-on-Eumetsat-Elasticity/{{ datavolume100 }}
 
 Make sure that newly created volume has the following **Status**: **available**.
 
 What To Do Next
----------------
+---------------------
 
 You can now connect your new volume to a virtual machine and/or delete the previous one.
 
 .. jinja:: brand_names
 
-   The following article includes information how to connect a volume to a virtual machine: :doc:`/openstackcli/How-to-move-data-volume-between-two-VMs-using-OpenStack-CLI-on-Eumetsat-Elasticity/How-to-move-data-volume-between-two-VMs-using-OpenStack-CLI-on-Eumetsat-Elasticity`
+   The following article includes information how to connect a volume to a virtual machine: :doc:`/openstackcli/How-to-move-data-volume-between-two-VMs-using-OpenStack-CLI`
 
 .. jinja:: brand_names
 
-   To learn how to delete a volume snapshot, see this article :doc:`/datavolume/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity/How-to-create-or-delete-volume-snapshot-on-Eumetsat-Elasticity`
+   To learn how to delete a volume snapshot, see this article :doc:`/datavolume/How-to-create-or-delete-volume-snapshot`
 
 Volume you've just created can also be migrated to another project on the same cloud. This can be done by following one of these articles:
 
 .. jinja:: brand_names
 
-    * :doc:`/cloud/How-to-transfer-volumes-between-domains-and-projects-using-Horizon-dashboard-on-Eumetsat-Elasticity/How-to-transfer-volumes-between-domains-and-projects-using-Horizon-dashboard-on-Eumetsat-Elasticity`
-    * :doc:`/openstackcli/How-to-transfer-volumes-between-domains-and-projects-using-OpenStack-CLI-client-on-Eumetsat-Elasticity/How-to-transfer-volumes-between-domains-and-projects-using-OpenStack-CLI-client-on-Eumetsat-Elasticity`
+    * :doc:`/cloud/How-to-transfer-volumes-between-domains-and-projects-using-Horizon-dashboard`
+    * :doc:`/openstackcli/How-to-transfer-volumes-between-domains-and-projects-using-OpenStack-CLI-client`

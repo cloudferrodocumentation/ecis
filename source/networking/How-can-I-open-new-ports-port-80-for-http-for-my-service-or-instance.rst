@@ -1,5 +1,5 @@
 How can I open new ports for http for my service or instance on |brand-name|
-============================================================================
+===============================================================================================
 
 To open a new port for a service on an instance, click Project -> Network -> Security Groups and click "Create Security Group".
 
@@ -9,11 +9,11 @@ You need to create a new Ingress (incoming) rule that should look like this:
 
 ::
 
-   Ingress IPv4 TCP 80 (HTTP) 0.0.0.0/0
+   Ingress    IPv4    TCP    80 (HTTP)    0.0.0.0/0
 
 After creating a new Security Group you have to add it to your instance.
 
 To do so, simply click Project -> Compute -> Instances, then select "Edit Security Groups" and add it by clicking the "+" button.
 
-.. figure:: edit.png
+.. figure:: /networking/How-can-I-open-new-ports-port-80-for-http-for-my-service-or-instance-on-Eumetsat-Elasticity/edit.png
    :align: center

@@ -1,5 +1,5 @@
 Cannot ping VM on |brand-name|
-==============================
+======================================
 
 If you have problems with access to your VM - ping is not responding. Try the following:
 
@@ -24,7 +24,7 @@ check the name of the interface connected to private network:
 
    ifconfig
 
-based on the response, find the number of the interface of 192.168.x.x (eth<number> or ens<number>)
+based on the response, find the number of  the interface of 192.168.x.x (eth<number> or ens<number>)
 
 after that invoke the following commands:
 

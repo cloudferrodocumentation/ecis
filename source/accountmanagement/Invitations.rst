@@ -1,5 +1,5 @@
 Inviting new user to your Organization
-======================================
+==========================================
 
 .. important::
 
@@ -9,7 +9,7 @@ To invite a new user to your organization you need to share an **invitation code
 
 After logging into |brand-name-site-auth-link| press **Invitations** button on the left bar menu.
 
-.. figure:: invitation-copy--portal.png
+.. figure:: /accountmanagement/Invitations/invitation-copy-ecis-portal.png
    :align: center
    :class: image-with-border
 
@@ -24,4 +24,4 @@ As an organization admin, you need to accept the invitation first.
 
 Go to the **Invitations** tab and choose an invitation that you want to accept or -- in other case -- reject.
 
-After accepting the invitation you will be able to add/edit roles. For more details please check :doc:`/accountmanagement/Users-and-roles/Users-and-roles`
+After accepting the invitation you will be able to add/edit roles. For more details please check :doc:`/accountmanagement/Users-and-roles`

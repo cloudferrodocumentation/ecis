@@ -43,5 +43,3 @@ Terminology
       - Role controlling permissions within a specific service.
     * - S3 Key Manager
       - Portal components used to generate and manage S3 credentials.
-
-

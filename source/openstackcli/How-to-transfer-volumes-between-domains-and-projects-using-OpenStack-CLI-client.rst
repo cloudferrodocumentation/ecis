@@ -1,5 +1,5 @@
 How to transfer volumes between domains and projects using OpenStack CLI client on |brand-name|
-===============================================================================================
+===========================================================================================================
 
 Volumes in OpenStack can be used to store data. They are visible to virtual machines like drives.
 
@@ -10,14 +10,14 @@ This article covers changing the assignment of a volume to a project. This allow
 The *source* project and *destination* project must both be on the same cloud. They can (but don't have to) belong to different users from different domains and organizations.
 
 What We Are Going To Cover
---------------------------
+------------------------------------
 
  * Initializing transfer of volume
  * Accepting transfer of volume
  * Cancelling transfer of volume
 
 Prerequisites
--------------
+-------------------
 
 No. 1 **Account**
 
@@ -47,7 +47,7 @@ You can check the status of your volume by executing the following command:
 
    openstack volume list
 
-.. figure:: transfer-volume-between-projects-cli-32_creodias.png
+.. figure:: /openstackcli/How-to-transfer-volumes-between-domains-and-projects-using-OpenStack-CLI-client-on-Eumetsat-Elasticity/transfer-volume-between-projects-cli-32_creodias.png
    :class: image-with-border
 
 In this example, the volume which we want to transfer is called **my-other-volume**. Its status, marked on screenshot above with a blue rectangle, is **available**.
@@ -61,7 +61,7 @@ If *source* and/or *destination* is not managed by you, you might need to get ap
 To access each of these projects directly (if possible), source appropriate RC file. If you don't have direct access to any of these projects, you probably can request their members to execute commands mentioned in this article.
 
 Step 1: Initiating transfer of volume
--------------------------------------
+------------------------------------------------
 
 Perform this step in the *source* project.
 
@@ -71,7 +71,7 @@ Execute the following command:
 
    openstack volume list
 
-.. figure:: transfer-volume-between-projects-cli-14_creodias.png
+.. figure:: /openstackcli/How-to-transfer-volumes-between-domains-and-projects-using-OpenStack-CLI-client-on-Eumetsat-Elasticity/transfer-volume-between-projects-cli-14_creodias.png
    :class: image-with-border
 
 Write somewhere down the ID of the volume you want to transfer. In this example, we want to transfer volume called **my-other-volume**. Its ID, marked on the screenshot above with a green rectangle, is **7624dc4e-2fd1-48a7-985a-338ab887979e**.
@@ -90,7 +90,7 @@ In this command, replace:
 
 If the operation was successful, you should get output similar to this:
 
-.. figure:: transfer-volume-between-projects-cli-25_creodias.png
+.. figure:: /openstackcli/How-to-transfer-volumes-between-domains-and-projects-using-OpenStack-CLI-client-on-Eumetsat-Elasticity/transfer-volume-between-projects-cli-25_creodias.png
    :class: image-with-border
 
 Write somewhere down the ID of the transfer (value for **id**) and the authorization key (value for **auth_key**).
@@ -100,7 +100,7 @@ In example screenshot above, that ID of the transfer is **f944ce3262f0a6b3** and
 Note that after initializing the transfer, the volume cannot be connected to any virtual machine until the transfer is accepted or cancelled. To learn how to cancel the transfer (if you, say, accidentally chose the wrong volume), see section **Cancelling transfer of a volume** near the end of the article.
 
 Step 2: Accepting transfer of volume
-------------------------------------
+--------------------------------------------------
 
 Perform this step in the *destination* project.
 
@@ -112,7 +112,7 @@ Execute the command below. In it, replace **f944ce3262f0a6b3** with the authoriz
 
 If the operation was successful, you should get output similar to this:
 
-.. figure:: transfer-volume-between-projects-cli-26_creodias.png
+.. figure:: /openstackcli/How-to-transfer-volumes-between-domains-and-projects-using-OpenStack-CLI-client-on-Eumetsat-Elasticity/transfer-volume-between-projects-cli-26_creodias.png
    :class: image-with-border
 
 To verify that the volume has indeed been moved to your new project, execute this command:
@@ -123,11 +123,11 @@ To verify that the volume has indeed been moved to your new project, execute thi
 
 The transferred volume should be on the list:
 
-.. figure:: transfer-volume-between-projects-cli-27_creodias.png
+.. figure:: /openstackcli/How-to-transfer-volumes-between-domains-and-projects-using-OpenStack-CLI-client-on-Eumetsat-Elasticity/transfer-volume-between-projects-cli-27_creodias.png
    :class: image-with-border
 
 Cancelling transfer of volume
------------------------------
+----------------------------------
 
 If you, say, accidentally initiated transfer for a wrong volume and nobody accepts that transfer, it can be cancelled.
 
@@ -135,7 +135,7 @@ In this example, let's assume that we wanted to transfer volume called **my-volu
 
 Checking the statuses of the volumes using **openstack volume list** will show that **my-volume** now has status **awaiting-transfer**:
 
-.. figure:: transfer-volume-between-projects-cli-33_creodias.png
+.. figure:: /openstackcli/How-to-transfer-volumes-between-domains-and-projects-using-OpenStack-CLI-client-on-Eumetsat-Elasticity/transfer-volume-between-projects-cli-33_creodias.png
    :class: image-with-border
 
 Volume in such a status cannot be connected to a virtual machine.
@@ -150,14 +150,14 @@ If the operation was successful, the output should be empty.
 
 Executing **openstack volume list** again should inform you that the volume once again has **available** status:
 
-.. figure:: transfer-volume-between-projects-cli-34_creodias.png
+.. figure:: /openstackcli/How-to-transfer-volumes-between-domains-and-projects-using-OpenStack-CLI-client-on-Eumetsat-Elasticity/transfer-volume-between-projects-cli-34_creodias.png
    :class: image-with-border
 
 What To Do Next
----------------
+----------------------
 
 .. jinja:: brand_names
 
-   Now that the volume has been transferred, you might want to connect it to a virtual machine. This article includes information how to do that: :doc:`/openstackcli/How-to-move-data-volume-between-two-VMs-using-OpenStack-CLI-on-{{ brand_name_hyphen }}/How-to-move-data-volume-between-two-VMs-using-OpenStack-CLI-on-{{ brand_name_hyphen }}`
+   Now that the volume has been transferred, you might want to connect it to a virtual machine. This article includes information how to do that: :doc:`/openstackcli/How-to-move-data-volume-between-two-VMs-using-OpenStack-CLI`
 
-   The workflow described in this article can also be done using the Horizon dashboard. Learn more here: :doc:`/cloud/How-to-transfer-volumes-between-domains-and-projects-using-Horizon-dashboard-on-{{ brand_name_hyphen }}/How-to-transfer-volumes-between-domains-and-projects-using-Horizon-dashboard-on-{{ brand_name_hyphen }}`
+   The workflow described in this article can also be done using the Horizon dashboard. Learn more here: :doc:`/cloud/How-to-transfer-volumes-between-domains-and-projects-using-Horizon-dashboard`

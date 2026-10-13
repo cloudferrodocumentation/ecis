@@ -1,5 +1,5 @@
 How to mount object storage container as a file system in Linux using s3fs on |brand-name|
-==========================================================================================
+===========================================================================================================
 
 The following article covers mounting object storage containers using **s3fs**
 on Linux. One possible use case is easy access to the contents of such
@@ -52,7 +52,7 @@ dashboard:
 
 .. jinja:: s3_images
 
-   .. image:: {{ s3070 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs-on-Eumetsat-Elasticity/{{ s3070 }}
 
 With the proper **s3fs** command from this article, you will be able to access
 that container remotely through a local file system.
@@ -219,7 +219,7 @@ This is what executing **ls** from the mount point could produce:
 
 .. jinja:: s3_images
 
-   .. image:: {{ s3071 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs-on-Eumetsat-Elasticity/{{ s3071 }}
 
 To mount multiple containers, repeat the **s3fs** command with the relevant
 parameters as many times as needed.
@@ -346,7 +346,7 @@ Here is a situation from the Horizon dashboard:
 
 .. jinja:: s3_images
 
-   .. image:: {{ s3072 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs-on-Eumetsat-Elasticity/{{ s3072 }}
 
 The first row contains an object named **item**, with size of 10 bytes. The
 second row contains an object called **item/**, displayed in Horizon as a
@@ -362,7 +362,7 @@ only the folder:
 
 .. jinja:: s3_images
 
-   .. image:: {{ s3073 }}
+   .. image:: /s3/How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs-on-Eumetsat-Elasticity/{{ s3073 }}
 
 To prevent this issue, use consistent file naming and directory-like prefix
 conventions when working with object storage.

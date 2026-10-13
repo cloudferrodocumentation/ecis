@@ -83,7 +83,7 @@ example:
 
 .. jinja:: s3_images
 
-   .. image:: {{ s3068 }}
+   .. image:: /s3/How-to-install-s3cmd-on-Linux-on-Eumetsat-Elasticity/{{ s3068 }}
 
 Uninstalling s3cmd using apt
 ----------------------------
@@ -107,7 +107,7 @@ show you which packages are to be removed before proceeding.
 
 .. jinja:: s3_images
 
-   .. image:: {{ s3069 }}
+   .. image:: /s3/How-to-install-s3cmd-on-Linux-on-Eumetsat-Elasticity/{{ s3069 }}
 
 You should get the following question:
 

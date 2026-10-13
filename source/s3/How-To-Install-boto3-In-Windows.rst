@@ -59,7 +59,7 @@ To install **boto3** on Windows:
 
 .. jinja:: s3_images
 
-   .. image:: {{ s3062 }}
+   .. image:: /s3/How-To-Install-boto3-In-Windows-on-Eumetsat-Elasticity/{{ s3062 }}
 
 Verify that you have an up-to-date Python installation:
 
@@ -69,7 +69,7 @@ Verify that you have an up-to-date Python installation:
 
 .. jinja:: s3_images
 
-   .. image:: {{ s3063 }}
+   .. image:: /s3/How-To-Install-boto3-In-Windows-on-Eumetsat-Elasticity/{{ s3063 }}
 
 Install **boto3** with the following command:
 
@@ -79,7 +79,7 @@ Install **boto3** with the following command:
 
 .. jinja:: s3_images
 
-   .. image:: {{ s3064 }}
+   .. image:: /s3/How-To-Install-boto3-In-Windows-on-Eumetsat-Elasticity/{{ s3064 }}
 
 Verify the installation:
 
@@ -89,7 +89,7 @@ Verify the installation:
 
 .. jinja:: s3_images
 
-   .. image:: {{ s3065 }}
+   .. image:: /s3/How-To-Install-boto3-In-Windows-on-Eumetsat-Elasticity/{{ s3065 }}
 
 What to do next
 ---------------

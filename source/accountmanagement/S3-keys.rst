@@ -14,7 +14,7 @@ Prerequisites
 
    **1. Hosting account**
 
-   You need an `{{ brand_name }} account <{{ brand_name_site_auth_link }}>`_. For more information, see :doc:`/accountmanagement/Login-to-dashboard/Login-to-dashboard`.
+   You need an `{{ brand_name }} account <{{ brand_name_site_auth_link }}>`_. For more information, see :doc:`/accountmanagement/Login-to-dashboard`.
 
 **2. Knowledge of S3 usage and standard**
 
@@ -24,10 +24,10 @@ For more information about the **S3** service, see :doc:`/s3/s3`.
 
 You can create an S3 key pair for each region where the S3 service is available for your account.
 
-.. figure:: s3-keys-menu--portal.png
+.. figure:: /accountmanagement/S3-keys/s3-keys-menu-ecis-portal.png
    :class: image-with-border
 
-To check whether the storage service is enabled for your account, see :doc:`/accountmanagement/Service-catalog/Service-catalog`.
+To check whether the storage service is enabled for your account, see :doc:`/accountmanagement/Service-catalog`.
 
 **4. Admin or member+ role present**
 
@@ -38,19 +38,19 @@ Generate S3 keys
 
 When you access this option for the first time, all regions are labeled as ``NOT CONFIGURED``. Click **Create key** to open a modal form.
 
-.. figure:: do-you-want-to-generate--portal.png
+.. figure:: /accountmanagement/S3-keys/do-you-want-to-generate-ecis-portal.png
    :class: image-with-border
 
 After clicking **Confirm**, the key pair is successfully generated and becomes available for use.
 
 Click the eye icon to display the key on screen, and click the copy icon to copy its value to the clipboard.
 
-.. figure:: r1-s3-keys-generated--portal.png
+.. figure:: /accountmanagement/S3-keys/r1-s3-keys-generated-ecis-portal.png
    :class: image-with-border
 
 You will see a message at the top center of the window:
 
-.. figure:: copied-r1-s3-keys--portal.png
+.. figure:: /accountmanagement/S3-keys/copied-r1-s3-keys-ecis-portal.png
    :class: image-with-border
 
 Copy both values and save them in a text editor or similar text-based application. Once you click **Hide secret**, you will not be able to view the value of the **Secret key** again.
@@ -60,7 +60,7 @@ Reset key
 
 After you click **Reset key**, a modal window appears:
 
-.. figure:: modal-window-reset-key--portal.png
+.. figure:: /accountmanagement/S3-keys/modal-window-reset-key-ecis-portal.png
    :class: image-with-border
 
 As indicated, existing keys stop working immediately. This is not an issue if they have not been deployed. However, if they are already in use and need to continue functioning, you must replace them wherever they are used.

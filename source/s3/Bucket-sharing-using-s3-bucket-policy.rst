@@ -1,13 +1,13 @@
 Bucket sharing using s3 bucket policy on |brand-name|
-=====================================================
+=========================================================
 
 S3 bucket policy
-----------------
+-----------------------------------
 
 **Ceph** - the Software Defined Storage used in |brand-name| cloud, providing object storage compatibility with a subset of Amazon S3 API. Bucket policy in Ceph is part of the S3 API and allows for a selective access sharing to object storage buckets between users of different projects, in the same cloud.
 
 Naming conventions used in this document
-----------------------------------------
+-----------------------------------------------
 
 Bucket Owner
    OpenStack tenant who created an object storage bucket in their project, intending to share to their bucket or a subset of objects in the bucket to another tenant in the same cloud.
@@ -27,7 +27,7 @@ Tenant Admin
 In code examples, values typed in all-capital letters, such as BUCKET_OWNER_PROJECT_ID, are placeholders which should be replaced with actual values matching your use-case.
 
 Limitations
------------
+---------------------------
 
 It is possible to grant access at the project level only, not at the user level. In order to grant access to an individual user,
 Bucket User's Tenant Admin must create a separate project within their domain, which only selected users will be granted access to.
@@ -39,14 +39,14 @@ Ceph S3 implementation
  * does not support user, role or group policies.
 
 S3cmd CONFIGURATION
--------------------
+----------------------------
 
 .. jinja:: doc_links
 
    To share bucket using S3 bucket policy you have to configure s3cmd first using this tutorial :doc:`{{ s3cmd_access }}`
 
 Declaring bucket policy
------------------------
+------------------------------------
 
 
 
@@ -56,33 +56,33 @@ Declaring bucket policy
 
    .. code::
 
-      "Version": "2012-10-17",
+      "Version":  "2012-10-17",
 
 Policy JSON file's sections
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Bucket policy is declared using a JSON file. It can be created using editors such as **vim** or **nano**. Here is an example policy JSON template:
 
 .. code::
 
    {
-       "Id": "POLICY_ID",
-       "Version": "2012-10-17",
-       "Statement": [
+       "Id":  "POLICY_ID",
+       "Version":  "2012-10-17",
+       "Statement":  [
          {
-           "Sid": "STATEMENT_NAME",
-           "Action": [
+           "Sid":  "STATEMENT_NAME",
+           "Action":  [
              "s3:ACTION_1",
              "s3:ACTION_2"
            ],
-           "Effect": "EFFECT",
-           "Resource": "arn:aws:s3:::KEY_SPECIFICATION",
-           "Condition": {
+           "Effect":  "EFFECT",
+           "Resource":  "arn:aws:s3:::KEY_SPECIFICATION",
+           "Condition":  {
              "CONDITION_1": {
              }
            },
-           "Principal": {
-             "AWS": [
+           "Principal":  {
+             "AWS":  [
                "arn:aws:iam::PROJECT_ID:root"
              ]
            }
@@ -104,7 +104,7 @@ PROJECT_ID
    |cloud-name| Project ID
 
 List of actions
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -146,7 +146,7 @@ List of actions
    s3:PutObjectVersionAcl
 
 KEY_SPECIFICATION
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 It defines a bucket and its keys/objects. For example:
 
@@ -157,15 +157,15 @@ It defines a bucket and its keys/objects. For example:
    "arn:aws:s3:::MY_SHARED_BUCKET/myfolder/*" - all objects which are subkeys to myfolder in mybucket
 
 Conditions
-^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 Additional conditions to filter access to the bucket. For example you can grant access to the specific IP Address using:
 
 .. code::
 
-   "Condition": {
-         "IpAddress": {
-           "aws:SourceIp": "USER_IP_ADRESS/32"
+   "Condition":  {
+         "IpAddress":  {
+           "aws:SourceIp":  "USER_IP_ADRESS/32"
          }
    }
 
@@ -173,14 +173,14 @@ or, alternatively, you can permit access to the specific IP using:
 
 .. code::
 
-   "Condition": {
-         "NotIpAddress": {
-           "aws:SourceIp": "PERMITTED_USER_IP_ADRESS/32"
+   "Condition":  {
+         "NotIpAddress":  {
+           "aws:SourceIp":  "PERMITTED_USER_IP_ADRESS/32"
          }
     }
 
 SETTING A POLICY ON THE BUCKET
-------------------------------
+--------------------------------------
 
 The policy may be set on a bucket using:
 
@@ -202,10 +202,10 @@ The policy may be deleted from the bucket using:
 
 
 Sample scenarios
-----------------
+--------------------------
 
 1 Grant read/write access to a Bucket User using his **PROJECT_ID**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A Bucket Owner wants to grant a bucket a read/write access to a Bucket User, using his **PROJECT_ID**:
 
@@ -251,7 +251,7 @@ Then, to access the bucket, for example list the bucket, Bucket User should issu
 
 
 2 -- Limit read/write access to a Bucket to users accessing from specific IP address range
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A Bucket Owner wants to grant read/write access to Bucket Users which access the bucket from specific IP ranges.
 
@@ -260,24 +260,24 @@ A Bucket Owner wants to grant read/write access to Bucket Users which access the
 .. code::
 
    {
-     "Id": "Policy1654675551882",
-     "Version": "2012-10-17",
-     "Statement": [
+     "Id":  "Policy1654675551882",
+     "Version":  "2012-10-17",
+     "Statement":  [
        {
-         "Sid": "Stmt1654675545682",
-         "Action": [
+         "Sid":  "Stmt1654675545682",
+         "Action":  [
            "s3:GetObject",
            "s3:PutObject"
          ],
-         "Effect": "Allow",
-         "Resource": "arn:aws:s3:::MY_SHARED_BUCKET/*",
-         "Condition": {
-           "IpAddress": {
-             "aws:SourceIp": "IP_ADRESS/32"
+         "Effect":  "Allow",
+         "Resource":  "arn:aws:s3:::MY_SHARED_BUCKET/*",
+         "Condition":  {
+           "IpAddress":  {
+             "aws:SourceIp":  "IP_ADRESS/32"
            }
          },
-         "Principal": {
-           "AWS": [
+         "Principal":  {
+           "AWS":  [
              "*"
            ]
          }

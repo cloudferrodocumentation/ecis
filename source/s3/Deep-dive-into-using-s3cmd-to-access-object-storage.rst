@@ -1,7 +1,7 @@
-Deep dive into using s3cmd to access object storage on ECIS
-====================================================================================
+Deep dive into using s3cmd to access object storage
+===================================================
 
-Object storage on ECIS cloud can be used to store your files in *containers*. In this article, you will create a basic object storage container and perform common object storage operations with **s3cmd**.
+Object storage can be used to store your files in *containers*. In this article, you will create a basic object storage container and perform common object storage operations with **s3cmd**.
 
 .. raw:: html
 
@@ -20,17 +20,17 @@ Prerequisites
 
 Before starting, make sure that:
 
-1. You have an admin ECIS hosting account with access to the Eumetsat cloud interface:
+1. You have an admin hosting account with access to the cloud interface:
 
    `my.cloud.eumetsat.int <http://my.cloud.eumetsat.int>`__
 
-2. You can sign in to the ECIS portal and open the service catalog. For more information, see :doc:`/accountmanagement/Service-catalog/Service-catalog`
+2. You can sign in to the portal and open the service catalog. For more information, see :doc:`/accountmanagement/Service-catalog`
 
 3. You have S3 API keys for Object Storage.
 
    To create and manage S3 keys, see:
 
-   :doc:`/accountmanagement/S3-keys/S3-keys`
+   :doc:`/accountmanagement/S3-keys`
 
 4. You have access to a virtual machine or local terminal.
 
@@ -38,18 +38,18 @@ Before starting, make sure that:
 
    .. jinja:: brand_names
 
-      * :doc:`/cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-Eumetsat-Elasticity`
-      * :doc:`/cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-Eumetsat-Elasticity`
+      * :doc:`/cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop`
+      * :doc:`/cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line`
 
-5. **s3cmd** is installed and configured for the ECIS Object Storage endpoint of the region where you want to work.
+5. **s3cmd** is installed and configured for the Object Storage endpoint of the region where you want to work.
 
    For configuration instructions, see:
 
    .. jinja:: brand_names
 
-      * :doc:`/s3/How-to-install-s3cmd-on-Linux-on-Eumetsat-Elasticity/How-to-install-s3cmd-on-Linux-on-Eumetsat-Elasticity`
-      * :doc:`/s3/Configuration-files-for-s3cmd-command-on-Eumetsat-Elasticity/Configuration-files-for-s3cmd-command-on-Eumetsat-Elasticity`
-      * :doc:`/s3/How-to-access-object-storage-from-Eumetsat-Elasticity-using-s3cmd/How-to-access-object-storage-from-Eumetsat-Elasticity-using-s3cmd`
+      * :doc:`/s3/How-to-install-s3cmd-on-Linux`
+      * :doc:`/s3/Configuration-files-for-s3cmd-command`
+      * :doc:`/s3/How-to-access-object-storage-using-s3cmd`
 
 6. To test public object download from the terminal, you can use **wget** which comes preinstalled on most modern operating systems.
 
@@ -143,7 +143,7 @@ The result is:
 
    Bucket names cannot contain forward slashes (**/**).
 
-On ECIS clouds, **single tenancy** is enabled. This means that two object storage containers cannot have the same name. Avoid common names such as **storage** or **files**.
+On this platform, **single tenancy** is enabled. This means that two object storage containers cannot have the same name. Avoid common names such as **storage** or **files**.
 
 Uploading a file
 ----------------
@@ -423,7 +423,7 @@ You can also change the ACL of the bucket itself:
 
 Use this option carefully. In most cases, it is safer to make only the required object or prefix public.
 
-Object Storage endpoint depends on the ECIS region where the bucket was created. Use the endpoint that belongs to your region when creating public object URLs.
+Object Storage endpoint depends on the region where the bucket was created. Use the endpoint that belongs to your region when creating public object URLs.
 
 .. tabs::
 
@@ -476,7 +476,7 @@ The result should show the objects under that prefix:
    2026-04-24 14:56            0  s3://example-bucket/folder-to-upload/file.txt
    2026-04-24 14:56            0  s3://example-bucket/folder-to-upload/file2.txt
 
-The public URL of an object consists of the ECIS Object Storage endpoint, the bucket name, and the full object path.
+The public URL of an object consists of the Object Storage endpoint, the bucket name, and the full object path.
 
 For example, this object:
 
@@ -490,7 +490,7 @@ can be accessed through the following public URL in the FRA1-3 region:
 
    https://s3.fra1-3.cloudferro.com/example-bucket/folder-to-upload/file2.txt
 
-Use the endpoint that belongs to the ECIS region where your bucket was created.
+Use the endpoint that belongs to the region where your bucket was created.
 
 .. tabs::
 
@@ -594,6 +594,6 @@ Now that you have created your object storage container, you can mount it on the
 
 .. jinja:: brand_names
 
-   * :doc:`/s3/How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs-on-Eumetsat-Elasticity/How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs-on-Eumetsat-Elasticity`
+   * :doc:`/s3/How-to-mount-object-storage-container-as-a-file-system-in-Linux-using-s3fs`
 
-   * :doc:`/s3/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer/How-to-mount-object-storage-container-from-Eumetsat-Elasticity-as-file-system-on-local-Windows-computer`
+   * :doc:`/s3/How-to-mount-object-storage-container-as-file-system-on-local-Windows-computer`

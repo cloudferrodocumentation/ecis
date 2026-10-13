@@ -180,8 +180,8 @@ Before running production workloads on |MK8s|, review:
 
 .. jinja:: brand_names
 
-   To create a cluster, see :doc:`/kubernetes/How-to-create-a-Managed-Kubernetes-cluster-using-ECIS-launcher-GUI`.
+   To create a cluster, see :doc:`/kubernetes/How-to-create-a-Managed-Kubernetes-cluster-using-launcher-GUI`.
 
-   To add worker nodes, see :doc:`/kubernetes/Add-node-pools-to-Managed-ECIS-cluster-using-the-launcher-GUI`.
+   To add worker nodes, see :doc:`/kubernetes/Add-node-pools-to-Managed-cluster-using-the-launcher-GUI`.
 
    To obtain an API token for automation, see :doc:`/kubernetes/Obtain-managed-Kubernetes-API-token`.

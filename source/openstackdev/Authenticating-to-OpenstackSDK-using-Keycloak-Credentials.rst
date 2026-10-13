@@ -1,5 +1,5 @@
 Authenticating with OpenStackSDK using Keycloak credentials on |brand-name|
-===========================================================================
+==========================================================================
 
 If you use OpenStackSDK to write your own OpenStack automation or application,
 you need to authenticate your code before it can manage cloud resources.
@@ -9,7 +9,7 @@ they normally use the browser-based login flow. A screen like this appears:
 
 .. jinja:: image_names
 
-   .. figure:: {{ register }}
+   .. figure:: /openstackdev/Authenticating-to-OpenstackSDK-using-Keycloak-Credentials-on-Eumetsat-Elasticity/{{ register }}
       :align: center
       :class: image-with-border
 
@@ -81,8 +81,8 @@ The exact endpoints depend on the region. Use the tab for your region.
             echo "Please enter your OpenStack Password for project $OS_PROJECT_NAME as user $OS_USERNAME: "
             read -sr OS_PASSWORD_INPUT
             export OS_PASSWORD=$OS_PASSWORD_INPUT
-            if [-z "$OS_USER_DOMAIN_NAME"]; then unset OS_USER_DOMAIN_NAME; fi
-            if [-z "$OS_PROJECT_DOMAIN_ID"]; then unset OS_PROJECT_DOMAIN_ID; fi
+            if [ -z "$OS_USER_DOMAIN_NAME" ]; then unset OS_USER_DOMAIN_NAME; fi
+            if [ -z "$OS_PROJECT_DOMAIN_ID" ]; then unset OS_PROJECT_DOMAIN_ID; fi
             export OS_CLIENT_ID=openstack
             export OS_CLIENT_SECRET="Your Client Secret"
             export OS_PROTOCOL=openid
@@ -98,7 +98,7 @@ The exact endpoints depend on the region. Use the tab for your region.
    above shows the structure of the variables and the regional endpoint values.
 
 Step 2: Create Python code for OpenStackSDK authentication
-----------------------------------------------------------
+-----------------------------------------------------------------
 
 In this step, you copy the required values from the RC file into your Python
 code.

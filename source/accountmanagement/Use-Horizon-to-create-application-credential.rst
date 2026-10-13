@@ -1,12 +1,12 @@
 Use Horizon to create an application credential on |brand-name|
-===============================================================
+==========================================================================
 
 Cloud parameters for authentication and later OpenStack CLI access are stored in an OpenStack environment file, often called an *RC file*. When you use application credentials, Horizon can also provide a **clouds.yaml** file.
 
 This article explains how to create an application credential in Horizon, download the generated access files, and use them to authenticate with the OpenStack CLI.
 
 What We Are Going To Cover
---------------------------
+------------------------------
 
 * How to create an application credential in Horizon
 * How to download the generated **openrc.sh** file
@@ -18,7 +18,7 @@ What We Are Going To Cover
 * What the application credential fields mean
 
 Prerequisites
--------------
+-------------------
 
 No. 1 **Account**
 
@@ -41,25 +41,25 @@ You need a |brand-name| hosting account with access to the Horizon interface:
 
 No. 2 **OpenStackClient installed and available**
 
-RC file sets up the values of local environment variables and is a Bash file, ending in.sh. Here is how to run it on various operating systems:
+RC file sets up the values of local environment variables and is a Bash file, ending in .sh. Here is how to run it on various operating systems:
 
 Install GitBash on Windows
    .. jinja:: brand_names
 
-      Run **.sh** files and install OpenStackClient from a GitBash window under Windows: :doc:`/openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows-on-{{ brand_name_hyphen }}/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows-on-{{ brand_name_hyphen }}`.
+      Run **.sh** files and install OpenStackClient from a GitBash window under Windows:  :doc:`/openstackcli/How-to-install-OpenStackClient-GitBash-or-Cygwin-for-Windows`.
 
 Install and run WSL (Linux under Windows)
    .. jinja:: brand_names
 
-      Run **.sh** files and install OpenStackClient from a Ubuntu window under Windows. :doc:`/openstackcli/How-to-install-OpenStackClient-on-Windows-using-Windows-Subsystem-for-Linux-on-{{ brand_name_hyphen }}-OpenStack-Hosting/How-to-install-OpenStackClient-on-Windows-using-Windows-Subsystem-for-Linux-on-{{ brand_name_hyphen }}-OpenStack-Hosting`.
+      Run **.sh** files and install OpenStackClient from a Ubuntu window under Windows. :doc:`/openstackcli/How-to-install-OpenStackClient-on-Windows-using-Windows-Subsystem-for-Linux-on-OpenStack-Hosting`.
 
 Install OpenStackClient on Linux
    .. jinja:: brand_names
 
-      :doc:`/openstackcli/How-to-install-OpenStackClient-for-Linux-on-{{ brand_name_hyphen }}/How-to-install-OpenStackClient-for-Linux-on-{{ brand_name_hyphen }}`.
+      :doc:`/openstackcli/How-to-install-OpenStackClient-for-Linux`.
 
 Create a new application credential
------------------------------------
+-----------------------------------------
 
 On regions R1 and R2, the usual Horizon login credentials are not used directly as OpenStack CLI credentials. Instead, OpenStack provides *application credentials*. An application credential gives command-line tools and automation scripts their own authentication data without exposing your interactive login credentials.
 
@@ -67,14 +67,14 @@ In Horizon, use the following command chain:
 
 **Identity** -> **Application Credentials** -> **+ Create Application Credential**.
 
-.. figure:: Screenshot_20260526_163816.png
+.. figure:: /accountmanagement/Use-Horizon-to-create-application-credential-on-Eumetsat-Elasticity/Screenshot_20260526_163816.png
    :class: image-with-border
 
    Opening the Application Credentials page in Horizon
 
 Then enter the required data in the **Create Application Credential** form.
 
-.. figure:: Screenshot_20260526_164020.png
+.. figure:: /accountmanagement/Use-Horizon-to-create-application-credential-on-Eumetsat-Elasticity/Screenshot_20260526_164020.png
    :class: image-with-border
 
    Creating a new application credential
@@ -87,7 +87,7 @@ The fastest option is to enter only the credential name in the **Name** field. I
 
 After entering the name, click **Create Application Credential**.
 
-.. figure:: Screenshot_20260526_164237.png
+.. figure:: /accountmanagement/Use-Horizon-to-create-application-credential-on-Eumetsat-Elasticity/Screenshot_20260526_164237.png
    :class: image-with-border
 
    Application credential details after creation
@@ -103,13 +103,13 @@ Save the values shown in the following fields:
    The application credential secret is shown only once. It will not be available after you close this page. Save it now or download one of the generated credential files. If you lose the secret, you must create a new application credential.
 
 Download the openrc file
-------------------------
+-----------------------------
 
 After the application credential is created, click **Download openrc file**.
 
 Horizon downloads a shell file similar to this:
 
-.. figure:: Screenshot_20260526_165243.png
+.. figure:: /accountmanagement/Use-Horizon-to-create-application-credential-on-Eumetsat-Elasticity/Screenshot_20260526_165243.png
    :class: image-with-border
 
    Downloaded application credential openrc file
@@ -120,7 +120,7 @@ On Linux, you can activate it with **source**:
 
 .. code-block:: console
 
-   source./app-cred-openrc.sh
+   source ./app-cred-openrc.sh
 
 Replace **app-cred-openrc.sh** with the actual file name downloaded from Horizon.
 
@@ -143,13 +143,13 @@ You can also test access by listing projects, servers, networks, or images, depe
    openstack image list
 
 Download the clouds.yaml file
------------------------------
+--------------------------------
 
 You can also download the **clouds.yaml** file from the same application credential page.
 
 It looks similar to this:
 
-.. figure:: Screenshot_20260526_165605.png
+.. figure:: /accountmanagement/Use-Horizon-to-create-application-credential-on-Eumetsat-Elasticity/Screenshot_20260526_165605.png
    :class: image-with-border
 
    Downloaded clouds.yaml file
@@ -159,7 +159,7 @@ The **clouds.yaml** file contains the application credential ID and secret. Unli
 This is useful when you want to switch between regions without repeatedly sourcing different shell files.
 
 Where to place clouds.yaml
---------------------------
+-----------------------------
 
 By default, the OpenStack CLI looks for **clouds.yaml** in this location:
 
@@ -177,12 +177,12 @@ Then copy the downloaded file to that location:
 
 .. code-block:: console
 
-   cp./clouds.yaml ~/.config/openstack/clouds.yaml
+   cp ./clouds.yaml ~/.config/openstack/clouds.yaml
 
 Replace **./clouds.yaml** with the actual path to the downloaded file if needed.
 
 Use clouds.yaml with OpenStack CLI
-----------------------------------
+--------------------------------------
 
 When **clouds.yaml** is in place, you can choose the cloud entry with the **--os-cloud** parameter.
 
@@ -190,22 +190,22 @@ For example:
 
 .. code-block:: console
 
-   openstack --os-cloud -r1 token issue
+   openstack --os-cloud ecis-r1 token issue
 
 You can also export the selected cloud once and then omit **--os-cloud** from later commands:
 
 .. code-block:: console
 
-   export OS_CLOUD=-r1
+   export OS_CLOUD=ecis-r1
 
    openstack token issue
    openstack server list
    openstack network list
 
-The value **-r1** is only an example. Use the actual cloud name defined in your downloaded **clouds.yaml** file.
+The value **ecis-r1** is only an example. Use the actual cloud name defined in your downloaded **clouds.yaml** file.
 
 Switch from one region to another by using clouds.yaml
-------------------------------------------------------
+---------------------------------------------------------
 
 A **clouds.yaml** file can contain more than one entry. Each entry can point to a different region while using the same application credential authentication method.
 
@@ -214,51 +214,51 @@ A simplified example may look like this:
 .. code-block:: yaml
 
    clouds:
-     -r1:
+     ecis-r1:
        auth:
          auth_url: https://identity.api.r1.cloud.eumetsat.int/v3
          application_credential_id: 11111111111111111111111111111111
          application_credential_secret: "REPLACE_WITH_SECRET"
-       region_name: -R1
+       region_name: ECIS-R1
        interface: public
        identity_api_version: 3
        auth_type: v3applicationcredential
 
-     -r2:
+     ecis-r2:
        auth:
          auth_url: https://identity.api.r2.cloud.eumetsat.int/v3
          application_credential_id: 11111111111111111111111111111111
          application_credential_secret: "REPLACE_WITH_SECRET"
-       region_name: -R2
+       region_name: ECIS-R2
        interface: public
        identity_api_version: 3
        auth_type: v3applicationcredential
 
 In this example, the file defines two OpenStack CLI targets:
 
-* **-r1**
-* **-r2**
+* **ecis-r1**
+* **ecis-r2**
 
 To use the first region, run:
 
 .. code-block:: console
 
-   openstack --os-cloud -r1 server list
+   openstack --os-cloud ecis-r1 server list
 
 To use the second region, run:
 
 .. code-block:: console
 
-   openstack --os-cloud -r2 server list
+   openstack --os-cloud ecis-r2 server list
 
 You can also switch the active region for the current terminal session by changing **OS_CLOUD**:
 
 .. code-block:: console
 
-   export OS_CLOUD=-r1
+   export OS_CLOUD=ecis-r1
    openstack server list
 
-   export OS_CLOUD=-r2
+   export OS_CLOUD=ecis-r2
    openstack server list
 
 This method is convenient when you frequently work with more than one region.
@@ -268,7 +268,7 @@ This method is convenient when you frequently work with more than one region.
    Use the exact **auth_url**, **region_name**, application credential ID, and application credential secret from the files downloaded from Horizon. The values shown above are examples.
 
 Test the connection
--------------------
+-----------------------
 
 After activating either the **openrc.sh** file or the **clouds.yaml** entry, test authentication first:
 
@@ -288,7 +288,7 @@ If the token command works, test access to common OpenStack resources:
 The exact results depend on your assigned roles and the project selected for the application credential.
 
 Use application credentials in scripts
---------------------------------------
+------------------------------------------
 
 Application credentials are suitable for scripts and automation because they avoid using your interactive user login data.
 
@@ -300,7 +300,7 @@ For example, after setting **OS_CLOUD**, a script can call OpenStack CLI command
 
    set -euo pipefail
 
-   export OS_CLOUD=-r1
+   export OS_CLOUD=ecis-r1
 
    echo "Testing OpenStack authentication..."
    openstack token issue
@@ -316,13 +316,13 @@ You can also pass the cloud entry directly:
 
    set -euo pipefail
 
-   openstack --os-cloud -r1 token issue
-   openstack --os-cloud -r1 server list
+   openstack --os-cloud ecis-r1 token issue
+   openstack --os-cloud ecis-r1 server list
 
 Using **--os-cloud** makes the script explicit and avoids depending on an existing terminal environment.
 
 Protect credential files
-------------------------
+----------------------------
 
 The **openrc.sh** and **clouds.yaml** files contain secrets. Store them carefully and do not commit them to Git repositories.
 
@@ -336,13 +336,13 @@ If you keep downloaded **openrc.sh** files on disk, protect them as well:
 
 .. code-block:: console
 
-   chmod 600./app-cred-openrc.sh
+   chmod 600 ./app-cred-openrc.sh
 
 Resolving common errors
------------------------
+---------------------------
 
 Authentication fails
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 If authentication fails, verify that the application credential ID and secret are correct.
 
@@ -350,19 +350,19 @@ For **clouds.yaml**, check that the selected cloud entry exists:
 
 .. code-block:: console
 
-   openstack --os-cloud -r1 token issue
+   openstack --os-cloud ecis-r1 token issue
 
 If the cloud name is wrong, the OpenStack CLI cannot load the correct configuration.
 
 Secret was lost
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 If you no longer have the application credential secret, you cannot recover it from Horizon.
 
 Create a new application credential and download new access files.
 
 Wrong region is used
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 If commands return resources from the wrong region, check the selected cloud entry:
 
@@ -374,16 +374,16 @@ You can switch to another region by changing **OS_CLOUD**:
 
 .. code-block:: console
 
-   export OS_CLOUD=-r2
+   export OS_CLOUD=ecis-r2
 
 Or by passing the cloud name directly:
 
 .. code-block:: console
 
-   openstack --os-cloud -r2 server list
+   openstack --os-cloud ecis-r2 server list
 
 Permission denied
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 If authentication works but a command returns a permission error, your user account or application credential may not have the required role for that operation.
 
@@ -392,7 +392,7 @@ For example, you may be able to list networks but not create new ones, or you ma
 Create a new application credential with the correct roles, or contact your project administrator.
 
 clouds.yaml is ignored
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If the OpenStack CLI does not use your **clouds.yaml** file, verify that it is stored in the default location:
 
@@ -410,10 +410,10 @@ Then test again:
 
 .. code-block:: console
 
-   openstack --os-cloud -r1 token issue
+   openstack --os-cloud ecis-r1 token issue
 
 Application credential fields explained
----------------------------------------
+--------------------------------------------
 
 For a basic CLI setup, you usually need only a clear **Name**. Leave **Secret** empty so Horizon can generate it, and keep the advanced fields unchanged unless you have a specific reason to limit the credential further.
 
@@ -429,7 +429,7 @@ Use the fields as follows:
 
    .. code-block:: text
 
-      Used by backup script on admin VM. Created for -R1 CLI access.
+      Used by backup script on admin VM. Created for ECIS-R1 CLI access.
 
 **Secret**
    Leave this field empty unless you must provide your own value. Horizon generates the secret automatically and shows it only once. Save it immediately. If the secret is lost, create a new application credential.
@@ -452,8 +452,8 @@ Use the fields as follows:
 Protect downloaded credential files carefully. Do not commit them to Git repositories, paste them into tickets, or include them in public documentation.
 
 What to do next
----------------
+---------------------
 
 .. jinja:: brand_names
 
-   :doc:`/accountmanagement/How-to-activate-OpenStack-CLI-access-to-{{ brand_name_hyphen }}-cloud/How-to-activate-OpenStack-CLI-access-to-{{ brand_name_hyphen }}-cloud`
+   :doc:`/accountmanagement/How-to-activate-OpenStack-CLI-access-to-cloud`

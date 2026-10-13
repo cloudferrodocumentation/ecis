@@ -9,14 +9,14 @@ Use these articles to create SSH keys, connect to Linux VMs from Windows, access
    :maxdepth: 1
    :caption: SSH access from Windows
 
-   How-to-access-a-VM-from-Windows-PuTTY-on-Eumetsat-Elasticity/How-to-access-a-VM-from-Windows-PuTTY-on-Eumetsat-Elasticity
-   How-to-connect-to-a-virtual-machine-via-SSH-from-Windows-10-Command-Prompt-on-Eumetsat-Elasticity/How-to-connect-to-a-virtual-machine-via-SSH-from-Windows-10-Command-Prompt-on-Eumetsat-Elasticity
-   How-To-Create-SSH-Key-Pair-In-Windows-On-Eumetsat-Elasticity/How-To-Create-SSH-Key-Pair-In-Windows-On-Eumetsat-Elasticity
-   How-To-Create-SSH-Key-Pair-In-Windows-11-On-Eumetsat-Elasticity/How-To-Create-SSH-Key-Pair-In-Windows-11-On-Eumetsat-Elasticity
+   /windows/How-to-access-a-VM-from-Windows-PuTTY
+   /windows/How-to-connect-to-a-virtual-machine-via-SSH-from-Windows-10-Command-Prompt
+   /windows/How-To-Create-SSH-Key-Pair-In-Windows
+   /windows/How-To-Create-SSH-Key-Pair-In-Windows-11
 
 .. toctree::
    :maxdepth: 1
    :caption: RDP access and Windows VM management
 
-   Connecting-to-a-Windows-VM-via-RDP-through-a-Linux-bastion-host-port-forwarding-on-Eumetsat-Elasticity/Connecting-to-a-Windows-VM-via-RDP-through-a-Linux-bastion-host-port-forwarding-on-Eumetsat-Elasticity
-   Can-I-change-my-password-through-RDP-on-Eumetsat-Elasticity/Can-I-change-my-password-through-RDP-on-Eumetsat-Elasticity
+   /windows/Connecting-to-a-Windows-VM-via-RDP-through-a-Linux-bastion-host-port-forwarding
+   /windows/Can-I-change-my-password-through-RDP

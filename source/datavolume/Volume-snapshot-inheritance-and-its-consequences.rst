@@ -1,5 +1,5 @@
 Volume snapshot inheritance and its consequences on |brand-name|
-================================================================
+==================================================================
 
 Performing a volume snapshot is a common form of securing your data against loss.
 There is nothing wrong with that, but you should remember what the consequences are.
@@ -9,31 +9,31 @@ We have created a volume called "Volume A".
 
 .. jinja:: datavolume_images
 
-   .. figure:: {{ datavolume101 }}
+   .. figure:: /datavolume/Volume-snapshot-inheritance-and-its-consequences-on-Eumetsat-Elasticity/{{ datavolume101 }}
 
 Next we create an "SA" snapshot from the "VA" volume.
 
 .. jinja:: datavolume_images
 
-   .. figure:: {{ datavolume102 }}
+   .. figure:: /datavolume/Volume-snapshot-inheritance-and-its-consequences-on-Eumetsat-Elasticity/{{ datavolume102 }}
 
 From the OpenStack dashboard we can create new volumes "Volume B" and "Volume C" based on the previously created snapshot "Snapshot A".
 
 .. jinja:: datavolume_images
 
-   .. figure:: {{ datavolume103 }}
+   .. figure:: /datavolume/Volume-snapshot-inheritance-and-its-consequences-on-Eumetsat-Elasticity/{{ datavolume103 }}
 
 At the moment we have two new volumes which are based on the "Snapshot A" snapshot. Suppose we no longer need the volume called "Volume A" and we want to delete it.
 
 .. jinja:: datavolume_images
 
-   .. figure:: {{ datavolume104 }}
+   .. figure:: /datavolume/Volume-snapshot-inheritance-and-its-consequences-on-Eumetsat-Elasticity/{{ datavolume104 }}
 
 Unfortunately, its deletion will not be possible directly because to delete a given volume, we have to delete its snapshots.
 
 .. jinja:: datavolume_images
 
-   .. figure:: {{ datavolume105 }}
+   .. figure:: /datavolume/Volume-snapshot-inheritance-and-its-consequences-on-Eumetsat-Elasticity/{{ datavolume105 }}
 
 So we must first delete the snapshot "Snapshot A" and then the volume "Volume A".
 
@@ -45,4 +45,4 @@ In conclusion, when creating new volumes from a snapshot, remember about inherit
 
 .. jinja:: brand_names
 
-   Backups are another solution and they do not create such bonds as snapshots and may exist even after the volume from which the backup was created has been deleted. Please see :doc:`/openstackcli/How-to-backup-an-instance-and-download-it-to-the-desktop-on-Eumetsat-Elasticity/How-to-backup-an-instance-and-download-it-to-the-desktop-on-Eumetsat-Elasticity`.
+   Backups are another solution and they do not create such bonds as snapshots and may exist even after the volume from which the backup was created has been deleted. Please see :doc:`/openstackcli/How-to-backup-an-instance-and-download-it-to-the-desktop`.

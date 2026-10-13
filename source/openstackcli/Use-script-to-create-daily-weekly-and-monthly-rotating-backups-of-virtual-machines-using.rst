@@ -1,5 +1,5 @@
 Use script to create daily, weekly, and monthly rotating backups of virtual machines on |brand-name|
-====================================================================================================
+===================================================================================================
 
 **Rotating backups** in OpenStack are a backup strategy where older backups
 are automatically removed after a defined number of backups is reached. This
@@ -74,7 +74,7 @@ create it by following one of these articles:
    * :doc:`{{ linux_vm_from_windows }}`
    * :doc:`{{ linux_vm_from_linux }}`
 
-.. ifconfig:: brand_name!= 'ESA HPC'
+.. ifconfig:: brand_name != 'ESA HPC'
 
    To learn how to create a Windows virtual machine, see this article:
 
@@ -208,7 +208,7 @@ If **cron** is installed, the following command:
 
 should produce output similar to this:
 
-.. figure:: install-cron-1.png
+.. figure:: /openstackcli/Use-script-to-create-daily-weekly-and-monthly-rotating-backups-of-virtual-machines-using-on-Eumetsat-Elasticity/install-cron-1.png
    :class: image-with-border
 
 If **cron** is not installed, install and enable it:
@@ -247,8 +247,8 @@ You should be prompted to choose the editor by number, for example:
 
 .. code-block:: text
 
-   Select an editor. To change later, run 'select-editor'.
-     1. /bin/nano <---- easiest
+   Select an editor.  To change later, run 'select-editor'.
+     1. /bin/nano        <---- easiest
      2. /usr/bin/vim.basic
      3. /usr/bin/vim.tiny
      4. /bin/ed
@@ -354,7 +354,7 @@ script:
 
    #!/bin/bash
 
-   if [["$#" -ne 5]]
+   if [[ "$#" -ne 5 ]]
    then
      echo "Expecting 5 arguments: vm name, backup name, number of backups, os-cloud name, os-region name"
      exit 1
@@ -367,7 +367,7 @@ script:
    os_region_name=$5
 
    reifnumber='^[0-9]+$'
-   if! [[$count =~ $reifnumber]]
+   if ! [[ $count =~ $reifnumber ]]
    then
      echo "Given backup count is not a number"
      exit 1
@@ -428,7 +428,7 @@ Run:
 
 You should get output similar to this:
 
-.. figure:: use-script-rotating-backups-01_creodias.png
+.. figure:: /openstackcli/Use-script-to-create-daily-weekly-and-monthly-rotating-backups-of-virtual-machines-using-on-Eumetsat-Elasticity/use-script-rotating-backups-01_creodias.png
    :class: image-with-border
 
 Show backup files
@@ -444,7 +444,7 @@ the project, run:
      --os-cloud "$OS_CLOUD_NAME" \
      --os-region "$OS_REGION_NAME"
 
-.. figure:: use-script-rotating-backups-02_creodias.png
+.. figure:: /openstackcli/Use-script-to-create-daily-weekly-and-monthly-rotating-backups-of-virtual-machines-using-on-Eumetsat-Elasticity/use-script-rotating-backups-02_creodias.png
    :class: image-with-border
 
 Some snapshots may be backups created by this script, while others may have
@@ -683,7 +683,7 @@ Create cron jobs for the backup schedules you want to use.
 
 The crontab file may look like this:
 
-.. figure:: install-cron-mulitple-1.png
+.. figure:: /openstackcli/Use-script-to-create-daily-weekly-and-monthly-rotating-backups-of-virtual-machines-using-on-Eumetsat-Elasticity/install-cron-mulitple-1.png
 
 After you finish editing, save the file and exit the editor. If the jobs are
 defined correctly, they will run according to their schedules.
@@ -705,7 +705,7 @@ region.
 
 After five days, the list of backups should look similar to this:
 
-.. figure:: use-script-rotating-backups-03_creodias.png
+.. figure:: /openstackcli/Use-script-to-create-daily-weekly-and-monthly-rotating-backups-of-virtual-machines-using-on-Eumetsat-Elasticity/use-script-rotating-backups-03_creodias.png
 
 Backup number **1** is the newest and backup number **5** is the oldest.
 
@@ -720,7 +720,7 @@ This job runs every Monday 15 minutes after midnight. It creates the
 
 After four weeks, the list of backups should look similar to this:
 
-.. figure:: use-script-rotating-backups-04_creodias.png
+.. figure:: /openstackcli/Use-script-to-create-daily-weekly-and-monthly-rotating-backups-of-virtual-machines-using-on-Eumetsat-Elasticity/use-script-rotating-backups-04_creodias.png
 
 **Monthly**
 
@@ -733,7 +733,7 @@ creates the **monthly_backup** series and keeps three backups.
 
 After three months, the list of backups should look similar to this:
 
-.. figure:: use-script-rotating-backups-05_creodias.png
+.. figure:: /openstackcli/Use-script-to-create-daily-weekly-and-monthly-rotating-backups-of-virtual-machines-using-on-Eumetsat-Elasticity/use-script-rotating-backups-05_creodias.png
 
 Limitations
 -----------
@@ -805,9 +805,9 @@ The output should return the value in GB:
 .. code-block:: text
 
    +----------+-------+
-   | Field | Value |
+   | Field    | Value |
    +----------+-------+
-   | min_disk | 8 |
+   | min_disk | 8     |
    +----------+-------+
 
 Step 2: Create a volume from the image
@@ -919,7 +919,7 @@ Rebuild the VM from the copied image:
 
 You should get output similar to this:
 
-.. figure:: backup-command-rotating-backups-05_creodias.png
+.. figure:: /openstackcli/Use-script-to-create-daily-weekly-and-monthly-rotating-backups-of-virtual-machines-using-on-Eumetsat-Elasticity/backup-command-rotating-backups-05_creodias.png
 
 The VM status should become **REBUILD**.
 
@@ -945,7 +945,7 @@ To show only the status, add **-c status**:
      --os-region "$OS_REGION_NAME" \
      vm-to-backup
 
-.. figure:: backup-command-rotating-backups-06_creodias.png
+.. figure:: /openstackcli/Use-script-to-create-daily-weekly-and-monthly-rotating-backups-of-virtual-machines-using-on-Eumetsat-Elasticity/backup-command-rotating-backups-06_creodias.png
 
 If the status is **ACTIVE**, the VM should be ready.
 
@@ -966,7 +966,7 @@ can then be assigned to the new VM.
 
 In the **Image** section of Step 1 of that article:
 
-.. figure:: backup-command-rotating-backups-08_creodias.png
+.. figure:: /openstackcli/Use-script-to-create-daily-weekly-and-monthly-rotating-backups-of-virtual-machines-using-on-Eumetsat-Elasticity/backup-command-rotating-backups-08_creodias.png
    :class: with-border
 
 use the ID of the copied backup image.

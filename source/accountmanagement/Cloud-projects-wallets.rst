@@ -21,7 +21,7 @@ This article explains how to use the |brand-name| Dashboard to manage your cloud
 
 
 Prerequisites
--------------
+----------------
 
 .. jinja:: brand_names
 
@@ -44,7 +44,7 @@ No. 4 **Admin permission**
 To manage projects and wallets you need an **Admin** permission.
 
 Wallets (overview)
-------------------
+--------------------
 
 A **wallet** is the billing source for projects. You may have one shared wallet or multiple wallets for separation by project or contract.
 
@@ -73,11 +73,11 @@ A **wallet** is the billing source for projects. You may have one shared wallet 
 * **Separate wallets by workload**: set different wallets **on individual projects** within a region to isolate costs between teams or environments.
 
 Cloud projects/Wallets view
----------------------------
+-------------------------------------------
 
 After logging into |brand-name-site-auth-link|, click **Cloud projects/Wallets** in the left menu bar to view the details of your projects.
 
-.. figure:: cloud-projects-wallets--portal.png
+.. figure:: /accountmanagement/Cloud-projects-wallets/cloud-projects-wallets-ecis-portal.png
    :align: center
    :class: image-with-border
 
@@ -87,20 +87,20 @@ This view shows the table of active cloud regions for your account.
 
 To see what projects are active in a region, click on the row for that region. The following image shows all three regions activated in that way:
 
-.. figure:: activate-clouds-and-projects--portal.png
+.. figure:: /accountmanagement/Cloud-projects-wallets/activate-clouds-and-projects-ecis-portal.png
    :align: center
    :class: image-with-border
 
 Here we see the projects that already exist in the corresponding OpenStack environment. For instance, FRA1-3 has two projects active:
 
-.. figure:: active-projects-in-fra1-3--portal.png
+.. figure:: /accountmanagement/Cloud-projects-wallets/active-projects-in-fra1-3-ecis-portal.png
    :align: center
    :class: image-with-border
 
 If one or more projects have already been used to create resources (for example, virtual machines), the number of instances and RAM used will no longer be **0** in that region.
 
 Attaching wallets to projects in the Dashboard
-----------------------------------------------
+-----------------------------------------------------
 
 Initially, you will have only one active wallet, and the default wallet is inherited across all of the cloud regions.
 
@@ -111,7 +111,7 @@ The wallet attached to the region will be the default for all of the projects wi
 
 
 Three-dots menu
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 Use the **three-dots** menu in each row to access region-level or project-level actions.
 
@@ -130,13 +130,13 @@ Use the **three-dots** menu in each row to access region-level or project-level 
 
 
 Attach wallet to a region
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Attach the appropriate wallet to the region — this determines from which funds the projects' expenses will be drawn.
 
 To change the wallet, click the **three-dots** menu in the row of the region and choose whether to modify the **current** or **next** wallet:
 
-.. figure:: change-current-or-next-wallet--portal.png
+.. figure:: /accountmanagement/Cloud-projects-wallets/change-current-or-next-wallet-ecis-portal.png
    :align: center
    :class: image-with-border
 
@@ -144,7 +144,7 @@ To change the wallet, click the **three-dots** menu in the row of the region and
 
 This opens a new entry window:
 
-.. figure:: change-current-wallet--portal.png
+.. figure:: /accountmanagement/Cloud-projects-wallets/change-current-wallet-ecis-portal.png
    :align: center
    :class: image-with-border
    :scale: 75%

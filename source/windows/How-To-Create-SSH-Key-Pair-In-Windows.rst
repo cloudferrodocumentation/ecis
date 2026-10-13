@@ -1,10 +1,10 @@
 How to Create SSH Key Pair in Windows 10 On |brand-name|
-========================================================
+===================================================================
 
 This guide will show you how to generate an SSH key pair in Windows 10 using OpenSSH.
 
 Prerequisites
--------------
+---------------
 
  * System running Windows 10 or Windows Server 2016-2022
  * User account with administrative privileges
@@ -21,7 +21,7 @@ First, check to see if you have the OpenSSH client installed:
 
 .. jinja:: windows_images
 
-   .. image:: {{ windows092 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-On-Eumetsat-Elasticity/{{ windows092 }}
 
 3. Scroll down the list to see if OpenSSH Client is listed.
 
@@ -31,7 +31,7 @@ First, check to see if you have the OpenSSH client installed:
 
 .. jinja:: windows_images
 
-   .. image:: {{ windows093 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-On-Eumetsat-Elasticity/{{ windows093 }}
 
 This will install app called **ssh-keygen**.
 
@@ -50,7 +50,7 @@ Step 2: Open Command Prompt
 
 .. jinja:: windows_images
 
-   .. image:: {{ windows094 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-On-Eumetsat-Elasticity/{{ windows094 }}
 
 Step 3: Use OpenSSH to Generate an SSH Key Pair
 -----------------------------------------------
@@ -65,7 +65,7 @@ Finally, run **ssh-keygen** to generate the public and private keys for SSH acce
 
 .. jinja:: windows_images
 
-   .. image:: {{ windows095 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-On-Eumetsat-Elasticity/{{ windows095 }}
 
 Press **ENTER** three times. This will
 
@@ -83,35 +83,33 @@ These are the default values.
 
 .. jinja:: windows_images
 
-   .. image:: {{ windows096 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-On-Eumetsat-Elasticity/{{ windows096 }}
 
 To see the generated files, navigate to **C:/Users/<Your_User_Name>/.ssh** with your file explorer.
 
 .. jinja:: windows_images
 
-   .. image:: {{ windows097 }}
+   .. image:: /windows/How-To-Create-SSH-Key-Pair-In-Windows-On-Eumetsat-Elasticity/{{ windows097 }}
 
 The image shows default values of files for private and public keys, in files **id_rsa** and **id_rsa.pub**, respectively.
 
 What To Do Next
----------------
+-----------------
 
 .. jinja:: brand_names
 
-   For Windows 11, see this guide: :doc:`/windows/How-To-Create-SSH-Key-Pair-In-Windows-11-On-{{ brand_name_hyphen }}/How-To-Create-SSH-Key-Pair-In-Windows-11-On-{{ brand_name_hyphen }}`
+   For Windows 11, see this guide: :doc:`/windows/How-To-Create-SSH-Key-Pair-In-Windows-11`
 
 Put your public key on remote server and use your private key to authorize to your VM. To add the public key to remote server see
 
 .. jinja:: brand_names
 
-   :doc:`/networking/How-to-add-SSH-key-from-Horizon-web-console-on-{{ brand_name_hyphen }}`
+   :doc:`/networking/How-to-add-SSH-key-from-Horizon-web-console`
 
 To connect to the server from Windows:
 
 .. jinja:: brand_names
 
-   :doc:`/windows/How-to-connect-to-a-virtual-machine-via-SSH-from-Windows-10-Command-Prompt-on-{{ brand_name_hyphen }}`
+   :doc:`/windows/How-to-connect-to-a-virtual-machine-via-SSH-from-Windows-10-Command-Prompt`
 
-   :doc:`/windows/How-to-access-a-VM-from-Windows-PuTTY-on-{{ brand_name_hyphen }}`
-
-
+   :doc:`/windows/How-to-access-a-VM-from-Windows-PuTTY`

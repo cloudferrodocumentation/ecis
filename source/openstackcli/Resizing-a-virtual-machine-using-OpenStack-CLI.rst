@@ -1,5 +1,5 @@
 Resizing a virtual machine using OpenStack CLI on |brand-name|
-==============================================================
+======================================================================
 
 Introduction
 ------------
@@ -17,7 +17,7 @@ After the instance is spawned, it is possible to change one flavor for another, 
 In this article, we are going to resize VMs using CLI commands in OpenStack.
 
 Prerequisites
--------------
+------------------------
 
 No. 1 **Account**
 
@@ -27,13 +27,13 @@ If you are a normal user of |brand-name| hosting, you will have all prerogatives
 
 .. jinja:: brand_names
 
-   :doc:`/cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-{{ brand_name_hyphen }}-cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-{{ brand_name_hyphen }}-cloud`
+   :doc:`/cloud/How-to-create-a-VM-using-the-OpenStack-CLI-client-on-cloud`
 
 No. 2 **Awareness of existing quotas and flavors limits**
 
 .. jinja:: brand_names
 
-   For general introduction to quotas and flavors, see :doc:`/cloud/Dashboard-Overview-Project-Quotas-And-Flavors-Limits-on-{{ brand_name_hyphen }}/Dashboard-Overview-Project-Quotas-And-Flavors-Limits-on-{{ brand_name_hyphen }}`.
+   For general introduction to quotas and flavors, see :doc:`/cloud/Dashboard-Overview-Project-Quotas-And-Flavors-Limits`.
 
 Also:
 
@@ -42,7 +42,7 @@ Also:
  * Adequate resources are available in your OpenStack environment to accommodate the resize.
 
 Creating a new VM
------------------
+------------------------------------------
 
 To illustrate the commands in this article, let us create a new VM in order to start with a clean slate. (It goes without saying that you can practice with any of the already existing VMs in your account.)
 
@@ -52,7 +52,7 @@ To see all flavors:
 
    openstack flavor list
 
-.. figure:: resize-vm-horizon-cli-3.png
+.. figure:: /openstackcli/Resizing-a-virtual-machine-using-OpenStack-CLI-on-Eumetsat-Elasticity/resize-vm-horizon-cli-3.png
    :class: image-with-border
 
 This is the command to create a new VM called **ResizingCLI**:
@@ -70,7 +70,7 @@ This is the command to create a new VM called **ResizingCLI**:
 
 This is the result:
 
-.. figure:: resize-vm-horizon-cli-2.png
+.. figure:: /openstackcli/Resizing-a-virtual-machine-using-OpenStack-CLI-on-Eumetsat-Elasticity/resize-vm-horizon-cli-2.png
    :class: image-with-border
 
 The **id** for **ResizingCLI** is **82bba971-8ff1-4f85-93d6-9d56bb7b185d** and we can use it in various commands to denote this particular VM.
@@ -105,7 +105,7 @@ To verify the resize, check the status of the VM:
 
      openstack server show ResizingCLI
 
-.. figure:: resize-vm-horizon-cli-4.png
+.. figure:: /openstackcli/Resizing-a-virtual-machine-using-OpenStack-CLI-on-Eumetsat-Elasticity/resize-vm-horizon-cli-4.png
    :class: image-with-border
 
 When the VM has **VERIFY_RESIZE** status, we are able to confirm the resize. The command is:
@@ -123,7 +123,7 @@ Execute once again:
 to see the real state of the VM after confirmation. We will now see that the **status** is **ACTIVE**.
 
 Reverting a resize
-------------------
+-----------------------
 
 Reverting a resize switches the VM back to its original flavor and cleans up temporary resources allocated during the resize operation.
 
@@ -137,8 +137,8 @@ If status is not **VERIFY_RESIZE**, we will get message stating that it is not p
 
 
 What To Do Next
----------------
+-----------------------
 
 .. jinja:: brand_names
 
-   You can also resize the virtual machine using only OpenStack Horizon. More details here: :doc:`/cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon-on-{{ brand_name_hyphen }}/Resizing-a-virtual-machine-using-OpenStack-Horizon-on-{{ brand_name_hyphen }}`
+   You can also resize the virtual machine using only OpenStack Horizon. More details here: :doc:`/cloud/Resizing-a-virtual-machine-using-OpenStack-Horizon`

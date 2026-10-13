@@ -14,14 +14,14 @@ You need an active |brand-name| hosting account and access to the portal |brand-
 
 No. 2 **User and roles**
 
-Some notifications may reflect changes to your organization membership or assigned role. For background information, see :doc:`/accountmanagement/Users-and-roles/Users-and-roles`.
+Some notifications may reflect changes to your organization membership or assigned role. For background information, see :doc:`/accountmanagement/Users-and-roles`.
 
 Overview
 --------
 
 Open option **Notifications** in the left-side menu under **Support**.
 
-.. figure:: first-screen-for-notifications--portal.png
+.. figure:: /accountmanagement/Notifications/first-screen-for-notifications-ecis-portal.png
    :class: image-with-border
 
 This section displays messages sent through the portal. These messages may concern:
@@ -56,7 +56,7 @@ Service and maintenance notifications
 
 In regular use, the **Notifications** section is also used for operator announcements.
 
-.. figure:: notifications-from-eumetsat-old--portal.png
+.. figure:: /accountmanagement/Notifications/notifications-from-eumetsat-old-ecis-portal.png
    :class: image-with-border
 
 Notifications may appear under different message labels, such as **ANNOUNCEMENT** and **INFO**. These messages may cover new portal features, planned maintenance, service upgrades, fixes, and other operational updates.
@@ -70,7 +70,7 @@ What to do next
 
 For more information related to account access and portal usage, see:
 
-* :doc:`/accountmanagement/Users-and-roles/Users-and-roles`
-* :doc:`/accountmanagement/Management-interfaces/Management-interfaces`
-* :doc:`/accountmanagement/Regions/Regions`
-* :doc:`/accountmanagement/Help-Desk-And-Support/Help-Desk-And-Support`
+* :doc:`/accountmanagement/Users-and-roles`
+* :doc:`/accountmanagement/Management-interfaces`
+* :doc:`/accountmanagement/Regions`
+* :doc:`/accountmanagement/Help-Desk-And-Support`

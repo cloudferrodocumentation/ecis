@@ -3,13 +3,13 @@
    :keywords: EO-Lab, forgot, deleted
 
 What if I Forgot to Add the SSH Key to my VM - or Deleted it?
-=============================================================
+==============================================================
 
 OpenStack only allows to add a SSH key to your VM during its creation, so if you forgot to add an SSH key to your VM at the start you may consider following options:
 
 .. jinja:: brand_names
 
-   1) You can try logging in using OpenStack Console in Horizon (see: :doc:`/cloud/How-to-access-the-VM-from-OpenStack-console-on-{{ brand_name_hyphen }}/How-to-access-the-VM-from-OpenStack-console-on-{{ brand_name_hyphen }}`) and add SSH key as per this article: :doc:`/networking/How-to-add-SSH-key-from-Horizon-web-console-on-{{ brand_name_hyphen }}/How-to-add-SSH-key-from-Horizon-web-console-on-{{ brand_name_hyphen }}`.
+   1) You can try logging in using OpenStack Console in Horizon (see: :doc:`/cloud/How-to-access-the-VM-from-OpenStack-console`) and add SSH key as per this article: :doc:`/networking/How-to-add-SSH-key-from-Horizon-web-console`.
 
 2) If your VM is new and doesn't have any important data, or attached Volumes with data, you can just delete it and create a new one.
 

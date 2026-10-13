@@ -202,4 +202,3 @@ To provision a new OpenStack project, go to Accounts/Projects.
      -
 
 OpenStack Domain Name - invisible in frontend, automatically derived from the Dashboard Organization name.
-

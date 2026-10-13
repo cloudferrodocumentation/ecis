@@ -1,5 +1,5 @@
 How to Back Up an Instance and Download it to the Desktop on |brand-name| OpenStack Hosting
-===========================================================================================
+=====================================================================================================
 
 This article explains how to create a virtual machine using OpenStack CLI, create a snapshot of its boot volume, and prepare the backed-up disk for download to your desktop.
 
@@ -42,8 +42,8 @@ Copy the RC file to your working directory and activate it.
 
 .. code-block:: console
 
-   cp /home/dusko/Downloads/app-cred-test-access-openrc.sh.
-   source./app-cred-test-access-openrc.sh
+   cp /home/dusko/Downloads/app-cred-test-access-openrc.sh .
+   source ./app-cred-test-access-openrc.sh
 
 Verify that the OpenStack CLI client can communicate with the cloud.
 
@@ -56,12 +56,12 @@ Example output:
 .. code-block:: text
 
    +------------------------------+------------------------------+---------+------+-----------+-------+-----------+
-   | ID | Name | RAM | Disk | Ephemeral | VCPUs | Is Public |
+   | ID                           | Name                         |     RAM | Disk | Ephemeral | VCPUs | Is Public |
    +------------------------------+------------------------------+---------+------+-----------+-------+-----------+
-   | 1cpu-1gbmem | 1cpu-1gbmem | 1024 | 0 | 0 | 1 | True |
-   | 2cpu-4gbmem | 2cpu-4gbmem | 4096 | 0 | 0 | 2 | True |
-   | 4cpu-4gbmem | 4cpu-4gbmem | 4096 | 0 | 0 | 4 | True |
-   | 4cpu-8gbmem | 4cpu-8gbmem | 8192 | 0 | 0 | 4 | True |
+   | 1cpu-1gbmem                  | 1cpu-1gbmem                  |    1024 |    0 |         0 |     1 | True      |
+   | 2cpu-4gbmem                  | 2cpu-4gbmem                  |    4096 |    0 |         0 |     2 | True      |
+   | 4cpu-4gbmem                  | 4cpu-4gbmem                  |    4096 |    0 |         0 |     4 | True      |
+   | 4cpu-8gbmem                  | 4cpu-8gbmem                  |    8192 |    0 |         0 |     4 | True      |
    +------------------------------+------------------------------+---------+------+-----------+-------+-----------+
 
 
@@ -157,11 +157,11 @@ Example output:
 .. code-block:: text
 
    +--------------------------------------+------------+--------+-------------------------------------------------+--------------------------+-------------+
-   | ID | Name | Status | Networks | Image | Flavor |
+   | ID                                   | Name       | Status | Networks                                        | Image                    | Flavor      |
    +--------------------------------------+------------+--------+-------------------------------------------------+--------------------------+-------------+
    | 1c344527-d2a5-4a10-906c-1bbf8878551f | vm-john-01 | ACTIVE | cf_cloud_mvp_dev_ecis_r1_with_sfs=192.168.168.2 | N/A (booted from volume) | 4cpu-4gbmem |
-   | | | | 40; sfs_network_638f4089d6ad470aaaeb70268529701 | | |
-   | | | | 2=10.84.16.37 | | |
+   |                                      |            |        | 40; sfs_network_638f4089d6ad470aaaeb70268529701 |                          |             |
+   |                                      |            |        | 2=10.84.16.37                                   |                          |             |
    +--------------------------------------+------------+--------+-------------------------------------------------+--------------------------+-------------+
 
 The **Image** column shows **N/A (booted from volume)**. This means that the virtual machine uses a Cinder volume as its root disk.
@@ -238,17 +238,17 @@ Example output:
 .. code-block:: text
 
    +-------------+--------------------------------------+
-   | Field | Value |
+   | Field       | Value                                |
    +-------------+--------------------------------------+
-   | created_at | 2026-05-29T21:17:52.306655 |
-   | description | None |
-   | id | d092e03d-6b97-4ba0-ad07-4a6d239ca55a |
-   | name | backup-01-snapshot |
-   | properties | |
-   | size | 5 |
-   | status | creating |
-   | updated_at | None |
-   | volume_id | 4ee0a54d-3742-48e6-a665-43028f27462f |
+   | created_at  | 2026-05-29T21:17:52.306655           |
+   | description | None                                 |
+   | id          | d092e03d-6b97-4ba0-ad07-4a6d239ca55a |
+   | name        | backup-01-snapshot                   |
+   | properties  |                                      |
+   | size        | 5                                    |
+   | status      | creating                             |
+   | updated_at  | None                                 |
+   | volume_id   | 4ee0a54d-3742-48e6-a665-43028f27462f |
    +-------------+--------------------------------------+
 
 Check the snapshot status.
@@ -262,9 +262,9 @@ Example output:
 .. code-block:: text
 
    +--------------------------------------+--------------------+-------------+-----------+------+
-   | ID | Name | Description | Status | Size |
+   | ID                                   | Name               | Description | Status    | Size |
    +--------------------------------------+--------------------+-------------+-----------+------+
-   | d092e03d-6b97-4ba0-ad07-4a6d239ca55a | backup-01-snapshot | None | available | 5 |
+   | d092e03d-6b97-4ba0-ad07-4a6d239ca55a | backup-01-snapshot | None        | available |    5 |
    +--------------------------------------+--------------------+-------------+-----------+------+
 
 Continue only after the snapshot status becomes **available**.

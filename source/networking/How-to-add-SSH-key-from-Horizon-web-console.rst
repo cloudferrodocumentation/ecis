@@ -7,16 +7,16 @@ Unfortunately, copy/paste functionality in not supported by our console. For add
 
 For instance you may go to https://pastebin.com/ and put your public key there (you can set if and how long content is visible to others and so on)
 
-.. figure:: pastebin1.png
+.. figure:: /networking/How-to-add-SSH-key-from-Horizon-web-console-on-Eumetsat-Elasticity/pastebin1.png
 
 
 copy URL of raw pastebin content (for obtaining a raw content, click on "Raw" icon),
 
-.. figure:: pastebin2.png
+.. figure:: /networking/How-to-add-SSH-key-from-Horizon-web-console-on-Eumetsat-Elasticity/pastebin2.png
 
 
 
-.. figure:: pastebin3.png
+.. figure:: /networking/How-to-add-SSH-key-from-Horizon-web-console-on-Eumetsat-Elasticity/pastebin3.png
 
 
 and issue the command from inside of instance:
@@ -25,7 +25,7 @@ and issue the command from inside of instance:
 
    curl <pastebin url here> > mykey.txt
 
-.. figure:: pastebin4.png
+.. figure:: /networking/How-to-add-SSH-key-from-Horizon-web-console-on-Eumetsat-Elasticity/pastebin4.png
 
 
 After downloading the file, you may check if your key is saved correctly using cat command:
@@ -35,7 +35,7 @@ After downloading the file, you may check if your key is saved correctly using c
    cat mykey.txt
 
 
-.. figure:: pastebin5.png
+.. figure:: /networking/How-to-add-SSH-key-from-Horizon-web-console-on-Eumetsat-Elasticity/pastebin5.png
 
 
 
@@ -44,4 +44,3 @@ Please note that the key must be put into /home/eouser/.ssh/authorized_keys, bec
 ::
 
    cat mykey.txt | sudo tee -a /home/eouser/.ssh/authorized_keys
-

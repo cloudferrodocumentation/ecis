@@ -1,12 +1,12 @@
 How to Create Backup of Your Volume From Windows Machine on |brand-name|
-========================================================================
+=============================================================================
 
 In this tutorial you will learn how to create a backup of your volume on |brand-name| |cloud-name| cloud. It allows you to save its state at a certain point in time and, for example, perform some experiments on it. You can then restore the volume to its previous state if you are unhappy with the results.
 
 Those backups are stored using object storage. Restoring a backup will delete all data added to a volume after backup was created.
 
 What We Are Going To Cover
---------------------------
+-------------------------------
 
  * Disconnecting the volume from a Windows virtual machine
 
@@ -17,7 +17,7 @@ What We Are Going To Cover
  * Reattaching a volume to your Windows virtual machine
 
 Prerequisites
--------------
+-----------------
 
 No. 1 **Account**
 
@@ -27,14 +27,14 @@ No. 2 **Windows VM**
 
 .. jinja:: brand_names
 
-   You must operate a Microsoft Windows virtual machine running on |brand-name| |cloud-name| cloud. You can access it using the webconsole (:doc:`/cloud/How-to-access-the-VM-from-OpenStack-console-on-Eumetsat-Elasticity/How-to-access-the-VM-from-OpenStack-console-on-Eumetsat-Elasticity`) or through RDP. If you are using RDP, we strongly recommend using a bastion host for your security: :doc:`/windows/Connecting-to-a-Windows-VM-via-RDP-through-a-Linux-bastion-host-port-forwarding-on-Eumetsat-Elasticity/Connecting-to-a-Windows-VM-via-RDP-through-a-Linux-bastion-host-port-forwarding-on-Eumetsat-Elasticity`.
+   You must operate a Microsoft Windows virtual machine running on |brand-name| |cloud-name| cloud. You can access it using the webconsole (:doc:`/cloud/How-to-access-the-VM-from-OpenStack-console`) or through RDP. If you are using RDP, we strongly recommend using a bastion host for your security: :doc:`/windows/Connecting-to-a-Windows-VM-via-RDP-through-a-Linux-bastion-host-port-forwarding`.
 
 No. 3 **Volume**
 
 A volume must be connected to your Windows virtual machine.
 
 Disconnecting the volume from a virtual machine
------------------------------------------------
+--------------------------------------------------
 
 Before creating a backup of your volume, disconnect it.
 
@@ -42,19 +42,19 @@ On your virtual machine, right-click the Start menu and select **Disk Management
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume036 }}
+   .. image:: /datavolume/How-To-Create-Backup-Of-Your-Volume-From-Windows-Machine-on-Eumetsat-Elasticity/{{ datavolume036 }}
 
 A window similar to this should appear:
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume037 }}
+   .. image:: /datavolume/How-To-Create-Backup-Of-Your-Volume-From-Windows-Machine-on-Eumetsat-Elasticity/{{ datavolume037 }}
 
 Right-click your attached volume and select **Change Drive Letter and Paths...**. The following window should appear:
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume038 }}
+   .. image:: /datavolume/How-To-Create-Backup-Of-Your-Volume-From-Windows-Machine-on-Eumetsat-Elasticity/{{ datavolume038 }}
 
 Select the drive letter or mount point of your drive and click **Remove**.
 
@@ -64,7 +64,7 @@ Select the drive letter or mount point of your drive and click **Remove**.
 
    .. jinja:: datavolume_images
 
-      .. image:: {{ datavolume039 }}
+      .. image:: /datavolume/How-To-Create-Backup-Of-Your-Volume-From-Windows-Machine-on-Eumetsat-Elasticity/{{ datavolume039 }}
 
    make sure that the removal does not break your workflow and click **Yes**.
 
@@ -74,24 +74,24 @@ Go to **Volumes** > **Volumes**. You should see your volume there:
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume040 }}
+   .. image:: /datavolume/How-To-Create-Backup-Of-Your-Volume-From-Windows-Machine-on-Eumetsat-Elasticity/{{ datavolume040 }}
 
 Select **Manage Attachments** from the drop-down menu in the **Actions** column for your volume:
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume041 }}
+   .. image:: /datavolume/How-To-Create-Backup-Of-Your-Volume-From-Windows-Machine-on-Eumetsat-Elasticity/{{ datavolume041 }}
 
 The following window should appear:
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume042 }}
+   .. image:: /datavolume/How-To-Create-Backup-Of-Your-Volume-From-Windows-Machine-on-Eumetsat-Elasticity/{{ datavolume042 }}
 
 Click **Detach Volume** and confirm your choice.
 
 Creating a Backup of Your Volume
---------------------------------
+----------------------------------
 
 Now that you have detached the volume from your virtual machine, you can make its backup by following these steps:
 
@@ -100,7 +100,7 @@ Now that you have detached the volume from your virtual machine, you can make it
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume043 }}
+   .. image:: /datavolume/How-To-Create-Backup-Of-Your-Volume-From-Windows-Machine-on-Eumetsat-Elasticity/{{ datavolume043 }}
 
 * Enter the chosen name for your backup in the **Backup Name** text field. Optionally, you can provide its description in the **Description** text field. Once you're ready, click **Create Volume Backup**.
 
@@ -112,10 +112,10 @@ Once the process is over, you should see the status **Available** next to your b
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume044 }}
+   .. image:: /datavolume/How-To-Create-Backup-Of-Your-Volume-From-Windows-Machine-on-Eumetsat-Elasticity/{{ datavolume044 }}
 
 Restoring the backup
---------------------
+------------------------
 
 There are two ways of restoring a backup:
 
@@ -126,7 +126,7 @@ Go to **Volumes** > **Backups** section of the Horizon dashboard. In the **Actio
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume045 }}
+   .. image:: /datavolume/How-To-Create-Backup-Of-Your-Volume-From-Windows-Machine-on-Eumetsat-Elasticity/{{ datavolume045 }}
 
 Use **Select Volume** drop-down list to select the volume which your backup will replace. You can also create a new volume from that backup by choosing **Create a New Volume**.
 
@@ -136,18 +136,18 @@ Once this operation is completed, you should see the status **Available** next t
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume046 }}
+   .. image:: /datavolume/How-To-Create-Backup-Of-Your-Volume-From-Windows-Machine-on-Eumetsat-Elasticity/{{ datavolume046 }}
 
 You can now reattach the volume to your virtual machine.
 
 Reattaching the volume to your virtual machine
-----------------------------------------------
+-------------------------------------------------------
 
 In the **Volumes** > **Volumes** section of the Horizon dashboard, find the row containing your volume. Choose **Manage Attachments** from the drop-down menu in the **Actions** column for it. You should get the following window:
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume047 }}
+   .. image:: /datavolume/How-To-Create-Backup-Of-Your-Volume-From-Windows-Machine-on-Eumetsat-Elasticity/{{ datavolume047 }}
 
 From the drop-down menu **Attach To Instance** choose the name of the virtual machine to which the volume was previously attached. Click **Attach Volume**.
 
@@ -155,7 +155,7 @@ Attaching should take up to a few seconds. Once it is completed, you should see 
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume048 }}
+   .. image:: /datavolume/How-To-Create-Backup-Of-Your-Volume-From-Windows-Machine-on-Eumetsat-Elasticity/{{ datavolume048 }}
 
 Go to **Compute** > **Instances**. Choose **Start Instance** in the row with the virtual machine to which the volume has just been attached. Login to your Windows VM using RDP or the webconsole (see Prerequisite No. 2).
 
@@ -163,7 +163,7 @@ On your virtual machine, right-click the Start menu and select **Disk Management
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume049 }}
+   .. image:: /datavolume/How-To-Create-Backup-Of-Your-Volume-From-Windows-Machine-on-Eumetsat-Elasticity/{{ datavolume049 }}
 
 .. note::
 
@@ -171,19 +171,19 @@ On your virtual machine, right-click the Start menu and select **Disk Management
 
    .. jinja:: datavolume_images
 
-      .. image:: {{ datavolume050 }}
+      .. image:: /datavolume/How-To-Create-Backup-Of-Your-Volume-From-Windows-Machine-on-Eumetsat-Elasticity/{{ datavolume050 }}
 
 Right-click your attached volume and select **Change Drive Letter and Paths...**. The window titled **Change Drive Letter and Paths for New Volume** should appear:
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume051 }}
+   .. image:: /datavolume/How-To-Create-Backup-Of-Your-Volume-From-Windows-Machine-on-Eumetsat-Elasticity/{{ datavolume051 }}
 
 Click **Add...**. The following window should appear:
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume052 }}
+   .. image:: /datavolume/How-To-Create-Backup-Of-Your-Volume-From-Windows-Machine-on-Eumetsat-Elasticity/{{ datavolume052 }}
 
 You can choose to either assign a drive letter to your drive or mount it in an empty folder.
 
@@ -194,4 +194,4 @@ Your volume should now be mounted. If you chose to assign a drive letter, it sho
 
 .. jinja:: datavolume_images
 
-   .. image:: {{ datavolume053 }}
+   .. image:: /datavolume/How-To-Create-Backup-Of-Your-Volume-From-Windows-Machine-on-Eumetsat-Elasticity/{{ datavolume053 }}

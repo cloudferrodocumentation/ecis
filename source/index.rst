@@ -6,14 +6,13 @@ Welcome to EUMETSAT Cloud Infrastructure Service Documentation!
    :maxdepth: 1
    :caption: Contents:
 
-   accountmanagement/accountmanagement
-   kubernetes/kubernetes
-   datavolume/datavolume
-   cloud/cloud
-   networking/networking
-   openstackcli/openstackcli
-   openstackdev/openstackdev
-   s3/s3
-   shares/shares
-   windows/windows
-
+   /accountmanagement/accountmanagement
+   /kubernetes/kubernetes
+   /datavolume/datavolume
+   /cloud/cloud
+   /networking/networking
+   /openstackcli/openstackcli
+   /openstackdev/openstackdev
+   /s3/s3
+   /shares/shares
+   /windows/windows

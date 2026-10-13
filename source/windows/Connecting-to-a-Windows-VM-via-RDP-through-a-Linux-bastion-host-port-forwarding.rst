@@ -1,5 +1,5 @@
 Connecting to a Windows VM via RDP through a Linux Bastion Host port forwarding on |brand-name|
-===============================================================================================
+=========================================================================================================
 
 Connecting to Windows virtual machines using Remote Desktop Protocol (RDP) often requires exposing the RDP service directly to the public network.
 This approach increases the attack surface, makes the service more visible to automated scans, and may conflict with security policies that restrict direct access to management ports.
@@ -45,15 +45,15 @@ The following articles may serve as a reference:
 
 .. jinja:: brand_names
 
-   * :doc:`/cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-{{ brand_name_hyphen }}/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop-on-{{ brand_name_hyphen }}`
-   * :doc:`/cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-{{ brand_name_hyphen }}/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line-on-{{ brand_name_hyphen }}`
+   * :doc:`/cloud/How-to-create-a-Linux-VM-and-access-it-from-Windows-desktop`
+   * :doc:`/cloud/How-to-create-a-Linux-VM-and-access-it-from-Linux-command-line`
 
 The two virtual machines used in this article are shown below:
 **Bastion** running Ubuntu 24.04 and **rdp** running Windows Server 2019.
 
 .. jinja:: windows_images
 
-   .. figure:: {{ windows065 }}
+   .. figure:: /windows/Connecting-to-a-Windows-VM-via-RDP-through-a-Linux-bastion-host-port-forwarding-on-Eumetsat-Elasticity/{{ windows065 }}
 
 No. 3 **Local Windows system**
 
@@ -84,7 +84,7 @@ You also need:
 .. jinja:: brand_names
 
    For detailed instructions, see:
-   :doc:`/windows/How-to-access-a-VM-from-Windows-PuTTY-on-{{ brand_name_hyphen }}/How-to-access-a-VM-from-Windows-PuTTY-on-{{ brand_name_hyphen }}`
+   :doc:`/windows/How-to-access-a-VM-from-Windows-PuTTY`
 
 No. 6 **Windows Administrator credentials**
 
@@ -96,14 +96,14 @@ and set or change the Administrator password before attempting the RDP connectio
 
 .. jinja:: windows_images
 
-   .. figure:: {{ windows066 }}
+   .. figure:: /windows/Connecting-to-a-Windows-VM-via-RDP-through-a-Linux-bastion-host-port-forwarding-on-Eumetsat-Elasticity/{{ windows066 }}
       :class: with-border
 
 The Administrator password is required for RDP authentication and is unrelated
 to any local Windows users or SSH accounts used in this article.
 
 Step 1. Information required to establish connection with the bastion host
---------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 Launch PuTTY and change the settings according to the instructions:
 
@@ -111,21 +111,21 @@ Launch PuTTY and change the settings according to the instructions:
 
 .. jinja:: windows_images
 
-   .. figure:: {{ windows067 }}
+   .. figure:: /windows/Connecting-to-a-Windows-VM-via-RDP-through-a-Linux-bastion-host-port-forwarding-on-Eumetsat-Elasticity/{{ windows067 }}
       :class: with-border
 
 **Connection > Data** tab: Set auto-login username as "eouser".
 
 .. jinja:: windows_images
 
-   .. figure:: {{ windows068 }}
+   .. figure:: /windows/Connecting-to-a-Windows-VM-via-RDP-through-a-Linux-bastion-host-port-forwarding-on-Eumetsat-Elasticity/{{ windows068 }}
       :class: with-border
 
-Now select **Connection > SSH > Auth > Credentials > Private key file for authentication:** and add the private key in the.ppk format.
+Now select **Connection > SSH > Auth > Credentials > Private key file for authentication:** and add the private key in the .ppk format.
 
 .. jinja:: windows_images
 
-   .. figure:: {{ windows069 }}
+   .. figure:: /windows/Connecting-to-a-Windows-VM-via-RDP-through-a-Linux-bastion-host-port-forwarding-on-Eumetsat-Elasticity/{{ windows069 }}
       :class: with-border
 
 **Connection > SSH > Tunnels:** Provide the source port for the localhost RDP connection and destination (in the following format: *private IP address of Windows VM:RDP port* - as seen on the screenshot below).
@@ -134,24 +134,24 @@ Click the “Add” button to confirm the changes. Your forwarded port should no
 
 .. jinja:: windows_images
 
-   .. figure:: {{ windows070 }}
+   .. figure:: /windows/Connecting-to-a-Windows-VM-via-RDP-through-a-Linux-bastion-host-port-forwarding-on-Eumetsat-Elasticity/{{ windows070 }}
       :class: with-border
 
 Provide the name of the session and save your config to avoid repeating the whole process every time you would like to connect to your instance again.
 
 .. jinja:: windows_images
 
-   .. figure:: {{ windows071 }}
+   .. figure:: /windows/Connecting-to-a-Windows-VM-via-RDP-through-a-Linux-bastion-host-port-forwarding-on-Eumetsat-Elasticity/{{ windows071 }}
       :class: with-border
 
 Step 2. Open connection in PuTTy
---------------------------------
+------------------------------------
 
 Click “Open” to establish the connection:
 
 .. jinja:: windows_images
 
-   .. figure:: {{ windows072 }}
+   .. figure:: /windows/Connecting-to-a-Windows-VM-via-RDP-through-a-Linux-bastion-host-port-forwarding-on-Eumetsat-Elasticity/{{ windows072 }}
       :class: with-border
 
 The end result: you are now acting as **eouser** on **bastion** VM, on Linux. Leave the PuTTY session open while using RDP, as it maintains the SSH tunnel required for the connection.
@@ -159,7 +159,7 @@ The end result: you are now acting as **eouser** on **bastion** VM, on Linux. Le
 
 
 Step 3. Start an RDP session to localhost to reach the destination server
--------------------------------------------------------------------------
+-----------------------------------------------------------------------------
 
 This step is performed on your **local Windows system**, not on the bastion host.
 
@@ -173,7 +173,7 @@ On your local Windows machine, start the Remote Desktop client:
 
 .. jinja:: windows_images
 
-   .. figure:: {{ windows073 }}
+   .. figure:: /windows/Connecting-to-a-Windows-VM-via-RDP-through-a-Linux-bastion-host-port-forwarding-on-Eumetsat-Elasticity/{{ windows073 }}
       :class: with-border
 
 3. In the **Computer** field, enter the forwarded local address and port
@@ -196,7 +196,7 @@ Confirm the certificate warning if prompted to proceed with the connection.
 
 .. jinja:: windows_images
 
-   .. figure:: {{ windows074 }}
+   .. figure:: /windows/Connecting-to-a-Windows-VM-via-RDP-through-a-Linux-bastion-host-port-forwarding-on-Eumetsat-Elasticity/{{ windows074 }}
       :class: with-border
 
 After successful authentication, you are now connected to the **remote Windows VM**
@@ -204,7 +204,7 @@ through the SSH tunnel provided by the Linux bastion host.
 
 .. jinja:: windows_images
 
-   .. figure:: {{ windows075 }}
+   .. figure:: /windows/Connecting-to-a-Windows-VM-via-RDP-through-a-Linux-bastion-host-port-forwarding-on-Eumetsat-Elasticity/{{ windows075 }}
       :class: with-border
 
 Local Windows 11 vs. remote Windows Server
@@ -218,7 +218,7 @@ The **Server Manager** dashboard confirms this state. Server Manager is availabl
 
 
 How many RDP connections can you have at one time
--------------------------------------------------
+-----------------------------------------------------
 
 Windows operating systems (including Windows Server 2019 used here, as well as Windows 10 and Windows 11) allow only **one interactive RDP session per user account at a time** by default.
 

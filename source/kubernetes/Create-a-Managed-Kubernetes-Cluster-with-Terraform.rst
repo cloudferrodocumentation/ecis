@@ -31,7 +31,7 @@ You should know which cluster name, Kubernetes version, control plane flavor, an
 
 .. jinja:: brand_names
 
-   The same parameters are described in the GUI-based cluster creation article: :doc:`/kubernetes/How-to-create-a-Managed-Kubernetes-cluster-using-ECIS-launcher-GUI`.
+   The same parameters are described in the GUI-based cluster creation article: :doc:`/kubernetes/How-to-create-a-Managed-Kubernetes-cluster-using-launcher-GUI`.
 
 **3. Regional endpoints**
 
@@ -427,7 +427,7 @@ After creating the cluster, you can:
 
    You can also create Kubernetes clusters using the GUI. See:
 
-   * :doc:`/kubernetes/How-to-create-a-Managed-Kubernetes-cluster-using-ECIS-launcher-GUI`
-   * :doc:`/kubernetes/Add-node-pools-to-Managed-ECIS-cluster-using-the-launcher-GUI`
+   * :doc:`/kubernetes/How-to-create-a-Managed-Kubernetes-cluster-using-launcher-GUI`
+   * :doc:`/kubernetes/Add-node-pools-to-Managed-cluster-using-the-launcher-GUI`
 
    If you already have a cluster, you can back it up with :doc:`/kubernetes/Managed-Kubernetes-backups`.
